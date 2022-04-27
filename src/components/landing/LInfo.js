@@ -16,7 +16,7 @@ const LInfo = () => {
                 </Container>
             </div>
             <Container className="my-5">
-                <h2 className="text-light text-center py-2" style={{background: '#7B7784'}}>
+                <h2 className="text-light text-center py-2" style={{ background: '#7B7784' }}>
                     Estamos aquí para ayudarte.
                 </h2>
                 <p className="text-light text-center my-5">
@@ -24,36 +24,37 @@ const LInfo = () => {
                 </p>
             </Container>
 
-            <Card style={{ width: '18rem' }}>
-                <Card.Img variant="top" style={{ width: '50px' }} src="https://res.cloudinary.com/lau2401/image/upload/v1651019668/colegio_1_1_xqgzqd.png" />
-                <Card.Body>
-                    <Card.Title>Encuentra un centro de formacion según tu perfil.</Card.Title>
-                    <Card.Text>
-                        De acuerto a tu resultado en la prueba CHASIDE te mostrará opciones de Centros de Formacion.
-                    </Card.Text>
+            <div className='d-flex justify-content-between mx-2' style={{ }}>
+                <Card className='rounded' style={{ width: '16rem'}}>
+                    <Card.Img className='rounded-circle p-2 icon' style={{ width: '50px', background: '#3B3054' }} src="https://res.cloudinary.com/lau2401/image/upload/v1651019668/colegio_1_1_xqgzqd.png" />
+                    <Card.Body>
+                        <Card.Title className='fw-bold'>Encuentra un centro de formacion según tu perfil.</Card.Title>
+                        <Card.Text>
+                            De acuerto a tu resultado en la prueba CHASIDE te mostrará opciones de Centros de Formacion.
+                        </Card.Text>
+                    </Card.Body>
+                </Card>
+                <Card className='mt-5' style={{ width: '16rem' }}>
+                        <Card.Img className='rounded-circle p-2 icon' style={{ width: '50px', background: '#3B3054' }} src="https://res.cloudinary.com/lau2401/image/upload/v1651019668/beca_2_1_1_sziwbd.png" />
+                    <Card.Body>
+                        <Card.Title className='fw-bold'>Enterate de Becas y ofertas academicas.</Card.Title>
+                        <Card.Text>
+                            Tenemos un registro para que los Ofertantes de Carreras envien información y estar enterado de noticias.
+                        </Card.Text>
 
-                </Card.Body>
-            </Card>
-            <Card style={{ width: '18rem' }}>
-                <Card.Img variant="top" style={{ width: '50px' }} src="https://res.cloudinary.com/lau2401/image/upload/v1651019668/beca_2_1_1_sziwbd.png" />
-                <Card.Body>
-                    <Card.Title>Enterate de Becas y ofertas academicas.</Card.Title>
-                    <Card.Text>
-                        Tenemos un registro para que los Ofertantes de Carreras envien información y estar enterado de noticias.
-                    </Card.Text>
+                    </Card.Body>
+                </Card>
+                <Card style={{ width: '16rem' }}>
+                    <Card.Img className='rounded-circle p-2 icon' style={{ width: '50px', background: '#3B3054' }} src="https://res.cloudinary.com/lau2401/image/upload/v1651019668/beca_2_1_1_sziwbd.png" />
+                    <Card.Body>
+                        <Card.Title className='fw-bold'>Acompañamiento para elegir bien tu vocación.</Card.Title>
+                        <Card.Text>
+                            Si necesitas que nuestros Asesores en orientacion hablan contigo podras solicitarlo.
+                        </Card.Text>
 
-                </Card.Body>
-            </Card>
-            <Card style={{ width: '18rem' }}>
-                <Card.Img variant="top" style={{ width: '50px' }} src="https://res.cloudinary.com/lau2401/image/upload/v1651019668/beca_2_1_1_sziwbd.png" />
-                <Card.Body>
-                    <Card.Title>Acompañamiento para elegir bien tu vocación.</Card.Title>
-                    <Card.Text>
-                        Si necesitas que nuestros Asesores en orientacion hablan contigo podras solicitarlo.
-                    </Card.Text>
-
-                </Card.Body>
-            </Card>
+                    </Card.Body>
+                </Card>
+            </div>
         </div>
     )
 }
