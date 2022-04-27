@@ -1,4 +1,6 @@
-
+*{
+    color: black;
+}
 .conditions{
     font-size: 75%;
 }

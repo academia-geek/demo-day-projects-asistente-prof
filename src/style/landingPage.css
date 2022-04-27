@@ -1,0 +1,22 @@
+*{
+    color: white;
+}
+.linkA{
+    text-decoration: none;
+    color: #AB9AA7;
+    display: flex;
+    align-items: center;
+}
+.linkB{
+    text-decoration: none;
+    background-color: #2ACFCF;
+    width: 100px;
+    padding: 5px;
+    border-radius: 20px;
+    color: white;
+    margin: auto 10px;
+}
+.btnMas{
+    background-color: #2ACFCF;
+    border-radius: 20px;
+}

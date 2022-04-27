@@ -1,28 +1,28 @@
 import React from 'react'
-import { Button, Card } from 'react-bootstrap'
+import { Button, Card, Container } from 'react-bootstrap'
+import '../../style/landingPage.css'
 
 const LInfo = () => {
     return (
-        <div>
-            <Card className="border-radio15" style={{ width: '36rem', height: '400px' }}>
-                <Card.Img variant="top" src="https://res.cloudinary.com/lau2401/image/upload/v1651015886/4002302_1_si42va.png" />
-                <Card.Body>
-                    <Card.Title className="fw-bold" > En "Tu Asistente Prof"</Card.Title>
-                    <Card.Text>
-                        Encuentra la información para tu futuro Profesional.
-                    </Card.Text>
-                    <Button variant="primary">Inicia Tu Test</Button>
-                </Card.Body>
-            </Card>
-            <br />
-            <div className="flex flex-col items-center gap-6 text-center">
-                <h2 className="text-3xl font-bold text-neutral-darkViolet">
+        <div style={{ background: '#4B3F6B' }}>
+            <div class="d-flex justify-content-center">
+                <Container className='text-center text-light'>
+                    <h1 className='text-light fw-bold'> En "Tu Asistente Prof"</h1>
+                    <p className='text-light'>Encuentra la información para tu futuro Profesional.</p>
+                    <Button className='btnMas '>Ver  mas</Button>
+                </Container>
+                <Container className='d-flex'>
+                    <img className='d-flex margin-auto w-75 ' src="https://res.cloudinary.com/lau2401/image/upload/v1651015886/4002302_1_si42va.png" />
+                </Container>
+            </div>
+            <Container className="my-5">
+                <h2 className="text-light text-center py-2" style={{background: '#7B7784'}}>
                     Estamos aquí para ayudarte.
                 </h2>
-                <p className="max-w-[480px] font-medium text-neutral-grayishViolet">
+                <p className="text-light text-center my-5">
                     Podras encontar diferentes espacios para explorar y asi tomar una buena decision.
                 </p>
-            </div>
+            </Container>
 
             <Card style={{ width: '18rem' }}>
                 <Card.Img variant="top" style={{ width: '50px' }} src="https://res.cloudinary.com/lau2401/image/upload/v1651019668/colegio_1_1_xqgzqd.png" />
