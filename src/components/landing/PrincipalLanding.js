@@ -1,5 +1,5 @@
 import React from 'react'
-import LFooter from './LFooter'
+import { LFooter } from './LFooter'
 import LHeader from './LHeader'
 import LInfo from './LInfo'
 
