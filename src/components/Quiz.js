@@ -10,8 +10,13 @@ export const Quiz = () => {
     // fetch(urlQuiz)
     //     .then(response => response.json())
     //     .then(data => console.log(data));
+    //btn nmext
+    const [conter, setconter] = useState(1)
+    const sumar = () =>{
+        setconter(conter + 1)
+        console.log(conter);
+    }
     // forma 2
-    const [questionsNumber, setQuestionsNumber] = useState(0)
     const [questions, setQuestions] = useState([])
     const getDataQuiz = async (url) => {
         console.log(' hi')
@@ -40,8 +45,8 @@ export const Quiz = () => {
                     {/* <h2 className='fw-bold m-3'>{questions[0].quest}</h2> */}
                     <li className='ans'>Yes</li>
                     <li className='ans'>No</li>
-                    <button className='btnSiguiente text-light' onClick={()=>print()}>Siguiente</button>
-                    <p>1 / 5</p>
+                    <button className='btnSiguiente text-light' onClick={()=>sumar()}>Siguiente</button>
+                    <p> {conter} / 5</p>
                 </div>
                 <div className='w-50 d-flex align-items-center'>
                     <img className='w-100 d-flex m-auto' src="https://i.ibb.co/FXX78jr/8004-20171121041121-removebg-preview.png" alt='logo' />
