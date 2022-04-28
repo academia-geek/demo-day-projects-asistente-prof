@@ -1,13 +1,12 @@
-import React, { useState } from 'react';
-import { Nav, Form, Button } from 'react-bootstrap';
-import { useDispatch, useSelector } from 'react-redux';
+import { Nav, Button, Navbar, Container } from 'react-bootstrap';
+import { useDispatch } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
-import { useForm } from '../Hooks/useForm';
 import { logoutAsync } from '../redux/actions/actionLogin';
 
 
 const NavBars = () => {
 
+    //cerrar sesion
     const dispatch = useDispatch();
     const navigate = useNavigate()
 
@@ -16,27 +15,26 @@ const NavBars = () => {
         navigate("/login")
     }
 
-
-    const { products } = useSelector(store => store.products)
-    const [all, setall] = useState(products)
-
-
     return (
         <div >
-            <Nav className="me-auto d-flex justify-content-between nav1">
-                <Nav.Link className='px-0'>
-                    <Link to="/" >
-                        <img
-                            src="https://i.ibb.co/MSyvvTJ/Whats-App-Image-2022-04-25-at-10-24-26-PM-removebg-preview.png"
-                            width="10%" alt="" />
-                    </Link>
-                </Nav.Link>
-                <Nav.Link className='d-flex align-items-center px-0'>
-                    <Button onClick={handleLogout} variant="outline-danger ">Salir <i className="bi bi-box-arrow-left">
-                    </i></Button>
-                </Nav.Link>
-            </Nav>
-
+            <Navbar style={{ background: '#4B3F6B' }} expand="lg">
+                <Container>
+                    <img width='3%' src='https://i.ibb.co/4fh24Gm/Whats-App-Image-2022-04-25-at-10-24-26-PM-removebg-preview.png' alt='logo'></img>
+                    <Navbar.Brand href="#home" className='text-light fw-bold'>Asistente prof</Navbar.Brand>
+                    <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                    <Navbar.Collapse id="basic-navbar-nav">
+                        <Nav className="me-auto  ">
+                            <Nav.Link className='text-secondary'>Home</Nav.Link>
+                            <Nav.Link className='text-secondary'>Link</Nav.Link>
+                        </Nav>
+                        <Nav className="me-auto w-100 d-flex justify-content-end">
+                            <Link  to='/register' onClick={handleLogout}>
+                                <Button style={{ background: '#6ee6e6' }}><i className="bi bi-box-arrow-left"></i> Cerrar sesion </Button>
+                            </Link>
+                        </Nav>
+                    </Navbar.Collapse>
+                </Container>
+            </Navbar>
         </div>
     );
 };
