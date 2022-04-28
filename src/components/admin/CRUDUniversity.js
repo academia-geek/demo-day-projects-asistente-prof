@@ -1,6 +1,7 @@
 import React from 'react';
 import { Form } from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
+import uuid from 'react-uuid';
 import { useForm } from '../../Hooks/useForm';
 import { addProductAsync } from '../../redux/actions/actionUniversity';
 
@@ -12,8 +13,11 @@ const CRUDUniversity = () => {
     descripcion: '',
     carrera: '',
     duracion: '',
+    ciudad: '',
+    idCarrera: uuid(),
   });
-  const { universidad, titulo, descripcion, carrera, duracion } = values;
+  const { universidad, titulo, descripcion, carrera, duracion, ciudad } =
+    values;
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -33,29 +37,28 @@ const CRUDUniversity = () => {
           value={universidad}
         >
           <option selected>Selecciona universidad</option>
-          <option>Universidad Nacional</option>
-          <option>Universidad Distrital</option>
+          <option>Universidad Nacional de Colombia</option>
+          <option>Pontificia Universidad Javeriana</option>
           <option>Universidad Javeriana</option>
         </Form.Select>
+        <Form.Label htmlFor='ciu'>Ciudad</Form.Label>
+        <Form.Select name='ciudad' onChange={handleInputChange} value={ciudad}>
+          <option defaultValue>Selecciona Ciudad</option>
+          <option>Bogota</option>
+          <option>Medellin</option>
+          <option>Cali</option>
+          <option>Cartagena</option>
+        </Form.Select>
         <Form.Label htmlFor='tit'>Titulo</Form.Label>
-        <Form.Control
-          type='text'
-          id='tit'
-          name='titulo'
-          placeholder='Titulo'
-          value={titulo}
-          onChange={handleInputChange}
-        />
-        <Form.Label htmlFor='desc'>Descripcion</Form.Label>
-        <Form.Control
-          type='textarea'
-          id='desc'
-          name='descripcion'
-          placeholder='Descripcion'
-          value={descripcion}
-          onChange={handleInputChange}
-        />
+        <Form.Select name='titulo' onChange={handleInputChange} value={titulo}>
+          <option defaultValue>Titulo</option>
+          <option>Profesional</option>
+          <option>Tecnico</option>
+          <option>Tecnologo</option>
+        </Form.Select>
+
         <Form.Label htmlFor='car'>Carrera</Form.Label>
+
         <Form.Control
           type='text'
           id='car'
@@ -83,7 +86,17 @@ const CRUDUniversity = () => {
           <option>9</option>
           <option>10</option>
         </Form.Select>
-        <button type='submit'>Submit</button>
+        <Form.Label htmlFor='desc'>Descripcion</Form.Label>
+        <Form.Control
+          as='textarea'
+          id='desc'
+          name='descripcion'
+          placeholder='Descripcion'
+          value={descripcion}
+          onChange={handleInputChange}
+        />
+
+        <button type='submit'>Agregar</button>
       </Form>
     </div>
   );
