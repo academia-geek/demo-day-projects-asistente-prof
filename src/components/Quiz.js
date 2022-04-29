@@ -3,27 +3,35 @@ import { Container } from 'react-bootstrap';
 import '../style/quiz.css';
 
 export const Quiz = () => {
-  //traerdata
-  const urlQuiz ='https://asistente-prof.herokuapp.com/questions';
-  // forma 1
-  // fetch(urlQuiz)
-  //     .then(response => response.json())
-  //     .then(data => console.log(data));
-  // forma 2
-  const [questionsNumber, setQuestionsNumber] = useState(0);
+  const urlQuiz = 'https://asistente-prof.herokuapp.com/questions';
+
+  const [conter, setconter] = useState(0);
   const [questions, setQuestions] = useState([]);
+  const [dataChaside, setDataChaside] = useState([]);
+
   const getDataQuiz = async (url) => {
-    console.log(url);
     const resp = await fetch(url);
     const data = await resp.json();
     console.log(data);
+    setQuestions(data);
   };
-  const print = () => {
-    console.log(questions);
-  };
+  console.log(questions);
   useEffect(() => {
     getDataQuiz(urlQuiz);
   }, []);
+
+  console.log(questions);
+
+  const sumar = () => {
+    setconter(conter + 1);
+    console.log(conter);
+  };
+
+  const addData = (dat) => {
+    setDataChaside([...dataChaside, dat]);
+  };
+
+  console.log(dataChaside);
 
   return (
     <div className='py-5' style={{ background: '#4B3F6B' }}>
@@ -32,13 +40,22 @@ export const Quiz = () => {
         style={{ width: '18rem', background: ' white', borderRadius: '20px' }}
       >
         <div className='w-50 text-center text-light'>
-          {/* <h2 className='fw-bold m-3'>{questions[0].quest}</h2> */}
-          <li className='ans'>Yes</li>
+          <h2 className='fw-bold m-3'>{questions[conter]?.quest}</h2>
+          <li
+            className='ans'
+            onClick={() => {
+              addData(questions[conter]?.id);
+            }}
+          >
+            Yes
+          </li>
           <li className='ans'>No</li>
-          <button className='btnSiguiente text-light' onClick={() => print()}>
+          <button className='btnSiguiente text-light' onClick={() => sumar()}>
             Siguiente
           </button>
-          <p>1 / 5</p>
+          <p>
+            {conter + 1} / {questions.length}
+          </p>
         </div>
         <div className='w-50 d-flex align-items-center'>
           <img
