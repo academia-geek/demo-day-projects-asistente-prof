@@ -7,6 +7,7 @@ export const Quiz = () => {
 
   const [conter, setconter] = useState(0);
   const [questions, setQuestions] = useState([]);
+  const [dataChaside, setDataChaside] = useState([]);
 
   const getDataQuiz = async (url) => {
     const resp = await fetch(url);
@@ -26,6 +27,12 @@ export const Quiz = () => {
     console.log(conter);
   };
 
+  const addData = (dat) => {
+    setDataChaside([...dataChaside, dat]);
+  };
+
+  console.log(dataChaside);
+
   return (
     <div className='py-5' style={{ background: '#4B3F6B' }}>
       <Container
@@ -34,7 +41,14 @@ export const Quiz = () => {
       >
         <div className='w-50 text-center text-light'>
           <h2 className='fw-bold m-3'>{questions[conter]?.quest}</h2>
-          <li className='ans'>Yes</li>
+          <li
+            className='ans'
+            onClick={() => {
+              addData(questions[conter]?.id);
+            }}
+          >
+            Yes
+          </li>
           <li className='ans'>No</li>
           <button className='btnSiguiente text-light' onClick={() => sumar()}>
             Siguiente
