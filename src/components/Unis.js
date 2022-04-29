@@ -9,6 +9,9 @@ export const Unis = () => {
     const { careeries } = useSelector(store => store.careeries)
     const [all, setAll] = useState(careeries)
 
+
+
+    
     useEffect(() => {
         dispatch(paintCareerAsync())
         setAll(careeries)

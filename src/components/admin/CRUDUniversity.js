@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Form } from 'react-bootstrap';
+import { Button, Card, Form, Modal, Table } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import uuid from 'react-uuid';
 import { useForm } from '../../Hooks/useForm';
@@ -26,14 +26,43 @@ const CRUDUniversity = () => {
     reset();
   };
 
-    const { careeries } = useSelector(store => store.careeries)
-    const [all, setAll] = useState(careeries)
+  // action delete
+  const [actionModal, setActionModal] = useState([])
+  const [show2, setShow2] = useState(false);
+  const handleClose2 = () => setShow2(false);
+  const handleShow2 = () => setShow2(true);
 
-    useEffect(() => {
-        dispatch(paintCareerAsync())
-        setAll(careeries)
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [])
+  const eliminar = (p) => {
+    handleShow2()
+    setActionModal(p)
+    console.log(p)
+  }
+
+  const eliminarYes = () => {
+    console.log(actionModal.id)
+    // dispatch(deleteAsync(actionModal.id))
+    setTimeout(() => {
+      handleClose2()
+    }, 1000)
+  }
+
+  //edit
+  const [modalEdit, setModalEdit] = useState(false)
+    const [dataModal, setDataModal] = useState([])
+    const editarM = (p) => {
+        console.log(p)
+        setDataModal(p)
+        setModalEdit(true)
+    }
+
+  const { careeries } = useSelector(store => store.careeries)
+  const [all, setAll] = useState(careeries)
+
+  useEffect(() => {
+    dispatch(paintCareerAsync())
+    setAll(careeries)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   return (
     <div>
@@ -107,6 +136,85 @@ const CRUDUniversity = () => {
 
         <button type='submit'>Agregar</button>
       </Form>
+      <Table className='w-75 m-auto ' striped bordered hover size="sm">
+        <thead>
+          <tr className='text-center'>
+            <th>Carrera</th>
+            <th>Universidad</th>
+            <th>Titulo de formacion</th>
+            <th>Ciudad</th>
+            <th>Duracion</th>
+            {/* <th>Descripcion</th> */}
+            {/* <th>Img</th> */}
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody >
+          {
+            careeries.map((carr, index) => (
+              <tr key={index} >
+
+                <td className='position-relative '>
+                  <div className='position-absolute top-50 start-50 translate-middle'>
+                    {carr.carrera}
+                  </div>
+                </td>
+                <td className='position-relative'>
+                  <div className='position-absolute top-50 start-50 translate-middle'>
+                    {carr.universidad}
+                  </div>
+                </td>
+                <td className='position-relative'>
+                  <div className='position-absolute top-50 start-50 translate-middle'>
+                    {carr.titulo}
+                  </div>
+                </td>
+                <td className='position-relative'>
+                  <div className='position-absolute top-50 start-50 translate-middle'>
+                    {carr.ciudad}
+                  </div>
+                </td>
+                {/* <td className='position-relative'>
+                  <div className='position-absolute top-50 start-50 translate-middle'>
+                    {carr.descripcion}
+                  </div>
+                </td> */}
+                {/* <td className='position-relative '>
+                  <div className='imgCrud d-flex align-items-center'>
+                    <img className=' w-25 m-auto' src={carr.img} alt={carr.name} />
+                  </div>
+                </td> */}
+                <td className='position-relative '>
+                <div className='position-absolute top-50 start-50 translate-middle'>
+                    {carr.duracion}
+                  </div>
+                </td>
+                <td className='position-relative w-2'>
+                  <div className='imgCrud d-flex align-items-center justify-content-evenly'>
+                    <div onClick={() => { editarM(carr) }} className="bi bi-pencil-square text-warning"></div>
+                    <div onClick={() => { eliminar(carr) }} className="bi bi-trash3 text-danger"></div>
+                  </div>
+                </td>
+              </tr>
+            ))
+          }
+        </tbody>
+        <Modal show={show2} onHide={handleClose2}>
+          <Modal.Header closeButton>
+            <Modal.Title>Desea eliminar este producto?</Modal.Title>
+          </Modal.Header>
+          {/* <Card.Img className='w-50 m-auto' variant="top" src={actionModal.img} />
+          <Modal.Body className='text-center'>{actionModal.name}</Modal.Body>
+          <Modal.Footer>
+            <Button variant="danger" onClick={eliminarYes}>
+              Yes
+            </Button>
+            <Button variant="primary" onClick={handleClose2}>
+              Cancel
+            </Button>
+          </Modal.Footer> */}
+        </Modal>
+      </Table>
     </div>
   );
 };
