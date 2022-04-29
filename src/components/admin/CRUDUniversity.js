@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Form } from 'react-bootstrap';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import uuid from 'react-uuid';
 import { useForm } from '../../Hooks/useForm';
-import { addProductAsync } from '../../redux/actions/actionUniversity';
+import { addProductAsync, paintCareerAsync } from '../../redux/actions/actionUniversity';
 
 const CRUDUniversity = () => {
   const dispatch = useDispatch();
@@ -25,6 +25,15 @@ const CRUDUniversity = () => {
     dispatch(addProductAsync(values));
     reset();
   };
+
+    const { careeries } = useSelector(store => store.careeries)
+    const [all, setAll] = useState(careeries)
+
+    useEffect(() => {
+        dispatch(paintCareerAsync())
+        setAll(careeries)
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
 
   return (
     <div>

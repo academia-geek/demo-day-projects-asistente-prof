@@ -1,18 +1,22 @@
 import { typesUniversity } from '../types/types';
 
 const initialState = {
-  carrer: [],
+  careeries: [],
 };
 
 export const carrerReducers = (state = initialState, action) => {
   switch (action.type) {
+    case typesUniversity.paintCareer:
+            return {
+              careeries: [...action.payload]
+            }
     case typesUniversity.addCarrer:
       return {
-        carrer: [action.payload],
+        careeries: [action.payload],
       };
     case typesUniversity.deleteCarrer:
       return {
-        carrer: state.carrer.filter((p) => p.id !== action.payload),
+        careeries: state.careeries.filter((p) => p.id !== action.payload),
       };
     case typesUniversity.updateCarrer:
       return {
