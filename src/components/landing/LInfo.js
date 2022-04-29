@@ -1,55 +1,65 @@
 import React from 'react'
-import { Button, Card } from 'react-bootstrap'
+import { Button, Card, Container } from 'react-bootstrap'
+import '../../style/landingPage.css'
 
 const LInfo = () => {
     return (
-        <div>
-            <Card className="border-radio15" style={{ width: '36rem', height: '400px' }}>
-                <Card.Img variant="top" src="https://res.cloudinary.com/lau2401/image/upload/v1651015886/4002302_1_si42va.png" />
-                <Card.Body>
-                    <Card.Title className="fw-bold" > En "Tu Asistente Prof"</Card.Title>
-                    <Card.Text>
-                        Encuentra la información para tu futuro Profesional.
-                    </Card.Text>
-                    <Button variant="primary">Inicia Tu Test</Button>
-                </Card.Body>
-            </Card>
-            <br />
-            <div className="flex flex-col items-center gap-6 text-center">
-                <h2 className="text-3xl font-bold text-neutral-darkViolet">
+        <div className='py-5' style={{ background: '#4B3F6B' }}>
+            <div class="d-flex  justify-content-center" style={{ background: '#4B3F6B' }}>
+                <Container className='text-light mx-3 d-flex align-content-around   flex-wrap'>
+                    <h1 className='text-light fw-bold'> En "Tu Asistente Prof"</h1>
+                    <p className='text-light'>Encuentra la información para tu futuro Profesional.</p>
+                    <br/>
+                        <Button className='btnMas mx-5'>Ver  mas</Button>
+                </Container>
+                <Container className='d-flex'>
+                    <img className='d-flex margin-auto w-100 ' src="https://res.cloudinary.com/lau2401/image/upload/v1651015886/4002302_1_si42va.png" alt=' logo' />
+                </Container>
+            </div>
+            <Container className="my-5">
+                <h2 className="text-light text-center py-2" style={{ background: '#544b6b' }}>
                     Estamos aquí para ayudarte.
                 </h2>
-                <p className="max-w-[480px] font-medium text-neutral-grayishViolet">
+                <p className="text-light text-center my-5">
                     Podras encontar diferentes espacios para explorar y asi tomar una buena decision.
                 </p>
+            </Container>
+            <div className='d-flex justify-content-around mx-2 flex-wrap' style={{}}>
+                <Card className='card-1' style={{ width: '16rem' }}>
+                    <Card.Img className='rounded-circle p-2 icon' style={{ width: '50px', background: '#3B3054' }} src="https://res.cloudinary.com/lau2401/image/upload/v1651019668/colegio_1_1_xqgzqd.png" />
+                    <Card.Body>
+                        <Card.Title className='fw-bold'>Encuentra un centro de formacion según tu perfil.</Card.Title>
+                        <Card.Text>
+                            De acuerto a tu resultado en la prueba CHASIDE te mostrará opciones de Centros de Formacion.
+                        </Card.Text>
+                    </Card.Body>
+                </Card>
+                <Card className='card-2' style={{ width: '16rem' }}>
+                    <Card.Img className='rounded-circle p-2 icon' style={{ width: '50px', background: '#3B3054' }} src="https://res.cloudinary.com/lau2401/image/upload/v1651019668/beca_2_1_1_sziwbd.png" />
+                    <Card.Body>
+                        <Card.Title className='fw-bold'>Enterate de Becas y ofertas academicas.</Card.Title>
+                        <Card.Text>
+                            Tenemos un registro para que los Ofertantes de Carreras envien información y estar enterado de noticias.
+                        </Card.Text>
+
+                    </Card.Body>
+                </Card>
+                <Card className='card-3' style={{ width: '16rem' }}>
+                    <Card.Img className='rounded-circle p-2 icon' style={{ width: '50px', background: '#3B3054' }} src="https://i.ibb.co/mS39Kv3/auricular-1-1.png" />
+                    <Card.Body>
+                        <Card.Title className='fw-bold'>Acompañamiento para elegir bien tu vocación.</Card.Title>
+                        <Card.Text>
+                            Si necesitas que nuestros Asesores en orientacion hablan contigo podras solicitarlo.
+                        </Card.Text>
+
+                    </Card.Body>
+                </Card>
             </div>
-
-            <Card style={{ width: '18rem' }}>
-                <Card.Img variant="top" style={{ width: '50px' }} src="https://res.cloudinary.com/lau2401/image/upload/v1651019668/colegio_1_1_xqgzqd.png" />
+            <Card className='card-4 m-auto' style={{ width: '20rem' }}>
                 <Card.Body>
-                    <Card.Title>Encuentra un centro de formacion según tu perfil.</Card.Title>
+                    <Card.Title className='fw-bold text-light'>Boost your links today</Card.Title>
                     <Card.Text>
-                        De acuerto a tu resultado en la prueba CHASIDE te mostrará opciones de Centros de Formacion.
-                    </Card.Text>
-
-                </Card.Body>
-            </Card>
-            <Card style={{ width: '18rem' }}>
-                <Card.Img variant="top" style={{ width: '50px' }} src="https://res.cloudinary.com/lau2401/image/upload/v1651019668/beca_2_1_1_sziwbd.png" />
-                <Card.Body>
-                    <Card.Title>Enterate de Becas y ofertas academicas.</Card.Title>
-                    <Card.Text>
-                        Tenemos un registro para que los Ofertantes de Carreras envien información y estar enterado de noticias.
-                    </Card.Text>
-
-                </Card.Body>
-            </Card>
-            <Card style={{ width: '18rem' }}>
-                <Card.Img variant="top" style={{ width: '50px' }} src="https://res.cloudinary.com/lau2401/image/upload/v1651019668/beca_2_1_1_sziwbd.png" />
-                <Card.Body>
-                    <Card.Title>Acompañamiento para elegir bien tu vocación.</Card.Title>
-                    <Card.Text>
-                        Si necesitas que nuestros Asesores en orientacion hablan contigo podras solicitarlo.
+                        <Button className='btnMas d-flex m-auto'>Realizar test</Button>
                     </Card.Text>
 
                 </Card.Body>

@@ -1,48 +1,59 @@
 import React from 'react'
+import { ListGroup, Table } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
+import '../../style/landingPage.css'
 
-const LFooter = () => {
-  return (
-    
-        <footer className="flex flex-col xl:flex-row items-center xl:items-start xl:justify-between gap-10 py-16 xl:px-36 2xl:px-36 bg-neutral-darkViolet">
-            <h1>Tu Asistente Prof</h1>
-            <img src="https://res.cloudinary.com/lau2401/image/upload/v1651011780/Ellipse_1_jfbqbz.png" alt=""/>
-            <div >
-                <div>
-                    <h3>Features</h3>
-                    <ul>
-                        <li>Link Shortening</li>
-                        <li>Branded Links</li>
-                        <li>Analytics</li>
-                    </ul>
-                </div>
-                <div >
-                    <h3>Resources</h3>
-                    <ul>
-                        <li>Blog</li>
-                        <li>Developers</li>
-                        <li>Support</li>
-                    </ul>
-                </div>
-                <div className="text-center xl:text-left">
-                    <h3 className="text-lg font-semibold text-white">Company</h3>
-                    <ul className="flex flex-col gap-2 text-neutral-grayishViolet mt-3">
-                        <li>About</li>
-                        <li>Our Team</li>
-                        <li>Careers</li>
-                        <li>Contact</li>
-                    </ul>
-                </div>
+export const LFooter = () => {
+    return (
 
-                <div className="flex gap-3">
-                        <i class="bi bi-facebook"></i>
-                        <i class="bi bi-instagram"></i>
-                        <i class="bi bi-twitter"></i>
-                    
-                </div>
-            </div>
-        </footer>
-  
-  )
+        <div className='foot2 ' style={{ background: '#3B3054' }}>
+
+            <h2 className='text-center text-light'>Asistente prof</h2>
+            <img className='d-flex m-auto' style={{width: '5%'}} src='https://i.ibb.co/4fh24Gm/Whats-App-Image-2022-04-25-at-10-24-26-PM-removebg-preview.png' alt='logo'/>
+            <Table className='foot2  table-borderless w-75 mx-auto mb-5 text-light' responsive="sm" style={{ background: '#3B3054' }}>
+                <tbody className='text-light tableTd flex-wrap'>
+                    <tr>
+                        <th>Conócenos</th>
+                        <th>Gana dinero con nosotros</th>
+                        <th>Podemos ayudarte</th>
+                        <th>Redes Sociales</th>
+                    </tr>
+                    <tr>
+                        <td>Trabajar en Amazon</td>
+                        <td>Vender en Amazon Handmade</td>
+                        <td>Departamento de prensa</td>
+                        <td className='d-flex justify-content-between '>
+                            <i className="bi bi-instagram"></i>
+                            <i className="bi bi-twitter "></i>
+                            <i className="bi bi-instagram"></i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Información corporativa</td>
+                        <td>Publica tu libro en Kindle</td>
+                        <td>Devolver o reemplazar productos</td>
+                    </tr>
+                    <tr>
+                        <td>Departamento de prensa</td>
+                        <td>Programa de afiliados</td>
+                        <td>Gestionar contenido y dispositivos</td>
+                    </tr>
+                </tbody>
+            </Table>
+            <hr />
+            <ListGroup horizontal className='d-flex justify-content-evenly '>
+                <ListGroup.Item className='bg-transparent d-flex'>
+                    <img className='d-flex margin-auto'
+                        src="https://i.ibb.co/MSyvvTJ/Whats-App-Image-2022-04-25-at-10-24-26-PM-removebg-preview.png"
+                        width="10%" alt="" />
+                </ListGroup.Item>
+                <Link to='/crud' className='crud d-flex align-items-center'>
+                    <ListGroup.Item className='bg-transparent border-warning border-1 rounded text-light '>
+                        <div className=" bi bi-cloud-plus"> Crud  </div>
+                    </ListGroup.Item>
+                </Link>
+            </ListGroup>
+        </div>
+    )
 }
 
-export default LFooter

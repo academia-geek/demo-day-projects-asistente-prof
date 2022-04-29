@@ -1,14 +1,16 @@
 import React from 'react';
 import 'bootstrap-icons/font/bootstrap-icons.css';
-import { Footer } from './Footer';
 import {  BecasShow } from './BecasShow';
+import { Quiz } from './Quiz';
+import { LFooter } from './landing/LFooter';
 
 
 const Home = () => {
     return (
         <div>
-            <BecasShow/>
-            <Footer/>
+            <Quiz></Quiz>
+            {/* <BecasShow/> */}
+            <LFooter/>
         </div>
     );
 };

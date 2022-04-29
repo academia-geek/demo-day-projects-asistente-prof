@@ -1,87 +1,104 @@
-
-.conditions{
-    font-size: 75%;
+* {
+  color: black;
 }
-.register{
-    color: black;
-    text-decoration: none;
+.conditions {
+  font-size: 75%;
+}
+.register {
+  color: black;
+  text-decoration: none;
 }
 
 /* navbar */
-.nav1{
-    background-color: #131921;
+.nav1 {
+  background-color: #131921;
 }
-.nav2{
-    background-color: #242F3E;
+.nav2 {
+  background-color: #242f3e;
 }
-.nav3{
-    background-color: #FAFAFA;
+.nav3 {
+  background-color: #fafafa;
 }
-.back{
-    text-decoration: none;
-    /* float: right; */
+.back {
+  text-decoration: none;
+  /* float: right; */
 }
-.carrito:hover{
-    transform: scale(1.05);
+.carrito:hover {
+  transform: scale(1.05);
 }
 /* productos home */
-.carta{
-    display: flex;
-    
+.carta {
+  display: flex;
 }
 .cartas {
-    display: flex;
-    /* position: relative; */
-    bottom: 350px;
-    overflow-x: scroll;
-    z-index: 10;
+  display: flex;
+  /* position: relative; */
+  bottom: 350px;
+  overflow-x: scroll;
+  z-index: 10;
 }
-.card{
-    margin: 20px 10px;
-    /* border: none; */
-    min-width: 200px;
+.card {
+  margin: 20px 10px;
+  /* border: none; */
+  min-width: 200px;
 }
-.imgCard{
-    /* height: 220px; */
-    min-height: 220px;
-
+.imgCard {
+  /* height: 220px; */
+  min-height: 220px;
 }
-.imgCard:hover{
-    transform: scale(1.03);
+.imgCard:hover {
+  transform: scale(1.03);
 }
 
 /* footer */
-.foot1{
-    background: #485769;
+.foot1 {
+  background: #485769;
 }
-.foot2{
-    background: #232f3e;
+.foot2 {
+  background: #232f3e;
 }
-.crud{
-    text-decoration: none;
+.crud {
+  text-decoration: none;
 }
-.crud:hover{
-    transform: scale(1.05);
+.crud:hover {
+  transform: scale(1.05);
 }
-.imgCrud{
-    min-height: 100px;
+.imgCrud {
+  min-height: 100px;
 }
-.imgModal{
-    background-color: red;
+.imgModal {
+  background-color: red;
 }
 
 /* //detail */
-.imgDetail{
-    width: 40%;
-    z-index: 15;
+.imgDetail {
+  width: 40%;
+  z-index: 15;
 }
-.h1{
-    background-color: red;
+.h1 {
+  background-color: red;
 }
-.btnCart{
-    background-color: #F3D184;
+.btnCart {
+  background-color: #f3d184;
 }
 
-.btnPay{
-    background-color: #F0AD64;
+.btnPay {
+  background-color: #f0ad64;
+}
+
+/*
+Cards Login
+*/
+
+.cardsLoginAll {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  width: 100%;
+  height: 100vh;
+  border: 1px solid red;
+  background-color: #4b3f6b;
 }
