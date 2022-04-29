@@ -5,7 +5,7 @@ import '../style/quiz.css'
 export const Quiz = () => {
 
     //traerdata
-    const urlQuiz = 'http://localhost:4002/quest'
+    const urlQuiz = 'https://asistente-prof.herokuapp.com/questions'
     // forma 1
     // fetch(urlQuiz)
     //     .then(response => response.json())
@@ -14,7 +14,6 @@ export const Quiz = () => {
     const [conter, setconter] = useState(1)
     const sumar = () =>{
         setconter(conter + 1)
-        console.log(conter);
     }
     // forma 2
     const [questions, setQuestions] = useState([])
@@ -23,13 +22,8 @@ export const Quiz = () => {
         const resp = await fetch(url)
         const data = await resp.json()
         setQuestions(data)
-        console.log(data)
-        console.log(questions)
-        return data
     }
-    const print = ()=>{
-        console.log(questions)
-    }
+    console.log(questions)
     useEffect(() => {
         
     getDataQuiz(urlQuiz)
