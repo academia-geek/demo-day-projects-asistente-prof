@@ -7,15 +7,18 @@ export const Quiz = () => {
 
   const [conter, setconter] = useState(0);
   const [questions, setQuestions] = useState([]);
-  const [dataChaside, setDataChaside] = useState([]);
+
+  const [letters, setLetters] = useState([0, 0, 0, 0, 0, 0, 0]);
+
+  console.log(letters);
 
   const getDataQuiz = async (url) => {
     const resp = await fetch(url);
     const data = await resp.json();
-    console.log(data);
+
     setQuestions(data);
   };
-  console.log(questions);
+
   useEffect(() => {
     getDataQuiz(urlQuiz);
   }, []);
@@ -28,10 +31,22 @@ export const Quiz = () => {
   };
 
   const addData = (dat) => {
-    setDataChaside([...dataChaside, dat]);
+    if (dat === 'c') {
+      setLetters(letters.map((item, index) => (index === 0 ? item + 1 : item)));
+    } else if (dat === 'h') {
+      setLetters(letters.map((item, index) => (index === 1 ? item + 1 : item)));
+    } else if (dat === 'a') {
+      setLetters(letters.map((item, index) => (index === 2 ? item + 1 : item)));
+    } else if (dat === 's') {
+      setLetters(letters.map((item, index) => (index === 3 ? item + 1 : item)));
+    } else if (dat === 'i') {
+      setLetters(letters.map((item, index) => (index === 4 ? item + 1 : item)));
+    } else if (dat === 'd') {
+      setLetters(letters.map((item, index) => (index === 5 ? item + 1 : item)));
+    } else if (dat === 'e') {
+      setLetters(letters.map((item, index) => (index === 6 ? item + 1 : item)));
+    }
   };
-
-  console.log(dataChaside);
 
   return (
     <div className='py-5' style={{ background: '#4B3F6B' }}>
@@ -44,13 +59,18 @@ export const Quiz = () => {
           <li
             className='ans'
             onClick={() => {
-              addData(questions[conter]?.id);
+              addData('d');
             }}
           >
             Yes
           </li>
           <li className='ans'>No</li>
-          <button className='btnSiguiente text-light' onClick={() => sumar()}>
+          <button
+            className='btnSiguiente text-light'
+            onClick={() => {
+              sumar();
+            }}
+          >
             Siguiente
           </button>
           <p>
