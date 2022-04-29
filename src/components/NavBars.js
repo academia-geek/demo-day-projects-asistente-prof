@@ -24,8 +24,8 @@ const NavBars = () => {
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="me-auto  ">
-                            <Nav.Link className='text-secondary'>Home</Nav.Link>
-                            <Nav.Link className='text-secondary'>Link</Nav.Link>
+                            <Link to='/'>Home</Link>
+                            <Link to='/unis'>Universidades</Link>
                         </Nav>
                         <Nav className="me-auto w-100 d-flex justify-content-end">
                             <Link  to='/register' onClick={handleLogout}>

@@ -21,7 +21,7 @@ const LoginAdmin = ({ setIsAdminLog }) => {
   const navigate = useNavigate();
   const handleSubmit = ({ email, password }) => {
     console.log(email, password);
-    if (email === 'dsp5502@gmail.com' && password === '12345678') {
+    if (email === 'user@gmail.com' && password === 'user1234') {
       setIsAdminLog(true);
       navigate('/university');
     } else {

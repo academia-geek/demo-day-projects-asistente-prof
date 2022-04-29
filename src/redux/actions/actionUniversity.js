@@ -2,6 +2,11 @@ import { addDoc, collection } from 'firebase/firestore';
 import { getMyData } from '../../Firebase/firebaseConfig';
 import { typesUniversity } from '../types/types';
 
+//paint carreras
+export const paintCareer = (career)=>{
+  
+}
+// add carreras
 export const addSync = (carrer) => {
   return {
     type: typesUniversity.addCarrer,
