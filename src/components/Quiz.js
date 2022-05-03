@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Container } from 'react-bootstrap';
 import { quest } from '../data/q';
 import '../style/quiz.css';
+import Result from './ResultQuiz/Result';
 
 export const Quiz = () => {
   const [conter, setconter] = useState(85);
@@ -10,7 +11,6 @@ export const Quiz = () => {
   const [letters, setLetters] = useState([0, 0, 0, 0, 0, 0, 0]);
   const [focus, setFocus] = useState([]);
 
-  console.log(focus);
   console.log(letters[0]);
   console.log(answers);
 
@@ -64,35 +64,6 @@ export const Quiz = () => {
     setconter(conter + 1);
   };
 
-  if (conter === questions.length) {
-    return (
-      <Container>
-        {focus.map((item) => (
-          <div key={item.id}>
-            <p>
-              {item.id === 'c'
-                ? 'Administrativas y Contables'
-                : item.id === 'h'
-                ? 'Humanas'
-                : item.id === 'a'
-                ? 'Agrícolas'
-                : item.id === 's'
-                ? 'Salud'
-                : item.id === 'i'
-                ? 'Industrial'
-                : item.id === 'd'
-                ? 'Derecho'
-                : item.id === 'e'
-                ? 'Económico'
-                : null}
-            </p>
-          </div>
-        ))}
-        <h1>Universidades</h1>
-      </Container>
-    );
-  }
-
   const addData = (dat) => {
     console.log(dat);
     if (dat === 'c') {
@@ -115,36 +86,40 @@ export const Quiz = () => {
 
   return (
     <div className='py-5' style={{ background: '#4B3F6B' }}>
-      <Container
-        className='w-100 d-flex m-auto'
-        style={{ width: '18rem', background: ' white', borderRadius: '20px' }}
-      >
-        <div className='w-50 text-center text-light'>
-          <h2 className='fw-bold m-3'>{questions[conter]?.quest}</h2>
-          <li
-            className='ans'
-            onClick={() => {
-              addData(questions[conter]?.formacion);
-            }}
-          >
-            Yes
-          </li>
-          <li className='ans' onClick={sumar}>
-            No
-          </li>
+      {conter === questions.length ? (
+        <Result focus={focus} />
+      ) : (
+        <Container
+          className='w-100 d-flex m-auto'
+          style={{ width: '18rem', background: ' white', borderRadius: '20px' }}
+        >
+          <div className='w-50 text-center text-light'>
+            <h2 className='fw-bold m-3'>{questions[conter]?.quest}</h2>
+            <li
+              className='ans'
+              onClick={() => {
+                addData(questions[conter]?.formacion);
+              }}
+            >
+              Yes
+            </li>
+            <li className='ans' onClick={sumar}>
+              No
+            </li>
 
-          <p>
-            {conter + 1} / {questions.length}
-          </p>
-        </div>
-        <div className='w-50 d-flex align-items-center'>
-          <img
-            className='w-100 d-flex m-auto'
-            src='https://i.ibb.co/FXX78jr/8004-20171121041121-removebg-preview.png'
-            alt='logo'
-          />
-        </div>
-      </Container>
+            <p>
+              {conter + 1} / {questions.length}
+            </p>
+          </div>
+          <div className='w-50 d-flex align-items-center'>
+            <img
+              className='w-100 d-flex m-auto'
+              src='https://i.ibb.co/FXX78jr/8004-20171121041121-removebg-preview.png'
+              alt='logo'
+            />
+          </div>
+        </Container>
+      )}
     </div>
   );
 };
