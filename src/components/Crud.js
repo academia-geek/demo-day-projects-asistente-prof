@@ -5,7 +5,7 @@ import { FileUp } from '../helpers/FileUp'
 import { useForm } from '../Hooks/useForm'
 import { addAsync, deleteAsync, listAsyn } from '../redux/actions/actionBecas'
 import uuid from 'react-uuid'
-import { Edit } from './Edit'
+import {Edit } from './Edit'
 
 export const Crud = () => {
     const [actionModal, setActionModal] = useState([])

@@ -93,19 +93,21 @@ export const Quiz = () => {
           className='w-100 d-flex m-auto'
           style={{ width: '18rem', background: ' white', borderRadius: '20px' }}
         >
-          <div className='w-50 text-center text-light'>
+          <div className='w-50 text-center text-light d-flex align-content-between flex-wrap'>
             <h2 className='fw-bold m-3'>{questions[conter]?.quest}</h2>
-            <li
-              className='ans'
-              onClick={() => {
-                addData(questions[conter]?.formacion);
-              }}
-            >
-              Yes
-            </li>
-            <li className='ans' onClick={sumar}>
-              No
-            </li>
+            <ul className='w-100'>
+              <li
+                className='ans'
+                onClick={() => {
+                  addData(questions[conter]?.formacion);
+                }}
+              >
+                Yes
+              </li>
+              <li className='ans' onClick={sumar}>
+                No
+              </li>
+            </ul>
 
             <p>
               {conter + 1} / {questions.length}
