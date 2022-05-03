@@ -107,11 +107,10 @@ export const Quiz = () => {
               <li className='ans' onClick={sumar}>
                 No
               </li>
+              <p>
+                {conter + 1} / {questions.length}
+              </p>
             </ul>
-
-            <p>
-              {conter + 1} / {questions.length}
-            </p>
           </div>
           <div className='w-50 d-flex align-items-center'>
             <img
