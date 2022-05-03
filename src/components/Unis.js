@@ -19,6 +19,7 @@ export const Unis = () => {
         Carreras universitarias
       </h2>
       <SearchUnis />
+      <h1>Resultados: {careeries.length}</h1>
 
       <div
         className='py-5 d-flex justify-content-between flex-wrap'

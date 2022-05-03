@@ -1,16 +1,22 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Button, Form, FormControl, InputGroup } from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
 import { useForm } from '../Hooks/useForm';
-import { searchCareersync } from '../redux/actions/actionUniversity';
+import {
+  paintCareerAsync,
+  searchCareersync,
+} from '../redux/actions/actionUniversity';
 
 const SearchUnis = () => {
   const dispatch = useDispatch();
   const [values, handleInputChange, reset] = useForm({
     busqueda: '',
   });
-
   const { busqueda } = values;
+
+  useEffect(() => {
+    dispatch(paintCareerAsync());
+  }, [values]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
