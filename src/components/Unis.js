@@ -3,10 +3,6 @@ import { Card, Container } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import { paintCareerAsync } from '../redux/actions/actionUniversity'
 import '../style/unis.css'
-import unal from '../img/unal.png'
-import ecci from '../img/ecci.png'
-import puj from '../img/puj.png'
-import utap from '../img/utap.png'
 
 export const Unis = () => {
 
@@ -29,10 +25,10 @@ export const Unis = () => {
                         <Container className='d-flex my-3 bg-white' style={{ minWidth: '500px', maxWidth: '700px' }} key={carrera.idCarrera}>
                             <div className='m-auto d-flex' style={{ width: '150px' }}>
                                 <Card.Img className='border border-3 rounded' style={{ width: '100%' }} variant="top"
-                                    src={carrera.sigla === 'unal' ? unal :
-                                        carrera.sigla === 'ecci' ? ecci :
-                                        carrera.sigla === 'utap' ? utap :
-                                        carrera.sigla === 'puj' ? puj :
+                                    src={carrera.sigla === 'unal' ? "https://res.cloudinary.com/edwin3002/image/upload/v1651556839/u/puj_wggjl8.png" :
+                                        carrera.sigla === 'ecci' ? 'https://res.cloudinary.com/edwin3002/image/upload/v1651556836/u/ecci_vsmyre.png' :
+                                        carrera.sigla === 'utap' ? 'https://res.cloudinary.com/edwin3002/image/upload/v1651556835/u/unal_txtgip.png' :
+                                        carrera.sigla === 'puj' ?  'https://res.cloudinary.com/edwin3002/image/upload/v1651556836/u/utap_tonkbm.png' :
                                         'https://thumbs.dreamstime.com/b/sin-foto-ni-icono-de-imagen-en-blanco-cargar-im%C3%A1genes-o-falta-marca-no-disponible-pr%C3%B3xima-se%C3%B1al-silueta-naturaleza-simple-marco-215973362.jpg'
                                     } />
                             </div>
