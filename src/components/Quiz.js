@@ -64,8 +64,6 @@ export const Quiz = () => {
     setconter(conter + 1);
   };
 
-  const showResult = () => {};
-
   if (conter === questions.length) {
     return (
       <Container>
