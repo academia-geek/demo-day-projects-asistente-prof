@@ -24,7 +24,12 @@ export const carrerReducers = (state = initialState, action) => {
       return {
         ...state,
       };
+    case typesUniversity.searchCareer:
+      return {
+        Datos: action.payload
+      }  
     default:
       return state;
+
   }
 };

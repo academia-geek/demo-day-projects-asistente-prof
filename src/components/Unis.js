@@ -16,6 +16,8 @@ export const Unis = () => {
         dispatch(paintCareerAsync())
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
+
+    
     return (
         <div className='py-5' style={{ background: '#4B3F6B' }}>
             <h2 className='text-center text-light fw-bold'>Carreras universitarias</h2>

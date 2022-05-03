@@ -24,6 +24,33 @@ export const paintCareerSync = (careeries) => {
 
 }
 
+//----------buscador-------------//
+export const BuscadorUniAsync = (carrera) => {
+  return async (dispatch) => {
+    const universidadRef = collection(getMyData, 'universidades');
+    const q = query(universidadRef, where('carrera', '==', carrera));
+    const querySnapshop = await getDocs(q)
+    querySnapshop.forEach((doc) => {
+      const data = doc.data()
+      const DocId = doc.id;
+      const datosUni = {
+        area: data.area,
+        carrera: data.carrera,
+        cuidad: data.cuidad,
+        descripcion: data.descripcion,
+        duracion: data.duracion,
+        id: data.id,
+        idCarrera: data.idCarrera,
+        sigla: data.sigla,
+        titulo: data.titulo,
+        universidades: data.universidades,
+        uid: DocId        
+      }
+      dispatch(BuscadorUniAsync(datosUni))
+    })
+  }
+}
+
 // add carreras
 export const addCareerSync = (carrer) => {
   return {
