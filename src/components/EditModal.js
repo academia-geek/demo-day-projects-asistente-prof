@@ -25,8 +25,6 @@ export const EditModal = ({mEdit}) => {
     }
     return (
         <div>
-            <div>edit
-            </div>
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
                     <Modal.Title>Edite el producto aqui</Modal.Title>
