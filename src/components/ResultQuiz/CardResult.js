@@ -1,8 +1,17 @@
 import React from 'react';
 import { Card, ListGroup, ListGroupItem } from 'react-bootstrap';
+import { useDispatch } from 'react-redux';
 import { infoChaside } from '../../data/chaside';
+import { filterCareersync } from '../../redux/actions/actionUniversity';
 
-const CardResult = ({ item }) => {
+const CardResult = ({ item, setResultMatch }) => {
+  const dispatch = useDispatch();
+  const handleUniversity = () => {
+    setResultMatch(true);
+    dispatch(filterCareersync(item));
+  };
+  console.log(item);
+
   return (
     <>
       {infoChaside.map((ite) =>
@@ -30,8 +39,13 @@ const CardResult = ({ item }) => {
               <ListGroupItem>Vestibulum at eros</ListGroupItem>
             </ListGroup>
             <Card.Body>
-              <Card.Link href='#'>Card Link</Card.Link>
-              <Card.Link href='#'>Another Link</Card.Link>
+              <Card.Link
+                onClick={() => {
+                  handleUniversity();
+                }}
+              >
+                Ver Universidades
+              </Card.Link>
             </Card.Body>
           </Card>
         ) : null

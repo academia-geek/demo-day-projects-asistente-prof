@@ -75,3 +75,12 @@ export const deleteCareerSync = (id) => {
     payload: id,
   };
 };
+
+//* filter carreras
+
+export const filterCareersync = (area) => {
+  return {
+    type: typesUniversity.filterCareer,
+    payload: area,
+  };
+};

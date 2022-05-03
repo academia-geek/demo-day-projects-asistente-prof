@@ -24,6 +24,11 @@ export const carrerReducers = (state = initialState, action) => {
       return {
         ...state,
       };
+    case typesUniversity.filterCareer:
+      return {
+        careeries: state.careeries.filter((p) => p.area === action.payload),
+      };
+
     default:
       return state;
   }
