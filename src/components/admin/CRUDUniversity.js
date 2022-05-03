@@ -5,6 +5,7 @@ import uuid from 'react-uuid';
 import { useForm } from '../../Hooks/useForm';
 import { addCareerAsync, deleteCareerAsync, paintCareerAsync } from '../../redux/actions/actionUniversity';
 import '../../style/unis.css'
+import { EditModal } from '../EditModal';
 
 const CRUDUniversity = () => {
   const dispatch = useDispatch();
@@ -148,7 +149,7 @@ const CRUDUniversity = () => {
 
         <Button type='submit' variant="success" className='m-4'>Agregar</Button>
         {/* <Button  variant="warning" className='m-4' onClick={()=>{reset()}}>Resetear formulario</Button> */}
-        <Button  variant="primary" className='m-4' onClick={()=>{dispatch(paintCareerAsync())}}>ver todas de carreras</Button>
+        <Button variant="primary" className='m-4' onClick={() => { dispatch(paintCareerAsync()) }}>ver todas de carreras</Button>
       </Form>
       <Table className='w-75 mx-auto my-4' striped bordered hover size="sm">
         <thead>
@@ -246,6 +247,9 @@ const CRUDUniversity = () => {
           </Modal.Footer>
         </Modal>
       </Table>
+      {
+        modalEdit === true ? <EditModal mEdit={dataModal} /> : ''
+      }
     </div>
   );
 };

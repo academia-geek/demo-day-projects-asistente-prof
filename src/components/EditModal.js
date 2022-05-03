@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import { useForm } from '../Hooks/useForm';
 import { updateAsync } from '../redux/actions/actionBecas';
 
-export const Edit = ({mEdit}) => {
+export const EditModal = ({mEdit}) => {
 
     const dispatch = useDispatch()
     const [show, setShow] = useState(true);
