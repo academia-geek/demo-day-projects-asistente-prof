@@ -69,7 +69,6 @@ const AppRouters = () => {
             </PublicRouters>
           }
         />
-
         <Route
           path='/university'
           element={

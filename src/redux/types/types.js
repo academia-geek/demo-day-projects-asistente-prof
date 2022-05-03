@@ -22,9 +22,9 @@ export const typesCarts = {
 
 export const typesUniversity = {
   addCarrer: 'addCarrer',
-  paintCarrer: 'paintCarrer',
-  updateCarrer: 'updateCarrer',
-  deleteCarrer: 'deleteCarrer',
-  detailCarrer: 'detailCarrer',
-  searchCarrer: 'searchCarrer',
+  paintCareer: 'paintCareer',
+  updateCareer: 'updateCareer',
+  deleteCareer: 'deleteCareer',
+  detailCareer: 'detailCareer',
+  searchCareer: 'searchCareer',
 };

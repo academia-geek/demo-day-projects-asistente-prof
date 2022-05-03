@@ -13,7 +13,27 @@ export const BecasShow = () => {
     const [all, setAll] = useState(becas)
     console.log(all)
 
+    {
+        const resp=[
+            {
+                id:'h',
+                ans: 5
+            },
+            {
+                id:'c', 
+                ans: 2
+            },
+            {
+                id:'f',
+                ans: 4
+            },
+            {
+                id:'a',
+                ans: 7
+            }
 
+        ]
+    }
 
     useEffect(() => {
         dispatch(listAsyn())

@@ -23,9 +23,13 @@ const NavBars = () => {
                     <Navbar.Brand href="#home" className='text-light fw-bold'>Asistente prof</Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
-                        <Nav className="me-auto  ">
-                            <Nav.Link className='text-secondary'>Home</Nav.Link>
-                            <Nav.Link className='text-secondary'>Link</Nav.Link>
+                        <Nav className="me-auto">
+                            <Link to='/' className="mx-4">
+                            <Button variant="outline-info" >Test</Button>
+                            </Link>
+                            <Link to='/unis' className="mx-4">
+                            <Button variant="outline-light">Universidades</Button>
+                            </Link>
                         </Nav>
                         <Nav className="me-auto w-100 d-flex justify-content-end">
                             <Link  to='/register' onClick={handleLogout}>
