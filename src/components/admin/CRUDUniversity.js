@@ -72,7 +72,7 @@ const CRUDUniversity = () => {
       <Form onSubmit={handleSubmit} className='w-75 mx-auto my-5'>
         <Form.Label>Universidad</Form.Label>
         <Form.Select
-          name='universidad'
+          name="universidad"
           onChange={handleInputChange}
           value={universidad}
         >
@@ -108,24 +108,30 @@ const CRUDUniversity = () => {
           <option value={'e'}>Ciencias Exactas y Agrarias</option>
         </Form.Select>
 
-        <Form.Label htmlFor='car'>Carrera</Form.Label>
+        <Form.Label htmlFor="car">
+          Carrera
+        </Form.Label>
 
         <Form.Control
-          type='text'
-          id='car'
-          name='carrera'
-          placeholder='Carrera'
+          type="text"
+          id="car"
+          name="carrera"
+          placeholder="Carrera"
           value={carrera}
           onChange={handleInputChange}
         />
-        <Form.Label htmlFor='dur'>Duracion</Form.Label>
+        <Form.Label htmlFor="dur">
+          Duracion
+        </Form.Label>
 
         <Form.Select
-          name='duracion'
+          name="duracion"
           onChange={handleInputChange}
           value={duracion}
         >
-          <option defaultValue>Selecciona Duracion(Semestres)</option>
+          <option defaultValue>
+            Selecciona Duracion(Semestres)
+          </option>
           <option>1</option>
           <option>2</option>
           <option>3</option>
@@ -136,13 +142,17 @@ const CRUDUniversity = () => {
           <option>8</option>
           <option>9</option>
           <option>10</option>
+          <option>11</option>
+          <option>12</option>
         </Form.Select>
-        <Form.Label htmlFor='desc'>Descripcion</Form.Label>
+        <Form.Label htmlFor="desc">
+          Descripcion
+        </Form.Label>
         <Form.Control
-          as='textarea'
-          id='desc'
-          name='descripcion'
-          placeholder='Descripcion'
+          as="textarea"
+          id="desc"
+          name="descripcion"
+          placeholder="Descripcion"
           value={descripcion}
           onChange={handleInputChange}
         />
