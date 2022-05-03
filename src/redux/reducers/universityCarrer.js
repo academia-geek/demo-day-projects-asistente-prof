@@ -11,10 +11,12 @@ export const carrerReducers = (state = initialState, action) => {
               careeries: [...action.payload]
             }
     case typesUniversity.addCarrer:
+      console.log('agregado')
       return {
         careeries: [action.payload],
       };
-    case typesUniversity.deleteCarrer:
+    case typesUniversity.deleteCareer:
+      console.log('borrado')
       return {
         careeries: state.careeries.filter((p) => p.id !== action.payload),
       };

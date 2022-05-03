@@ -17,10 +17,8 @@ const SignupSchema = Yup.object().shape({
 });
 
 const LoginAdmin = ({ setIsAdminLog }) => {
-  console.log(setIsAdminLog);
   const navigate = useNavigate();
   const handleSubmit = ({ email, password }) => {
-    console.log(email, password);
     if (email === 'user@gmail.com' && password === 'user1234') {
       setIsAdminLog(true);
       navigate('/university');
