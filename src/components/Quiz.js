@@ -133,7 +133,7 @@ export const Quiz = () => {
           <div className='w-50 d-flex align-items-center'>
             <img
               className='w-100 d-flex m-auto'
-              src='https://i.ibb.co/FXX78jr/8004-20171121041121-removebg-preview.png'
+              src={questions[conter]?.imagen}
               alt='logo'
             />
           </div>

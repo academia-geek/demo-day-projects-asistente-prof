@@ -113,3 +113,12 @@ export const filterCareersync = (area) => {
     payload: area,
   };
 };
+
+//* search
+
+export const searchCareersync = (carrer) => {
+  return {
+    type: typesUniversity.searchCareer,
+    payload: carrer,
+  };
+};
