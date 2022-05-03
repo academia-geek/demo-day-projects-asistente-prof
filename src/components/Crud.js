@@ -5,7 +5,7 @@ import { FileUp } from '../helpers/FileUp'
 import { useForm } from '../Hooks/useForm'
 import { addAsync, deleteAsync, listAsyn } from '../redux/actions/actionBecas'
 import uuid from 'react-uuid'
-import { EditModal } from './EditModal'
+import {Edit } from './Edit'
 
 export const Crud = () => {
     const [actionModal, setActionModal] = useState([])
@@ -161,7 +161,7 @@ export const Crud = () => {
                 </Modal>
             </Table>
             {
-                modalEdit === true ? <EditModal mEdit={dataModal} /> : ''
+                modalEdit === true ? <Edit mEdit={dataModal} /> : ''
             }
         </div>
     )
