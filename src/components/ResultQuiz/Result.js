@@ -16,7 +16,11 @@ const Result = ({ focus }) => {
 
   return (
     <>
-      <Container style={{ display: 'flex' }}>
+      <Container
+        style={{
+          display: 'flex',
+        }}
+      >
         {resultMatch ? (
           <>
             <h1
@@ -47,7 +51,6 @@ const Result = ({ focus }) => {
                       style={{ color: '#6ee6e6', float: 'right' }}
                     ></span>
                   </Card.Title>
-                  {/* <button className='rounded-pill py-1 px-4' id={carrera.area} style={{  border: ' 2px solid fff' }}>{carrera.area}</button> */}
                   <button
                     className='rounded-pill py-1 px-4'
                     id={carrera.area}
@@ -97,7 +100,7 @@ const Result = ({ focus }) => {
           </>
         ) : (
           focus.map((item) => (
-            <div key={item.id} className='conten'>
+            <div key={item.id} className='conten '>
               <p>
                 {item.id === 'c' ? (
                   <CardResult item={item.id} setResultMatch={setResultMatch} />
