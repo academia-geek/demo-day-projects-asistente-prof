@@ -10,7 +10,7 @@ export const LFooter = () => {
 
             <h2 className='text-center text-light'>Asistente prof</h2>
             <img className='d-flex m-auto' style={{width: '5%'}} src='https://i.ibb.co/4fh24Gm/Whats-App-Image-2022-04-25-at-10-24-26-PM-removebg-preview.png' alt='logo'/>
-            <Table className='foot2  table-borderless w-75 mx-auto mb-5 text-light' responsive="sm" style={{ background: '#3B3054' }}>
+            <Table className='foot2  table-borderless w-75 mx-auto py-5 text-light' responsive="sm" style={{ background: '#3B3054' }}>
                 <tbody className='text-light tableTd flex-wrap'>
                     <tr>
                         <th>Conócenos</th>
@@ -40,19 +40,6 @@ export const LFooter = () => {
                     </tr>
                 </tbody>
             </Table>
-            <hr />
-            <ListGroup horizontal className='d-flex justify-content-evenly '>
-                <ListGroup.Item className='bg-transparent d-flex'>
-                    <img className='d-flex margin-auto'
-                        src="https://i.ibb.co/MSyvvTJ/Whats-App-Image-2022-04-25-at-10-24-26-PM-removebg-preview.png"
-                        width="10%" alt="" />
-                </ListGroup.Item>
-                <Link to='/crud' className='crud d-flex align-items-center'>
-                    <ListGroup.Item className='bg-transparent border-warning border-1 rounded text-light '>
-                        <div className=" bi bi-cloud-plus"> Crud  </div>
-                    </ListGroup.Item>
-                </Link>
-            </ListGroup>
         </div>
     )
 }

@@ -1,7 +1,6 @@
 import React from 'react';
 import { Button, Col, Container, Form, Nav, Row } from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom';
 import { useForm } from '../Hooks/useForm';
 import { registerAsync } from '../redux/actions/actionRegister';
 
@@ -27,7 +26,7 @@ const Register = () => {
         <div>
             <Nav className='d-flex justify-content-between' style={{ background: '#4B3F6B', fontWeight: 'bold', backgroundImage: "url('https://i.ibb.co/CngVcj8/descarga-2.png')" }} as="ul">
                 <Nav.Item as="li">
-                    <Nav.Link href="/Login" style={{ color: 'white' }}>Volver</Nav.Link>
+                    <Nav.Link href="/landing" style={{ color: 'white' }}>Volver</Nav.Link>
                 </Nav.Item>
             </Nav>
             <h1 className='text-center'> Registrarse</h1>
