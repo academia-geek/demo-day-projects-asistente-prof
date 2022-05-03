@@ -69,11 +69,9 @@ const CRUDUniversity = () => {
   };
 
   const { careeries } = useSelector((store) => store.careeries);
-  const [all, setAll] = useState(careeries);
 
   useEffect(() => {
     dispatch(paintCareerAsync());
-    setAll(careeries);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

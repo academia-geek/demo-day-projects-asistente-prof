@@ -5,6 +5,7 @@ import {
   doc,
   getDocs,
   query,
+  updateDoc,
   where,
 } from 'firebase/firestore';
 import { getMyData } from '../../Firebase/firebaseConfig';
@@ -75,3 +76,33 @@ export const deleteCareerSync = (id) => {
     payload: id,
   };
 };
+
+
+//update
+export const updateCareerAsync = (index, carrer) => {
+  console.log(index, carrer)
+  return async (dispatch) => {
+      const colleccionTraer = collection(getMyData, "universidades")
+      const q = query(colleccionTraer, where("idCarrera", "==", index))
+      const traerDatosQ = await getDocs(q)
+      let id
+      traerDatosQ.forEach(async (docu) => {
+          id = docu.id
+      })
+      const documenRef = doc(getMyData, "universidades", id)
+      await updateDoc(documenRef, carrer)
+          .then(resp => {
+              dispatch(UpdateCareerSync(carrer))
+              dispatch(paintCareerAsync());
+          })
+          .catch((err) => console.log(err))
+  }
+}
+
+
+export const UpdateCareerSync = (carrer) => {
+  return {
+      type: typesUniversity.updateCareer,
+      payload: carrer
+  }
+}
