@@ -1,16 +1,23 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Card, ListGroup, ListGroupItem } from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
 import { infoChaside } from '../../data/chaside';
-import { filterCareersync } from '../../redux/actions/actionUniversity';
+import {
+  filterCareersync,
+  paintCareerAsync,
+} from '../../redux/actions/actionUniversity';
 
 const CardResult = ({ item, setResultMatch }) => {
   const dispatch = useDispatch();
   const handleUniversity = () => {
-    setResultMatch(true);
     dispatch(filterCareersync(item));
+    setResultMatch(true);
   };
   console.log(item);
+
+  useEffect(() => {
+    dispatch(paintCareerAsync());
+  }, []);
 
   return (
     <>

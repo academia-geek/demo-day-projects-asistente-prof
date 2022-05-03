@@ -12,7 +12,7 @@ const Result = ({ focus }) => {
 
   useEffect(() => {
     dispatch(paintCareerAsync());
-  }, [resultMatch]);
+  }, []);
 
   return (
     <>
@@ -21,7 +21,7 @@ const Result = ({ focus }) => {
           <>
             <h1
               className='mx-5 text-light'
-              onClick={() => setResultMatch(!resultMatch)}
+              onClick={() => setResultMatch(false)}
             >
               volver
             </h1>
