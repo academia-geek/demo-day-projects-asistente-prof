@@ -1,28 +1,37 @@
-import { addDoc, collection, deleteDoc, doc, getDocs, query, where } from 'firebase/firestore';
+import {
+  addDoc,
+  collection,
+  deleteDoc,
+  doc,
+  getDocs,
+  query,
+  where,
+} from 'firebase/firestore';
 import { getMyData } from '../../Firebase/firebaseConfig';
 import { typesUniversity } from '../types/types';
 
 //paint carreras
-export const paintCareerAsync = ()=>{
-  return async (dispatch)=>{
-    const getDataCareeries = await getDocs(collection(getMyData, 'universidades'))
-    const careeries = []
-    getDataCareeries.forEach((carr)=>{
+export const paintCareerAsync = () => {
+  return async (dispatch) => {
+    const getDataCareeries = await getDocs(
+      collection(getMyData, 'universidades')
+    );
+    const careeries = [];
+    getDataCareeries.forEach((carr) => {
       careeries.push({
-        ...carr.data()
-      })
-    })
-    dispatch(paintCareerSync(careeries))
-  }
-}
+        ...carr.data(),
+      });
+    });
+    dispatch(paintCareerSync(careeries));
+  };
+};
 
 export const paintCareerSync = (careeries) => {
   return {
-      type: typesUniversity.paintCareer,
-      payload: careeries
-  }
-
-}
+    type: typesUniversity.paintCareer,
+    payload: careeries,
+  };
+};
 
 // add carreras
 export const addCareerSync = (carrer) => {
@@ -45,24 +54,24 @@ export const addCareerAsync = (carrer) => {
   };
 };
 
-//delete carreras 
+//delete carreras
 export const deleteCareerAsync = (id) => {
-
   return async (dispatch) => {
-      const colleccionTraer = collection(getMyData, "universidades")
-      const q = query(colleccionTraer, where("idCarrera", "==", id))
-      const traerDatosQ = await getDocs(q)
-      traerDatosQ.forEach((collec => {
-          deleteDoc(doc(getMyData, "universidades", collec.id))
-      }))
-      dispatch(deleteCareerSync(id))
-  }
-}
+    const colleccionTraer = collection(getMyData, 'universidades');
+    const q = query(colleccionTraer, where('idCarrera', '==', id));
+    const traerDatosQ = await getDocs(q);
+    traerDatosQ.forEach((collec) => {
+      deleteDoc(doc(getMyData, 'universidades', collec.id));
+    });
+    dispatch(deleteCareerSync(id));
+    dispatch(paintCareerAsync());
+  };
+};
 
 export const deleteCareerSync = (id) => {
-  console.log('eliminar')
+  console.log('eliminar');
   return {
-      type: typesUniversity.deleteCareer,
-      payload: id
-  }
-}
+    type: typesUniversity.deleteCareer,
+    payload: id,
+  };
+};
