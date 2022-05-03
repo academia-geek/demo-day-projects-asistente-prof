@@ -14,15 +14,17 @@ export const Edit = ({ mEdit, setModalEdit }) => {
 
   const [values, handleInputChange, reset] = useForm({
     universidad: mEdit.universidad,
+    sigla: mEdit.sigla,
     titulo: mEdit.titulo,
     descripcion: mEdit.descripcion,
     carrera: mEdit.carrera,
     duracion: mEdit.duracion,
+    url: mEdit.url,
     ciudad: mEdit.ciudad,
     area: mEdit.area,
     idCarrera: mEdit.idCarrera,
   });
-  const { universidad, titulo, descripcion, carrera, duracion, ciudad, idCarrera } =
+  const { universidad, titulo, descripcion, carrera, duracion, ciudad, idCarrera, url, sigla } =
     values;
 
   const handleSubmit = () => {
@@ -50,6 +52,15 @@ export const Edit = ({ mEdit, setModalEdit }) => {
             <option>Pontificia Universidad Javeriana</option>
             <option>Universidad Icesi</option>
           </Form.Select>
+          <Form.Label className='fw-bold' htmlFor='car'>Sigla de universidad</Form.Label>
+          <Form.Control
+            type='text'
+            id='car'
+            name='sigla'
+            placeholder='Sigla de universidad'
+            value={sigla}
+            onChange={handleInputChange}
+          />
           <Form.Label className='fw-bold' htmlFor='ciu'>Ciudad</Form.Label>
           <Form.Select name='ciudad' onChange={handleInputChange} value={ciudad}>
             <option>Selecciona Ciudad</option>
@@ -87,8 +98,16 @@ export const Edit = ({ mEdit, setModalEdit }) => {
             value={carrera}
             onChange={handleInputChange}
           />
+          <Form.Label className='fw-bold' htmlFor='car'>Url de la Carrera</Form.Label>
+          <Form.Control
+            type='text'
+            id='car'
+            name='url'
+            placeholder='url'
+            value={url}
+            onChange={handleInputChange}
+          />
           <Form.Label className='fw-bold' htmlFor='dur'>Duracion</Form.Label>
-
           <Form.Select
             name='duracion'
             onChange={handleInputChange}

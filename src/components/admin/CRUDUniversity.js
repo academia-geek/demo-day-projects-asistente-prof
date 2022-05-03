@@ -8,6 +8,7 @@ import {
   Table,
 } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import uuid from 'react-uuid';
 import { useForm } from '../../Hooks/useForm';
 import {
@@ -28,9 +29,11 @@ const CRUDUniversity = () => {
     duracion: '',
     ciudad: '',
     area: '',
+    sigla: '',
+    url: '',
     idCarrera: uuid(),
   });
-  const { universidad, titulo, descripcion, carrera, duracion, ciudad } =
+  const { universidad, titulo, descripcion, carrera, duracion, ciudad, sigla, url } =
     values;
 
   const handleSubmit = (e) => {
@@ -77,6 +80,11 @@ const CRUDUniversity = () => {
 
   return (
     <div>
+      <div>
+        <Link to='/landing'>
+          <Button variant="secondary" className='m-2'> <span className="bi bi-arrow-left-circle-fill"></span> Volver a pagina principal</Button>
+        </Link>
+      </div>
       <h1 className='text-center'>Agregar Formación Academica</h1>
       <Form onSubmit={handleSubmit} className='w-75 mx-auto my-5'>
         <Form.Label>Universidad</Form.Label>
@@ -90,6 +98,15 @@ const CRUDUniversity = () => {
           <option>Pontificia Universidad Javeriana</option>
           <option>Universidad Icesi</option>
         </Form.Select>
+        <Form.Label htmlFor='car'>Sigla de universidad</Form.Label>
+        <Form.Control
+          type='text'
+          id='car'
+          name='sigla'
+          placeholder='Sigla de universidad'
+          value={sigla}
+          onChange={handleInputChange}
+        />
         <Form.Label htmlFor='ciu'>Ciudad</Form.Label>
         <Form.Select name='ciudad' onChange={handleInputChange} value={ciudad}>
           <option>Selecciona Ciudad</option>
@@ -118,13 +135,21 @@ const CRUDUniversity = () => {
         </Form.Select>
 
         <Form.Label htmlFor='car'>Carrera</Form.Label>
-
         <Form.Control
           type='text'
           id='car'
           name='carrera'
           placeholder='Carrera'
           value={carrera}
+          onChange={handleInputChange}
+        />
+        <Form.Label htmlFor='car'>Url de la Carrera</Form.Label>
+        <Form.Control
+          type='text'
+          id='car'
+          name='url'
+          placeholder='url'
+          value={url}
           onChange={handleInputChange}
         />
         <Form.Label htmlFor='dur'>Duracion</Form.Label>
@@ -205,7 +230,7 @@ const CRUDUniversity = () => {
                 </div>
               </td>
               <td className='position-relative' id={carr.area}>
-                <div className='position-absolute top-50 start-50 translate-middle'>
+                <div className='position-absolute top-50 start-50 translate-middle text-light fw-bold text-uppercase' >
                   {carr.area}
                 </div>
               </td>
@@ -214,16 +239,6 @@ const CRUDUniversity = () => {
                   {carr.ciudad}
                 </div>
               </td>
-              {/* <td className='position-relative'>
-                  <div className='position-absolute top-50 start-50 translate-middle'>
-                    {carr.descripcion}
-                  </div>
-                </td> */}
-              {/* <td className='position-relative '>
-                  <div className='imgCrud d-flex align-items-center'>
-                    <img className=' w-25 m-auto' src={carr.img} alt={carr.name} />
-                  </div>
-                </td> */}
               <td className='position-relative '>
                 <div className='position-absolute top-50 start-50 translate-middle'>
                   {carr.duracion}
@@ -255,8 +270,12 @@ const CRUDUniversity = () => {
           <Modal.Body className=''>
             <ListGroup className='list-group-flush'>
               <ListGroupItem>
-                <span className='fw-bold'>Universidad: </span>
+                <span className='fw-bold '>Universidad: </span>
                 {objModal.universidad}
+              </ListGroupItem>
+              <ListGroupItem>
+                <span className='fw-bold text-capitalize'>Sigla universidad: </span>
+                {objModal.sigla}
               </ListGroupItem>
               <ListGroupItem>
                 <span className='fw-bold'>Ciudad: </span>
@@ -277,6 +296,10 @@ const CRUDUniversity = () => {
               <ListGroupItem>
                 <span className='fw-bold'>Duracion: </span>
                 {objModal.duracion}
+              </ListGroupItem>
+              <ListGroupItem>
+                <span className='fw-bold'>Url: </span>
+                {objModal.url}
               </ListGroupItem>
               <ListGroupItem>
                 <span className='fw-bold'>Descripcion: </span>

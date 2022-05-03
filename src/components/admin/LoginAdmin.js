@@ -1,7 +1,7 @@
 import { Field, Form, Formik } from 'formik';
 import React from 'react';
 import { Button, Col, Container, Row } from 'react-bootstrap';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import * as Yup from 'yup';
 
 const SignupSchema = Yup.object().shape({
@@ -27,7 +27,7 @@ const LoginAdmin = ({ setIsAdminLog }) => {
     }
   };
   return (
-    <div className='cardsLoginAll'>
+    <div className='cardsLoginAll d-flex flex-column'>
       <div className='login '>
         <h1 className='text-center'>Iniciar sesion</h1>
         <Container>
@@ -78,6 +78,13 @@ const LoginAdmin = ({ setIsAdminLog }) => {
                   </Form>
                 )}
               </Formik>
+            </Col>
+          </Row>
+          <Row className='my-4'>
+            <Col>
+            <Link to='/landing'>
+              <Button variant="light" className='d-flex m-auto'> <span className="bi bi-arrow-left-circle-fill"></span> Volver a pagina principal</Button>
+            </Link>
             </Col>
           </Row>
         </Container>
