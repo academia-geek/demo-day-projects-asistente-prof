@@ -27,4 +27,5 @@ export const typesUniversity = {
   deleteCareer: 'deleteCareer',
   detailCareer: 'detailCareer',
   searchCareer: 'searchCareer',
+  filterCareer: 'filterCareer',
 };

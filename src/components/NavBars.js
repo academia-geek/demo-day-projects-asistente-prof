@@ -28,7 +28,7 @@ const NavBars = () => {
                             <Button variant="outline-info" >Test</Button>
                             </Link>
                             <Link to='/unis' className="mx-4">
-                            <Button variant="outline-light">Universidades</Button>
+                            <Button variant="outline-info">Universidades</Button>
                             </Link>
                         </Nav>
                         <Nav className="me-auto w-100 d-flex justify-content-end">
