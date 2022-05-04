@@ -25,7 +25,7 @@ const CardResult = ({ item, setResultMatch }) => {
       {infoChaside.map((ite) =>
         ite.id === item ? (
           // <div className='bg-warning m-auto ' style={{ minWidth: '500px' }}>
-          <div className='p-2 bg-light rounded'>
+          <div className='p-2 bg-light rounded' key={ite.id}>
             <div
               className='m-auto p-2'
               style={{
@@ -84,6 +84,7 @@ const CardResult = ({ item, setResultMatch }) => {
           </div>
         ) : null
       )}
+
       <div>
         <p className='text-light'>hola</p>
       </div>

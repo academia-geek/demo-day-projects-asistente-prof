@@ -11,6 +11,7 @@ const Result = ({ focus }) => {
 
   useEffect(() => {
     dispatch(paintCareerAsync());
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

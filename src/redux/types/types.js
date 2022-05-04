@@ -33,3 +33,8 @@ export const typesUniversity = {
 export const typesUsers = {
   addUser: 'addUser',
 };
+export const typesFavorite = {
+  paintFavorite: 'paintFavorite',
+  addFavorite: 'addFavorite',
+  deleteFavorite: 'deleteFavorite',
+};
