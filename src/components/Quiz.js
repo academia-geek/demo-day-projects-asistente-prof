@@ -106,7 +106,16 @@ export const Quiz = ({ userV }) => {
   return (
     <div className='py-5' style={{ background: '#4B3F6B' }}>
       {conter === questions.length ? (
-        <Result focus={focus} />
+        <Result
+          focus={focus}
+          setconter={setconter}
+          setLetters={setLetters}
+          conter={conter}
+          answers={answers}
+          letters={letters}
+          uid={uid}
+          displayName={displayName}
+        />
       ) : (
         <Container
           className='w-100 d-flex m-auto'
