@@ -1,26 +1,29 @@
 import React, { useEffect, useState } from 'react';
 import { Container } from 'react-bootstrap';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { quest } from '../data/q';
-import { addUserAsync } from '../redux/actions/actionUsers';
+import { addUserAsync, paintUserAsync } from '../redux/actions/actionUsers';
 import '../style/quiz.css';
 import Result from './ResultQuiz/Result';
 
 export const Quiz = ({ userV }) => {
   const dispatch = useDispatch();
+  const { user } = useSelector((state) => state.user);
   const [conter, setconter] = useState(85);
   const [questions, setQuestions] = useState([]);
   const [answers, setAnswers] = useState([]);
   const [letters, setLetters] = useState([0, 0, 0, 0, 0, 0, 0]);
   const [focus, setFocus] = useState([]);
-  const [finishGame, setFinishGame] = useState(false);
   const { uid, displayName } = userV;
+
+  console.log(user);
 
   const getDataQuiz = (url) => {
     setQuestions(url);
   };
 
   useEffect(() => {
+    dispatch(paintUserAsync());
     getDataQuiz(quest);
     const AnswersLS = JSON.parse(localStorage.getItem('answers'));
     const conterLS = JSON.parse(localStorage.getItem('conter'));
@@ -115,6 +118,7 @@ export const Quiz = ({ userV }) => {
           letters={letters}
           uid={uid}
           displayName={displayName}
+          gdFgxuDojNgHEoUOE6MvzeONQxa2
         />
       ) : (
         <Container

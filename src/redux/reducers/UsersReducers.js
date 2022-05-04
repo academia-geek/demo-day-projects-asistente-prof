@@ -10,6 +10,10 @@ export const userReducers = (state = initialState, action) => {
       return {
         user: [action.payload],
       };
+    case typesUsers.paintUser:
+      return {
+        user: action.payload,
+      };
 
     default:
       return state;
