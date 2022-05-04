@@ -29,3 +29,9 @@ export const typesUniversity = {
   searchCareer: 'searchCareer',
   filterCareer: 'filterCareer',
 };
+
+export const typesFavorite = {
+  paintFavorite: 'paintFavorite',
+  addFavorite: 'addFavorite',
+  deleteFavorite: 'deleteFavorite',
+}
