@@ -20,6 +20,18 @@ export const Quiz = () => {
 
   useEffect(() => {
     getDataQuiz(quest);
+    const AnswersLS = JSON.parse(localStorage.getItem('answers'));
+    const conterLS = JSON.parse(localStorage.getItem('conter'));
+    const lettersLS = JSON.parse(localStorage.getItem('letters'));
+    if (AnswersLS) {
+      setAnswers(AnswersLS);
+    }
+    if (conterLS) {
+      setconter(conterLS);
+    }
+    if (lettersLS) {
+      setLetters(lettersLS);
+    }
   }, []);
 
   useEffect(() => {
@@ -60,6 +72,12 @@ export const Quiz = () => {
     setFocus(prueba);
   }, [answers]);
 
+  useEffect(() => {
+    localStorage.setItem('answers', JSON.stringify(answers));
+    localStorage.setItem('conter', JSON.stringify(conter));
+    localStorage.setItem('letters', JSON.stringify(letters));
+  }, [answers, conter, letters]);
+
   const sumar = () => {
     setconter(conter + 1);
   };
@@ -85,7 +103,7 @@ export const Quiz = () => {
   };
 
   return (
-    <div className='py-5' style={{ background: '#4B3F6B' }}>
+    <div className='py-5 d-flex  ' style={{ background: '#4B3F6B' }}>
       {conter === questions.length ? (
         <Result focus={focus} />
       ) : (
@@ -115,7 +133,7 @@ export const Quiz = () => {
           <div className='w-50 d-flex align-items-center'>
             <img
               className='w-100 d-flex m-auto'
-              src='https://i.ibb.co/FXX78jr/8004-20171121041121-removebg-preview.png'
+              src={questions[conter]?.imagen}
               alt='logo'
             />
           </div>
