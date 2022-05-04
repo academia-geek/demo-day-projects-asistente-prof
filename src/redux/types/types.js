@@ -32,6 +32,7 @@ export const typesUniversity = {
 
 export const typesUsers = {
   addUser: 'addUser',
+  paintUser: 'paintUser',
 };
 export const typesFavorite = {
   paintFavorite: 'paintFavorite',
