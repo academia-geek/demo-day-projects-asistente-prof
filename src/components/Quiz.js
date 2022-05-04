@@ -103,7 +103,7 @@ export const Quiz = () => {
   };
 
   return (
-    <div className='py-5 d-flex  ' style={{ background: '#4B3F6B' }}>
+    <div className='py-5' style={{ background: '#4B3F6B' }}>
       {conter === questions.length ? (
         <Result focus={focus} />
       ) : (
