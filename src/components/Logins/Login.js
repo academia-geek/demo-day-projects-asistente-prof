@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import {
   loginEmailPassAsync,
@@ -11,6 +11,7 @@ import { Button, Col, Container, Nav, Row } from 'react-bootstrap';
 
 import * as Yup from 'yup';
 import '../../style/style.css';
+import { addUserAsync } from '../../redux/actions/actionUsers';
 
 //----------------Validacion de cada input -----------
 const SignupSchema = Yup.object().shape({
@@ -25,14 +26,22 @@ const SignupSchema = Yup.object().shape({
     .required('el password es obligatorio'),
 });
 
-export const Login = () => {
+export const Login = ({ userV }) => {
   const dispatch = useDispatch();
+  const [newUsuario, setNewUsuario] = useState({
+    id: userV.uid,
+    nombre: userV.displayName,
+    datos: [],
+  });
+  console.log(newUsuario);
 
   const handleGoogle = () => {
     dispatch(loginGoogle());
+    dispatch(addUserAsync(newUsuario));
   };
   const handleFacebook = () => {
     dispatch(loginFacebook());
+    dispatch(addUserAsync(newUsuario));
   };
 
   return (
@@ -65,6 +74,7 @@ export const Login = () => {
               onSubmit={(values) => {
                 console.log(values);
                 dispatch(loginEmailPassAsync(values.email, values.password));
+                dispatch(addUserAsync(newUsuario));
               }}
             >
               {({ errors, touched }) => (

@@ -20,6 +20,9 @@ export const Unis = () => {
       </h2>
       <SearchUnis />
       <h1>Resultados: {careeries.length}</h1>
+      {careeries.length === 0 && (
+        <h1 className='text-center text-light'>No hay resultados</h1>
+      )}
 
       <div
         className='py-5 d-flex justify-content-between flex-wrap'

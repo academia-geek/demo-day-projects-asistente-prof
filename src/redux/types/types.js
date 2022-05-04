@@ -29,3 +29,7 @@ export const typesUniversity = {
   searchCareer: 'searchCareer',
   filterCareer: 'filterCareer',
 };
+
+export const typesUsers = {
+  addUser: 'addUser',
+};

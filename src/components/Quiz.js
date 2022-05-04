@@ -1,18 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import { Container } from 'react-bootstrap';
+import { useDispatch } from 'react-redux';
 import { quest } from '../data/q';
+import { addUserAsync } from '../redux/actions/actionUsers';
 import '../style/quiz.css';
 import Result from './ResultQuiz/Result';
 
-export const Quiz = () => {
+export const Quiz = ({ userV }) => {
+  const dispatch = useDispatch();
   const [conter, setconter] = useState(85);
   const [questions, setQuestions] = useState([]);
   const [answers, setAnswers] = useState([]);
   const [letters, setLetters] = useState([0, 0, 0, 0, 0, 0, 0]);
   const [focus, setFocus] = useState([]);
-
-  console.log(letters[0]);
-  console.log(answers);
+  const [finishGame, setFinishGame] = useState(false);
+  const { uid, displayName } = userV;
 
   const getDataQuiz = (url) => {
     setQuestions(url);
@@ -83,7 +85,6 @@ export const Quiz = () => {
   };
 
   const addData = (dat) => {
-    console.log(dat);
     if (dat === 'c') {
       setLetters(letters.map((item, index) => (index === 0 ? item + 1 : item)));
     } else if (dat === 'h') {
