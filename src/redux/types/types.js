@@ -29,3 +29,12 @@ export const typesUniversity = {
   searchCareer: 'searchCareer',
   filterCareer: 'filterCareer',
 };
+
+export const typesUsers = {
+  addUser: 'addUser',
+};
+export const typesFavorite = {
+  paintFavorite: 'paintFavorite',
+  addFavorite: 'addFavorite',
+  deleteFavorite: 'deleteFavorite',
+};

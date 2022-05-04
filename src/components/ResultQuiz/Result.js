@@ -8,10 +8,10 @@ const Result = ({ focus }) => {
   const [resultMatch, setResultMatch] = useState(false);
   const dispatch = useDispatch();
   const { careeries } = useSelector((store) => store.careeries);
-  console.log(careeries);
 
   useEffect(() => {
     dispatch(paintCareerAsync());
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

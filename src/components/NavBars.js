@@ -35,6 +35,9 @@ const NavBars = ({ userV }) => {
               <Link to='/unis' className='mx-4'>
                 <Button variant='outline-info'>Universidades</Button>
               </Link>
+              <Link to='/favorites' className='mx-4'>
+                <Button variant='outline-info'>Favorites</Button>
+              </Link>
             </Nav>
             <Nav className='me-auto w-100 d-flex justify-content-end'>
               <h5>Hola, {displayName} </h5>

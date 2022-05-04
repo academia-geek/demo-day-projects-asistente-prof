@@ -22,11 +22,11 @@ const AppRouters = () => {
     photoURL: '',
     uid: '',
   });
-  console.log(userV);
 
   useEffect(() => {
     const auth = getAuth();
     onAuthStateChanged(auth, (user) => {
+      console.log(user);
       if (user?.uid) {
         setIsLoggedIn(true);
         setUserV({
@@ -53,7 +53,7 @@ const AppRouters = () => {
           path='/login'
           element={
             <PublicRouters isAut={isLoggedIn}>
-              <Login />
+              <Login userV={userV} />
             </PublicRouters>
           }
         />
