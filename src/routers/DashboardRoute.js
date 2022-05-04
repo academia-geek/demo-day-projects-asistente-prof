@@ -6,12 +6,12 @@ import NavBars from '../components/NavBars';
 
 import { Unis } from '../components/Unis';
 
-const DashboardRoute = () => {
+const DashboardRoute = ({ userV }) => {
   return (
     <>
-      <NavBars />
+      <NavBars userV={userV} />
       <Routes>
-        <Route path='/' element={<Home />} />
+        <Route path='/' element={<Home userV={userV} />} />
         <Route path='/crud' element={<Crud />} />
         <Route path='/unis' element={<Unis />} />
 
