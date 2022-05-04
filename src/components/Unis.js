@@ -1,18 +1,15 @@
 import React, { useEffect,  } from 'react'
 import { Card, Container } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
-import { paintCareerAsync } from '../redux/actions/actionUniversity'
+import { paintCareerAsync, SearchUniAsync } from '../redux/actions/actionUniversity'
 import '../style/unis.css'
 
 export const Unis = () => {
 
     const dispatch = useDispatch()
     const { careeries } = useSelector(store => store.careeries)
-
-
-
-    
-    useEffect(() => {
+ 
+        useEffect(() => {
         dispatch(paintCareerAsync())
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])

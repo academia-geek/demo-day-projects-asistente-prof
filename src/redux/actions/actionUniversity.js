@@ -25,7 +25,7 @@ export const paintCareerSync = (careeries) => {
 }
 
 //----------buscador-------------//
-export const BuscadorUniAsync = (carrera) => {
+export const SearchUniAsync = (carrera) => {
   return async (dispatch) => {
     const universidadRef = collection(getMyData, 'universidades');
     const q = query(universidadRef, where('carrera', '==', carrera));
@@ -46,8 +46,14 @@ export const BuscadorUniAsync = (carrera) => {
         universidades: data.universidades,
         uid: DocId        
       }
-      dispatch(BuscadorUniAsync(datosUni))
+      dispatch(SearchUniAsync(datosUni))
     })
+  }
+}
+export const SearchUniSync = (datosUni) => {
+  return {
+    type: typesUniversity.searchCareer,
+    payload: datosUni
   }
 }
 
