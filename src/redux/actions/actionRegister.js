@@ -7,7 +7,7 @@ export const registerAsync =(email, pass, name)=>{
             createUserWithEmailAndPassword(auth, email, pass)
             .then(async({user})=>{
                 console.log(user)
-                await updateProfile(auth.currentUsers, {displayName: name})
+                await updateProfile(auth.currentUser, {displayName: name})
                 dispatch(registerSync(email, pass, name))
                 console.log('Usuario agregado')
         })

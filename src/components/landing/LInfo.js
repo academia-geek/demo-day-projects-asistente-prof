@@ -5,7 +5,7 @@ import '../../style/landingPage.css'
 const LInfo = () => {
     return (
         <div className='py-5' style={{ background: '#4B3F6B' }}>
-            <div class="d-flex  justify-content-center" style={{ background: '#4B3F6B' }}>
+            <div className="d-flex  justify-content-center" style={{ background: '#4B3F6B' }}>
                 <Container className='text-light mx-3 d-flex align-content-around   flex-wrap'>
                     <h1 className='text-light fw-bold'> En "Tu Asistente Prof"</h1>
                     <p className='text-light'>Encuentra la información para tu futuro Profesional.</p>

@@ -11,8 +11,6 @@ export const Quiz = () => {
   const [letters, setLetters] = useState([0, 0, 0, 0, 0, 0, 0]);
   const [focus, setFocus] = useState([]);
 
-  console.log(letters[0]);
-  console.log(answers);
 
   const getDataQuiz = (url) => {
     setQuestions(url);
