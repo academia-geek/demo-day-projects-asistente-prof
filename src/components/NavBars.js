@@ -14,18 +14,12 @@ const NavBars = ({ userV, numero }) => {
   const handleLogout = () => {
     dispatch(logoutAsync());
     navigate('/login');
-    localStorage.clear()
-    // localStorage.setItem('answers', JSON.stringify([]));
-    // localStorage.setItem('conter', JSON.stringify(85));
-    // localStorage.setItem('letters', JSON.stringify([0, 0, 0, 0, 0, 0, 0]));
-    // localStorage.setItem('user', JSON.stringify());
+    localStorage.clear();
   };
-
-
 
   return (
     <div>
-      <Navbar fixed="top" style={{ background: '#4B3F6B' }} expand='lg'>
+      <Navbar fixed='top' style={{ background: '#4B3F6B' }} expand='lg'>
         <Container>
           <img
             width='3%'
@@ -38,8 +32,13 @@ const NavBars = ({ userV, numero }) => {
           <Navbar.Toggle aria-controls='basic-navbar-nav' />
           <Navbar.Collapse id='basic-navbar-nav'>
             <Nav className='me-auto' style={{ gap: '10px' }}>
+              <Link to='/perfil' className='mx-4'>
+                <Button variant='outline-info'>Perfil</Button>
+              </Link>
               <Link to='/' className='mx-4'>
-                <Button variant='outline-info'>{numero === 98 ? 'Resultados' : 'Test' }</Button>
+                <Button variant='outline-info'>
+                  {numero === 98 ? 'Resultados' : 'Test'}
+                </Button>
               </Link>
               <Link to='/unis' className='mx-4'>
                 <Button variant='outline-info'>Universidades</Button>
@@ -48,7 +47,10 @@ const NavBars = ({ userV, numero }) => {
                 <Button variant='outline-info'>Favoritos</Button>
               </Link>
             </Nav>
-            <Nav className='me-auto w-100 d-flex justify-content-end ' style={{ gap: '10px' }}>
+            <Nav
+              className='me-auto w-100 d-flex justify-content-end '
+              style={{ gap: '10px' }}
+            >
               <Button variant='outline-info' className='mx-2 text-light'>
                 Hola,
                 <span className=' fw-bold text-light'> {displayName}</span>

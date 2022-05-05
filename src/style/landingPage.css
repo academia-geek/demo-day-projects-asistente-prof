@@ -1,68 +1,127 @@
-*{
-    color: white;
-}
-.linkA{
-    text-decoration: none;
-    color: #AB9AA7;
-    display: flex;
-    align-items: center;
-}
-.linkB{
-    text-decoration: none;
-    background-color: #2ACFCF;
-    width: 100px;
-    padding: 5px;
-    border-radius: 20px;
-    color: white;
-    margin: auto 10px;
-}
-.btnMas{
-    background-color: #2ACFCF;
-    border-radius: 20px;
-}
-/* //cards */
-.card-1{
-    background-color: #6ee6e6;
-    position: relative;
-    bottom: 50px;
-    border-radius: 40px;
-}
-.card-2{
-    border-radius: 40px;
-}
-.card-3{
-    background-color: #6ee6e6;
-    position: relative;
-    top: 50px;
-    border-radius: 40px;
-}
-.card-4{
-    background: linear-gradient(#3B3054, #4B3F6B);
-    /* background: #7ce5cd; */
-    position: relative;
-    top: 100px;
-    border-radius: 20px;
-}
-.icon{
-    /* position: ; */
-    margin-top: -20px;
-}
-/* //foot */
-.foot2{
-    color: white;
-    padding-top: 80px;
-}
-.tableTd td{
-    color: white;
+* {
+  color: white;
 }
 
-.tableTd td i{
-    color: white;
+.linkA {
+  text-decoration: none;
+  color: #ab9aa7;
+  display: flex;
+  align-items: center;
 }
-.tableTd th{
-    color: white;
+.linkB {
+  text-decoration: none;
+  background-color: #2acfcf;
+  width: 100px;
+  padding: 5px;
+  border-radius: 20px;
+  color: white;
+  margin: auto 10px;
 }
-.f{
-    flex-wrap: wrap;
-    flex-direction: column;
+.btnMas {
+  background-color: #2acfcf;
+  border-radius: 20px;
+}
+/* //cards */
+.card-1 {
+  background-color: #6ee6e6;
+  position: relative;
+  bottom: 50px;
+  border-radius: 40px;
+}
+.card-2 {
+  border-radius: 40px;
+}
+.card-3 {
+  background-color: #6ee6e6;
+  position: relative;
+  top: 50px;
+  border-radius: 40px;
+}
+.card-4 {
+  background: linear-gradient(#3b3054, #4b3f6b);
+  /* background: #7ce5cd; */
+  position: relative;
+  top: 100px;
+  border-radius: 20px;
+}
+.icon {
+  /* position: ; */
+  margin-top: -20px;
+}
+/* //foot */
+.foot2 {
+  color: white;
+  padding-top: 80px;
+}
+.tableTd td {
+  color: white;
+}
+
+.tableTd td i {
+  color: white;
+}
+.tableTd th {
+  color: white;
+}
+.f {
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.Background {
+  height: 100vh;
+  width: 100vw;
+  background-color: hsl(185, 75%, 39%);
+}
+
+.ProfileCard {
+  width: 350px;
+  border-radius: 20px !important;
+  border: none !important;
+}
+
+.ProfileCardBody {
+  padding-top: 3.5rem !important;
+  padding-bottom: 2rem !important;
+}
+
+.ProfileCardBackgroundImage {
+  width: 350px;
+  height: 140px;
+  border-top-left-radius: 15px !important;
+  border-top-right-radius: 15px !important;
+  background-color: #2acfcf;
+  background-size: cover;
+}
+
+.ProfileCardImage {
+  width: 96px !important;
+  height: 96px !important;
+  margin: auto;
+  position: absolute;
+  top: 84px;
+  left: 127px;
+  border: 5px white solid;
+  border-radius: 48px !important;
+}
+
+.TextMuted {
+  font-weight: 400;
+  color: hsl(0, 0%, 59%);
+}
+
+.TextBold {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.CardFooter {
+  background-color: white !important;
+  border-bottom-left-radius: 15px !important;
+  border-bottom-right-radius: 15px !important;
+}
+
+.FooterP {
+  margin-bottom: 0;
+  margin-top: 0.5rem;
 }
