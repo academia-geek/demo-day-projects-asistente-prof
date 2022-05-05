@@ -1,34 +1,40 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Card, Container } from 'react-bootstrap';
-import { useDispatch, useSelector } from 'react-redux';
-import { deleteFavoriteAsync, paintFavoriteAsync } from '../redux/actions/actionFavorite';
+import { deleteAllFavorites, getFavorites } from '../helpers/favoriteLocalStorage';
 import '../style/unis.css';
-import SearchUnis from './SearchUnis';
 
 export const Favorites = () => {
-    const dispatch = useDispatch();
-    const { favorites } = useSelector((store) => store.favorites);
+    const [dataf, setdataf] = useState([])
 
     const favoriteStar = (car) => {
-                dispatch(deleteFavoriteAsync(car.idCarrera))
-        }
+        deleteAllFavorites(car.idCarrera)
+        console.log(dataf)
+        setTimeout(() => {
+            const data = getFavorites()
+            setdataf(data)
+            console.log(dataf)
+          }, 1000);
+    }
+
     useEffect(() => {
-        dispatch(paintFavoriteAsync());
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
+        const data = getFavorites()
+        if (data == null){
+        }else{
+            setdataf(data)
+        }
+    }, [setdataf])
     return (
-        <div className='py-5' style={{ background: '#4B3F6B' }}>
-            <h2 className='text-center text-light fw-bold'>
+        <div className=' py-5' style={{ background: '#4B3F6B' }}>
+            <h2 className='text-center text-light fw-bold my-3'>
                 Carreras universitarias
             </h2>
-            <SearchUnis />
-            <h2 className='text-light w-75 m-auto'>Resultados: {favorites.length}</h2>
+            <h2 className='text-light w-75 m-auto'>Resultados: {dataf.length}</h2>
 
             <div
                 className='py-5 d-flex justify-content-between flex-wrap'
                 style={{ width: '100%' }}
             >
-                {favorites.map((carrera) => (
+                {dataf?.map((carrera) => (
                     <Container
                         className='d-flex my-3 bg-white rounded'
                         style={{ minWidth: '500px', maxWidth: '700px' }}

@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { Card, Container } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
-import { addFavoriteAsync } from '../redux/actions/actionFavorite';
+import { saveFavorites } from '../helpers/favoriteLocalStorage';
 import { paintCareerAsync } from '../redux/actions/actionUniversity';
 import '../style/unis.css';
 import SearchUnis from './SearchUnis';
@@ -9,19 +9,22 @@ import SearchUnis from './SearchUnis';
 export const Unis = () => {
     const dispatch = useDispatch();
     const { careeries } = useSelector((store) => store.careeries);
-
     const favoriteStar = (car) => {
-            dispatch(addFavoriteAsync(car))
+            saveFavorites(car)
     }
-
-
     useEffect(() => {
         dispatch(paintCareerAsync());
+        const dataFavorite = JSON.parse(localStorage.getItem('favorites'))
+        if(dataFavorite === null){
+            localStorage.setItem('favorites', JSON.stringify([]))
+        }else{
+
+        }
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
     return (
         <div className='py-5' style={{ background: '#4B3F6B' }}>
-            <h2 className='text-center text-light fw-bold'>
+            <h2 className='text-center text-light fw-bold my-3'>
                 Carreras universitarias
             </h2>
             <SearchUnis />

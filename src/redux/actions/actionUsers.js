@@ -33,3 +33,27 @@ export const addUserAsync = (user) => {
     }
   };
 };
+
+//* paint user
+export const paintUserSync = (user) => {
+  return {
+    type: typesUsers.paintUser,
+    payload: user,
+  };
+};
+
+export const paintUserAsync = (uid) => {
+  return async (dispatch) => {
+    const collectionTraer = await getDocs(collection(getMyData, 'users'));
+    const users = [];
+    collectionTraer.forEach((doc) => {
+      users.push({
+        ...doc.data(),
+      });
+    });
+    const user = users?.find((use) => {
+      return use.id === uid;
+    });
+    dispatch(paintUserSync(user));
+  };
+};

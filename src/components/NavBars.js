@@ -1,22 +1,31 @@
+import { useEffect, useState } from 'react';
 import { Nav, Button, Navbar, Container } from 'react-bootstrap';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import { logoutAsync } from '../redux/actions/actionLogin';
+import { paintUserAsync } from '../redux/actions/actionUsers';
 
-const NavBars = ({ userV }) => {
+const NavBars = ({ userV, numero }) => {
   //cerrar sesion
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { displayName, email } = userV;
+  const { displayName, uid } = userV;
 
   const handleLogout = () => {
     dispatch(logoutAsync());
     navigate('/login');
+    localStorage.clear()
+    // localStorage.setItem('answers', JSON.stringify([]));
+    // localStorage.setItem('conter', JSON.stringify(85));
+    // localStorage.setItem('letters', JSON.stringify([0, 0, 0, 0, 0, 0, 0]));
+    // localStorage.setItem('user', JSON.stringify());
   };
+
+
 
   return (
     <div>
-      <Navbar style={{ background: '#4B3F6B' }} expand='lg'>
+      <Navbar fixed="top" style={{ background: '#4B3F6B' }} expand='lg'>
         <Container>
           <img
             width='3%'
@@ -28,21 +37,24 @@ const NavBars = ({ userV }) => {
           </Navbar.Brand>
           <Navbar.Toggle aria-controls='basic-navbar-nav' />
           <Navbar.Collapse id='basic-navbar-nav'>
-            <Nav className='me-auto'>
+            <Nav className='me-auto' style={{ gap: '10px' }}>
               <Link to='/' className='mx-4'>
-                <Button variant='outline-info'>Test</Button>
+                <Button variant='outline-info'>{numero === 98 ? 'Resultados' : 'Test' }</Button>
               </Link>
               <Link to='/unis' className='mx-4'>
                 <Button variant='outline-info'>Universidades</Button>
               </Link>
               <Link to='/favorites' className='mx-4'>
-                <Button variant='outline-info'>Favorites</Button>
+                <Button variant='outline-info'>Favoritos</Button>
               </Link>
             </Nav>
-            <Nav className='me-auto w-100 d-flex justify-content-end'>
-              <h5>Hola, {displayName} </h5>
+            <Nav className='me-auto w-100 d-flex justify-content-end ' style={{ gap: '10px' }}>
+              <Button variant='outline-info' className='mx-2 text-light'>
+                Hola,
+                <span className=' fw-bold text-light'> {displayName}</span>
+              </Button>
               <Link to='/register' onClick={handleLogout}>
-                <Button style={{ background: '#6ee6e6' }}>
+                <Button variant='info' style={{ background: '#6ee6e6' }}>
                   <i className='bi bi-box-arrow-left'></i> Cerrar sesion{' '}
                 </Button>
               </Link>

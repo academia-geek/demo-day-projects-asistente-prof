@@ -1,18 +1,52 @@
 import React, { useState, useEffect } from 'react';
 import { Card, Container } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { paintCareerAsync } from '../../redux/actions/actionUniversity';
+import { addUserAsync, paintUserAsync } from '../../redux/actions/actionUsers';
 import CardResult from './CardResult';
 
-const Result = ({ focus }) => {
+const Result = ({
+  focus,
+  setconter,
+  setLetters,
+  conter,
+  answers,
+  letters,
+  uid,
+  displayName,
+}) => {
+  const navigate = useNavigate()
   const [resultMatch, setResultMatch] = useState(false);
+  const [newUser, setNewUser] = useState({
+    id: uid,
+    name: displayName,
+    answers,
+    conter,
+    letters,
+  });
+
   const dispatch = useDispatch();
   const { careeries } = useSelector((store) => store.careeries);
 
   useEffect(() => {
     dispatch(paintCareerAsync());
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  const handleReset = () => {
+    localStorage.clear();
+    setconter(85);
+    setLetters([0, 0, 0, 0, 0, 0, 0]);
+    
+  };
+
+  const agregarBDUSer = () => {
+    dispatch(addUserAsync(newUser));
+    navigate('/unis')
+    
+  };
 
   return (
     <>
@@ -99,27 +133,66 @@ const Result = ({ focus }) => {
             ))}
           </>
         ) : (
-          focus.map((item) => (
-            <div key={item.id} className='conten '>
-              <p>
-                {item.id === 'c' ? (
-                  <CardResult item={item.id} setResultMatch={setResultMatch} />
-                ) : item.id === 'h' ? (
-                  <CardResult item={item.id} setResultMatch={setResultMatch} />
-                ) : item.id === 'a' ? (
-                  <CardResult item={item.id} setResultMatch={setResultMatch} />
-                ) : item.id === 's' ? (
-                  <CardResult item={item.id} setResultMatch={setResultMatch} />
-                ) : item.id === 'i' ? (
-                  <CardResult item={item.id} setResultMatch={setResultMatch} />
-                ) : item.id === 'd' ? (
-                  <CardResult item={item.id} setResultMatch={setResultMatch} />
-                ) : item.id === 'e' ? (
-                  <CardResult item={item.id} setResultMatch={setResultMatch} />
-                ) : null}
-              </p>
+          <>
+            {focus.map((item) => (
+              <div key={item.id} className='conten '>
+                <p>
+                  {item.id === 'c' ? (
+                    <CardResult
+                      item={item.id}
+                      setResultMatch={setResultMatch}
+                    />
+                  ) : item.id === 'h' ? (
+                    <CardResult
+                      item={item.id}
+                      setResultMatch={setResultMatch}
+                    />
+                  ) : item.id === 'a' ? (
+                    <CardResult
+                      item={item.id}
+                      setResultMatch={setResultMatch}
+                    />
+                  ) : item.id === 's' ? (
+                    <CardResult
+                      item={item.id}
+                      setResultMatch={setResultMatch}
+                    />
+                  ) : item.id === 'i' ? (
+                    <CardResult
+                      item={item.id}
+                      setResultMatch={setResultMatch}
+                    />
+                  ) : item.id === 'd' ? (
+                    <CardResult
+                      item={item.id}
+                      setResultMatch={setResultMatch}
+                    />
+                  ) : item.id === 'e' ? (
+                    <CardResult
+                      item={item.id}
+                      setResultMatch={setResultMatch}
+                    />
+                  ) : null}
+                </p>
+              </div>
+            ))}
+            <div>
+              <button
+                onClick={() => {
+                  agregarBDUSer();
+                }}
+              >
+                Guardar Test
+              </button>
+              <button
+                onClick={() => {
+                  handleReset();
+                }}
+              >
+                Reiniciar Test
+              </button>
             </div>
-          ))
+          </>
         )}
       </Container>
     </>

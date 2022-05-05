@@ -28,20 +28,12 @@ const SignupSchema = Yup.object().shape({
 
 export const Login = ({ userV }) => {
   const dispatch = useDispatch();
-  const [newUsuario, setNewUsuario] = useState({
-    id: userV.uid,
-    nombre: userV.displayName,
-    datos: [],
-  });
-  console.log(newUsuario);
 
   const handleGoogle = () => {
     dispatch(loginGoogle());
-    dispatch(addUserAsync(newUsuario));
   };
   const handleFacebook = () => {
     dispatch(loginFacebook());
-    dispatch(addUserAsync(newUsuario));
   };
 
   return (
@@ -74,7 +66,6 @@ export const Login = ({ userV }) => {
               onSubmit={(values) => {
                 console.log(values);
                 dispatch(loginEmailPassAsync(values.email, values.password));
-                dispatch(addUserAsync(newUsuario));
               }}
             >
               {({ errors, touched }) => (
