@@ -10,8 +10,8 @@ export const Favorites = () => {
         deleteAllFavorites(car.idCarrera)
         console.log(dataf)
         setTimeout(() => {
-            const dataFavorite = JSON.parse(localStorage.getItem('favorites'))
-            setdataf(dataFavorite)
+            const data = getFavorites()
+            setdataf(data)
             console.log(dataf)
           }, 1000);
     }
