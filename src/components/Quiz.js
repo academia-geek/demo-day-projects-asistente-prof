@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { Container } from 'react-bootstrap';
+import { useIsRTL } from 'react-bootstrap/esm/ThemeProvider';
 import { useDispatch, useSelector } from 'react-redux';
 import { quest } from '../data/q';
 import { paintUserAsync } from '../redux/actions/actionUsers';
 import '../style/quiz.css';
 import Result from './ResultQuiz/Result';
 
-export const Quiz = ({ userV }) => {
+export const Quiz = ({ userV, setnumero }) => {
   const dispatch = useDispatch();
   const { user } = useSelector((state) => state.user);
   const [conter, setconter] = useState(85);
@@ -22,12 +23,15 @@ export const Quiz = ({ userV }) => {
   };
 
   useEffect(() => {
-    if (user !== undefined) {
+    if (user !== undefined && user.answers !== undefined &&
+      user.conter !== undefined && user.letters !== undefined) {
       localStorage.setItem('user', JSON.stringify(user));
       setAnswers(user.answers);
+      console.log(user.answers)
       setconter(user.conter);
       setLetters(user.letters);
-    } else {
+    } 
+    else {
       setAnswers([]);
       setconter(85);
       setLetters([0, 0, 0, 0, 0, 0, 0]);
@@ -96,6 +100,7 @@ export const Quiz = ({ userV }) => {
     localStorage.setItem('answers', JSON.stringify(answers));
     localStorage.setItem('conter', JSON.stringify(conter));
     localStorage.setItem('letters', JSON.stringify(letters));
+    setnumero(conter)
   }, [answers, conter, letters]);
 
   const sumar = () => {

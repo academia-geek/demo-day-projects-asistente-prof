@@ -19,7 +19,6 @@ export const Favorites = () => {
     useEffect(() => {
         const data = getFavorites()
         if (data == null){
-            localStorage.setItem('favorites', JSON.stringify([]))
         }else{
             setdataf(data)
         }
@@ -35,7 +34,7 @@ export const Favorites = () => {
                 className='py-5 d-flex justify-content-between flex-wrap'
                 style={{ width: '100%' }}
             >
-                {dataf.map((carrera) => (
+                {dataf?.map((carrera) => (
                     <Container
                         className='d-flex my-3 bg-white rounded'
                         style={{ minWidth: '500px', maxWidth: '700px' }}

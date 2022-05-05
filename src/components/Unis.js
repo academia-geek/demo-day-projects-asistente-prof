@@ -14,6 +14,12 @@ export const Unis = () => {
     }
     useEffect(() => {
         dispatch(paintCareerAsync());
+        const dataFavorite = JSON.parse(localStorage.getItem('favorites'))
+        if(dataFavorite === null){
+            localStorage.setItem('favorites', JSON.stringify([]))
+        }else{
+
+        }
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
     return (
