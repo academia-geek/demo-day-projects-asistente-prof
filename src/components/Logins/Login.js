@@ -12,6 +12,7 @@ import { Button, Col, Container, Nav, Row } from 'react-bootstrap';
 import * as Yup from 'yup';
 import '../../style/style.css';
 import { addUserAsync } from '../../redux/actions/actionUsers';
+import Swal from 'sweetalert2';
 
 //----------------Validacion de cada input -----------
 const SignupSchema = Yup.object().shape({
@@ -31,9 +32,11 @@ export const Login = ({ userV }) => {
 
   const handleGoogle = () => {
     dispatch(loginGoogle());
+    
   };
   const handleFacebook = () => {
     dispatch(loginFacebook());
+    
   };
 
   return (

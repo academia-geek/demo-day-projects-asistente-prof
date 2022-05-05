@@ -4,6 +4,7 @@ import {
   signInWithPopup,
   signOut,
 } from 'firebase/auth';
+import Swal from 'sweetalert2';
 import { facebook, google } from '../../Firebase/firebaseConfig';
 import { typesLogin } from '../types/types';
 
@@ -37,7 +38,11 @@ export const loginGoogle = () => {
     signInWithPopup(auth, google)
       .then(({ user }) => {
         dispatch(loginSincronico(user.email, user.password));
-
+        Swal.fire({
+          text: 'A continuación van a realizar un test de 98 preguntas donde tienen como resultado sus habilidades y actitudes que ayudaran a encontar la carrera que se adapta a su perfil.',
+          icon: 'exito',
+          confirmButtonText: 'Realizar Test'
+        })  
         console.log(user, 'Usuario autorizado');
       })
       .catch((error) => {
@@ -52,6 +57,11 @@ export const loginFacebook = () => {
     signInWithPopup(auth, facebook)
       .then(({ user }) => {
         dispatch(loginSincronico(user.email, user.password));
+        Swal.fire({
+          text: 'A continuación van a realizar un test de 98 preguntas donde tienen como resultado sus habilidades y actitudes que ayudaran a encontar la carrera que se adapta a su perfil.',
+          icon: 'exito',
+          confirmButtonText: 'Realizar Test'
+        })
         console.log(user, 'Usuario autorizado');
       })
       .catch((error) => {
@@ -67,6 +77,11 @@ export const loginEmailPassAsync = (email, password) => {
     signInWithEmailAndPassword(auth, email, password)
       .then(({ user }) => {
         dispatch(loginSincronico(user.email, user.password));
+        Swal.fire({
+          text: 'A continuación van a realizar un test de 98 preguntas donde tienen como resultado sus habilidades y actitudes que ayudaran a encontar la carrera que se adapta a su perfil.',
+          icon: 'exito',
+          confirmButtonText: 'Realizar Test'
+        })
         console.log('Usuario autorizado');
       })
 
