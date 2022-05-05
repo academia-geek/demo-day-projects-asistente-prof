@@ -62,3 +62,7 @@
 .tableTd th{
     color: white;
 }
+.f{
+    flex-wrap: wrap;
+    flex-direction: column;
+}

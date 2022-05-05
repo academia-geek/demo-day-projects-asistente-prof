@@ -1,18 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import { Container } from 'react-bootstrap';
+import { useDispatch } from 'react-redux';
 import { quest } from '../data/q';
+import { addUserAsync } from '../redux/actions/actionUsers';
 import '../style/quiz.css';
+import Result from './ResultQuiz/Result';
 
-export const Quiz = () => {
+export const Quiz = ({ userV }) => {
+  const dispatch = useDispatch();
   const [conter, setconter] = useState(85);
   const [questions, setQuestions] = useState([]);
   const [answers, setAnswers] = useState([]);
   const [letters, setLetters] = useState([0, 0, 0, 0, 0, 0, 0]);
   const [focus, setFocus] = useState([]);
-
-  console.log(focus);
-  console.log(letters[0]);
-  console.log(answers);
+  const [finishGame, setFinishGame] = useState(false);
+  const { uid, displayName } = userV;
 
   const getDataQuiz = (url) => {
     setQuestions(url);
@@ -20,6 +22,18 @@ export const Quiz = () => {
 
   useEffect(() => {
     getDataQuiz(quest);
+    const AnswersLS = JSON.parse(localStorage.getItem('answers'));
+    const conterLS = JSON.parse(localStorage.getItem('conter'));
+    const lettersLS = JSON.parse(localStorage.getItem('letters'));
+    if (AnswersLS) {
+      setAnswers(AnswersLS);
+    }
+    if (conterLS) {
+      setconter(conterLS);
+    }
+    if (lettersLS) {
+      setLetters(lettersLS);
+    }
   }, []);
 
   useEffect(() => {
@@ -60,41 +74,17 @@ export const Quiz = () => {
     setFocus(prueba);
   }, [answers]);
 
+  useEffect(() => {
+    localStorage.setItem('answers', JSON.stringify(answers));
+    localStorage.setItem('conter', JSON.stringify(conter));
+    localStorage.setItem('letters', JSON.stringify(letters));
+  }, [answers, conter, letters]);
+
   const sumar = () => {
     setconter(conter + 1);
   };
 
-  if (conter === questions.length) {
-    return (
-      <Container>
-        {focus.map((item) => (
-          <div key={item.id}>
-            <p>
-              {item.id === 'c'
-                ? 'Administrativas y Contables'
-                : item.id === 'h'
-                ? 'Humanas'
-                : item.id === 'a'
-                ? 'Agrícolas'
-                : item.id === 's'
-                ? 'Salud'
-                : item.id === 'i'
-                ? 'Industrial'
-                : item.id === 'd'
-                ? 'Derecho'
-                : item.id === 'e'
-                ? 'Económico'
-                : null}
-            </p>
-          </div>
-        ))}
-        <h1>Universidades</h1>
-      </Container>
-    );
-  }
-
   const addData = (dat) => {
-    console.log(dat);
     if (dat === 'c') {
       setLetters(letters.map((item, index) => (index === 0 ? item + 1 : item)));
     } else if (dat === 'h') {
@@ -115,36 +105,41 @@ export const Quiz = () => {
 
   return (
     <div className='py-5' style={{ background: '#4B3F6B' }}>
-      <Container
-        className='w-100 d-flex m-auto'
-        style={{ width: '18rem', background: ' white', borderRadius: '20px' }}
-      >
-        <div className='w-50 text-center text-light'>
-          <h2 className='fw-bold m-3'>{questions[conter]?.quest}</h2>
-          <li
-            className='ans'
-            onClick={() => {
-              addData(questions[conter]?.formacion);
-            }}
-          >
-            Yes
-          </li>
-          <li className='ans' onClick={sumar}>
-            No
-          </li>
-
-          <p>
-            {conter + 1} / {questions.length}
-          </p>
-        </div>
-        <div className='w-50 d-flex align-items-center'>
-          <img
-            className='w-100 d-flex m-auto'
-            src='https://i.ibb.co/FXX78jr/8004-20171121041121-removebg-preview.png'
-            alt='logo'
-          />
-        </div>
-      </Container>
+      {conter === questions.length ? (
+        <Result focus={focus} />
+      ) : (
+        <Container
+          className='w-100 d-flex m-auto'
+          style={{ width: '18rem', background: ' white', borderRadius: '20px' }}
+        >
+          <div className='w-50 text-center text-light d-flex align-content-between flex-wrap'>
+            <h2 className='fw-bold m-3'>{questions[conter]?.quest}</h2>
+            <ul className='w-100'>
+              <li
+                className='ans'
+                onClick={() => {
+                  addData(questions[conter]?.formacion);
+                }}
+              >
+                Yes
+              </li>
+              <li className='ans' onClick={sumar}>
+                No
+              </li>
+              <p>
+                {conter + 1} / {questions.length}
+              </p>
+            </ul>
+          </div>
+          <div className='w-50 d-flex align-items-center'>
+            <img
+              className='w-100 d-flex m-auto'
+              src={questions[conter]?.imagen}
+              alt='logo'
+            />
+          </div>
+        </Container>
+      )}
     </div>
   );
 };

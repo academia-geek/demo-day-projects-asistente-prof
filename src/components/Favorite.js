@@ -1,22 +1,19 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { Card, Container } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
-import { addFavoriteAsync } from '../redux/actions/actionFavorite';
-import { paintCareerAsync } from '../redux/actions/actionUniversity';
+import { deleteFavoriteAsync, paintFavoriteAsync } from '../redux/actions/actionFavorite';
 import '../style/unis.css';
 import SearchUnis from './SearchUnis';
 
-export const Unis = () => {
+export const Favorites = () => {
     const dispatch = useDispatch();
-    const { careeries } = useSelector((store) => store.careeries);
+    const { favorites } = useSelector((store) => store.favorites);
 
     const favoriteStar = (car) => {
-            dispatch(addFavoriteAsync(car))
-    }
-
-
+                dispatch(deleteFavoriteAsync(car.idCarrera))
+        }
     useEffect(() => {
-        dispatch(paintCareerAsync());
+        dispatch(paintFavoriteAsync());
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
     return (
@@ -25,13 +22,13 @@ export const Unis = () => {
                 Carreras universitarias
             </h2>
             <SearchUnis />
-            <h2 className='text-light w-75 m-auto'>Resultados: {careeries.length}</h2>
+            <h2 className='text-light w-75 m-auto'>Resultados: {favorites.length}</h2>
 
             <div
                 className='py-5 d-flex justify-content-between flex-wrap'
                 style={{ width: '100%' }}
             >
-                {careeries.map((carrera, index) => (
+                {favorites.map((carrera) => (
                     <Container
                         className='d-flex my-3 bg-white rounded'
                         style={{ minWidth: '500px', maxWidth: '700px' }}
@@ -61,7 +58,7 @@ export const Unis = () => {
                                 {/* estrella */}
                                 <span onClick={() => { favoriteStar(carrera) }}
                                     className='bi bi-star-fill'
-                                    style={{ color: 'gray', float: 'right' }}
+                                    style={{ color: '#6ee6e6', float: 'right' }}
                                 ></span>
                             </Card.Title>
                             <button

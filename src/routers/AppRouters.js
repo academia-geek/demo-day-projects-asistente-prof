@@ -16,12 +16,25 @@ const AppRouters = () => {
   const [checking, setChecking] = useState(true);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isAdminLog, setIsAdminLog] = useState(false);
+  const [userV, setUserV] = useState({
+    displayName: '',
+    email: '',
+    photoURL: '',
+    uid: '',
+  });
 
   useEffect(() => {
     const auth = getAuth();
     onAuthStateChanged(auth, (user) => {
+      console.log(user);
       if (user?.uid) {
         setIsLoggedIn(true);
+        setUserV({
+          displayName: user.displayName,
+          email: user.email,
+          photoURL: user.photoURL,
+          uid: user.uid,
+        });
       } else {
         setIsLoggedIn(false);
       }
@@ -40,7 +53,7 @@ const AppRouters = () => {
           path='/login'
           element={
             <PublicRouters isAut={isLoggedIn}>
-              <Login />
+              <Login userV={userV} />
             </PublicRouters>
           }
         />
@@ -82,7 +95,7 @@ const AppRouters = () => {
           path='/*'
           element={
             <PrivateRoters isAut={isLoggedIn}>
-              <DashboardRoute />
+              <DashboardRoute userV={userV} />
             </PrivateRoters>
           }
         />

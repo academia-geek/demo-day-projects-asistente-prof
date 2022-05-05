@@ -27,4 +27,14 @@ export const typesUniversity = {
   deleteCareer: 'deleteCareer',
   detailCareer: 'detailCareer',
   searchCareer: 'searchCareer',
+  filterCareer: 'filterCareer',
+};
+
+export const typesUsers = {
+  addUser: 'addUser',
+};
+export const typesFavorite = {
+  paintFavorite: 'paintFavorite',
+  addFavorite: 'addFavorite',
+  deleteFavorite: 'deleteFavorite',
 };
