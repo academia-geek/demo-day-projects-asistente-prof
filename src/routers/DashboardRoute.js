@@ -20,7 +20,7 @@ const DashboardRoute = ({ userV }) => {
         />
         <Route path='/crud' element={<Crud />} />
         <Route path='/unis' element={<Unis />} />
-        <Route path='/perfil' element={<Perfil />} />
+        <Route path='/perfil' element={<Perfil userV={userV} />} />
         <Route path='/favorites' element={<Favorites />} />
 
         <Route path='*' element={<Navigate to='/' />} />

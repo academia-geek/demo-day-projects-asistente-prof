@@ -1,7 +1,18 @@
 import React from 'react';
 import { Card, Col, Container, Row } from 'react-bootstrap';
+import { jsPDF } from 'jspdf';
 
-const Perfil = () => {
+const Perfil = ({ userV }) => {
+  const { displayName, email, photoURL } = userV;
+
+  const generatorPDF = () => {
+    const doc = new jsPDF();
+    doc.text(`${displayName}`, 10, 10);
+    doc.text(`${email}`, 10, 20);
+    doc.text(`${photoURL}`, 10, 30);
+    doc.save('perfil.pdf');
+  };
+
   return (
     <div style={{ background: '#4B3F6B' }} className='mt-5 Background'>
       <Container className='py-5'>
@@ -15,25 +26,21 @@ const Perfil = () => {
           <Card.Img
             className='ProfileCardImage '
             alt='User Image'
-            src={
-              'https://res.cloudinary.com/djjgtili7/image/upload/v1647294352/cld-sample.jpg'
-            }
+            src={photoURL}
           />
           <Card.Body className='text-center ProfileCardBody '>
-            <Card.Text className='TextBold mb-0'>
-              Victor Crest <span className='TextMuted pl-1'>26</span>
-            </Card.Text>
-            <Card.Text className='TextMuted'>London</Card.Text>
+            <Card.Text className='TextBold mb-0'>{displayName}</Card.Text>
+            <Card.Text className='TextMuted'>{email}</Card.Text>
           </Card.Body>
           <Card.Footer className='CardFooter'>
-            <Row xs='3' className='text-center mb-1'>
+            <Row xs='2' className='text-center mb-1'>
               <Col>
-                <Card.Text className='TextBold'>80K</Card.Text>
-                <Card.Text className='TextMuted'>Followers</Card.Text>
-              </Col>
-              <Col>
-                <Card.Text className='TextBold'>803K</Card.Text>
-                <Card.Text className='TextMuted'>Likes</Card.Text>
+                <Card.Text className='TextBold'>
+                  <i className='bi bi-file-earmark-arrow-down-fill'></i>
+                </Card.Text>
+                <Card.Text className='TextMuted' onClick={generatorPDF}>
+                  Descargar Resultados
+                </Card.Text>
               </Col>
               <Col>
                 <Card.Text className='TextBold'>1.4K</Card.Text>
