@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Nav, Navbar } from 'react-bootstrap';
+import { Button, Container, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import '../../style/landingPage.css';
 
@@ -23,11 +23,15 @@ const LHeader = () => {
               <Nav.Link className='text-secondary'>Link</Nav.Link>
             </Nav>
             <Nav className='me-auto w-100 d-flex justify-content-end'>
-              <Link className='linkA ' to='/login'>
-                Login
+              <Link to='/login'>
+                <Button variant='outline-info' className='mx-2 text-light'>
+                  Login
+                </Button>
               </Link>
-              <Link className='linkB' to='/register'>
-                Crear cuenta
+              <Link  to='/register'>
+                <Button variant='info' style={{ background: '#6ee6e6' }}>
+                  Crear cuenta
+                </Button>
               </Link>
             </Nav>
           </Navbar.Collapse>

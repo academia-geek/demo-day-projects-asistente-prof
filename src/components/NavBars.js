@@ -7,7 +7,7 @@ const NavBars = ({ userV }) => {
   //cerrar sesion
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { displayName, email } = userV;
+  const { displayName } = userV;
 
   const handleLogout = () => {
     dispatch(logoutAsync());
@@ -20,7 +20,7 @@ const NavBars = ({ userV }) => {
 
   return (
     <div>
-      <Navbar style={{ background: '#4B3F6B' }} expand='lg'>
+      <Navbar fixed="top" style={{ background: '#4B3F6B' }} expand='lg'>
         <Container>
           <img
             width='3%'
@@ -40,13 +40,16 @@ const NavBars = ({ userV }) => {
                 <Button variant='outline-info'>Universidades</Button>
               </Link>
               <Link to='/favorites' className='mx-4'>
-                <Button variant='outline-info'>Favorites</Button>
+                <Button variant='outline-info'>Favoritos</Button>
               </Link>
             </Nav>
             <Nav className='me-auto w-100 d-flex justify-content-end'>
-              <h5>Hola, {displayName} </h5>
+                <Button variant='outline-info' className='mx-2 text-light'>
+                Hola,
+                  <span className=' fw-bold text-light'> {displayName}</span>
+                </Button>
               <Link to='/register' onClick={handleLogout}>
-                <Button style={{ background: '#6ee6e6' }}>
+                <Button variant='info' style={{ background: '#6ee6e6' }}>
                   <i className='bi bi-box-arrow-left'></i> Cerrar sesion{' '}
                 </Button>
               </Link>
