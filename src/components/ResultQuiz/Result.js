@@ -16,6 +16,7 @@ const Result = ({
   uid,
   displayName,
 }) => {
+  const navigate = useNavigate()
   const [resultMatch, setResultMatch] = useState(false);
   const [newUser, setNewUser] = useState({
     id: uid,
@@ -40,8 +41,11 @@ const Result = ({
     setLetters([0, 0, 0, 0, 0, 0, 0]);
     
   };
+
   const agregarBDUSer = () => {
     dispatch(addUserAsync(newUser));
+    navigate('/unis')
+    
   };
 
   return (
