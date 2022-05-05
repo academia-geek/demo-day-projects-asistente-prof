@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Container } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { quest } from '../data/q';
-import { addUserAsync, paintUserAsync } from '../redux/actions/actionUsers';
+import { paintUserAsync } from '../redux/actions/actionUsers';
 import '../style/quiz.css';
 import Result from './ResultQuiz/Result';
 
@@ -14,20 +14,33 @@ export const Quiz = ({ userV }) => {
   const [answers, setAnswers] = useState([]);
   const [letters, setLetters] = useState([0, 0, 0, 0, 0, 0, 0]);
   const [focus, setFocus] = useState([]);
-  const { uid, displayName } = userV;
 
-  console.log(user);
+  const { uid, displayName } = userV;
 
   const getDataQuiz = (url) => {
     setQuestions(url);
   };
 
   useEffect(() => {
-    dispatch(paintUserAsync());
+    if (user !== undefined) {
+      localStorage.setItem('user', JSON.stringify(user));
+      setAnswers(user.answers);
+      setconter(user.conter);
+      setLetters(user.letters);
+    } else {
+      setAnswers([]);
+      setconter(85);
+      setLetters([0, 0, 0, 0, 0, 0, 0]);
+    }
+  }, [user]);
+
+  useEffect(() => {
+    dispatch(paintUserAsync(uid));
     getDataQuiz(quest);
     const AnswersLS = JSON.parse(localStorage.getItem('answers'));
     const conterLS = JSON.parse(localStorage.getItem('conter'));
     const lettersLS = JSON.parse(localStorage.getItem('letters'));
+
     if (AnswersLS) {
       setAnswers(AnswersLS);
     }
@@ -40,36 +53,38 @@ export const Quiz = ({ userV }) => {
   }, []);
 
   useEffect(() => {
-    setAnswers([
-      {
-        id: 'c',
-        ans: letters[0],
-      },
-      {
-        id: 'h',
-        ans: letters[1],
-      },
-      {
-        id: 'a',
-        ans: letters[2],
-      },
-      {
-        id: 's',
-        ans: letters[3],
-      },
-      {
-        id: 'i',
-        ans: letters[4],
-      },
-      {
-        id: 'd',
-        ans: letters[5],
-      },
-      {
-        id: 'e',
-        ans: letters[6],
-      },
-    ]);
+    if (letters !== undefined) {
+      setAnswers([
+        {
+          id: 'c',
+          ans: letters[0],
+        },
+        {
+          id: 'h',
+          ans: letters[1],
+        },
+        {
+          id: 'a',
+          ans: letters[2],
+        },
+        {
+          id: 's',
+          ans: letters[3],
+        },
+        {
+          id: 'i',
+          ans: letters[4],
+        },
+        {
+          id: 'd',
+          ans: letters[5],
+        },
+        {
+          id: 'e',
+          ans: letters[6],
+        },
+      ]);
+    }
   }, [letters]);
 
   useEffect(() => {
@@ -118,7 +133,6 @@ export const Quiz = ({ userV }) => {
           letters={letters}
           uid={uid}
           displayName={displayName}
-          gdFgxuDojNgHEoUOE6MvzeONQxa2
         />
       ) : (
         <Container

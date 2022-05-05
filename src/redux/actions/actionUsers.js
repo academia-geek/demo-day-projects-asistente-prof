@@ -42,14 +42,18 @@ export const paintUserSync = (user) => {
   };
 };
 
-export const paintUserAsync = () => {
+export const paintUserAsync = (uid) => {
   return async (dispatch) => {
     const collectionTraer = await getDocs(collection(getMyData, 'users'));
     const users = [];
     collectionTraer.forEach((doc) => {
-      users.push({ ...doc.data() });
+      users.push({
+        ...doc.data(),
+      });
     });
-    console.log(users);
-    dispatch(paintUserSync(users));
+    const user = users?.find((use) => {
+      return use.id === uid;
+    });
+    dispatch(paintUserSync(user));
   };
 };

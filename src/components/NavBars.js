@@ -12,6 +12,10 @@ const NavBars = ({ userV }) => {
   const handleLogout = () => {
     dispatch(logoutAsync());
     navigate('/login');
+    localStorage.setItem('answers', JSON.stringify([]));
+    localStorage.setItem('conter', JSON.stringify(85));
+    localStorage.setItem('letters', JSON.stringify([0, 0, 0, 0, 0, 0, 0]));
+    localStorage.setItem('user', JSON.stringify());
   };
 
   return (

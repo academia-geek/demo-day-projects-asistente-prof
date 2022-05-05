@@ -3,7 +3,7 @@ import { Card, Container } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { paintCareerAsync } from '../../redux/actions/actionUniversity';
-import { addUserAsync } from '../../redux/actions/actionUsers';
+import { addUserAsync, paintUserAsync } from '../../redux/actions/actionUsers';
 import CardResult from './CardResult';
 
 const Result = ({
@@ -30,6 +30,7 @@ const Result = ({
 
   useEffect(() => {
     dispatch(paintCareerAsync());
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -37,6 +38,7 @@ const Result = ({
     localStorage.clear();
     setconter(85);
     setLetters([0, 0, 0, 0, 0, 0, 0]);
+    
   };
   const agregarBDUSer = () => {
     dispatch(addUserAsync(newUser));
