@@ -17,32 +17,50 @@
   color: white;
   margin: auto 10px;
 }
-.btnMas {
-  background-color: #2acfcf;
-  border-radius: 20px;
-}
 /* //cards */
 .card-1 {
-  background-color: #6ee6e6;
   position: relative;
   bottom: 50px;
-  border-radius: 40px;
+  border-radius: 10px;
 }
 .card-2 {
-  border-radius: 40px;
+  border-radius: 10px;
 }
 .card-3 {
-  background-color: #6ee6e6;
   position: relative;
   top: 50px;
-  border-radius: 40px;
+  border-radius: 10px;
 }
 .card-4 {
-  background: linear-gradient(#3b3054, #4b3f6b);
-  /* background: #7ce5cd; */
+  /* background: linear-gradient(#3b3054, #4b3f6b);
+ */
+  background-image: url(https://i.ibb.co/CngVcj8/descarga-2.png);
+  background-size: cover;
+  background-color: #4b3f6b;
   position: relative;
   top: 100px;
-  border-radius: 20px;
+}
+.card-h2{
+  /* background: linear-gradient(#3b3054, #4b3f6b);
+ */
+  background-image: url(https://i.ibb.co/CngVcj8/descarga-2.png);
+  background-size: cover;
+  background-color: #4b3f6b;
+  font-size: x-large;
+  font-size: 25px;
+}
+.imgFoot{
+  width: 50%;
+}
+@media (min-width: 500px) {
+  .card-h2{
+    font-size: 55px;
+  }
+}
+@media (min-width: 1300px) {
+  .card-h2{
+    font-size: 70px;
+  }
 }
 .icon {
   /* position: ; */
@@ -50,7 +68,6 @@
 }
 /* //foot */
 .foot2 {
-  color: white;
   padding-top: 80px;
 }
 .tableTd td {

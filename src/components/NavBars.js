@@ -19,7 +19,7 @@ const NavBars = ({ userV, numero }) => {
 
   return (
     <div>
-      <Navbar fixed='top' style={{ background: '#4B3F6B' }} expand='lg'>
+      <Navbar fixed="top" style={{ backgroundImage: "url('https://i.ibb.co/CngVcj8/descarga-2.png')"}} expand='lg'>
         <Container>
           <img
             width='3%'
@@ -47,15 +47,12 @@ const NavBars = ({ userV, numero }) => {
                 <Button variant='outline-info'>Favoritos</Button>
               </Link>
             </Nav>
-            <Nav
-              className='me-auto w-100 d-flex justify-content-end '
-              style={{ gap: '10px' }}
-            >
-              <Button variant='outline-info' className='mx-2 text-light'>
+            <Nav className='mx-auto my-2 w-100 d-flex justify-content-end ' style={{ gap: '10px' }}>
+              <Button variant='outline-info' className='mx-4 text-light'>
                 Hola,
                 <span className=' fw-bold text-light'> {displayName}</span>
               </Button>
-              <Link to='/register' onClick={handleLogout}>
+              <Link to='/register' className='mx-4' onClick={handleLogout}>
                 <Button variant='info' style={{ background: '#6ee6e6' }}>
                   <i className='bi bi-box-arrow-left'></i> Cerrar sesion{' '}
                 </Button>

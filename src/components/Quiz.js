@@ -30,7 +30,7 @@ export const Quiz = ({ userV, setnumero }) => {
       console.log(user.answers)
       setconter(user.conter);
       setLetters(user.letters);
-    } 
+    }
     else {
       setAnswers([]);
       setconter(85);
@@ -141,7 +141,7 @@ export const Quiz = ({ userV, setnumero }) => {
         />
       ) : (
         <Container
-          className='w-100 d-flex m-auto'
+          className='w-100 d-flex mx-auto my-4'
           style={{ width: '18rem', background: ' white', borderRadius: '20px' }}
         >
           <div className='w-50 text-center text-light d-flex align-content-between flex-wrap'>
@@ -165,7 +165,7 @@ export const Quiz = ({ userV, setnumero }) => {
           </div>
           <div className='w-50 d-flex align-items-center'>
             <img
-              className='w-100 d-flex m-auto'
+              className='w-100 d-flex m-auto rounded'
               src={questions[conter]?.imagen}
               alt='logo'
             />
