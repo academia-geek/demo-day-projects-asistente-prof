@@ -12,7 +12,7 @@ export const LFooter = () => {
                         <th>Asistente</th>
                         <th>Conócenos</th>
                         <th>Podemos ayudarte</th>
-                        <th>Redes Sociales</th>
+                        <th>Redes</th>
                     </tr>
                     <tr>
                         <td rowSpan='4' className='w-25'>
@@ -22,7 +22,7 @@ export const LFooter = () => {
                     <tr>
                         <td>Trabajar en Amazon</td>
                         <td>Departamento de prensa</td>
-                        <td className='d-flex justify-content-between '>
+                        <td className='d-flex justify-content-between footLogos'>
                             <i className="bi bi-instagram"></i>
                             <i className="bi bi-twitter "></i>
                             <i className="bi bi-instagram"></i>

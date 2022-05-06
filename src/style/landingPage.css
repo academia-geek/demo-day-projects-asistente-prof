@@ -72,6 +72,10 @@
   .btnVerMas{
     width: 100%;
   }
+  .footLogos{
+    display: flex;
+    flex-direction: column;
+  }
 }
 @media (min-width: 1300px) {
   .card-h2{
@@ -170,3 +174,4 @@
   margin-bottom: 0;
   margin-top: 0.5rem;
 }
+

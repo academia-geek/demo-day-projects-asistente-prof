@@ -127,7 +127,7 @@ export const Quiz = ({ userV, setnumero }) => {
   };
 
   return (
-    <div className='py-5' style={{ background: '#4B3F6B' }}>
+    <div className='py-5' style={{ background: '#eee' }}>
       {conter === questions.length ? (
         <Result
           focus={focus}

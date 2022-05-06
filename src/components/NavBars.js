@@ -19,7 +19,7 @@ const NavBars = ({ userV, numero }) => {
 
   return (
     <div>
-      <Navbar fixed="top" style={{ backgroundImage: "url('https://i.ibb.co/CngVcj8/descarga-2.png')"}} expand='lg'>
+      <Navbar fixed="top" style={{ background: "#4B3F6B"}} expand='lg'>
         <Container>
           <img
             width='3%'
