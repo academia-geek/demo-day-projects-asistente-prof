@@ -52,15 +52,43 @@
 .imgFoot{
   width: 50%;
 }
+.logoNav{
+  width: 20%;
+}
+/* .imgLogin{
+  background-color: red;
+  width: 100%;
+} */
+.contLogin{
+
+}
 @media (min-width: 500px) {
   .card-h2{
     font-size: 55px;
+  }
+  .logoNav{
+    width: 10%;
+  }
+  .contLogin{
+
+
+  }
+}
+@media (max-width: 800px) {
+  .contLogin{
+    display: flex;
+    flex-direction: column-reverse;
   }
 }
 @media (min-width: 1300px) {
   .card-h2{
     font-size: 70px;
   }
+  .logoNav{
+    width: 6%;
+  }
+
+  
 }
 .icon {
   /* position: ; */

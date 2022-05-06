@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import {
   loginEmailPassAsync,
@@ -6,12 +5,10 @@ import {
   loginGoogle,
 } from '../../redux/actions/actionLogin';
 import { Formik, Field, Form } from 'formik';
-import { Link } from 'react-router-dom';
 import { Button, Col, Container, Nav, Row } from 'react-bootstrap';
 
 import * as Yup from 'yup';
 import '../../style/style.css';
-import { addUserAsync } from '../../redux/actions/actionUsers';
 import Swal from 'sweetalert2';
 
 
@@ -36,40 +33,68 @@ export const Login = ({ userV, conterLogin }) => {
     setTimeout(() => {
       if (conterLogin === 85) {
         Swal.fire({
-        title: 'Bienvenido',
-        text: 'A continuación van a realizar un test de 98 preguntas donde tienen como resultado sus habilidades y actitudes que ayudaran a encontar la carrera que se adapta a su perfil.',
-        icon: 'exito',
-        confirmButtonText: 'Realizar Test'
-      })}
+          title: 'Bienvenido',
+          text: 'A continuación van a realizar un test de 98 preguntas donde tienen como resultado sus habilidades y actitudes que ayudaran a encontar la carrera que se adapta a su perfil.',
+          icon: 'exito',
+          confirmButtonText: 'Realizar Test'
+        })
+      }
     }, 2000);
-    
+
   };
   const handleFacebook = () => {
     dispatch(loginFacebook(conterLogin));
-    
+
   };
 
   return (
     <div className='login '>
-      <Nav className='d-flex justify-content-between' as='ul'>
+      <Nav className='d-flex justify-content-between' style={{
+        background: '#4B3F6B',
+        fontWeight: 'bold',
+        backgroundImage: "url('https://i.ibb.co/CngVcj8/descarga-2.png')",
+      }}>
         <Nav.Item as='li'>
-          <Nav.Link href='/' style={{ color: '#4B3F6B' }}>
+          <Nav.Link href='/' className='text-light'>
             Atras
           </Nav.Link>
         </Nav.Item>
-        <Link className='' to='/register'>
-          <Nav.Item as='li'>
-            <Nav.Link href='/register' style={{ color: '#4B3F6B' }}>
-              Crear Cuenta
-            </Nav.Link>
-          </Nav.Item>
-        </Link>
-      </Nav>
-      <h1 className='text-center'>Iniciar sesion</h1>
+        <Nav.Item as='li'>
+          <Nav.Link href='/register' className='text-light'>
+            Crear Cuenta
+          </Nav.Link>
+        </Nav.Item>
 
-      <Container>
-        <Row>
+      </Nav>
+      <Container className='shadow p-5 rounded mx-auto my-5'>
+        <h1 className='text-center'>Iniciar sesión</h1>
+        <Row className='contLogin'>
+          <Col >
+            <div className='imgLogin'>
+              <img className='w-100' src='https://res.cloudinary.com/djjgtili7/image/upload/v1651817640/Mobile_login-pana-removebg-preview_yntomq.png' alt='img' />
+            </div>
+          </Col>
           <Col>
+            <Container
+              className='google-icon-wrapper d-flex border w-75 my-2'
+              onClick={handleGoogle}
+            >
+              <span className='d-flex m-auto'>
+                <i class="bi bi-facebook text-info"></i>
+
+                Continuar con google
+              </span>
+            </Container>
+            <Container
+              className='google-icon-wrapper d-flex border w-75 my-2'
+              onClick={handleFacebook}
+            >
+              <span className='d-flex m-auto'>
+                <i class="bi bi-google"></i>
+                Continuar con facebook
+              </span>
+            </Container>
+            <p className='text-center my-4'>O</p>
             <Formik
               initialValues={{
                 email: '',
@@ -77,12 +102,11 @@ export const Login = ({ userV, conterLogin }) => {
               }}
               validationSchema={SignupSchema}
               onSubmit={(values) => {
-                console.log(values);
                 dispatch(loginEmailPassAsync(values.email, values.password, conterLogin));
               }}
             >
               {({ errors, touched }) => (
-                <Form className=' mx-auto '>
+                <Form className=' mx-auto my-2'>
                   <p className='d-flex mx-auto w-75 fw-bold'>Correo</p>
                   <Field
                     className='d-flex mx-auto w-75 '
@@ -116,34 +140,8 @@ export const Login = ({ userV, conterLogin }) => {
                 </Form>
               )}
             </Formik>
-          </Col>
-          <Col className='my-5'>
-            <Container
-              className='google-icon-wrapper d-flex border w-75 my-2'
-              onClick={handleGoogle}
-            >
-              <span className='d-flex m-auto '>
-                <img
-                  className='google-icon mx-2'
-                  src='https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg'
-                  alt='google button'
-                />
-                Continuar con google
-              </span>
-            </Container>
-            <Container
-              className='google-icon-wrapper d-flex border w-75 my-2'
-              onClick={handleFacebook}
-            >
-              <span className='d-flex m-auto'>
-                <img
-                  className='facebook-icon mx-2'
-                  src='https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/2021_Facebook_icon.svg/25px-2021_Facebook_icon.svg.png'
-                  alt='facebook button'
-                />
-                Continuar con facebook
-              </span>
-            </Container>
+
+
           </Col>
         </Row>
       </Container>

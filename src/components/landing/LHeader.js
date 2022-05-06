@@ -6,11 +6,12 @@ import '../../style/landingPage.css';
 const LHeader = () => {
   return (
     <div>
-      <Navbar style={{ background: '#4B3F6B' }} expand='lg'>
+      <Navbar fixed="top" style={{ background: '#4B3F6B',
+    }} expand='lg'>
         <Container>
           <img
-            width='3%'
-            src='https://i.ibb.co/4fh24Gm/Whats-App-Image-2022-04-25-at-10-24-26-PM-removebg-preview.png'
+            className='logoNav'
+            src='https://res.cloudinary.com/djjgtili7/image/upload/v1651816474/Tu_Asistente_prof_gz6wjm.png'
             alt='logo'
           ></img>
           <Navbar.Brand href='#home' className='text-light fw-bold'>
