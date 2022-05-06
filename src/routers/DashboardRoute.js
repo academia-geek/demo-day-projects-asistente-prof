@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import { Crud } from '../components/Crud';
 import { Favorites } from '../components/Favorite';
@@ -7,8 +7,12 @@ import NavBars from '../components/NavBars';
 
 import { Unis } from '../components/Unis';
 
-const DashboardRoute = ({ userV }) => {
+const DashboardRoute = ({ userV, setconterLogin }) => {
   const [numero, setnumero] = useState(0)
+  useEffect(() => {
+    setconterLogin(numero)
+  }, [numero])
+  
   return (
     <>
       <NavBars userV={userV} numero={numero} />
