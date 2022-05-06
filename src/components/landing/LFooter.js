@@ -6,9 +6,6 @@ export const LFooter = () => {
     return (
 
         <div className='foot2 pb-5' style={{ background: '#3B3054' }}>
-
-            {/* <h2 className='text-center text-light'>Asistente prof</h2>
-            <img className='d-flex m-auto' style={{ width: '5%' }} src='https://i.ibb.co/4fh24Gm/Whats-App-Image-2022-04-25-at-10-24-26-PM-removebg-preview.png' alt='logo' /> */}
             <Table className='foot2  table-borderless w-75 mx-auto m-0 p-5 text-light' responsive="sm" style={{ background: '#3B3054' }}>
                 <tbody className='text-light tableTd flex-wrap'>
                     <tr>
@@ -19,7 +16,7 @@ export const LFooter = () => {
                     </tr>
                     <tr>
                         <td rowSpan='4' className='w-25'>
-                            <img className='imgFoot'   src='https://i.ibb.co/4fh24Gm/Whats-App-Image-2022-04-25-at-10-24-26-PM-removebg-preview.png' alt='logo' />
+                            <img className='imgFoot'   src='https://res.cloudinary.com/djjgtili7/image/upload/v1651816474/Tu_Asistente_prof_gz6wjm.png' alt='logo' />
                         </td>
                     </tr>
                     <tr>
