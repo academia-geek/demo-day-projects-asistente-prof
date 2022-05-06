@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button, Card, Container } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import '../../style/landingPage.css';
 
 const LInfo = () => {
@@ -89,12 +90,13 @@ const LInfo = () => {
       </div>
       <Card className='card-4 m-auto' style={{ width: '20rem' }}>
         <Card.Body>
-          <Card.Title className='fw-bold text-light'>
-            Boost your links today
+          <Card.Title  className='fw-bold text-light'>
+            Contactanos 
           </Card.Title>
-          <Card.Text>
+          
+          <Link to='/contactanos'>
             <Button className='btnMas d-flex m-auto'>Realizar test</Button>
-          </Card.Text>
+          </Link>
         </Card.Body>
       </Card>
     </div>
