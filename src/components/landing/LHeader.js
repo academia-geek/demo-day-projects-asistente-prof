@@ -18,17 +18,13 @@ const LHeader = () => {
           </Navbar.Brand>
           <Navbar.Toggle aria-controls='basic-navbar-nav' />
           <Navbar.Collapse id='basic-navbar-nav'>
-            <Nav className='me-auto  '>
-              <Nav.Link className='text-secondary'>Home</Nav.Link>
-              <Nav.Link className='text-secondary'>Link</Nav.Link>
-            </Nav>
             <Nav className='me-auto w-100 d-flex justify-content-end'>
-              <Link to='/login'>
-                <Button variant='outline-info' className='mx-2 text-light'>
+              <Link to='/login' className='my-2'>
+                <Button variant='outline-info' className='text-light'>
                   Login
                 </Button>
               </Link>
-              <Link  to='/register'>
+              <Link className='my-2'  to='/register'>
                 <Button variant='info' style={{ background: '#6ee6e6' }}>
                   Crear cuenta
                 </Button>
