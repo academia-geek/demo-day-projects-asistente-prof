@@ -108,7 +108,7 @@ export const Quiz = ({ userV, setnumero }) => {
   };
 
   const addData = (dat) => {
-    if (dat === 'c') {
+      if (dat === 'c') {
       setLetters(letters.map((item, index) => (index === 0 ? item + 1 : item)));
     } else if (dat === 'h') {
       setLetters(letters.map((item, index) => (index === 1 ? item + 1 : item)));

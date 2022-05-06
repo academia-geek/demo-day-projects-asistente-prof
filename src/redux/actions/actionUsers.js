@@ -20,9 +20,7 @@ export const addUserAsync = (user) => {
     const userSelected = userlist.find((use) => {
       return use.id === user.id;
     });
-    console.log(userSelected);
     if (!userSelected) {
-      console.log('no existe');
       addDoc(collection(getMyData, 'users'), user)
         .then((resp) => {
           dispatch(addUserSync(user));

@@ -14,14 +14,8 @@ const NavBars = ({ userV, numero }) => {
   const handleLogout = () => {
     dispatch(logoutAsync());
     navigate('/login');
-    localStorage.clear()
-    // localStorage.setItem('answers', JSON.stringify([]));
-    // localStorage.setItem('conter', JSON.stringify(85));
-    // localStorage.setItem('letters', JSON.stringify([0, 0, 0, 0, 0, 0, 0]));
-    // localStorage.setItem('user', JSON.stringify());
+    localStorage.clear();
   };
-
-
 
   return (
     <div>
@@ -37,9 +31,14 @@ const NavBars = ({ userV, numero }) => {
           </Navbar.Brand>
           <Navbar.Toggle aria-controls='basic-navbar-nav' />
           <Navbar.Collapse id='basic-navbar-nav'>
-            <Nav className='mx-auto my-2' style={{ gap: '10px' }}>
+            <Nav className='me-auto' style={{ gap: '10px' }}>
+              <Link to='/perfil' className='mx-4'>
+                <Button variant='outline-info'>Perfil</Button>
+              </Link>
               <Link to='/' className='mx-4'>
-                <Button variant='outline-info'>{numero === 98 ? 'Resultados' : 'Test' }</Button>
+                <Button variant='outline-info'>
+                  {numero === 98 ? 'Resultados' : 'Test'}
+                </Button>
               </Link>
               <Link to='/unis' className='mx-4'>
                 <Button variant='outline-info'>Universidades</Button>
