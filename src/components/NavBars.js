@@ -21,14 +21,11 @@ const NavBars = ({ userV, numero }) => {
     <div>
       <Navbar fixed="top" style={{ background: "#4B3F6B"}} expand='lg'>
         <Container>
-          <img
-            width='3%'
-            src='https://i.ibb.co/4fh24Gm/Whats-App-Image-2022-04-25-at-10-24-26-PM-removebg-preview.png'
+        <img
+            className='logoNav'
+            src='https://res.cloudinary.com/djjgtili7/image/upload/v1651816474/Tu_Asistente_prof_gz6wjm.png'
             alt='logo'
           ></img>
-          <Navbar.Brand href='#home' className='text-light fw-bold'>
-            Asistente prof
-          </Navbar.Brand>
           <Navbar.Toggle aria-controls='basic-navbar-nav' />
           <Navbar.Collapse id='basic-navbar-nav'>
             <Nav className='me-auto' style={{ gap: '10px' }}>

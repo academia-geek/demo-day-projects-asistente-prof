@@ -21,15 +21,15 @@ const CardResult = ({ item, setResultMatch }) => {
     }, []);
 
     return (
-        <div className='rounded mx-2'>
+        <div className='rounded m-auto'>
             {infoChaside.map((ite) =>
                 ite.id === item ? (
                     // <div className='bg-warning m-auto ' style={{ minWidth: '500px' }}>
-                    <div className='p-2 bg-light rounded' key={ite.id}>
+                    <div className='p-2 rounded cardResult' key={ite.id}>
                         <div
                             className='m-auto p-2'
                             style={{
-                                maxWidth: '500px',
+                                maxWidth: '300px',
                                 border: '5px solid #2ACFCF',
                                 borderRadius: '20px',
                             }}
@@ -57,20 +57,23 @@ const CardResult = ({ item, setResultMatch }) => {
                                 }
                             />
                         </div>
-                        <Card.Body>
-                            <Card.Title className='fs-3 text-center'>{ite.title}</Card.Title>
+                        <Card.Body className='w-50 m-0 p-0'>
                             <Card.Title className='text-center'>Intereses</Card.Title>
+                            <p
+                                id={ite.id}
+                                className='fw-bold text-light text-center border border-dark rounded'>
+                                {ite.intereses}
+                            </p>
+                            <Card.Title className='text-center'>Aptitudes</Card.Title>
                             <Card.Text
                                 id={ite.id}
-                                className='fw-bold text-light p-4 text-center border border-dark rounded'
-                            >
-                                {ite.intereses}
+                                className=' fw-bold text-light text-center border border-dark rounded'>
+                                {ite.aptitudes}
                             </Card.Text>
                             <Card.Title className='text-center'>Aptitudes</Card.Title>
                             <Card.Text
                                 id={ite.id}
-                                className='fw-bold text-light py-4 text-center border border-dark rounded'
-                            >
+                                className=' fw-bold text-light text-center border border-dark rounded'>
                                 {ite.aptitudes}
                             </Card.Text>
                             <Button

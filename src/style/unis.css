@@ -24,4 +24,22 @@
 #e{
     background-color: #80EF9F;
 }
-
+.cardResult{
+    display: flex;
+    /* background: red; */
+    margin: 50px 30px;
+}
+@media (min-width: 900px) {
+    .cardResult{
+        /* background: green; */
+        margin: 80px 30px;
+    }
+    
+}
+@media (min-width: 1300px) {
+    .cardResult{
+        /* background: blue; */
+        margin: 80px 30px;
+    }
+    
+}
