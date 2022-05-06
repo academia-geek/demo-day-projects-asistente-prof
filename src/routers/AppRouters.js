@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import CRUDUniversity from '../components/admin/CRUDUniversity';
 import LoginAdmin from '../components/admin/LoginAdmin';
+import ContacUs from '../components/ContacUs';
 import PrincipalLanding from '../components/landing/PrincipalLanding';
 import { Login } from '../components/Logins/Login';
 import Register from '../components/Register';
@@ -50,14 +51,22 @@ const AppRouters = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route
-          path='/login'
-          element={
-            <PublicRouters isAut={isLoggedIn} >
-              <Login userV={userV} conterLogin={conterLogin}/>
-            </PublicRouters>
-          }
-        />
+          <Route
+            path='/login'
+            element={
+              <PublicRouters isAut={isLoggedIn} >
+                <Login userV={userV} conterLogin={conterLogin}/>
+              </PublicRouters>
+            }
+          />
+          <Route
+            path='/contactanos'
+            element={
+              <PublicRouters isAut={isLoggedIn} >
+               <ContacUs/>
+              </PublicRouters>
+            }
+          />
         <Route
           path='/admin'
           element={
