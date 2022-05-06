@@ -5,11 +5,8 @@ import '../../style/landingPage.css';
 
 const LInfo = () => {
   return (
-    <div className='py-5' style={{ background: '#eee' }}>
-      <div
-        className='d-flex m-3 py-3 shadow rounded justify-content-center flex-wrap'
-        style={{ background: '' }}
-      >
+    <div className='py-5 my-5' style={{ background: '#eee' }}>
+      <div className='d-flex my-4 py-5 shadow rounded justify-content-center flex-wrap'>
         <Container
           className=' mx-auto my-2 text-light d-flex align-content-around flex-wrap'
           style={{ maxWidth: '700px' }}
@@ -24,7 +21,7 @@ const LInfo = () => {
             <br />
             <Button
               variant='info'
-              className='w-25 m-auto'
+              className='btnVerMas m-auto'
               style={{ background: '#6ee6e6' }}
             >
               ver mas

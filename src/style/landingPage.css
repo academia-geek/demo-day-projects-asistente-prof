@@ -55,13 +55,7 @@
 .logoNav{
   width: 20%;
 }
-/* .imgLogin{
-  background-color: red;
-  width: 100%;
-} */
-.contLogin{
 
-}
 @media (min-width: 500px) {
   .card-h2{
     font-size: 55px;
@@ -69,15 +63,14 @@
   .logoNav{
     width: 10%;
   }
-  .contLogin{
-
-
-  }
 }
 @media (max-width: 800px) {
   .contLogin{
     display: flex;
     flex-direction: column-reverse;
+  }
+  .btnVerMas{
+    width: 100%;
   }
 }
 @media (min-width: 1300px) {
