@@ -4,10 +4,9 @@ import '../../style/landingPage.css';
 
 const LInfo = () => {
   return (
-    <div className='py-5' style={{ background: '#eee' }}>
+    <div className='py-5 my-5' style={{ background: '#eee' }}>
       <div
-        className='d-flex m-3 py-3 shadow rounded justify-content-center flex-wrap'
-        style={{ background: '' }}
+        className='d-flex my-4 py-5 shadow rounded justify-content-center flex-wrap'
       >
         <Container className=' mx-auto my-2 text-light d-flex align-content-around flex-wrap' style={{maxWidth: '700px'}}>
           <div className='m-auto d-flex flex-column p-5'>
@@ -18,7 +17,7 @@ const LInfo = () => {
             Encuentra la información para tu futuro Profesional.
           </p>
           <br />
-          <Button variant='info' className='w-25 m-auto' style={{ background: '#6ee6e6' }}>
+          <Button variant='info' className='btnVerMas m-auto' style={{ background: '#6ee6e6' }}>
                   ver  mas
                 </Button>
           </div>

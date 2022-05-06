@@ -1,6 +1,6 @@
 import { Field, Form, Formik } from 'formik';
 import React from 'react';
-import { Button, Col, Container, Row } from 'react-bootstrap';
+import { Button, Col, Container, Nav, Row } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
 import * as Yup from 'yup';
 
@@ -27,11 +27,28 @@ const LoginAdmin = ({ setIsAdminLog }) => {
     }
   };
   return (
-    <div className='cardsLoginAll d-flex flex-column'>
+    <div className='cardsLoginAll'>
+      <Nav className='d-flex justify-content-between' style={{
+        background: '#4B3F6B',
+        fontWeight: 'bold',
+        backgroundImage: "url('https://i.ibb.co/CngVcj8/descarga-2.png')",
+      }}>
+        <Nav.Item as='li'>
+          <Nav.Link href='/landing' className='text-light'>
+            Atras
+          </Nav.Link>
+        </Nav.Item>
+
+      </Nav>
       <div className='login '>
-        <h1 className='text-center'>Iniciar sesion</h1>
-        <Container>
-          <Row>
+        <Container className='shadow p-5 rounded mx-auto my-5' style={{ background: '#4B3F6B' }}>
+          <h1 className='text-center text-light'>Iniciar sesión</h1>
+          <Row className='contLogin'>
+            <Col >
+              <div className='imgLogin'>
+                <img className='w-100' src='https://res.cloudinary.com/djjgtili7/image/upload/v1651819978/Account-amico-removebg-preview_v4dehk.png' alt='img' />
+              </div>
+            </Col>
             <Col>
               <Formik
                 initialValues={{
@@ -45,19 +62,19 @@ const LoginAdmin = ({ setIsAdminLog }) => {
               >
                 {({ errors, touched }) => (
                   <Form className=' mx-auto '>
-                    <p className='d-flex mx-auto w-75 fw-bold'>Correo</p>
+                    <p className='d-flex mx-auto w-75 fw-bold text-light'>Correo</p>
                     <Field
                       className='d-flex mx-auto w-75 '
                       placeholder='Email'
                       type='text'
                       style={{ margin: '2%' }}
                       name='email'
-                    />
+                      />
                     {errors.email && touched.email ? (
                       <div>{errors.email}</div>
-                    ) : null}
+                      ) : null}
 
-                    <p className='d-flex mx-auto w-75 fw-bold'> Contraseña</p>
+                    <p className='d-flex mx-auto w-75 fw-bold text-light'> Contraseña</p>
                     <Field
                       className='d-flex mx-auto w-75 '
                       placeholder='Password'
@@ -78,13 +95,10 @@ const LoginAdmin = ({ setIsAdminLog }) => {
                   </Form>
                 )}
               </Formik>
-            </Col>
-          </Row>
-          <Row className='my-4'>
-            <Col>
-            <Link to='/landing'>
-              <Button variant="light" className='d-flex m-auto'> <span className="bi bi-arrow-left-circle-fill"></span> Volver a pagina principal</Button>
-            </Link>
+              <br />
+              <Link to='/landing'>
+                <Button variant="light" className='d-flex m-auto'> <span className="bi bi-arrow-left-circle-fill"></span> Volver a pagina principal</Button>
+              </Link>
             </Col>
           </Row>
         </Container>

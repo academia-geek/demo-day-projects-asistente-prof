@@ -55,7 +55,7 @@ export const Login = ({ userV, conterLogin }) => {
         backgroundImage: "url('https://i.ibb.co/CngVcj8/descarga-2.png')",
       }}>
         <Nav.Item as='li'>
-          <Nav.Link href='/' className='text-light'>
+          <Nav.Link href='/landing' className='text-light'>
             Atras
           </Nav.Link>
         </Nav.Item>
@@ -80,7 +80,7 @@ export const Login = ({ userV, conterLogin }) => {
               onClick={handleGoogle}
             >
               <span className='d-flex m-auto'>
-                <i class="bi bi-facebook text-info"></i>
+                <i class="bi bi-google text-secondary"></i>
 
                 Continuar con google
               </span>
@@ -90,7 +90,7 @@ export const Login = ({ userV, conterLogin }) => {
               onClick={handleFacebook}
             >
               <span className='d-flex m-auto'>
-                <i class="bi bi-google"></i>
+                <i class="bi bi-facebook text-info"></i>
                 Continuar con facebook
               </span>
             </Container>
