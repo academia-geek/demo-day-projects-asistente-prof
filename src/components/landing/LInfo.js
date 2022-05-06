@@ -1,28 +1,34 @@
 import React from 'react';
 import { Button, Card, Container } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import '../../style/landingPage.css';
 
 const LInfo = () => {
   return (
     <div className='py-5 my-5' style={{ background: '#eee' }}>
-      <div
-        className='d-flex my-4 py-5 shadow rounded justify-content-center flex-wrap'
-      >
-        <Container className=' mx-auto my-2 text-light d-flex align-content-around flex-wrap' style={{maxWidth: '700px'}}>
+      <div className='d-flex my-4 py-5 shadow rounded justify-content-center flex-wrap'>
+        <Container
+          className=' mx-auto my-2 text-light d-flex align-content-around flex-wrap'
+          style={{ maxWidth: '700px' }}
+        >
           <div className='m-auto d-flex flex-column p-5'>
-          <h1 className=' fw-bold'> En "Tu Asistente Prof"</h1>
-          <p className='fs-3'>
-            Encuentra la información para tu futuro Profesional.
-            Encuentra la información para tu futuro Profesional.
-            Encuentra la información para tu futuro Profesional.
-          </p>
-          <br />
-          <Button variant='info' className='btnVerMas m-auto' style={{ background: '#6ee6e6' }}>
-                  ver  mas
-                </Button>
+            <h1 className=' fw-bold'> En "Tu Asistente Prof"</h1>
+            <p className='fs-3'>
+              Encuentra la información para tu futuro Profesional. Encuentra la
+              información para tu futuro Profesional. Encuentra la información
+              para tu futuro Profesional.
+            </p>
+            <br />
+            <Button
+              variant='info'
+              className='btnVerMas m-auto'
+              style={{ background: '#6ee6e6' }}
+            >
+              ver mas
+            </Button>
           </div>
         </Container>
-        <Container className=' d-flex ' style={{maxWidth: '500px'}}>
+        <Container className=' d-flex ' style={{ maxWidth: '500px' }}>
           <img
             className='d-flex margin-auto w-100 '
             src='https://res.cloudinary.com/lau2401/image/upload/v1651015886/4002302_1_si42va.png'
@@ -42,7 +48,7 @@ const LInfo = () => {
           buena decision.
         </p>
       </Card>
-      <div className='d-flex justify-content-around mx-2 flex-wrap' >
+      <div className='d-flex justify-content-around mx-2 flex-wrap'>
         <Card className='card-1 shadow-lg' style={{ width: '20rem' }}>
           <Card.Img
             className='rounded-circle p-2 icon'
@@ -92,16 +98,21 @@ const LInfo = () => {
           </Card.Body>
         </Card>
       </div>
-      <Card className='card-4 m-auto' >
+      <Card className='card-4 m-auto'>
         <Card.Body>
           <Card.Title className='fw-bold text-light text-center my-2 fs-2A'>
-            Boost your links today
+            Contactanos
           </Card.Title>
-          <Card.Text>
-          <Button variant='info' className='text-center d-flex m-auto' style={{ background: '#6ee6e6' }}>
-                  Realizar  test
-                </Button>
-          </Card.Text>
+
+          <Link to='/contactanos'>
+            <Button
+              variant='info'
+              className='text-center d-flex m-auto'
+              style={{ background: '#6ee6e6' }}
+            >
+              Realizar test
+            </Button>
+          </Link>
         </Card.Body>
       </Card>
     </div>
