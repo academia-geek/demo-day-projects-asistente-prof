@@ -4,6 +4,7 @@ import {
   signInWithPopup,
   signOut,
 } from 'firebase/auth';
+
 import { facebook, google } from '../../Firebase/firebaseConfig';
 import { typesLogin } from '../types/types';
 
@@ -37,7 +38,7 @@ export const loginGoogle = () => {
     signInWithPopup(auth, google)
       .then(({ user }) => {
         dispatch(loginSincronico(user.email, user.password));
-
+          
         console.log(user, 'Usuario autorizado');
       })
       .catch((error) => {
@@ -52,6 +53,7 @@ export const loginFacebook = () => {
     signInWithPopup(auth, facebook)
       .then(({ user }) => {
         dispatch(loginSincronico(user.email, user.password));
+
         console.log(user, 'Usuario autorizado');
       })
       .catch((error) => {
@@ -67,6 +69,7 @@ export const loginEmailPassAsync = (email, password) => {
     signInWithEmailAndPassword(auth, email, password)
       .then(({ user }) => {
         dispatch(loginSincronico(user.email, user.password));
+        
         console.log('Usuario autorizado');
       })
 

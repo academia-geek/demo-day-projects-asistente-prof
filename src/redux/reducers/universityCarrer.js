@@ -39,5 +39,6 @@ export const carrerReducers = (state = initialState, action) => {
 
     default:
       return state;
+
   }
 };

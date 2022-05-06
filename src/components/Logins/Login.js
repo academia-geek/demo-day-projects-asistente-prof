@@ -12,6 +12,8 @@ import { Button, Col, Container, Nav, Row } from 'react-bootstrap';
 import * as Yup from 'yup';
 import '../../style/style.css';
 import { addUserAsync } from '../../redux/actions/actionUsers';
+import Swal from 'sweetalert2';
+
 
 //----------------Validacion de cada input -----------
 const SignupSchema = Yup.object().shape({
@@ -26,14 +28,25 @@ const SignupSchema = Yup.object().shape({
     .required('el password es obligatorio'),
 });
 
-export const Login = ({ userV }) => {
+export const Login = ({ userV, conterLogin }) => {
   const dispatch = useDispatch();
 
   const handleGoogle = () => {
     dispatch(loginGoogle());
+    setTimeout(() => {
+      if (conterLogin === 85) {
+        Swal.fire({
+        title: 'Bienvenido',
+        text: 'A continuación van a realizar un test de 98 preguntas donde tienen como resultado sus habilidades y actitudes que ayudaran a encontar la carrera que se adapta a su perfil.',
+        icon: 'exito',
+        confirmButtonText: 'Realizar Test'
+      })}
+    }, 2000);
+    
   };
   const handleFacebook = () => {
-    dispatch(loginFacebook());
+    dispatch(loginFacebook(conterLogin));
+    
   };
 
   return (
@@ -65,7 +78,7 @@ export const Login = ({ userV }) => {
               validationSchema={SignupSchema}
               onSubmit={(values) => {
                 console.log(values);
-                dispatch(loginEmailPassAsync(values.email, values.password));
+                dispatch(loginEmailPassAsync(values.email, values.password, conterLogin));
               }}
             >
               {({ errors, touched }) => (
