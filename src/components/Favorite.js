@@ -25,7 +25,7 @@ export const Favorites = () => {
     }, [setdataf])
     return (
         <div className=' py-5' style={{ background: '#4B3F6B' }}>
-            <h2 className='text-center text-light fw-bold my-3'>
+            <h2 className='text-center text-light fw-bold  titleUni'>
                 Carreras universitarias
             </h2>
             <h2 className='text-light w-75 m-auto'>Resultados: {dataf.length}</h2>
