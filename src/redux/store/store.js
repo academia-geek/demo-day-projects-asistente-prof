@@ -1,7 +1,7 @@
 import { applyMiddleware, combineReducers, compose, createStore } from 'redux';
 import thunk from 'redux-thunk';
 import { loginReducers } from '../reducers/loginReducers';
-import { becasReducers } from '../reducers/becasReducers';
+
 import { registerReducers } from '../reducers/registerReducers';
 import { carrerReducers } from '../reducers/universityCarrer';
 import { favoriteReducers } from '../reducers/favoriteReducers';
@@ -15,8 +15,6 @@ const composeEnhancers =
 const reducersEnviar = combineReducers({
   login: loginReducers,
   register: registerReducers,
-  products: becasReducers,
-  becas: becasReducers,
   careeries: carrerReducers,
   favorites: favoriteReducers,
   user: userReducers,
