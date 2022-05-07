@@ -16,7 +16,7 @@ const Result = ({
   uid,
   displayName,
 }) => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const [resultMatch, setResultMatch] = useState(false);
   const [newUser, setNewUser] = useState({
     id: uid,
@@ -39,13 +39,11 @@ const Result = ({
     localStorage.clear();
     setconter(85);
     setLetters([0, 0, 0, 0, 0, 0, 0]);
-    
   };
 
   const agregarBDUSer = () => {
     dispatch(addUserAsync(newUser));
-    navigate('/unis')
-    
+    navigate('/unis');
   };
 
   return (
@@ -133,10 +131,10 @@ const Result = ({
             ))}
           </>
         ) : (
-          <>
+          <div>
             {focus.map((item) => (
-              <div key={item.id} className='conten '>
-                <p>
+              <div key={item.id} className='conten  '>
+                <p className=''>
                   {item.id === 'c' ? (
                     <CardResult
                       item={item.id}
@@ -192,7 +190,7 @@ const Result = ({
                 Reiniciar Test
               </button>
             </div>
-          </>
+          </div>
         )}
       </Container>
     </>

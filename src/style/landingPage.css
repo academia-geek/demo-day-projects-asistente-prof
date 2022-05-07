@@ -40,7 +40,7 @@
   position: relative;
   top: 100px;
 }
-.card-h2{
+.card-h2 {
   /* background: linear-gradient(#3b3054, #4b3f6b);
  */
   background-image: url(https://i.ibb.co/CngVcj8/descarga-2.png);
@@ -49,39 +49,37 @@
   font-size: x-large;
   font-size: 25px;
 }
-.imgFoot{
+.imgFoot {
   width: 50%;
 }
-.logoNav{
+.logoNav {
   width: 20%;
 }
 
 @media (min-width: 500px) {
-  .card-h2{
+  .card-h2 {
     font-size: 55px;
   }
-  .logoNav{
+  .logoNav {
     width: 10%;
   }
 }
 @media (max-width: 800px) {
-  .contLogin{
+  .contLogin {
     display: flex;
     flex-direction: column-reverse;
   }
-  .btnVerMas{
+  .btnVerMas {
     width: 100%;
   }
 }
 @media (min-width: 1300px) {
-  .card-h2{
+  .card-h2 {
     font-size: 70px;
   }
-  .logoNav{
+  .logoNav {
     width: 6%;
   }
-
-  
 }
 .icon {
   /* position: ; */
@@ -169,4 +167,15 @@
 .FooterP {
   margin-bottom: 0;
   margin-top: 0.5rem;
+}
+
+.prueba {
+  border: 1px solid red !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+.prueba2 {
+  border: 1px solid green !important;
+  display: flex !important;
+  flex-direction: column !important;
 }
