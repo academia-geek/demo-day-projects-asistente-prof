@@ -21,17 +21,18 @@ const CardResult = ({ item, setResultMatch }) => {
     }, []);
 
     return (
-        <div className='rounded m-auto'>
+        <div className='w-100 d-flex shadow rounded mx-auto  p-0 cardResultdos' >
             {infoChaside.map((ite) =>
                 ite.id === item ? (
                     // <div className='bg-warning m-auto ' style={{ minWidth: '500px' }}>
-                    <div className='p-2 rounded cardResult' key={ite.id}>
+                    <div className='w-100 rounded cardResult ' key={ite.id}>
                         <div
-                            className='m-auto p-2'
+                            className=' my-auto mx-2 p-2'
                             style={{
                                 maxWidth: '300px',
                                 border: '5px solid #2ACFCF',
                                 borderRadius: '20px',
+                                // marginRight: ' 10px'
                             }}
                         >
                             <img
@@ -57,33 +58,35 @@ const CardResult = ({ item, setResultMatch }) => {
                                 }
                             />
                         </div>
-                        <Card.Body className='w-50 m-0 p-0'>
-                            <Card.Title className='text-center'>Intereses</Card.Title>
-                            <p
-                                id={ite.id}
-                                className='fw-bold text-light text-center border border-dark rounded'>
-                                {ite.intereses}
-                            </p>
-                            <Card.Title className='text-center'>Aptitudes</Card.Title>
-                            <Card.Text
-                                id={ite.id}
-                                className=' fw-bold text-light text-center border border-dark rounded'>
-                                {ite.aptitudes}
-                            </Card.Text>
-                            <Card.Title className='text-center'>Aptitudes</Card.Title>
-                            <Card.Text
-                                id={ite.id}
-                                className=' fw-bold text-light text-center border border-dark rounded'>
-                                {ite.aptitudes}
-                            </Card.Text>
-                            <Button
-                                onClick={() => {
-                                    handleUniversity();
-                                }}
-                            >
-                                Ver Universidades
-                            </Button>
-                        </Card.Body>
+                        {/* <div className='d-flex m-0'> */}
+
+                            <Card.Body className='w-50 d-flex  mx-2 p-0'>
+                                <div className='m-auto'>
+
+                                    <Card.Title className='text-center fs-2'>Intereses  </Card.Title>
+                                    <p
+                                        id={ite.id}
+                                        className='fw-bold p-3 text-center border border-dark rounded'>
+                                        {ite.intereses}
+                                    </p>
+                                    <Card.Title className='text-center fs-2'>Aptitudes</Card.Title>
+                                    <Card.Text
+                                        id={ite.id}
+                                        className=' fw-bold p-3 text-center border border-dark rounded'>
+                                        {ite.aptitudes}
+                                    </Card.Text>
+                                    <Card.Title className='text-center fs-2' >Aptitudes</Card.Title>
+                                    <Card.Text
+                                        id={ite.id}
+                                        className=' fw-bold p-3 text-center border border-dark rounded'>
+                                        {ite.aptitudes}
+                                    </Card.Text>
+                                    <Button variant='info' className='m-auto d-flex' onClick={() => { handleUniversity() }} style={{ background: '#6ee6e6' }}>
+                                        Ver Universidades
+                                    </Button>
+                                </div>
+                            </Card.Body>
+                        {/* </div> */}
                     </div>
                 ) : null
             )}

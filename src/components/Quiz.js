@@ -127,7 +127,7 @@ export const Quiz = ({ userV, setnumero }) => {
   };
 
   return (
-    <div className='py-5' style={{ background: '#eee' }}>
+    <div className='py-5 my-3 contPadre'>
       {conter === questions.length ? (
         <Result
           focus={focus}
@@ -141,7 +141,7 @@ export const Quiz = ({ userV, setnumero }) => {
         />
       ) : (
         <Container
-          className=' d-flex marginQuiz shadow'
+          className=' d-flex m-auto marginQuiz shadow my-5'
         >
           <div className='questionsQuiz my-5 text-center text-light d-flex align-content-between flex-wrap'>
             <h2 className='fw-bold m-3 preguntas'>{questions[conter]?.quest}</h2>
