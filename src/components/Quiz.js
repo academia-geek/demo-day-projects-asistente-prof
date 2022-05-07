@@ -103,6 +103,7 @@ export const Quiz = ({ userV, setnumero }) => {
     localStorage.setItem('conter', JSON.stringify(conter));
     localStorage.setItem('letters', JSON.stringify(letters));
     setnumero(conter);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [answers, conter, letters]);
 
   const sumar = () => {
@@ -154,11 +155,12 @@ export const Quiz = ({ userV, setnumero }) => {
                   addData(questions[conter]?.formacion);
                 }}
               >
-                Yes
+                Si
               </li>
               <li className='ans' onClick={sumar}>
                 No
               </li>
+
               <p>
                 {conter + 1} / {questions.length}
               </p>
