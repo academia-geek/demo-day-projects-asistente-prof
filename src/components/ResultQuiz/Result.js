@@ -133,7 +133,7 @@ const Result = ({
         ) : (
           <div>
             {focus.map((item) => (
-              <div key={item.id} className='conten  '>
+              <div key={item.id} className='conten '>
                 <p className=''>
                   {item.id === 'c' ? (
                     <CardResult
@@ -174,25 +174,26 @@ const Result = ({
                 </p>
               </div>
             ))}
-            <div>
-              <button
-                onClick={() => {
-                  agregarBDUSer();
-                }}
-              >
-                Guardar Test
-              </button>
-              <button
-                onClick={() => {
-                  handleReset();
-                }}
-              >
-                Reiniciar Test
-              </button>
-            </div>
+            <br />
           </div>
         )}
       </Container>
+      <div className='bg-danger d-block'>
+        <button
+          onClick={() => {
+            agregarBDUSer();
+          }}
+        >
+          Guardar Test
+        </button>
+        <button
+          onClick={() => {
+            handleReset();
+          }}
+        >
+          Reiniciar Test
+        </button>
+      </div>
     </>
   );
 };

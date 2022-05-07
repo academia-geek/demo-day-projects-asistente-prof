@@ -100,17 +100,13 @@ const LInfo = () => {
       </div>
       <Card className='card-4 m-auto'>
         <Card.Body>
-          <Card.Title className='fw-bold text-light text-center my-2 fs-2A'>
-            Contactanos
-          </Card.Title>
-
           <Link to='/contactanos'>
             <Button
               variant='info'
               className='text-center d-flex m-auto'
-              style={{ background: '#6ee6e6' }}
+              style={{ background: '#6ee6e6', textDecoration: 'none'}}
             >
-              Realizar test
+              Contactanos
             </Button>
           </Link>
         </Card.Body>

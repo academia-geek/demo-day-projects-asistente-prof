@@ -27,6 +27,50 @@
   transform: scale(1.05);
 }
 /* productos home */
+.marginQuiz{
+  border-radius: 20px;
+  margin-top: 50px;
+}
+.imgQuiz{
+  border-left: 3px solid #3b3054;
+  background-color: white;
+  width: 50%;
+  margin: auto;
+}
+.imgQ{
+  width: 100%;
+  object-fit: cover;
+}
+.questionsQuiz{
+  width: 50%;
+}
+
+@media (max-width: 700px) {
+  .questionsQuiz{
+    width: 100%;
+  }
+  .imgQuiz{
+    width: 100%;
+  }
+  .imgQuiz{
+    border-top: 3px solid #3b3054;
+    border-left: none;
+  }
+  .marginQuiz{
+    width: 90%;
+    margin: 50px auto;
+    flex-direction: column;
+  }
+}
+@media (min-width: 1200px) {
+  .preguntas{
+    font-size: 45px;
+  }
+  .marginQuiz{
+   margin-top: 100px;
+  }
+  
+}
 .carta {
   display: flex;
 }

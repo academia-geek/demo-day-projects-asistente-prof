@@ -72,6 +72,10 @@
   .btnVerMas {
     width: 100%;
   }
+  .footLogos {
+    display: flex;
+    flex-direction: column;
+  }
 }
 @media (min-width: 1300px) {
   .card-h2 {
@@ -167,15 +171,4 @@
 .FooterP {
   margin-bottom: 0;
   margin-top: 0.5rem;
-}
-
-.prueba {
-  border: 1px solid red !important;
-  display: flex !important;
-  flex-direction: column !important;
-}
-.prueba2 {
-  border: 1px solid green !important;
-  display: flex !important;
-  flex-direction: column !important;
 }

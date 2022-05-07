@@ -43,7 +43,7 @@ const Register = () => {
           </Nav.Link>
         </Nav.Item>
       </Nav>
-      <h1 className='text-center'> Registrarse</h1>
+      <h1 className='text-center mx-4 my-5' style={{fontSize: '60px'}}> Registrarse</h1>
 
       <Container>        
         <Row>
