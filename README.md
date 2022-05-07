@@ -4,8 +4,11 @@
 ## Instalacion 💡 
  Para Ejecutar la aplicación es necesario:
 • Clonar el Repositorio
+
 • Ejecutar el comando npm install
+
 • Ejecutar el comando npm start
+
 • Entrar en el navegador la url:  http://localhost:3000/ 
  
 ## Desarrollo Frontend 🌞 
@@ -22,8 +25,11 @@
 ## Installation 💡 
  To run the application you need: 
 • Clone the Repository 
+
 • Run the npm install command 
+
 • Run the npm start command 
+
 • Enter the url in the browser: http://localhost:3000/ 
  
 ## Frontend Development 🌞 
