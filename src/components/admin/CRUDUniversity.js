@@ -33,12 +33,19 @@ const CRUDUniversity = () => {
     url: '',
     idCarrera: uuid(),
   });
-  const { universidad, titulo, descripcion, carrera, duracion, ciudad, sigla, url } =
-    values;
+  const {
+    universidad,
+    titulo,
+    descripcion,
+    carrera,
+    duracion,
+    ciudad,
+    sigla,
+    url,
+  } = values;
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(values);
     dispatch(addCareerAsync(values));
     reset();
   };
@@ -55,7 +62,6 @@ const CRUDUniversity = () => {
   };
 
   const eliminarYes = () => {
-    console.log(objModal.idCarrera);
     dispatch(deleteCareerAsync(objModal.idCarrera));
     setTimeout(() => {
       handleClose2();
@@ -66,7 +72,6 @@ const CRUDUniversity = () => {
   const [modalEdit, setModalEdit] = useState(false);
   const [dataModal, setDataModal] = useState([]);
   const editarM = (p) => {
-    console.log(p);
     setDataModal(p);
     setModalEdit(true);
   };
@@ -82,7 +87,11 @@ const CRUDUniversity = () => {
     <div>
       <div>
         <Link to='/landing'>
-          <Button variant="secondary" className='m-2'> <span className="bi bi-arrow-left-circle-fill"></span> Volver a pagina principal</Button>
+          <Button variant='secondary' className='m-2'>
+            {' '}
+            <span className='bi bi-arrow-left-circle-fill'></span> Volver a
+            pagina principal
+          </Button>
         </Link>
       </div>
       <h1 className='text-center'>Agregar Formación Academica</h1>
@@ -230,7 +239,7 @@ const CRUDUniversity = () => {
                 </div>
               </td>
               <td className='position-relative' id={carr.area}>
-                <div className='position-absolute top-50 start-50 translate-middle text-light fw-bold text-uppercase' >
+                <div className='position-absolute top-50 start-50 translate-middle text-light fw-bold text-uppercase'>
                   {carr.area}
                 </div>
               </td>
@@ -274,7 +283,9 @@ const CRUDUniversity = () => {
                 {objModal.universidad}
               </ListGroupItem>
               <ListGroupItem>
-                <span className='fw-bold text-capitalize'>Sigla universidad: </span>
+                <span className='fw-bold text-capitalize'>
+                  Sigla universidad:{' '}
+                </span>
                 {objModal.sigla}
               </ListGroupItem>
               <ListGroupItem>

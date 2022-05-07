@@ -16,8 +16,6 @@ export const logoutAsync = () => {
     signOut(auth)
       .then(({ user }) => {
         dispatch(logoutSync());
-
-        console.log('Adios');
       })
       .catch((error) => {
         console.warn(error);
@@ -38,7 +36,7 @@ export const loginGoogle = () => {
     signInWithPopup(auth, google)
       .then(({ user }) => {
         dispatch(loginSincronico(user.email, user.password));
-          
+
         console.log(user, 'Usuario autorizado');
       })
       .catch((error) => {
@@ -69,7 +67,7 @@ export const loginEmailPassAsync = (email, password) => {
     signInWithEmailAndPassword(auth, email, password)
       .then(({ user }) => {
         dispatch(loginSincronico(user.email, user.password));
-        
+
         console.log('Usuario autorizado');
       })
 

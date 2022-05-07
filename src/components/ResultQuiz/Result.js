@@ -3,7 +3,7 @@ import { Card, Container } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { paintCareerAsync } from '../../redux/actions/actionUniversity';
-import { addUserAsync, paintUserAsync } from '../../redux/actions/actionUsers';
+import { addUserAsync } from '../../redux/actions/actionUsers';
 import CardResult from './CardResult';
 
 const Result = ({

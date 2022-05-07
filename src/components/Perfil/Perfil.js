@@ -30,12 +30,12 @@ const Perfil = ({ userV }) => {
     });
     doc.save(`${displayName}-Resultados-Chaside.pdf`);
   };
-  console.log(result);
 
   useEffect(() => {
     if (result) {
       dataPdf();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [result]);
 
   const dataPdf = async () => {
@@ -47,8 +47,6 @@ const Perfil = ({ userV }) => {
       const resultSinDuplicate = resultPdf.filter(
         (item, index) => resultPdf.indexOf(item) === index
       );
-
-      console.log(resultSinDuplicate);
 
       infoChaside?.forEach((item) => {
         resultSinDuplicate?.forEach((item2) => {

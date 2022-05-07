@@ -43,7 +43,7 @@ export const infoChaside = [
       'Altruista ,Solidario ,Paciente ,Comprensivo ,Respetuoso ,Persuasivo',
     imagen:
       'https://res.cloudinary.com/djjgtili7/image/upload/v1651553576/tuaistente/pexels-nataliya-vaitkevich-6863175_cizahn.jpg',
-    carreras:
+    carrera:
       'Tecnología Médica, Odontología, Obstetricia, Nutrición y Dietética, Terapia Ocupacional, Fonoaudiología, Enfermería, Psicología, Kinesiología',
   },
   {
@@ -64,7 +64,8 @@ export const infoChaside = [
     aptitudes: 'Arriesgado, Solidario, Valiente, Agresivo, Persuasivo',
     imagen:
       'https://res.cloudinary.com/djjgtili7/image/upload/v1651553576/tuaistente/pexels-nataliya-vaitkevich-6863175_cizahn.jpg',
-    carrera: 'hola',
+    carrera:
+      'Militar, Bombero, Agente de policía, Oficial de la marina, Escolta, Agente de aduanas, Inspector de salud y seguridad, Agente de estacionamiento, Guarda de seguridad',
   },
   {
     id: 'e',
