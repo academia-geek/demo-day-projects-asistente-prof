@@ -16,8 +16,9 @@
  
  
 ## Herramientas 🎨 
- ![Figma](https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white)
+![Figma](https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white)
 
+![Firebase](https://th.bing.com/th/id/OIP.VnP8WNkRxAIYvhjiF9sOPQAAAA?pid=ImgDet&rs=1)
 
 # Tu Asistente Prof 💻
 ## Description 📚
@@ -38,3 +39,4 @@
  
 ## Tools 🎨 
  ![Figma](https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white)
+ ![Firebase]()
