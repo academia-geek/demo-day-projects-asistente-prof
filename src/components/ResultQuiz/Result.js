@@ -131,7 +131,7 @@ const Result = ({
             ))}
           </>
         ) : (
-          <div>
+          <div className='centrar'>
             {focus.map((item) => (
               <div key={item.id} className='conten '>
                 <p className=''>
@@ -178,8 +178,9 @@ const Result = ({
           </div>
         )}
       </Container>
-      <div className='bg-danger d-block'>
+      <div className='botones'>
         <button
+          className='btones-btn'
           onClick={() => {
             agregarBDUSer();
           }}
@@ -187,6 +188,7 @@ const Result = ({
           Guardar Test
         </button>
         <button
+          className='btones-btn'
           onClick={() => {
             handleReset();
           }}

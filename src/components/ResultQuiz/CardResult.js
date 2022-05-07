@@ -27,12 +27,11 @@ const CardResult = ({ item, setResultMatch }) => {
           // <div className='bg-warning m-auto ' style={{ minWidth: '500px' }}>
           <div className='w-100 rounded cardResult ' key={ite.id}>
             <div
-              className=' my-auto mx-2 p-2'
+              className=' my-auto mx-2 py-2 px-4'
               style={{
-                maxWidth: '300px',
+                maxWidth: '400px',
                 border: '5px solid #2ACFCF',
                 borderRadius: '20px',
-                // marginRight: ' 10px'
               }}
             >
               <img
@@ -58,10 +57,13 @@ const CardResult = ({ item, setResultMatch }) => {
                 }
               />
             </div>
-            {/* <div className='d-flex m-0'> */}
 
             <Card.Body className='w-50 d-flex  mx-2 p-0'>
               <div className='m-auto'>
+                <Card.Title className='fs-3 fw-bold text-center'>
+                  {ite.title}
+                </Card.Title>
+                <hr />
                 <Card.Title className='text-center fs-2'>Intereses </Card.Title>
                 <p
                   id={ite.id}
@@ -76,12 +78,12 @@ const CardResult = ({ item, setResultMatch }) => {
                 >
                   {ite.aptitudes}
                 </Card.Text>
-                <Card.Title className='text-center fs-2'>Aptitudes</Card.Title>
+                <Card.Title className='text-center fs-2'>Carreras</Card.Title>
                 <Card.Text
-                  id={ite.id}
+                  id={ite.carreras}
                   className=' fw-bold p-3 text-center border border-dark rounded'
                 >
-                  {ite.aptitudes}
+                  {ite.carrera}
                 </Card.Text>
                 <Button
                   variant='info'

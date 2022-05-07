@@ -172,3 +172,89 @@
   margin-bottom: 0;
   margin-top: 0.5rem;
 }
+
+.centrar {
+  margin: 0 auto;
+}
+
+/* Buttons  */
+
+button {
+  border: 2px solid #2acfcf !important;
+  position: relative;
+  overflow: hidden;
+  background-color: transparent;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 12px !important;
+  transition: 0.3s;
+  z-index: 1;
+  font-family: inherit;
+  color: white !important;
+}
+
+button::before {
+  content: '';
+  width: 0;
+  height: 500%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  background: #2acfcf !important;
+  transition: 0.5s ease;
+  display: block;
+  z-index: -1;
+}
+
+button:hover::before {
+  width: 105%;
+}
+
+button:hover {
+  color: white !important;
+}
+
+.botones {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+.btones-btn {
+  padding: 0.5rem 1rem;
+  width: 30% !important;
+  border: 2px solid #2acfcf !important;
+  position: relative !important;
+  overflow: hidden !important;
+  background-color: #2acfcf;
+  text-align: center !important;
+  text-transform: uppercase;
+  font-size: 12px !important;
+  transition: 0.3s;
+  z-index: 1 !important;
+  font-family: inherit !important;
+  color: white !important;
+  font-weight: bold !important;
+  border-radius: 3px !important;
+}
+
+.btones-btn::before {
+  content: '';
+  width: 0;
+  height: 1700% !important;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  background: white !important;
+  transition: 0.5s ease;
+  display: block;
+  z-index: -1;
+}
+
+.btones-btn:hover::before {
+  width: 105% !important;
+}
+.btones-btn:hover {
+  color: #2acfcf !important;
+}

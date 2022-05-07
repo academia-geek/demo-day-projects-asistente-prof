@@ -8,6 +8,8 @@ export const infoChaside = [
       'Persuasivo, Objetivo, Práctico, Tolerante, Responsable, Ambicioso ',
     imagen:
       'https://res.cloudinary.com/djjgtili7/image/upload/v1651553576/tuaistente/pexels-nataliya-vaitkevich-6863175_cizahn.jpg',
+    carrera:
+      'Auxiliar Administrativo, Administración de Aduanas, Administración Comercial, Comercio Internacional, Contabilidad y Finanzas, Auxiliar,Contaduría',
   },
   {
     id: 'h',
@@ -18,6 +20,8 @@ export const infoChaside = [
       'Responsable, justo, Conciliador, Persuasivo, Sagaz, Imaginativo ',
     imagen:
       'https://res.cloudinary.com/djjgtili7/image/upload/v1651553576/tuaistente/pexels-nataliya-vaitkevich-6863175_cizahn.jpg',
+    carrera:
+      'Filosofía, Historia, Literatura, Arqueología, Geografía, Ciencia Política, Derecho',
   },
   {
     id: 'a',
@@ -27,6 +31,8 @@ export const infoChaside = [
       'Sensible, Imaginativo, Creativo, Detallista, Innovador ,Intuitivo',
     imagen:
       'https://res.cloudinary.com/djjgtili7/image/upload/v1651553576/tuaistente/pexels-nataliya-vaitkevich-6863175_cizahn.jpg',
+    carrera:
+      'Artistica, artes plásticas, Fotógrafo, Cine, Teatro, Danza, Música, Diseño industrial, Diseñador gráfico, Diseño de moda, Diseño de interiores',
   },
   {
     id: 's',
@@ -37,6 +43,8 @@ export const infoChaside = [
       'Altruista ,Solidario ,Paciente ,Comprensivo ,Respetuoso ,Persuasivo',
     imagen:
       'https://res.cloudinary.com/djjgtili7/image/upload/v1651553576/tuaistente/pexels-nataliya-vaitkevich-6863175_cizahn.jpg',
+    carreras:
+      'Tecnología Médica, Odontología, Obstetricia, Nutrición y Dietética, Terapia Ocupacional, Fonoaudiología, Enfermería, Psicología, Kinesiología',
   },
   {
     id: 'i',
@@ -45,6 +53,8 @@ export const infoChaside = [
     aptitudes: 'Preciso, Práctico, Crítico, Analítico, Rígido',
     imagen:
       'https://res.cloudinary.com/djjgtili7/image/upload/v1651553576/tuaistente/pexels-nataliya-vaitkevich-6863175_cizahn.jpg',
+    carrera:
+      'Administrador de Red , Analista de Sistemas Computacionales , Arquitecto de inteligencia artificial , Desarrollador (web, software, móvil) , Ingeniería Civil , Ingeniería de Producción , Ingeniería de Telecomunicaciones , Ingeniería Electrónica , Ingeniería Industrial , Ingeniería Mecánica , Ingeniería Mecatrónica',
   },
   {
     id: 'd',
@@ -54,6 +64,7 @@ export const infoChaside = [
     aptitudes: 'Arriesgado, Solidario, Valiente, Agresivo, Persuasivo',
     imagen:
       'https://res.cloudinary.com/djjgtili7/image/upload/v1651553576/tuaistente/pexels-nataliya-vaitkevich-6863175_cizahn.jpg',
+    carrera: 'hola',
   },
   {
     id: 'e',
@@ -61,8 +72,9 @@ export const infoChaside = [
     intereses:
       'Investigación, Orden, Organización, Análisis y Síntesis, Numérico, Clasificar',
     aptitudes:
-      'Metódico, Analítico, Obervador, I ntrovertido, Paciente, Seguro ',
+      'Metódico, Analítico, Obervador, Introvertido, Paciente, Seguro ',
     imagen:
       'https://res.cloudinary.com/djjgtili7/image/upload/v1651553576/tuaistente/pexels-nataliya-vaitkevich-6863175_cizahn.jpg',
+    carrera: 'Química, Física, Matemáticas, Biología, Matemática, Estadística',
   },
 ];
