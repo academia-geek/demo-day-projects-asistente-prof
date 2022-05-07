@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { Container } from 'react-bootstrap';
-import { useIsRTL } from 'react-bootstrap/esm/ThemeProvider';
 import { useDispatch, useSelector } from 'react-redux';
 import { quest } from '../data/q';
 import { paintUserAsync } from '../redux/actions/actionUsers';
@@ -23,15 +22,17 @@ export const Quiz = ({ userV, setnumero }) => {
   };
 
   useEffect(() => {
-    if (user !== undefined && user.answers !== undefined &&
-      user.conter !== undefined && user.letters !== undefined) {
+    if (
+      user !== undefined &&
+      user.answers !== undefined &&
+      user.conter !== undefined &&
+      user.letters !== undefined
+    ) {
       localStorage.setItem('user', JSON.stringify(user));
       setAnswers(user.answers);
-      console.log(user.answers)
       setconter(user.conter);
       setLetters(user.letters);
-    }
-    else {
+    } else {
       setAnswers([]);
       setconter(85);
       setLetters([0, 0, 0, 0, 0, 0, 0]);
@@ -54,6 +55,7 @@ export const Quiz = ({ userV, setnumero }) => {
     if (lettersLS) {
       setLetters(lettersLS);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
@@ -100,7 +102,7 @@ export const Quiz = ({ userV, setnumero }) => {
     localStorage.setItem('answers', JSON.stringify(answers));
     localStorage.setItem('conter', JSON.stringify(conter));
     localStorage.setItem('letters', JSON.stringify(letters));
-    setnumero(conter)
+    setnumero(conter);
   }, [answers, conter, letters]);
 
   const sumar = () => {
@@ -108,7 +110,7 @@ export const Quiz = ({ userV, setnumero }) => {
   };
 
   const addData = (dat) => {
-      if (dat === 'c') {
+    if (dat === 'c') {
       setLetters(letters.map((item, index) => (index === 0 ? item + 1 : item)));
     } else if (dat === 'h') {
       setLetters(letters.map((item, index) => (index === 1 ? item + 1 : item)));
@@ -127,7 +129,7 @@ export const Quiz = ({ userV, setnumero }) => {
   };
 
   return (
-    <div className='py-5' style={{ background: '#4B3F6B' }}>
+    <div className='py-5 my-3 contPadre'>
       {conter === questions.length ? (
         <Result
           focus={focus}
@@ -140,12 +142,11 @@ export const Quiz = ({ userV, setnumero }) => {
           displayName={displayName}
         />
       ) : (
-        <Container
-          className='w-100 d-flex mx-auto my-4'
-          style={{ width: '18rem', background: ' white', borderRadius: '20px' }}
-        >
-          <div className='w-50 text-center text-light d-flex align-content-between flex-wrap'>
-            <h2 className='fw-bold m-3'>{questions[conter]?.quest}</h2>
+        <Container className=' d-flex m-auto marginQuiz shadow my-5'>
+          <div className='questionsQuiz my-5 text-center text-light d-flex align-content-between flex-wrap'>
+            <h2 className='fw-bold m-3 preguntas'>
+              {questions[conter]?.quest}
+            </h2>
             <ul className='w-100'>
               <li
                 className='ans'
@@ -163,9 +164,9 @@ export const Quiz = ({ userV, setnumero }) => {
               </p>
             </ul>
           </div>
-          <div className='w-50 d-flex align-items-center'>
+          <div className='d-flex align-items-center imgQuiz'>
             <img
-              className='w-100 d-flex m-auto rounded'
+              className='d-flex m-auto  imgQ'
               src={questions[conter]?.imagen}
               alt='logo'
             />

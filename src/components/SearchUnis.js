@@ -9,23 +9,23 @@ import {
 
 const SearchUnis = () => {
   const dispatch = useDispatch();
-  const [values, handleInputChange, reset] = useForm({
+  const [values, handleInputChange] = useForm({
     busqueda: '',
   });
   const { busqueda } = values;
 
   useEffect(() => {
     dispatch(paintCareerAsync());
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [values]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(busqueda);
     dispatch(searchCareersync(busqueda));
   };
 
   return (
-    <Form className='w-75 m-auto' onSubmit={handleSubmit}>
+    <Form className='w-75 mx-auto my-0' onSubmit={handleSubmit}>
       <InputGroup className='mb-3 '>
         <FormControl
           placeholder='Buscar carrera'

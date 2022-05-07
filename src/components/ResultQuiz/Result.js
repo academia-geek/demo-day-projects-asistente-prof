@@ -3,7 +3,7 @@ import { Card, Container } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { paintCareerAsync } from '../../redux/actions/actionUniversity';
-import { addUserAsync, paintUserAsync } from '../../redux/actions/actionUsers';
+import { addUserAsync } from '../../redux/actions/actionUsers';
 import CardResult from './CardResult';
 
 const Result = ({
@@ -16,7 +16,7 @@ const Result = ({
   uid,
   displayName,
 }) => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const [resultMatch, setResultMatch] = useState(false);
   const [newUser, setNewUser] = useState({
     id: uid,
@@ -39,13 +39,11 @@ const Result = ({
     localStorage.clear();
     setconter(85);
     setLetters([0, 0, 0, 0, 0, 0, 0]);
-    
   };
 
   const agregarBDUSer = () => {
     dispatch(addUserAsync(newUser));
-    navigate('/unis')
-    
+    navigate('/unis');
   };
 
   return (
@@ -133,10 +131,10 @@ const Result = ({
             ))}
           </>
         ) : (
-          <>
+          <div className='centrar'>
             {focus.map((item) => (
               <div key={item.id} className='conten '>
-                <p>
+                <p className=''>
                   {item.id === 'c' ? (
                     <CardResult
                       item={item.id}
@@ -176,25 +174,28 @@ const Result = ({
                 </p>
               </div>
             ))}
-            <div>
-              <button
-                onClick={() => {
-                  agregarBDUSer();
-                }}
-              >
-                Guardar Test
-              </button>
-              <button
-                onClick={() => {
-                  handleReset();
-                }}
-              >
-                Reiniciar Test
-              </button>
-            </div>
-          </>
+            <br />
+          </div>
         )}
       </Container>
+      <div className='botones'>
+        <button
+          className='btones-btn'
+          onClick={() => {
+            agregarBDUSer();
+          }}
+        >
+          Guardar Test
+        </button>
+        <button
+          className='btones-btn'
+          onClick={() => {
+            handleReset();
+          }}
+        >
+          Reiniciar Test
+        </button>
+      </div>
     </>
   );
 };

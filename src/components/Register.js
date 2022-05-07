@@ -17,7 +17,6 @@ const Register = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(values);
     dispatch(registerAsync(email, pass1, nombre));
     localStorage.setItem('answers', JSON.stringify([]));
     localStorage.setItem('conter', JSON.stringify(85));
@@ -43,9 +42,12 @@ const Register = () => {
           </Nav.Link>
         </Nav.Item>
       </Nav>
-      <h1 className='text-center'> Registrarse</h1>
+      <h1 className='text-center mx-4 my-5' style={{ fontSize: '60px' }}>
+        {' '}
+        Registrarse
+      </h1>
 
-      <Container>        
+      <Container>
         <Row>
           <Col>
             <Form.Label>Nombre (obligatorio)</Form.Label>
@@ -97,9 +99,14 @@ const Register = () => {
                   onChange={handleInputChange}
                 />
               </Form.Group>
-              <Button variant='info' type='submit' className='text-center d-flex m-auto' style={{ background: '#6ee6e6' }}>
-                  Registrarse
-                </Button>
+              <Button
+                variant='info'
+                type='submit'
+                className='text-center d-flex m-auto'
+                style={{ background: '#6ee6e6' }}
+              >
+                Registrarse
+              </Button>
             </Form>
           </Col>
         </Row>

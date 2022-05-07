@@ -66,7 +66,7 @@ export const Login = ({ userV, conterLogin }) => {
         </Nav.Item>
 
       </Nav>
-      <Container className='shadow p-5 rounded mx-auto my-5'>
+      <Container className='shadow p-5 rounded mx-auto my-5 '>
         <h1 className='text-center'>Iniciar sesión</h1>
         <Row className='contLogin'>
           <Col >
@@ -74,74 +74,72 @@ export const Login = ({ userV, conterLogin }) => {
               <img className='w-100' src='https://res.cloudinary.com/djjgtili7/image/upload/v1651817640/Mobile_login-pana-removebg-preview_yntomq.png' alt='img' />
             </div>
           </Col>
-          <Col>
-            <Container
-              className='google-icon-wrapper d-flex border w-75 my-2'
-              onClick={handleGoogle}
-            >
-              <span className='d-flex m-auto'>
-                <i class="bi bi-google text-secondary"></i>
+          <Col className=' m-auto'>
+              <Container
+                className='google-icon-wrapper d-flex border w-75 my-2 '
+                onClick={handleGoogle}
+              >
+                <span className='d-flex m-auto'>
+                  <i class="bi bi-google text-secondary"></i>
 
-                Continuar con google
-              </span>
-            </Container>
-            <Container
-              className='google-icon-wrapper d-flex border w-75 my-2'
-              onClick={handleFacebook}
-            >
-              <span className='d-flex m-auto'>
-                <i class="bi bi-facebook text-info"></i>
-                Continuar con facebook
-              </span>
-            </Container>
-            <p className='text-center my-4'>O</p>
-            <Formik
-              initialValues={{
-                email: '',
-                password: '',
-              }}
-              validationSchema={SignupSchema}
-              onSubmit={(values) => {
-                dispatch(loginEmailPassAsync(values.email, values.password, conterLogin));
-              }}
-            >
-              {({ errors, touched }) => (
-                <Form className=' mx-auto my-2'>
-                  <p className='d-flex mx-auto w-75 fw-bold'>Correo</p>
-                  <Field
-                    className='d-flex mx-auto w-75 '
-                    placeholder='Email'
-                    type='text'
-                    style={{ margin: '2%' }}
-                    name='email'
-                  />
-                  {errors.email && touched.email ? (
-                    <div>{errors.email}</div>
-                  ) : null}
+                  Continuar con google
+                </span>
+              </Container>
+              <Container
+                className='google-icon-wrapper d-flex border w-75 my-2'
+                onClick={handleFacebook}
+              >
+                <span className='d-flex m-auto'>
+                  <i class="bi bi-facebook text-info"></i>
+                  Continuar con facebook
+                </span>
+              </Container>
+              <p className='text-center my-4'>O</p>
+              <Formik
+                initialValues={{
+                  email: '',
+                  password: '',
+                }}
+                validationSchema={SignupSchema}
+                onSubmit={(values) => {
+                  dispatch(loginEmailPassAsync(values.email, values.password, conterLogin));
+                }}
+              >
+                {({ errors, touched }) => (
+                  <Form className=' mx-auto my-2'>
+                    <p className='d-flex mx-auto w-75 fw-bold'>Correo</p>
+                    <Field
+                      className='d-flex mx-auto w-75 '
+                      placeholder='Email'
+                      type='text'
+                      style={{ margin: '2%' }}
+                      name='email'
+                    />
+                    {errors.email && touched.email ? (
+                      <div>{errors.email}</div>
+                    ) : null}
 
-                  <p className='d-flex mx-auto w-75 fw-bold'> Contraseña</p>
-                  <Field
-                    className='d-flex mx-auto w-75 '
-                    placeholder='Password'
-                    type='password'
-                    style={{ margin: '2%' }}
-                    name='password'
-                  />
-                  {errors.password && touched.password ? (
-                    <div>{errors.password}</div>
-                  ) : null}
-                  <Button
-                    className='d-flex mx-auto w-75 text-center'
-                    type='submit'
-                    style={{ background: '#2ACFCF' }}
-                  >
-                    Continue
-                  </Button>
-                </Form>
-              )}
-            </Formik>
-
-
+                    <p className='d-flex mx-auto w-75 fw-bold'> Contraseña</p>
+                    <Field
+                      className='d-flex mx-auto w-75 '
+                      placeholder='Password'
+                      type='password'
+                      style={{ margin: '2%' }}
+                      name='password'
+                    />
+                    {errors.password && touched.password ? (
+                      <div>{errors.password}</div>
+                    ) : null}
+                    <Button
+                      className='d-flex mx-auto w-75 text-center'
+                      type='submit'
+                      style={{ background: '#2ACFCF' }}
+                    >
+                      Continue
+                    </Button>
+                  </Form>
+                )}
+              </Formik>
           </Col>
         </Row>
       </Container>
