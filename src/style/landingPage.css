@@ -258,3 +258,31 @@ button:hover {
 .btones-btn:hover {
   color: #2acfcf !important;
 }
+
+.btnSioNo {
+  margin: 0 auto;
+  background: #6ee6e6;
+  font-family: inherit;
+  padding: 0.6em 1.3em;
+  width: 80%;
+  font-weight: 900;
+  font-size: 18px;
+  border: 3px solid black;
+  border-radius: 0.4em;
+  box-shadow: 0.1em 0.1em;
+  cursor: pointer;
+  list-style: none;
+  margin-bottom: 1rem;
+}
+
+.btnSioNo:hover {
+  transform: translate(-0.05em, -0.05em);
+  box-shadow: 0.15em 0.15em;
+  background: #2acfcf;
+  color: white;
+}
+
+.btnSioNo:active {
+  transform: translate(0.05em, 0.05em);
+  box-shadow: 0.05em 0.05em;
+}
