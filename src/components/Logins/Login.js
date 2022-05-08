@@ -55,12 +55,12 @@ export const Login = ({ userV, conterLogin }) => {
         }}
       >
         <Nav.Item as='li'>
-          <Nav.Link href='/landing' className='text-light'>
+          <Nav.Link href='/landing' className='text-light tagsSimple'>
             Atras
           </Nav.Link>
         </Nav.Item>
         <Nav.Item as='li'>
-          <Nav.Link href='/register' className='text-light'>
+          <Nav.Link href='/register' className='text-light tagsSimple'>
             Crear Cuenta
           </Nav.Link>
         </Nav.Item>
@@ -79,21 +79,21 @@ export const Login = ({ userV, conterLogin }) => {
           </Col>
           <Col className=' m-auto'>
             <Container
-              className='google-icon-wrapper d-flex   w-75 my-2 px-2 '
+              className='google-icon-wrapper d-flex   w-75 my-2 px-2  cursorp'
               onClick={handleGoogle}
             >
-              <span className='d-flex  gap-5 google-btn iWhite'>
-                <i class='bi bi-google text-secondary fs-5 iWhite  '></i>
-                Continuar con google
+              <span className='d-flex  gap-5 google-btn iWhite '>
+                <i class='bi bi-google text-danger fs-5 iWhite   '></i>
+                Continuar con Google
               </span>
             </Container>
             <Container
-              className='google-icon-wrapper d-flex w-75 my-2 px-2'
+              className='google-icon-wrapper d-flex w-75 my-2 px-2 cursorp'
               onClick={handleFacebook}
             >
               <span className='d-flex  gap-5  google-btn iWhite'>
                 <i class='bi bi-facebook text-info fs-5'></i>
-                Continuar con facebook
+                Continuar con Facebook
               </span>
             </Container>
             <p className='text-center my-4 fw-bold fs-4'>O</p>
@@ -117,7 +117,7 @@ export const Login = ({ userV, conterLogin }) => {
                 <Form className=' mx-auto my-2'>
                   <p className='d-flex mx-auto w-75 fw-bold'>Correo</p>
                   <Field
-                    className='d-flex mx-auto w-75 '
+                    className='d-flex mx-auto w-75 px-2 '
                     placeholder='Email'
                     type='text'
                     style={{ margin: '2%' }}
@@ -129,7 +129,7 @@ export const Login = ({ userV, conterLogin }) => {
 
                   <p className='d-flex mx-auto w-75 fw-bold'> Contraseña</p>
                   <Field
-                    className='d-flex mx-auto w-75 '
+                    className='d-flex mx-auto w-75 px-2'
                     placeholder='Password'
                     type='password'
                     style={{ margin: '2%' }}

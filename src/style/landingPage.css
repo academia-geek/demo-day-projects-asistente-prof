@@ -360,6 +360,7 @@ button:hover {
   transition: 0.5s ease;
   display: block;
   z-index: -1;
+  cursor: pointer;
 }
 .google-btn:hover::before {
   width: 105% !important;
@@ -370,4 +371,12 @@ button:hover {
 
 .iWhite:hover i {
   color: white !important;
+}
+
+.cursorp {
+  cursor: pointer !important;
+}
+.tagsSimple:hover {
+  color: #2acfcf !important;
+  border-bottom: 2px solid #2acfcf !important;
 }
