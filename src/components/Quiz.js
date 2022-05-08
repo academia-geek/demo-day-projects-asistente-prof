@@ -150,14 +150,14 @@ export const Quiz = ({ userV, setnumero }) => {
             </h2>
             <ul className='w-100'>
               <li
-                className='ans'
+                className='btnSioNo'
                 onClick={() => {
                   addData(questions[conter]?.formacion);
                 }}
               >
                 Si
               </li>
-              <li className='ans' onClick={sumar}>
+              <li className='btnSioNo' onClick={sumar}>
                 No
               </li>
 
