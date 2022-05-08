@@ -12,24 +12,123 @@ const Perfil = ({ userV }) => {
     if (userV) {
       setResult(JSON.parse(localStorage.getItem('user')));
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const generatorPDF = () => {
+  function generatorPDF() {
     const doc = new jsPDF();
-    doc.setFont('helvetica', 'bold');
-    doc.setFontSize(20);
-    doc.text(`Tu Asistente Prof`, 50, 10);
-    doc.setFontSize(16);
-    doc.setFont('helvetica', 'normal');
-    doc.text(`Nombre: ${displayName}`, 10, 20);
-    doc.text(`Correo: ${email}`, 10, 30);
-    data.forEach((element, index) => {
-      doc.text(`${element.title}`, 10, 40 + index * 10);
-      doc.text(`${element.intereses}`, 10, 70 + index * 10);
-      doc.text(`${element.aptitudes}`, 10, 90 + index * 10);
-    });
+    // doc.setFont('helvetica', 'bold');
+    // doc.setFontSize(20);
+    // doc.text(`Tu Asistente Prof`, 50, 10);
+    // doc.addImage("https://res.cloudinary.com/djjgtili7/image/upload/v1651901836/Tu_Asistente_prof_1_tqqqyk.png", 40, 5, 20, 20);
+    // doc.setFontSize(16);
+    // doc.setFont('helvetica', 'normal');
+    // doc.text(`Nombre: ${displayName}`, 10, 20);
+    // doc.text(`Correo: ${email}`, 10, 30);
+    // data.forEach((element, index) => {
+    //   doc.text(`${element.title}`, 10, 40 + index * 10);
+    //   doc.text(`${element.intereses}`, 10, 70 + index * 10);
+    //   doc.text(`${element.aptitudes}`, 10, 90 + index * 10);
+    //cuadrado
+    //cuadrado
+    
+//cuadrado
+doc.setFillColor(75,63,107);
+doc.rect(0, 0, 210,40, 'F'); 
+
+//titulo e img
+doc.setFont('helvetica', 'bold');
+doc.setFontSize(20);
+doc.setTextColor(252, 252, 252);
+doc.text(`Tu Asistente Prof`, 80, 20);
+doc.addImage("https://res.cloudinary.com/djjgtili7/image/upload/v1651901836/Tu_Asistente_prof_1_tqqqyk.png", 50, 0, 40, 40);
+   
+//text hello
+doc.setFontSize(16);
+    doc.setTextColor(0, 0, 0);
+doc.text(`Hola Paco estos son los resultados del test`, 20, 60);
+
+//cuadro uno morado
+doc.setFillColor(163,157,179,);
+doc.rect(20, 80, 170,80, 'F'); 
+
+//cuadro tipo de carrera y texto
+doc.setFillColor(148, 231, 231);
+doc.rect(45, 85, 30, 8, 'F'); 
+doc.setFontSize(12);
+    doc.setTextColor(0, 0, 0);
+doc.text(`Ingenieria`, 50, 90);
+
+
+//img cuadro
+doc.addImage("https://res.cloudinary.com/edwin3002/image/upload/v1651613762/u/s_indnvz.webp", 30, 95, 60, 60);
+
+//cuadro y text intereses
+doc.setFontSize(18);
+doc.setTextColor(252, 252, 252);
+doc.text(`Intereses`, 125, 90);
+
+doc.setFillColor(75, 63, 107);
+doc.rect(100, 95, 80, 15, 'F');
+
+doc.setFontSize(10);
+doc.setTextColor(252, 252, 252);
+doc.text(`Precisión, Verbal, Organización, Relación de Hechos, Lingüística,Orden y justicia`, 105, 100);
+
+//cuadro y text aptitudes
+doc.setFontSize(18);
+doc.setTextColor(252, 252, 252);
+doc.text(`Aptitudes`, 125, 210);
+
+doc.setFillColor(75, 63, 107);
+doc.rect(100, 125, 80, 15, 'F');
+
+doc.setFontSize(12);
+doc.setTextColor(252, 252, 252);
+doc.text(`Ingenieria Ingenieria Ingenieria Ingenieria Ingenieria Ingenieria Ingenieria Ingenieria`, 105, 130);
+
+
+
+//cuadro dos morado 2
+doc.setFillColor(163,157,179,);
+doc.rect(20, 170, 170,80, 'F'); 
+
+//cuadro tipo de carrera y texto
+doc.setFillColor(148, 231, 231);
+doc.rect(45, 175, 30, 8, 'F'); 
+doc.setFontSize(12);
+    doc.setTextColor(0, 0, 0);
+doc.text(`Ingenieria`, 50, 180);
+
+
+//img cuadro 2
+doc.addImage("https://res.cloudinary.com/edwin3002/image/upload/v1651613762/u/s_indnvz.webp", 30, 185, 60, 60);
+
+//cuadro y text intereses 2
+doc.setFontSize(18);
+doc.setTextColor(252, 252, 252);
+doc.text(`Intereses`, 125, 180);
+
+doc.setFillColor(75, 63, 107);
+doc.rect(100, 185, 80, 15, 'F');
+
+doc.setFontSize(10);
+doc.setTextColor(252, 252, 252);
+doc.text(`Precisión, Verbal, Organización, Relación de Hechos, Lingüística,Orden y justicia`, 105, 190);
+
+//cuadro y text aptitudes 2
+doc.setFontSize(18);
+doc.setTextColor(252, 252, 252);
+doc.text(`Aptitudes`, 205, 210);
+
+doc.setFillColor(75, 63, 107);
+doc.rect(100, 215, 80, 15, 'F');
+
+doc.setFontSize(12);
+doc.setTextColor(252, 252, 252);
+doc.text(`Ingenieria Ingenieria Ingenieria Ingenieria Ingenieria Ingenieria Ingenieria Ingenieria`, 105, 220);
     doc.save(`${displayName}-Resultados-Chaside.pdf`);
-  };
+  }
 
   useEffect(() => {
     if (result) {

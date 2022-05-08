@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Card, Container } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import { saveFavorites } from '../../helpers/favoriteLocalStorage';
 import { paintCareerAsync } from '../../redux/actions/actionUniversity';
 import { addUserAsync } from '../../redux/actions/actionUsers';
 import CardResult from './CardResult';
@@ -18,7 +19,7 @@ const Result = ({
 }) => {
   const navigate = useNavigate();
   const [resultMatch, setResultMatch] = useState(false);
-  const [newUser, setNewUser] = useState({
+  const [newUser, ] = useState({
     id: uid,
     name: displayName,
     answers,
@@ -45,25 +46,23 @@ const Result = ({
     dispatch(addUserAsync(newUser));
     navigate('/unis');
   };
+  const favoriteStar = (car) => {
+    saveFavorites(car)
+}
 
   return (
-    <>
-      <Container
-        style={{
-          display: 'flex',
-        }}
-      >
+    <div >
+      <Container className='w-100'>
         {resultMatch ? (
-          <>
-            <h1
-              className='mx-5 text-light'
-              onClick={() => setResultMatch(false)}
-            >
-              volver
-            </h1>
+          <div>
+            <h1 className='pt-5'
+              onClick={() => setResultMatch(false)}><span className="bi bi-arrow-left-circle-fill text-info"></span> Volver</h1>
+               
+            <div className=' d-flex justify-content-between flex-wrap'
+                style={{ width: '100%' }}>
             {careeries.map((carrera) => (
               <Container
-                className='d-flex my-3 bg-white'
+                className='d-flex my-3 shadow'
                 style={{ minWidth: '500px', maxWidth: '700px' }}
                 key={carrera.idCarrera}
               >
@@ -77,10 +76,11 @@ const Result = ({
                 </div>
                 <Card.Body>
                   <Card.Title className='fs-3'>
-                    {carrera.universidad}{' '}
-                    <span
+                    {carrera.carrera}{' '}
+                    {/* estrella */}
+                    <span onClick={() => { favoriteStar(carrera) }}
                       className='bi bi-star-fill'
-                      style={{ color: '#6ee6e6', float: 'right' }}
+                      style={{ color: 'gray', float: 'right' }}
                     ></span>
                   </Card.Title>
                   <button
@@ -91,21 +91,21 @@ const Result = ({
                     {carrera.area === 'c'
                       ? 'Administrativas y Contables'
                       : carrera.area === 'h'
-                      ? ' Humanísticas y Sociales '
-                      : carrera.area === 'a'
-                      ? ' Artísticas'
-                      : carrera.area === 's'
-                      ? 'Medicina y Cs. de la Salud '
-                      : carrera.area === 'i'
-                      ? 'Ingeniería y Computación'
-                      : carrera.area === 'd'
-                      ? 'Defensa y Seguridad'
-                      : 'Ciencias Exactas y Agrarias'}
+                        ? ' Humanísticas y Sociales '
+                        : carrera.area === 'a'
+                          ? ' Artísticas'
+                          : carrera.area === 's'
+                            ? 'Medicina y Cs. de la Salud '
+                            : carrera.area === 'i'
+                              ? 'Ingeniería y Computación'
+                              : carrera.area === 'd'
+                                ? 'Defensa y Seguridad'
+                                : 'Ciencias Exactas y Agrarias'}
                   </button>
                   <Card.Text>
                     <p>
-                      <span className='fw-bold fs-5'>Titulo: </span>{' '}
-                      Licenciatura {carrera.carrera}
+                      <span className='fw-bold fs-5'>Academia: </span>
+                      {carrera.universidad}
                     </p>
                     <p>
                       <span className='fw-bold fs-5'>
@@ -129,7 +129,8 @@ const Result = ({
                 </Card.Body>
               </Container>
             ))}
-          </>
+          </div>
+          </div>
         ) : (
           <div className='centrar'>
             {focus.map((item) => (
@@ -196,7 +197,7 @@ const Result = ({
           Reiniciar Test
         </button>
       </div>
-    </>
+    </div>
   );
 };
 

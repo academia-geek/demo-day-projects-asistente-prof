@@ -80,7 +80,7 @@ const CardResult = ({ item, setResultMatch }) => {
                 </Card.Text>
                 <Card.Title className='text-center fs-2'>Carreras</Card.Title>
                 <Card.Text
-                  id={ite.carreras}
+                  id={ite.id}
                   className=' fw-bold p-3 text-center border border-dark rounded'
                 >
                   {ite.carrera}
