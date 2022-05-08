@@ -40,7 +40,7 @@
   position: relative;
   top: 100px;
 }
-.card-h2{
+.card-h2 {
   /* background: linear-gradient(#3b3054, #4b3f6b);
  */
   background-image: url(https://i.ibb.co/CngVcj8/descarga-2.png);
@@ -49,43 +49,41 @@
   font-size: x-large;
   font-size: 25px;
 }
-.imgFoot{
+.imgFoot {
   width: 50%;
 }
-.logoNav{
+.logoNav {
   width: 20%;
 }
 
 @media (min-width: 500px) {
-  .card-h2{
+  .card-h2 {
     font-size: 55px;
   }
-  .logoNav{
+  .logoNav {
     width: 10%;
   }
 }
 @media (max-width: 800px) {
-  .contLogin{
+  .contLogin {
     display: flex;
     flex-direction: column-reverse;
   }
-  .btnVerMas{
+  .btnVerMas {
     width: 100%;
   }
-  .footLogos{
+  .footLogos {
     display: flex;
     flex-direction: column;
   }
 }
 @media (min-width: 1300px) {
-  .card-h2{
+  .card-h2 {
     font-size: 70px;
   }
-  .logoNav{
+  .logoNav {
     width: 6%;
   }
-
-  
 }
 .icon {
   /* position: ; */
@@ -175,3 +173,88 @@
   margin-top: 0.5rem;
 }
 
+.centrar {
+  margin: 0 auto;
+}
+
+/* Buttons  */
+
+button {
+  border: 2px solid #2acfcf !important;
+  position: relative;
+  overflow: hidden;
+  background-color: transparent;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 12px !important;
+  transition: 0.3s;
+  z-index: 1;
+  font-family: inherit;
+  color: white !important;
+}
+
+button::before {
+  content: '';
+  width: 0;
+  height: 500%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  background: #2acfcf !important;
+  transition: 0.5s ease;
+  display: block;
+  z-index: -1;
+}
+
+button:hover::before {
+  width: 105%;
+}
+
+button:hover {
+  color: white !important;
+}
+
+.botones {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+.btones-btn {
+  padding: 0.5rem 1rem;
+  width: 30% !important;
+  border: 2px solid #2acfcf !important;
+  position: relative !important;
+  overflow: hidden !important;
+  background-color: #2acfcf;
+  text-align: center !important;
+  text-transform: uppercase;
+  font-size: 12px !important;
+  transition: 0.3s;
+  z-index: 1 !important;
+  font-family: inherit !important;
+  color: white !important;
+  font-weight: bold !important;
+  border-radius: 3px !important;
+}
+
+.btones-btn::before {
+  content: '';
+  width: 0;
+  height: 1700% !important;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  background: white !important;
+  transition: 0.5s ease;
+  display: block;
+  z-index: -1;
+}
+
+.btones-btn:hover::before {
+  width: 105% !important;
+}
+.btones-btn:hover {
+  color: #2acfcf !important;
+}

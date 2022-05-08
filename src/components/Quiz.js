@@ -22,15 +22,17 @@ export const Quiz = ({ userV, setnumero }) => {
   };
 
   useEffect(() => {
-    if (user !== undefined && user.answers !== undefined &&
-      user.conter !== undefined && user.letters !== undefined) {
+    if (
+      user !== undefined &&
+      user.answers !== undefined &&
+      user.conter !== undefined &&
+      user.letters !== undefined
+    ) {
       localStorage.setItem('user', JSON.stringify(user));
       setAnswers(user.answers);
-      console.log(user.answers)
       setconter(user.conter);
       setLetters(user.letters);
-    }
-    else {
+    } else {
       setAnswers([]);
       setconter(85);
       setLetters([0, 0, 0, 0, 0, 0, 0]);
@@ -53,7 +55,7 @@ export const Quiz = ({ userV, setnumero }) => {
     if (lettersLS) {
       setLetters(lettersLS);
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
@@ -100,7 +102,7 @@ export const Quiz = ({ userV, setnumero }) => {
     localStorage.setItem('answers', JSON.stringify(answers));
     localStorage.setItem('conter', JSON.stringify(conter));
     localStorage.setItem('letters', JSON.stringify(letters));
-    setnumero(conter)
+    setnumero(conter);
   }, [answers, conter, letters]);
 
   const sumar = () => {
@@ -108,7 +110,7 @@ export const Quiz = ({ userV, setnumero }) => {
   };
 
   const addData = (dat) => {
-      if (dat === 'c') {
+    if (dat === 'c') {
       setLetters(letters.map((item, index) => (index === 0 ? item + 1 : item)));
     } else if (dat === 'h') {
       setLetters(letters.map((item, index) => (index === 1 ? item + 1 : item)));
@@ -140,11 +142,11 @@ export const Quiz = ({ userV, setnumero }) => {
           displayName={displayName}
         />
       ) : (
-        <Container
-          className=' d-flex m-auto marginQuiz shadow my-5'
-        >
+        <Container className=' d-flex m-auto marginQuiz shadow my-5'>
           <div className='questionsQuiz my-5 text-center text-light d-flex align-content-between flex-wrap'>
-            <h2 className='fw-bold m-3 preguntas'>{questions[conter]?.quest}</h2>
+            <h2 className='fw-bold m-3 preguntas'>
+              {questions[conter]?.quest}
+            </h2>
             <ul className='w-100'>
               <li
                 className='ans'

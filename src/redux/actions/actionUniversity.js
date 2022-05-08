@@ -39,9 +39,9 @@ export const SearchUniAsync = (carrera) => {
   return async (dispatch) => {
     const universidadRef = collection(getMyData, 'universidades');
     const q = query(universidadRef, where('carrera', '==', carrera));
-    const querySnapshop = await getDocs(q)
+    const querySnapshop = await getDocs(q);
     querySnapshop.forEach((doc) => {
-      const data = doc.data()
+      const data = doc.data();
       const DocId = doc.id;
       const datosUni = {
         area: data.area,
@@ -54,18 +54,18 @@ export const SearchUniAsync = (carrera) => {
         sigla: data.sigla,
         titulo: data.titulo,
         universidades: data.universidades,
-        uid: DocId        
-      }
-      dispatch(SearchUniAsync(datosUni))
-    })
-  }
-}
+        uid: DocId,
+      };
+      dispatch(SearchUniAsync(datosUni));
+    });
+  };
+};
 export const SearchUniSync = (datosUni) => {
   return {
     type: typesUniversity.searchCareer,
-    payload: datosUni
-  }
-}
+    payload: datosUni,
+  };
+};
 
 // add carreras
 export const addCareerSync = (carrer) => {
@@ -79,7 +79,6 @@ export const addCareerAsync = (carrer) => {
   return (dispatch) => {
     addDoc(collection(getMyData, 'universidades'), carrer)
       .then((resp) => {
-        console.log(resp);
         dispatch(addCareerSync(carrer));
       })
       .catch((err) => {
@@ -103,7 +102,6 @@ export const deleteCareerAsync = (id) => {
 };
 
 export const deleteCareerSync = (id) => {
-  console.log('eliminar');
   return {
     type: typesUniversity.deleteCareer,
     payload: id,
@@ -112,7 +110,6 @@ export const deleteCareerSync = (id) => {
 
 //update
 export const updateCareerAsync = (index, carrer) => {
-  console.log(index, carrer);
   return async (dispatch) => {
     const colleccionTraer = collection(getMyData, 'universidades');
     const q = query(colleccionTraer, where('idCarrera', '==', index));
@@ -127,7 +124,7 @@ export const updateCareerAsync = (index, carrer) => {
         dispatch(UpdateCareerSync(carrer));
         dispatch(paintCareerAsync());
       })
-      .catch((err) => console.log(err));
+      .catch((err) => console.warn(err));
   };
 };
 

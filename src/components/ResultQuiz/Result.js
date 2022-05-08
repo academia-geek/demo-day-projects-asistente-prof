@@ -17,9 +17,9 @@ const Result = ({
   uid,
   displayName,
 }) => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const [resultMatch, setResultMatch] = useState(false);
-  const [newUser, setNewUser] = useState({
+  const [newUser, ] = useState({
     id: uid,
     name: displayName,
     answers,
@@ -40,13 +40,11 @@ const Result = ({
     localStorage.clear();
     setconter(85);
     setLetters([0, 0, 0, 0, 0, 0, 0]);
-
   };
 
   const agregarBDUSer = () => {
     dispatch(addUserAsync(newUser));
-    navigate('/unis')
-
+    navigate('/unis');
   };
   const favoriteStar = (car) => {
     saveFavorites(car)
@@ -58,7 +56,7 @@ const Result = ({
         {resultMatch ? (
           <div>
             <h1 className='pt-5'
-              onClick={() => setResultMatch(false)}>volver</h1>
+              onClick={() => setResultMatch(false)}><span className="bi bi-arrow-left-circle-fill text-info"></span> Volver</h1>
                
             <div className=' d-flex justify-content-between flex-wrap'
                 style={{ width: '100%' }}>
@@ -134,9 +132,9 @@ const Result = ({
           </div>
           </div>
         ) : (
-          <div>
+          <div className='centrar'>
             {focus.map((item) => (
-              <div key={item.id} className='conten ' >
+              <div key={item.id} className='conten '>
                 <p className=''>
                   {item.id === 'c' ? (
                     <CardResult
@@ -178,12 +176,12 @@ const Result = ({
               </div>
             ))}
             <br />
-
           </div>
         )}
       </Container>
-      <div className='bg-danger d-block'>
+      <div className='botones'>
         <button
+          className='btones-btn'
           onClick={() => {
             agregarBDUSer();
           }}
@@ -191,6 +189,7 @@ const Result = ({
           Guardar Test
         </button>
         <button
+          className='btones-btn'
           onClick={() => {
             handleReset();
           }}

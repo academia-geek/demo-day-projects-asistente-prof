@@ -24,19 +24,27 @@ export const Edit = ({ mEdit, setModalEdit }) => {
     area: mEdit.area,
     idCarrera: mEdit.idCarrera,
   });
-  const { universidad, titulo, descripcion, carrera, duracion, ciudad, idCarrera, url, sigla } =
-    values;
+  const {
+    universidad,
+    titulo,
+    descripcion,
+    carrera,
+    duracion,
+    ciudad,
+    idCarrera,
+    url,
+    sigla,
+  } = values;
 
   const handleSubmit = () => {
-    console.log(values);
     dispatch(updateCareerAsync(idCarrera, values));
     setModalEdit(false);
-    reset()
+    reset();
   };
   return (
     <div>
       <div>edit</div>
-      <Modal show={show} onHide={handleClose} size="lg">
+      <Modal show={show} onHide={handleClose} size='lg'>
         <Modal.Header closeButton>
           <Modal.Title>Edite la carrera aqui</Modal.Title>
         </Modal.Header>
@@ -52,7 +60,9 @@ export const Edit = ({ mEdit, setModalEdit }) => {
             <option>Pontificia Universidad Javeriana</option>
             <option>Universidad Icesi</option>
           </Form.Select>
-          <Form.Label className='fw-bold' htmlFor='car'>Sigla de universidad</Form.Label>
+          <Form.Label className='fw-bold' htmlFor='car'>
+            Sigla de universidad
+          </Form.Label>
           <Form.Control
             type='text'
             id='car'
@@ -61,22 +71,36 @@ export const Edit = ({ mEdit, setModalEdit }) => {
             value={sigla}
             onChange={handleInputChange}
           />
-          <Form.Label className='fw-bold' htmlFor='ciu'>Ciudad</Form.Label>
-          <Form.Select name='ciudad' onChange={handleInputChange} value={ciudad}>
+          <Form.Label className='fw-bold' htmlFor='ciu'>
+            Ciudad
+          </Form.Label>
+          <Form.Select
+            name='ciudad'
+            onChange={handleInputChange}
+            value={ciudad}
+          >
             <option>Selecciona Ciudad</option>
             <option>Bogota</option>
             <option>Medellin</option>
             <option>Cali</option>
             <option>Cartagena</option>
           </Form.Select>
-          <Form.Label className='fw-bold' htmlFor='tit'>Titulo de formacion</Form.Label>
-          <Form.Select name='titulo' onChange={handleInputChange} value={titulo}>
+          <Form.Label className='fw-bold' htmlFor='tit'>
+            Titulo de formacion
+          </Form.Label>
+          <Form.Select
+            name='titulo'
+            onChange={handleInputChange}
+            value={titulo}
+          >
             <option>Titulo</option>
             <option>Profesional</option>
             <option>Tecnico</option>
             <option>Tecnologo</option>
           </Form.Select>
-          <Form.Label className='fw-bold' htmlFor='tit'>Area de la carrera</Form.Label>
+          <Form.Label className='fw-bold' htmlFor='tit'>
+            Area de la carrera
+          </Form.Label>
           <Form.Select name='area' onChange={handleInputChange}>
             <option>Area</option>
             <option value={'c'}>Administrativas y Contables</option>
@@ -88,7 +112,9 @@ export const Edit = ({ mEdit, setModalEdit }) => {
             <option value={'e'}>Ciencias Exactas y Agrarias</option>
           </Form.Select>
 
-          <Form.Label className='fw-bold' htmlFor='car'>Carrera</Form.Label>
+          <Form.Label className='fw-bold' htmlFor='car'>
+            Carrera
+          </Form.Label>
 
           <Form.Control
             type='text'
@@ -98,7 +124,9 @@ export const Edit = ({ mEdit, setModalEdit }) => {
             value={carrera}
             onChange={handleInputChange}
           />
-          <Form.Label className='fw-bold' htmlFor='car'>Url de la Carrera</Form.Label>
+          <Form.Label className='fw-bold' htmlFor='car'>
+            Url de la Carrera
+          </Form.Label>
           <Form.Control
             type='text'
             id='car'
@@ -107,7 +135,9 @@ export const Edit = ({ mEdit, setModalEdit }) => {
             value={url}
             onChange={handleInputChange}
           />
-          <Form.Label className='fw-bold' htmlFor='dur'>Duracion</Form.Label>
+          <Form.Label className='fw-bold' htmlFor='dur'>
+            Duracion
+          </Form.Label>
           <Form.Select
             name='duracion'
             onChange={handleInputChange}
@@ -127,7 +157,9 @@ export const Edit = ({ mEdit, setModalEdit }) => {
             <option>11</option>
             <option>12</option>
           </Form.Select>
-          <Form.Label className='fw-bold' htmlFor='desc'>Descripcion</Form.Label>
+          <Form.Label className='fw-bold' htmlFor='desc'>
+            Descripcion
+          </Form.Label>
           <Form.Control
             as='textarea'
             id='desc'

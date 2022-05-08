@@ -1,15 +1,13 @@
-import { useEffect, useState } from 'react';
 import { Nav, Button, Navbar, Container } from 'react-bootstrap';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import { logoutAsync } from '../redux/actions/actionLogin';
-import { paintUserAsync } from '../redux/actions/actionUsers';
 
 const NavBars = ({ userV, numero }) => {
   //cerrar sesion
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { displayName, uid } = userV;
+  const { displayName } = userV;
 
   const handleLogout = () => {
     dispatch(logoutAsync());
@@ -19,9 +17,9 @@ const NavBars = ({ userV, numero }) => {
 
   return (
     <div>
-      <Navbar fixed="top" style={{ background: "#4B3F6B"}} expand='lg'>
+      <Navbar fixed='top' style={{ background: '#4B3F6B' }} expand='lg'>
         <Container>
-        <img
+          <img
             className='logoNav'
             src='https://res.cloudinary.com/djjgtili7/image/upload/v1651816474/Tu_Asistente_prof_gz6wjm.png'
             alt='logo'
@@ -44,7 +42,10 @@ const NavBars = ({ userV, numero }) => {
                 <Button variant='outline-info'>Favoritos</Button>
               </Link>
             </Nav>
-            <Nav className='mx-auto my-2 w-100 d-flex justify-content-end ' style={{ gap: '10px' }}>
+            <Nav
+              className='mx-auto my-2 w-100 d-flex justify-content-end '
+              style={{ gap: '10px' }}
+            >
               <Button variant='outline-info' className='mx-4 text-light'>
                 Hola,
                 <span className=' fw-bold text-light'> {displayName}</span>

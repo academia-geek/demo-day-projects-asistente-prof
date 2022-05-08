@@ -8,11 +8,9 @@ export const Favorites = () => {
 
     const favoriteStar = (car) => {
         deleteAllFavorites(car.idCarrera)
-        console.log(dataf)
         setTimeout(() => {
             const data = getFavorites()
             setdataf(data)
-            console.log(dataf)
           }, 1000);
     }
 

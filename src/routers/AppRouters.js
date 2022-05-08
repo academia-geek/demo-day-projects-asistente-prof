@@ -17,15 +17,14 @@ const AppRouters = () => {
   const [checking, setChecking] = useState(true);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isAdminLog, setIsAdminLog] = useState(false);
-  const [conterLogin, setconterLogin] = useState(0)
-  console.log(conterLogin);
+  const [conterLogin, setconterLogin] = useState(0);
   const [userV, setUserV] = useState({
     displayName: '',
     email: '',
     photoURL: '',
     uid: '',
   });
- 
+
   useEffect(() => {
     const auth = getAuth();
     onAuthStateChanged(auth, (user) => {
@@ -51,22 +50,22 @@ const AppRouters = () => {
   return (
     <BrowserRouter>
       <Routes>
-          <Route
-            path='/login'
-            element={
-              <PublicRouters isAut={isLoggedIn} >
-                <Login userV={userV} conterLogin={conterLogin}/>
-              </PublicRouters>
-            }
-          />
-          <Route
-            path='/contactanos'
-            element={
-              <PublicRouters isAut={isLoggedIn} >
-               <ContacUs/>
-              </PublicRouters>
-            }
-          />
+        <Route
+          path='/login'
+          element={
+            <PublicRouters isAut={isLoggedIn}>
+              <Login userV={userV} conterLogin={conterLogin} />
+            </PublicRouters>
+          }
+        />
+        <Route
+          path='/contactanos'
+          element={
+            <PublicRouters isAut={isLoggedIn}>
+              <ContacUs />
+            </PublicRouters>
+          }
+        />
         <Route
           path='/admin'
           element={

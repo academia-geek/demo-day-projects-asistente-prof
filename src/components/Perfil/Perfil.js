@@ -12,9 +12,10 @@ const Perfil = ({ userV }) => {
     if (userV) {
       setResult(JSON.parse(localStorage.getItem('user')));
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const generatorPDF = () => {
+  function generatorPDF() {
     const doc = new jsPDF();
     // doc.setFont('helvetica', 'bold');
     // doc.setFontSize(20);
@@ -46,7 +47,7 @@ const Perfil = ({ userV }) => {
     doc.text(`Hola ${displayName} estos son los resultados del test`, 20, 60);
 
     //cuadro dos
-    doc.setFillColor(163, 157, 179,);
+    doc.setFillColor(163, 157, 179);
     doc.rect(20, 80, 170, 80, 'F');
 
     //cuadro tipo de carrera
@@ -73,17 +74,18 @@ const Perfil = ({ userV }) => {
     doc.rect(100, 125, 80, 15, 'F');
 
     //cuadro dos
-    doc.setFillColor(163, 157, 179,);
+    doc.setFillColor(163, 157, 179);
     doc.rect(20, 170, 170, 80, 'F');
     doc.save(`${displayName}-Resultados-Chaside.pdf`);
     console.log('PDF');
     console.log(data);
-  };
+  }
 
   useEffect(() => {
     if (result) {
       dataPdf();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [result]);
 
   const dataPdf = async () => {
@@ -95,8 +97,6 @@ const Perfil = ({ userV }) => {
       const resultSinDuplicate = resultPdf.filter(
         (item, index) => resultPdf.indexOf(item) === index
       );
-
-      console.log(resultSinDuplicate);
 
       infoChaside?.forEach((item) => {
         resultSinDuplicate?.forEach((item2) => {
