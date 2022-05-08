@@ -17,10 +17,15 @@ const NavBars = ({ userV, numero }) => {
 
   return (
     <div>
-      <Navbar fixed='top' style={{ background: '#4B3F6B' }} expand='lg'>
+      <Navbar
+        fixed='top'
+        style={{ background: '#4B3F6B', paddingBottom: '0px' }}
+        expand='lg'
+      >
         <Container>
           <img
-            className='logoNav'
+            onClick={() => navigate('/')}
+            className='logoNav '
             src='https://res.cloudinary.com/djjgtili7/image/upload/v1651816474/Tu_Asistente_prof_gz6wjm.png'
             alt='logo'
           ></img>
