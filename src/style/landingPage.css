@@ -286,3 +286,97 @@ button:hover {
   transform: translate(0.05em, 0.05em);
   box-shadow: 0.05em 0.05em;
 }
+
+.continuar {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+.continuar-btn {
+  padding: 0.5rem 1rem;
+  width: 75% !important;
+  border: 2px solid #2acfcf !important;
+  position: relative !important;
+  overflow: hidden !important;
+  background-color: #2acfcf;
+  text-align: center !important;
+  text-transform: uppercase;
+  font-size: 12px !important;
+  transition: 0.3s;
+  z-index: 1 !important;
+  font-family: inherit !important;
+  color: white !important;
+  font-weight: bold !important;
+  border-radius: 3px !important;
+}
+
+.continuar-btn::before {
+  content: '';
+  width: 0;
+  height: 1700% !important;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  background: white !important;
+  transition: 0.5s ease;
+  display: block;
+  z-index: -1;
+}
+
+.continuar-btn:hover::before {
+  width: 105% !important;
+}
+.continuar-btn:hover {
+  color: #2acfcf !important;
+}
+
+.google-btn {
+  padding: 0.2rem 0.5rem;
+  width: 100% !important;
+  border: 2px solid #2acfcf !important;
+  position: relative !important;
+  overflow: hidden !important;
+  background-color: transparent !important;
+  text-align: center !important;
+  font-size: 16px !important;
+  transition: 0.3s;
+  z-index: 1 !important;
+  font-family: inherit !important;
+  color: black !important;
+  font-weight: bold !important;
+  border-radius: 3px !important;
+}
+
+.google-btn::before {
+  content: '';
+  width: 0;
+  height: 1700% !important;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  background: #2acfcf !important;
+  transition: 0.5s ease;
+  display: block;
+  z-index: -1;
+  cursor: pointer;
+}
+.google-btn:hover::before {
+  width: 105% !important;
+}
+.google-btn:hover {
+  color: white !important;
+}
+
+.iWhite:hover i {
+  color: white !important;
+}
+
+.cursorp {
+  cursor: pointer !important;
+}
+.tagsSimple:hover {
+  color: #2acfcf !important;
+  border-bottom: 2px solid #2acfcf !important;
+}
