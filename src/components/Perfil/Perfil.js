@@ -2,8 +2,13 @@ import React, { useEffect, useState } from 'react';
 import { Card, Col, Container, Row } from 'react-bootstrap';
 import { jsPDF } from 'jspdf';
 import { infoChaside } from '../../data/chaside';
+import Swal from 'sweetalert2';
+import { useDispatch } from 'react-redux';
+import { deleteUserLogAsync } from '../../redux/actions/actionLogin';
+import { deleteUserAsync } from '../../redux/actions/actionUsers';
 
 const Perfil = ({ userV }) => {
+  const dispatch = useDispatch();
   const { displayName, email, photoURL } = userV;
   const [result, setResult] = useState();
   const [data, setData] = useState([]);
@@ -196,6 +201,24 @@ const Perfil = ({ userV }) => {
     }
   };
 
+  const deleteuser = () => {
+    Swal.fire({
+      title: '¿Estas Seguro?',
+      text: 'Tu información se eliminara permanentemente!',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#2acfcf ',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Si, Eliminarlo!',
+    }).then((result) => {
+      if (result.isConfirmed) {
+        dispatch(deleteUserLogAsync());
+        dispatch(deleteUserAsync());
+        Swal.fire('Eliminado!', 'Tu usuario ha sido Eliminado', 'success');
+      }
+    });
+  };
+
   return (
     <div style={{ background: '#4B3F6B' }} className='mt-5 Background'>
       <Container className='py-5'>
@@ -221,19 +244,24 @@ const Perfil = ({ userV }) => {
           </Card.Body>
           <Card.Footer className='CardFooter'>
             <Row xs='2' className='text-center mb-1'>
-              <Col className='cursorp' onClick={generatorPDF}>
-                <Card.Text className='TextBold'>
-                  <i className='bi bi-file-earmark-arrow-down-fill'></i>
+              <Col className='cursorp ' onClick={generatorPDF}>
+                <Card.Text className='TextBold iconHoverPdf'>
+                  <i className='bi bi-file-earmark-arrow-down-fill '></i>
                 </Card.Text>
-                <Card.Text className='TextMuted'>
+                <Card.Text className='TextMuted iconHoverPdf'>
                   Descargar Resultados
                 </Card.Text>
               </Col>
-              <Col>
-                <Card.Text className='TextBold'>
-                  <i class='bi bi-x-square-fill'></i>
+              <Col className='cursorp' onClick={() => deleteuser()}>
+                <Card.Text className='TextBold iconHoverX'>
+                  <i class='bi bi-x-square-fill '></i>
                 </Card.Text>
-                <Card.Text className='TextMuted'>Eliminar Cuenta</Card.Text>
+                <Card.Text
+                  className='TextMuted iconHoverX'
+                  onClick={() => deleteuser()}
+                >
+                  Eliminar Cuenta
+                </Card.Text>
               </Col>
             </Row>
           </Card.Footer>

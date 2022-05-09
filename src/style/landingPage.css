@@ -404,3 +404,10 @@ button:hover {
   align-items: center;
   flex-direction: column;
 }
+
+.iconHoverX :hover {
+  color: red !important;
+}
+.iconHoverPdf :hover {
+  color: #2acfcf !important;
+}

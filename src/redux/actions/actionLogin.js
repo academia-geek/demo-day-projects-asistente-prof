@@ -86,3 +86,23 @@ export const loginSincronico = (email, password) => {
     },
   };
 };
+
+//* delete user
+export const deleteUserLogAsync = () => {
+  return (dispatch) => {
+    const auth = getAuth();
+    auth.currentUser
+      .delete()
+      .then(() => {
+        dispatch(deleteUserLogSync());
+      })
+      .catch((error) => {
+        console.warn(error);
+      });
+  };
+};
+export const deleteUserLogSync = () => {
+  return {
+    type: typesLogin.delete,
+  };
+};
