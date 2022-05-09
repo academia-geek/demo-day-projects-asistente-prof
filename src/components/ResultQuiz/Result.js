@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { saveFavorites } from '../../helpers/favoriteLocalStorage';
 import { paintCareerAsync } from '../../redux/actions/actionUniversity';
-import { addUserAsync, updateUserAsync } from '../../redux/actions/actionUsers';
+import { addUserAsync, deleteUserAsync } from '../../redux/actions/actionUsers';
 import CardResult from './CardResult';
 
 const Result = ({
@@ -26,30 +26,36 @@ const Result = ({
     conter,
     letters,
   });
-  const [resetarTest, setResetarTest] = useState({
-    id: uid,
-    name: displayName,
-    answers: [],
-    conter: 85,
-    letters: [0, 0, 0, 0, 0, 0, 0],
-  });
+  const [resetarTest, setResetarTest] = useState(2);
+  console.log(resetarTest);
 
   const dispatch = useDispatch();
   const { careeries } = useSelector((store) => store.careeries);
 
   useEffect(() => {
     dispatch(paintCareerAsync());
+    if (localStorage.getItem(`resetarTest`)) {
+      const reset = JSON.parse(localStorage.getItem('resetarTest'));
+      setResetarTest(reset);
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  useEffect(() => {
+    localStorage.setItem(`resetarTest`, JSON.stringify(resetarTest));
+  }, [resetarTest]);
+
   const handleReset = () => {
-    localStorage.clear();
-    dispatch(updateUserAsync(resetarTest));
+    dispatch(deleteUserAsync(uid));
+    setTimeout(() => {
+      navigate('/home');
+    }, 1000);
+    setResetarTest(resetarTest - 1);
   };
 
   const agregarBDUSer = () => {
     dispatch(addUserAsync(newUser));
-    navigate('/unis');
+    navigate('/perfil');
   };
   const favoriteStar = (car) => {
     saveFavorites(car);
@@ -200,12 +206,12 @@ const Result = ({
           Guardar Test
         </button>
         <button
-          className='btones-btn'
+          className={resetarTest <= 0 ? 'visually-hidden' : 'btones-btn'}
           onClick={() => {
             handleReset();
           }}
         >
-          Reiniciar Test
+          Reiniciar Test ({resetarTest})
         </button>
       </div>
     </div>

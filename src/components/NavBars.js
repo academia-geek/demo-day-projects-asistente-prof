@@ -4,7 +4,6 @@ import { Link, useNavigate } from 'react-router-dom';
 import { logoutAsync } from '../redux/actions/actionLogin';
 
 const NavBars = ({ userV, numero }) => {
-  //cerrar sesion
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { displayName } = userV;
@@ -12,7 +11,10 @@ const NavBars = ({ userV, numero }) => {
   const handleLogout = () => {
     dispatch(logoutAsync());
     navigate('/login');
-    localStorage.clear();
+    localStorage.removeItem('answers');
+    localStorage.removeItem('letters');
+    localStorage.removeItem('conter');
+    localStorage.removeItem('user');
   };
 
   return (
