@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { Card, Container } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
-import Swal from 'sweetalert2';
 import { saveFavorites } from '../helpers/favoriteLocalStorage';
 import { paintCareerAsync } from '../redux/actions/actionUniversity';
 import '../style/unis.css';

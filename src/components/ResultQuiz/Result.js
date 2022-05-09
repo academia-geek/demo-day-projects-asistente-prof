@@ -218,7 +218,7 @@ const Result = ({
           onClick={() => {
             handleReset();
             Swal.fire({
-              title: 'Custom animation with Animate.css',
+              title: `Acabas de reiniciar tu test, te queda ${resetarTest-1} opción de reinicio`,
               showClass: {
                 popup: 'animate__animated animate__fadeInDown',
               },

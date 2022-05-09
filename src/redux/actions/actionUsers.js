@@ -10,6 +10,7 @@ import {
 } from 'firebase/firestore';
 import { typesUsers } from '../types/types';
 import { getMyData } from '../../Firebase/firebaseConfig';
+import Swal from 'sweetalert2';
 
 //* User Add
 export const addUserSync = (user) => {
@@ -33,6 +34,14 @@ export const addUserAsync = (user) => {
       addDoc(collection(getMyData, 'users'), user)
         .then((resp) => {
           dispatch(addUserSync(user));
+          if(resp){Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'Guardada con Exito',
+            showConfirmButton: false,
+            timer: 1500
+          })}
+          
         })
         .catch((error) => {
           console.warn(error);
