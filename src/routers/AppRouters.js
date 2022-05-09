@@ -3,7 +3,9 @@ import React, { useEffect, useState } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import CRUDUniversity from '../components/admin/CRUDUniversity';
 import LoginAdmin from '../components/admin/LoginAdmin';
+import Cargando from '../components/Cargando';
 import ContacUs from '../components/ContacUs';
+
 import PrincipalLanding from '../components/landing/PrincipalLanding';
 import { Login } from '../components/Logins/Login';
 import Register from '../components/Register';
@@ -44,7 +46,7 @@ const AppRouters = () => {
   }, [setIsLoggedIn, setChecking]);
 
   if (checking) {
-    return <h1>Espere....</h1>;
+    return <Cargando />;
   }
 
   return (
