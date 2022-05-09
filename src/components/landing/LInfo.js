@@ -14,7 +14,7 @@ const LInfo = () => {
         >
           <div className='m-auto d-flex flex-column p-5'>
             <h1 className=' fw-bold'> En "Tu Asistente Prof"</h1>
-            <p className='fs-3'>
+            <p className='fs-6'>
               Podras ampliar tu visión hacia tu formación académica para ser profesional. Además tendras acceso a información sobre universidades 
               e institutos de formación profesional, con todo lo que te ofrece cada una de estas instituciones para que atravez de esta página tengas una informacion mas clara y  una guia sobre cual es tu mejor elección y las posibilidades de acceder a tu carrera en mente.            </p>
             <br />

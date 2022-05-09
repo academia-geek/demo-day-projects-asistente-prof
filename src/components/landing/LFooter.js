@@ -27,20 +27,20 @@ export const LFooter = () => {
             </td>
           </tr>
           <tr>
-            <td>Trabajar en Amazon</td>
-            <td>Departamento de prensa</td>
+            <td>Trabajar con nosotros</td>
+            <td>Contactanos</td>
             <td className='d-flex justify-content-between footLogos'>
               <i className='bi bi-instagram'></i>
               <i className='bi bi-twitter '></i>
             </td>
           </tr>
           <tr>
-            <td>Información corporativa</td>
-            <td>Devolver o reemplazar productos</td>
+            <td>Contáctanos</td>
+            <td>Información</td>
           </tr>
           <tr>
-            <td>Departamento de prensa</td>
-            <td>Gestionar contenido y dispositivos</td>
+            <td>Gestionar contenido</td>
+            <td>Becas universitarias</td>
           </tr>
         </tbody>
       </Table>
