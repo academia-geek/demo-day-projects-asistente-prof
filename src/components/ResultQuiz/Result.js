@@ -32,6 +32,7 @@ const Result = ({
 
   const dispatch = useDispatch();
   const { careeries } = useSelector((store) => store.careeries);
+  console.log(careeries);
 
   useEffect(() => {
     dispatch(paintCareerAsync());
@@ -71,7 +72,6 @@ const Result = ({
               <span className='bi bi-arrow-left-circle-fill text-info'></span>{' '}
               Volver
             </h1>
-
             <div
               className=' d-flex justify-content-between flex-wrap'
               style={{ width: '100%' }}

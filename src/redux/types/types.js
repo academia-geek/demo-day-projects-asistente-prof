@@ -1,6 +1,7 @@
 export const typesLogin = {
   login: 'login',
   logout: 'logout',
+  delete: 'delete',
 };
 
 export const typesRegister = {

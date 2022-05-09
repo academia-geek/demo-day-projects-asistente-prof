@@ -1,18 +1,17 @@
-import { typesLogin } from "../types/types";
+import { typesLogin } from '../types/types';
 
-
-export const loginReducers =(state ={}, action)=>{
-    switch (action.type) {
-        case typesLogin.login:
-           return{
-              id: action.payload.email,
-               name: action.payload.password
-           }
-           case typesLogin.logout:
-            return{
-                
-            }
-        default:
-          return state
-    }
-}
+export const loginReducers = (state = {}, action) => {
+  switch (action.type) {
+    case typesLogin.login:
+      return {
+        id: action.payload.email,
+        name: action.payload.password,
+      };
+    case typesLogin.logout:
+      return {};
+    case typesLogin.delete:
+      return {};
+    default:
+      return state;
+  }
+};

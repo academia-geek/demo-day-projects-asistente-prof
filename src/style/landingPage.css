@@ -380,3 +380,34 @@ button:hover {
   color: #2acfcf !important;
   border-bottom: 2px solid #2acfcf !important;
 }
+
+.formtotal {
+  margin: 200px auto;
+  padding: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  width: 90%;
+  box-shadow: 2.9px 8.9px 3.3px rgba(0, 0, 0, 0.059),
+    5.7px 17.4px 8.4px rgba(0, 0, 0, 0.084),
+    8.8px 26.7px 17.2px rgba(0, 0, 0, 0.106),
+    13.7px 41.6px 35.4px rgba(0, 0, 0, 0.131),
+    30px 91px 97px rgba(0, 0, 0, 0.19);
+}
+
+.loader {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.iconHoverX :hover {
+  color: red !important;
+}
+.iconHoverPdf :hover {
+  color: #2acfcf !important;
+}

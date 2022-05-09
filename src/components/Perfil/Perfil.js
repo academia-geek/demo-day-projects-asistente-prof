@@ -2,12 +2,16 @@ import React, { useEffect, useState } from 'react';
 import { Card, Col, Container, Row } from 'react-bootstrap';
 import { jsPDF } from 'jspdf';
 import { infoChaside } from '../../data/chaside';
+import Swal from 'sweetalert2';
+import { useDispatch } from 'react-redux';
+import { deleteUserLogAsync } from '../../redux/actions/actionLogin';
+import { deleteUserAsync } from '../../redux/actions/actionUsers';
 
 const Perfil = ({ userV }) => {
+  const dispatch = useDispatch();
   const { displayName, email, photoURL } = userV;
   const [result, setResult] = useState();
   const [data, setData] = useState([]);
-  console.log(data);
 
   useEffect(() => {
     if (userV) {
@@ -18,21 +22,6 @@ const Perfil = ({ userV }) => {
 
   function generatorPDF() {
     const doc = new jsPDF();
-    // doc.setFont('helvetica', 'bold');
-    // doc.setFontSize(20);
-    // doc.text(`Tu Asistente Prof`, 50, 10);
-    // doc.addImage("https://res.cloudinary.com/djjgtili7/image/upload/v1651901836/Tu_Asistente_prof_1_tqqqyk.png", 40, 5, 20, 20);
-    // doc.setFontSize(16);
-    // doc.setFont('helvetica', 'normal');
-    // doc.text(`Nombre: ${displayName}`, 10, 20);
-    // doc.text(`Correo: ${email}`, 10, 30);
-    // data.forEach((element, index) => {
-    //   doc.text(`${element.title}`, 10, 40 + index * 10);
-    //   doc.text(`${element.intereses}`, 10, 70 + index * 10);
-    //   doc.text(`${element.aptitudes}`, 10, 90 + index * 10);
-    //cuadrado
-    //cuadrado
-
     //cuadrado
     doc.setFillColor(75, 63, 107);
     doc.rect(0, 0, 210, 40, 'F');
@@ -212,6 +201,24 @@ const Perfil = ({ userV }) => {
     }
   };
 
+  const deleteuser = () => {
+    Swal.fire({
+      title: '¿Estas Seguro?',
+      text: 'Tu información se eliminara permanentemente!',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#2acfcf ',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Si, Eliminarlo!',
+    }).then((result) => {
+      if (result.isConfirmed) {
+        dispatch(deleteUserLogAsync());
+        dispatch(deleteUserAsync());
+        Swal.fire('Eliminado!', 'Tu usuario ha sido Eliminado', 'success');
+      }
+    });
+  };
+
   return (
     <div style={{ background: '#4B3F6B' }} className='mt-5 Background'>
       <Container className='py-5'>
@@ -237,17 +244,24 @@ const Perfil = ({ userV }) => {
           </Card.Body>
           <Card.Footer className='CardFooter'>
             <Row xs='2' className='text-center mb-1'>
-              <Col>
-                <Card.Text className='TextBold'>
-                  <i className='bi bi-file-earmark-arrow-down-fill'></i>
+              <Col className='cursorp ' onClick={generatorPDF}>
+                <Card.Text className='TextBold iconHoverPdf'>
+                  <i className='bi bi-file-earmark-arrow-down-fill '></i>
                 </Card.Text>
-                <Card.Text className='TextMuted' onClick={generatorPDF}>
+                <Card.Text className='TextMuted iconHoverPdf'>
                   Descargar Resultados
                 </Card.Text>
               </Col>
-              <Col>
-                <Card.Text className='TextBold'>1.4K</Card.Text>
-                <Card.Text className='TextMuted'>Photos</Card.Text>
+              <Col className='cursorp' onClick={() => deleteuser()}>
+                <Card.Text className='TextBold iconHoverX'>
+                  <i class='bi bi-x-square-fill '></i>
+                </Card.Text>
+                <Card.Text
+                  className='TextMuted iconHoverX'
+                  onClick={() => deleteuser()}
+                >
+                  Eliminar Cuenta
+                </Card.Text>
               </Col>
             </Row>
           </Card.Footer>
