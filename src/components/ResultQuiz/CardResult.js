@@ -24,7 +24,6 @@ const CardResult = ({ item, setResultMatch }) => {
     <div className='w-100 d-flex shadow rounded mx-auto  p-0 cardResultdos'>
       {infoChaside.map((ite) =>
         ite.id === item ? (
-          // <div className='bg-warning m-auto ' style={{ minWidth: '500px' }}>
           <div className='w-100 rounded cardResult ' key={ite.id}>
             <div
               className=' my-auto mx-2 py-2 px-4'
@@ -80,7 +79,7 @@ const CardResult = ({ item, setResultMatch }) => {
                 </Card.Text>
                 <Card.Title className='text-center fs-2'>Carreras</Card.Title>
                 <Card.Text
-                  id={ite.carreras}
+                  id={ite.id}
                   className=' fw-bold p-3 text-center border border-dark rounded'
                 >
                   {ite.carrera}
@@ -97,7 +96,6 @@ const CardResult = ({ item, setResultMatch }) => {
                 </Button>
               </div>
             </Card.Body>
-            {/* </div> */}
           </div>
         ) : null
       )}

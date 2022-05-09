@@ -4,7 +4,6 @@ import { Link, useNavigate } from 'react-router-dom';
 import { logoutAsync } from '../redux/actions/actionLogin';
 
 const NavBars = ({ userV, numero }) => {
-  //cerrar sesion
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { displayName } = userV;
@@ -12,15 +11,23 @@ const NavBars = ({ userV, numero }) => {
   const handleLogout = () => {
     dispatch(logoutAsync());
     navigate('/login');
-    localStorage.clear();
+    localStorage.removeItem('answers');
+    localStorage.removeItem('letters');
+    localStorage.removeItem('conter');
+    localStorage.removeItem('user');
   };
 
   return (
     <div>
-      <Navbar fixed='top' style={{ background: '#4B3F6B' }} expand='lg'>
+      <Navbar
+        fixed='top'
+        style={{ background: '#4B3F6B', paddingBottom: '0px' }}
+        expand='lg'
+      >
         <Container>
           <img
-            className='logoNav'
+            onClick={() => navigate('/')}
+            className='logoNav '
             src='https://res.cloudinary.com/djjgtili7/image/upload/v1651816474/Tu_Asistente_prof_gz6wjm.png'
             alt='logo'
           ></img>

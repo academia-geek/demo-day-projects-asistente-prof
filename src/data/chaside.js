@@ -7,7 +7,7 @@ export const infoChaside = [
     aptitudes:
       'Persuasivo, Objetivo, Práctico, Tolerante, Responsable, Ambicioso ',
     imagen:
-      'https://res.cloudinary.com/djjgtili7/image/upload/v1651553576/tuaistente/pexels-nataliya-vaitkevich-6863175_cizahn.jpg',
+      'https://res.cloudinary.com/edwin3002/image/upload/v1651613763/u/c_rwrkmu.jpg',
     carrera:
       'Auxiliar Administrativo, Administración de Aduanas, Administración Comercial, Comercio Internacional, Contabilidad y Finanzas, Auxiliar,Contaduría',
   },
@@ -19,7 +19,7 @@ export const infoChaside = [
     aptitudes:
       'Responsable, justo, Conciliador, Persuasivo, Sagaz, Imaginativo ',
     imagen:
-      'https://res.cloudinary.com/djjgtili7/image/upload/v1651553576/tuaistente/pexels-nataliya-vaitkevich-6863175_cizahn.jpg',
+      'https://res.cloudinary.com/edwin3002/image/upload/v1651613751/u/h_ce1m2k.jpg',
     carrera:
       'Filosofía, Historia, Literatura, Arqueología, Geografía, Ciencia Política, Derecho',
   },
@@ -30,7 +30,7 @@ export const infoChaside = [
     aptiudes:
       'Sensible, Imaginativo, Creativo, Detallista, Innovador ,Intuitivo',
     imagen:
-      'https://res.cloudinary.com/djjgtili7/image/upload/v1651553576/tuaistente/pexels-nataliya-vaitkevich-6863175_cizahn.jpg',
+      'https://res.cloudinary.com/edwin3002/image/upload/v1651613869/u/a_zb7e01.jpg',
     carrera:
       'Artistica, artes plásticas, Fotógrafo, Cine, Teatro, Danza, Música, Diseño industrial, Diseñador gráfico, Diseño de moda, Diseño de interiores',
   },
@@ -42,7 +42,7 @@ export const infoChaside = [
     aptitudes:
       'Altruista ,Solidario ,Paciente ,Comprensivo ,Respetuoso ,Persuasivo',
     imagen:
-      'https://res.cloudinary.com/djjgtili7/image/upload/v1651553576/tuaistente/pexels-nataliya-vaitkevich-6863175_cizahn.jpg',
+      'https://res.cloudinary.com/edwin3002/image/upload/v1651613762/u/s_indnvz.webp',
     carrera:
       'Tecnología Médica, Odontología, Obstetricia, Nutrición y Dietética, Terapia Ocupacional, Fonoaudiología, Enfermería, Psicología, Kinesiología',
   },
@@ -52,7 +52,7 @@ export const infoChaside = [
     intereses: 'Cálculo, Científico, Manual, Exacto, Planificar',
     aptitudes: 'Preciso, Práctico, Crítico, Analítico, Rígido',
     imagen:
-      'https://res.cloudinary.com/djjgtili7/image/upload/v1651553576/tuaistente/pexels-nataliya-vaitkevich-6863175_cizahn.jpg',
+      'https://res.cloudinary.com/edwin3002/image/upload/v1651613827/u/i_lccsi4.jpg',
     carrera:
       'Administrador de Red , Analista de Sistemas Computacionales , Arquitecto de inteligencia artificial , Desarrollador (web, software, móvil) , Ingeniería Civil , Ingeniería de Producción , Ingeniería de Telecomunicaciones , Ingeniería Electrónica , Ingeniería Industrial , Ingeniería Mecánica , Ingeniería Mecatrónica',
   },
@@ -63,7 +63,7 @@ export const infoChaside = [
       'justicia, Equidad, Colaboración, Espíritu de, Equipo, Liderazgo',
     aptitudes: 'Arriesgado, Solidario, Valiente, Agresivo, Persuasivo',
     imagen:
-      'https://res.cloudinary.com/djjgtili7/image/upload/v1651553576/tuaistente/pexels-nataliya-vaitkevich-6863175_cizahn.jpg',
+      'https://res.cloudinary.com/edwin3002/image/upload/v1651613853/u/d_g4ibn7.jpg',
     carrera:
       'Militar, Bombero, Agente de policía, Oficial de la marina, Escolta, Agente de aduanas, Inspector de salud y seguridad, Agente de estacionamiento, Guarda de seguridad',
   },
@@ -75,7 +75,7 @@ export const infoChaside = [
     aptitudes:
       'Metódico, Analítico, Obervador, Introvertido, Paciente, Seguro ',
     imagen:
-      'https://res.cloudinary.com/djjgtili7/image/upload/v1651553576/tuaistente/pexels-nataliya-vaitkevich-6863175_cizahn.jpg',
+      'https://res.cloudinary.com/edwin3002/image/upload/v1651613848/u/e_fety8d.jpg',
     carrera: 'Química, Física, Matemáticas, Biología, Matemática, Estadística',
   },
 ];

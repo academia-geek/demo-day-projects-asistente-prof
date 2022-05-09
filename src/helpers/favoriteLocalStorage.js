@@ -20,11 +20,9 @@ export const saveFavorites = (dataNew) => {
         }
     } else {
         Swal.fire({
-            
             icon: 'error',
             title: 'Ya fue Agregada',
             position: 'top-end',
-            
         })
     }
 }

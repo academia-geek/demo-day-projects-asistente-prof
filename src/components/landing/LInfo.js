@@ -1,9 +1,10 @@
 import React from 'react';
 import { Button, Card, Container } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import '../../style/landingPage.css';
 
 const LInfo = () => {
+  const navigate = useNavigate();
   return (
     <div className='py-5 my-5' style={{ background: '#eee' }}>
       <div className='d-flex my-4 py-5 shadow rounded justify-content-center flex-wrap'>
@@ -15,15 +16,20 @@ const LInfo = () => {
             <h1 className=' fw-bold'> En "Tu Asistente Prof"</h1>
             <p className='fs-3'>
               Podras ampliar tu visión hacia tu formación académica para ser profesional. Además tendras acceso a información sobre universidades 
-              e institutos de formación profesional, con todo lo que te ofrece cada una de estas instituciones para que atravez 
-            </p>
+              e institutos de formación profesional, con todo lo que te ofrece cada una de estas instituciones para que atravez de esta página tengas una informacion mas clara y  una guia sobre cual es tu mejor elección y las posibilidades de acceder a tu carrera en mente.            </p>
             <br />
             <Button
+              onClick={() => navigate('/login')}
               variant='info'
-              className='btnVerMas m-auto'
-              style={{ background: '#6ee6e6' }}
+              className='btnVerMas '
+              style={{
+                background: '#6ee6e6',
+                width: '70%',
+                letterSpacing: '1px',
+                fontWeight: 'bold',
+              }}
             >
-              ver mas
+              Comenzar Test
             </Button>
           </div>
         </Container>
@@ -99,15 +105,17 @@ const LInfo = () => {
       </div>
       <Card className='card-4 m-auto'>
         <Card.Body>
-          <Link to='/contactanos'>
-            <Button
-              variant='info'
-              className='text-center d-flex m-auto'
-              style={{ background: '#6ee6e6', textDecoration: 'none'}}
-            >
-              Contactanos
-            </Button>
-          </Link>
+          <Card.Title className='fw-bold text-center fs-1 text-light my-3'>
+            ¿Quieres saber más?
+          </Card.Title>
+          <Button
+            onClick={() => navigate('/contactanos')}
+            variant='info'
+            className=' d-flex m-auto fw-bold w-25 justify-content-center px-3 fs-6  '
+            style={{ background: '#6ee6e6' }}
+          >
+            Contactanos
+          </Button>
         </Card.Body>
       </Card>
     </div>
