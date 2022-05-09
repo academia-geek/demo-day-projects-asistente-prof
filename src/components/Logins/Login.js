@@ -5,7 +5,7 @@ import {
   loginGoogle,
 } from '../../redux/actions/actionLogin';
 import { Formik, Field, Form } from 'formik';
-import { Button, Col, Container, Nav, Row } from 'react-bootstrap';
+import { Col, Container, Nav, Row } from 'react-bootstrap';
 
 import * as Yup from 'yup';
 import '../../style/style.css';

@@ -1,6 +1,7 @@
 import {
   addDoc,
   collection,
+  deleteDoc,
   doc,
   getDocs,
   query,
@@ -89,5 +90,24 @@ export const updateUserAsync = (user) => {
       .catch((error) => {
         console.warn(error);
       });
+  };
+};
+
+//* delete user
+export const deleteUserSync = (user) => {
+  return {
+    type: typesUsers.deleteUser,
+    payload: user,
+  };
+};
+export const deleteUserAsync = (uid) => {
+  return async (dispatch) => {
+    const collectionTraer = collection(getMyData, 'users');
+    const q = query(collectionTraer, where('id', '==', uid));
+    const traerDatosQ = await getDocs(q);
+    traerDatosQ.forEach((docum) => {
+      deleteDoc(doc(getMyData, 'users', docum.id));
+    });
+    dispatch(deleteUserSync(uid));
   };
 };
