@@ -1,9 +1,17 @@
+import Swal from "sweetalert2"
+
 export const saveFavorites = (dataNew) => {
     const dataFavorite = JSON.parse(localStorage.getItem('favorites'))
 
     const data = dataFavorite.find((dt) => (dt.idCarrera === dataNew.idCarrera))
     if (data === undefined) {
-        alert(' agregado a favoritos')
+        Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'Agregada con Exito',
+            showConfirmButton: false,
+            timer: 1500
+          })        
         if (dataFavorite == null) {
             localStorage.setItem('favorites', JSON.stringify([dataNew]))
         } else {
@@ -11,7 +19,11 @@ export const saveFavorites = (dataNew) => {
             localStorage.setItem('favorites', JSON.stringify(dataFavorite))
         }
     } else {
-        alert('esta carrera ya esta en favoritos')
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Ya fue Agregada',
+        })
     }
 }
 

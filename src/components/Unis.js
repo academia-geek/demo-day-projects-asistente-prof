@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { Card, Container } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
+import Swal from 'sweetalert2';
 import { saveFavorites } from '../helpers/favoriteLocalStorage';
 import { paintCareerAsync } from '../redux/actions/actionUniversity';
 import '../style/unis.css';
@@ -12,11 +13,19 @@ export const Unis = () => {
     const favoriteStar = (car) => {
             saveFavorites(car)
     }
+    
     useEffect(() => {
         dispatch(paintCareerAsync());
         const dataFavorite = JSON.parse(localStorage.getItem('favorites'))
+        
         if(dataFavorite === null){
             localStorage.setItem('favorites', JSON.stringify([]))
+            Swal.fire({
+                title: 'Bienvenido',
+                text: 'A continuación van a realizar un test de 98 preguntas donde tienen como resultado sus habilidades y actitudes que ayudaran a encontar la carrera que se adapta a su perfil.',
+                icon: 'exito',
+                confirmButtonText: 'Realizar Test'
+              })
         }else{
 
         }
