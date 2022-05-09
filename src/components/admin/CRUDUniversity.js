@@ -94,20 +94,28 @@ const CRUDUniversity = () => {
           </Button>
         </Link>
       </div>
-      <h1 className='text-center'>Agregar Formación Academica</h1>
-      <Form onSubmit={handleSubmit} className='w-75 mx-auto my-5'>
-        <Form.Label>Universidad</Form.Label>
+      <h1 className='text-center fw-bold'>Agregar Formación Academica</h1>
+      <Form
+        onSubmit={handleSubmit}
+        className='w-75 mx-auto my-5 py-5 sombraSha'
+      >
+        <Form.Label className='w-75 d-flex mx-auto fw-bold '>
+          Universidad
+        </Form.Label>
         <Form.Select
           name='universidad'
           onChange={handleInputChange}
           value={universidad}
+          className='w-75 mx-auto mb-3 text-secondary'
         >
           <option>Selecciona universidad</option>
           <option>Universidad Nacional de Colombia</option>
           <option>Pontificia Universidad Javeriana</option>
           <option>Universidad Icesi</option>
         </Form.Select>
-        <Form.Label htmlFor='car'>Sigla de universidad</Form.Label>
+        <Form.Label htmlFor='car' className='w-75 d-flex mx-auto fw-bold'>
+          Sigla de universidad
+        </Form.Label>
         <Form.Control
           type='text'
           id='car'
@@ -115,24 +123,45 @@ const CRUDUniversity = () => {
           placeholder='Sigla de universidad'
           value={sigla}
           onChange={handleInputChange}
+          className='w-75 mx-auto text-secondary mb-3'
         />
-        <Form.Label htmlFor='ciu'>Ciudad</Form.Label>
-        <Form.Select name='ciudad' onChange={handleInputChange} value={ciudad}>
+        <Form.Label htmlFor='ciu' className='w-75 d-flex mx-auto fw-bold'>
+          Ciudad
+        </Form.Label>
+        <Form.Select
+          name='ciudad'
+          onChange={handleInputChange}
+          value={ciudad}
+          className='w-75 mx-auto text-secondary mb-3'
+        >
           <option>Selecciona Ciudad</option>
           <option>Bogota</option>
           <option>Medellin</option>
           <option>Cali</option>
           <option>Cartagena</option>
         </Form.Select>
-        <Form.Label htmlFor='tit'>Titulo de formacion</Form.Label>
-        <Form.Select name='titulo' onChange={handleInputChange} value={titulo}>
+        <Form.Label htmlFor='tit' className='w-75 d-flex mx-auto fw-bold'>
+          Titulo de formación
+        </Form.Label>
+        <Form.Select
+          name='titulo'
+          onChange={handleInputChange}
+          value={titulo}
+          className='w-75 mx-auto text-secondary mb-3'
+        >
           <option>Titulo</option>
           <option>Profesional</option>
           <option>Tecnico</option>
           <option>Tecnologo</option>
         </Form.Select>
-        <Form.Label htmlFor='tit'>Area de la carrera</Form.Label>
-        <Form.Select name='area' onChange={handleInputChange}>
+        <Form.Label htmlFor='tit' className='w-75 d-flex mx-auto fw-bold'>
+          Area de la carrera
+        </Form.Label>
+        <Form.Select
+          name='area'
+          className='w-75 mx-auto text-secondary mb-3'
+          onChange={handleInputChange}
+        >
           <option>Area</option>
           <option value={'c'}>Administrativas y Contables</option>
           <option value={'h'}>Humanísticas y Sociales</option>
@@ -143,7 +172,9 @@ const CRUDUniversity = () => {
           <option value={'e'}>Ciencias Exactas y Agrarias</option>
         </Form.Select>
 
-        <Form.Label htmlFor='car'>Carrera</Form.Label>
+        <Form.Label htmlFor='car' className='w-75 d-flex mx-auto fw-bold'>
+          Carrera
+        </Form.Label>
         <Form.Control
           type='text'
           id='car'
@@ -151,8 +182,11 @@ const CRUDUniversity = () => {
           placeholder='Carrera'
           value={carrera}
           onChange={handleInputChange}
+          className='w-75 mx-auto text-secondary mb-3'
         />
-        <Form.Label htmlFor='car'>Url de la Carrera</Form.Label>
+        <Form.Label htmlFor='car' className='w-75 d-flex mx-auto fw-bold'>
+          Url de la Carrera
+        </Form.Label>
         <Form.Control
           type='text'
           id='car'
@@ -160,13 +194,17 @@ const CRUDUniversity = () => {
           placeholder='url'
           value={url}
           onChange={handleInputChange}
+          className='w-75 mx-auto text-secondary mb-3'
         />
-        <Form.Label htmlFor='dur'>Duracion</Form.Label>
+        <Form.Label htmlFor='dur' className='w-75 d-flex mx-auto fw-bold '>
+          Duración
+        </Form.Label>
 
         <Form.Select
           name='duracion'
           onChange={handleInputChange}
           value={duracion}
+          className='w-75 mx-auto text-secondary mb-3'
         >
           <option defaultValue>Selecciona Duracion(Semestres)</option>
           <option>1</option>
@@ -182,7 +220,9 @@ const CRUDUniversity = () => {
           <option>11</option>
           <option>12</option>
         </Form.Select>
-        <Form.Label htmlFor='desc'>Descripcion</Form.Label>
+        <Form.Label htmlFor='desc' className='w-75 d-flex mx-auto  fw-bold'>
+          Descripcion
+        </Form.Label>
         <Form.Control
           as='textarea'
           id='desc'
@@ -190,23 +230,30 @@ const CRUDUniversity = () => {
           placeholder='Descripcion'
           value={descripcion}
           onChange={handleInputChange}
+          className='w-75 mx-auto text-secondary mb-3'
         />
 
-        <Button type='submit' variant='success' className='m-4'>
+        <button
+          type='submit'
+          variant='success'
+          className='m-4 w-25 d-flex mx-auto border-0 add-btn d-flex justify-content-center'
+          style={{ backgroundColor: 'green' }}
+        >
           Agregar
-        </Button>
-        {/* <Button  variant="warning" className='m-4' onClick={()=>{reset()}}>Resetear formulario</Button> */}
-        <Button
+        </button>
+        <button
           variant='primary'
-          className='m-4'
+          className=' w-25  d-flex mx-auto border-0 view-btn d-flex justify-content-center'
           onClick={() => {
             dispatch(paintCareerAsync());
           }}
+          style={{ backgroundColor: 'blue' }}
         >
           ver todas de carreras
-        </Button>
+        </button>
       </Form>
-      <Table className='w-75 mx-auto my-4' striped bordered hover size='sm'>
+      <br />
+      <Table className='w-75 mx-auto my-4 ' striped bordered hover size='sm'>
         <thead>
           <tr className='text-center'>
             <th>Carrera</th>

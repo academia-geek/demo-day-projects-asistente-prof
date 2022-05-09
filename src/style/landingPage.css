@@ -411,3 +411,89 @@ button:hover {
 .iconHoverPdf :hover {
   color: #2acfcf !important;
 }
+
+.sombraSha {
+  box-shadow: 2.9px 8.9px 3.3px rgba(0, 0, 0, 0.059),
+    5.7px 17.4px 8.4px rgba(0, 0, 0, 0.084),
+    8.8px 26.7px 17.2px rgba(0, 0, 0, 0.106),
+    13.7px 41.6px 35.4px rgba(0, 0, 0, 0.131),
+    30px 91px 97px rgba(0, 0, 0, 0.19) !important;
+
+  padding-top: 80px auto !important;
+}
+
+.add-btn {
+  padding: 0.5rem 1rem;
+  width: 25% !important;
+  border: 2px solid green !important;
+  position: relative !important;
+  overflow: hidden !important;
+  text-align: center !important;
+  text-transform: uppercase;
+  font-size: 12px !important;
+  transition: 0.3s;
+  z-index: 1 !important;
+  font-family: inherit !important;
+  color: white !important;
+  font-weight: bold !important;
+  border-radius: 3px !important;
+}
+
+.add-btn::before {
+  content: '';
+  width: 0;
+  height: 1700% !important;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  background: white !important;
+  transition: 0.5s ease;
+  display: block;
+  z-index: -1;
+}
+
+.add-btn:hover::before {
+  width: 105% !important;
+}
+.add-btn:hover {
+  color: green !important;
+}
+
+.view-btn {
+  padding: 0.5rem 1rem;
+  width: 25% !important;
+  border: 2px solid blue !important;
+  position: relative !important;
+  overflow: hidden !important;
+  text-align: center !important;
+  text-transform: uppercase;
+  font-size: 12px !important;
+  transition: 0.3s;
+  z-index: 1 !important;
+  font-family: inherit !important;
+  color: white !important;
+  font-weight: bold !important;
+  border-radius: 3px !important;
+}
+
+.view-btn::before {
+  content: '';
+  width: 0;
+  height: 1700% !important;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  background: white !important;
+  transition: 0.5s ease;
+  display: block;
+  z-index: -1;
+}
+
+.view-btn:hover::before {
+  width: 105% !important;
+}
+.view-btn:hover {
+  color: blue !important;
+}

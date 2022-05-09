@@ -28,25 +28,34 @@ const LoginAdmin = ({ setIsAdminLog }) => {
   };
   return (
     <div className='cardsLoginAll'>
-      <Nav className='d-flex justify-content-between' style={{
-        background: '#4B3F6B',
-        fontWeight: 'bold',
-        backgroundImage: "url('https://i.ibb.co/CngVcj8/descarga-2.png')",
-      }}>
+      <Nav
+        className='d-flex justify-content-between'
+        style={{
+          background: '#4B3F6B',
+          fontWeight: 'bold',
+          backgroundImage: "url('https://i.ibb.co/CngVcj8/descarga-2.png')",
+        }}
+      >
         <Nav.Item as='li'>
           <Nav.Link href='/landing' className='text-light'>
             Atras
           </Nav.Link>
         </Nav.Item>
-
       </Nav>
       <div className='login '>
-        <Container className='shadow p-5 rounded mx-auto my-5' style={{ background: '#4B3F6B' }}>
+        <Container
+          className='shadow p-5 rounded mx-auto my-5'
+          style={{ background: '#4B3F6B' }}
+        >
           <h1 className='text-center text-light'>Iniciar sesión</h1>
           <Row className='contLogin'>
-            <Col >
+            <Col>
               <div className='imgLogin'>
-                <img className='w-100' src='https://res.cloudinary.com/djjgtili7/image/upload/v1651819978/Account-amico-removebg-preview_v4dehk.png' alt='img' />
+                <img
+                  className='w-100'
+                  src='https://res.cloudinary.com/djjgtili7/image/upload/v1651819978/Account-amico-removebg-preview_v4dehk.png'
+                  alt='img'
+                />
               </div>
             </Col>
             <Col>
@@ -62,19 +71,24 @@ const LoginAdmin = ({ setIsAdminLog }) => {
               >
                 {({ errors, touched }) => (
                   <Form className=' mx-auto '>
-                    <p className='d-flex mx-auto w-75 fw-bold text-light'>Correo</p>
+                    <p className='d-flex mx-auto w-75 fw-bold text-light'>
+                      Correo
+                    </p>
                     <Field
                       className='d-flex mx-auto w-75 '
                       placeholder='Email'
                       type='text'
                       style={{ margin: '2%' }}
                       name='email'
-                      />
+                    />
                     {errors.email && touched.email ? (
                       <div>{errors.email}</div>
-                      ) : null}
+                    ) : null}
 
-                    <p className='d-flex mx-auto w-75 fw-bold text-light'> Contraseña</p>
+                    <p className='d-flex mx-auto w-75 fw-bold text-light'>
+                      {' '}
+                      Contraseña
+                    </p>
                     <Field
                       className='d-flex mx-auto w-75 '
                       placeholder='Password'
@@ -96,9 +110,16 @@ const LoginAdmin = ({ setIsAdminLog }) => {
                 )}
               </Formik>
               <br />
-              <Link to='/landing'>
-                <Button variant="light" className='d-flex m-auto'> <span className="bi bi-arrow-left-circle-fill"></span> Volver a pagina principal</Button>
-              </Link>
+
+              <button
+                onClick={() => navigate('/landing')}
+                variant='light'
+                className='d-flex m-auto botones'
+              >
+                {' '}
+                <span className='bi bi-arrow-left-circle-fill'></span> Volver a
+                pagina principal
+              </button>
             </Col>
           </Row>
         </Container>
