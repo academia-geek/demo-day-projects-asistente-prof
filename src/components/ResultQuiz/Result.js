@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Card, Container } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
 import { saveFavorites } from '../../helpers/favoriteLocalStorage';
 import { paintCareerAsync } from '../../redux/actions/actionUniversity';
 import { addUserAsync, deleteUserAsync } from '../../redux/actions/actionUsers';
@@ -209,7 +210,17 @@ const Result = ({
           className={resetarTest <= 0 ? 'visually-hidden' : 'btones-btn'}
           onClick={() => {
             handleReset();
+            Swal.fire({
+              title: 'Custom animation with Animate.css',
+              showClass: {
+                popup: 'animate__animated animate__fadeInDown'
+              },
+              hideClass: {
+                popup: 'animate__animated animate__fadeOutUp'
+              }
+            })
           }}
+          
         >
           Reiniciar Test ({resetarTest})
         </button>

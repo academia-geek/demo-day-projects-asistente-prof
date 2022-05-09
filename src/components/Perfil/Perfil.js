@@ -12,6 +12,7 @@ const Perfil = ({ userV }) => {
   const { displayName, email, photoURL } = userV;
   const [result, setResult] = useState();
   const [data, setData] = useState([]);
+  console.log(userV.uid);
 
   useEffect(() => {
     if (userV) {
@@ -213,8 +214,9 @@ const Perfil = ({ userV }) => {
     }).then((result) => {
       if (result.isConfirmed) {
         dispatch(deleteUserLogAsync());
-        dispatch(deleteUserAsync());
+        dispatch(deleteUserAsync(userV.uid));
         Swal.fire('Eliminado!', 'Tu usuario ha sido Eliminado', 'success');
+        localStorage.clear();
       }
     });
   };

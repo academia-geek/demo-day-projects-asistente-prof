@@ -40,6 +40,7 @@ export const deleteFavoriteAsync = (id) => {
       deleteDoc(doc(getMyData, 'favorite', collec.id));
     });
     dispatch(deleteFavoriteSync(id));
+    
     dispatch(paintFavoriteAsync());
   };
 };
