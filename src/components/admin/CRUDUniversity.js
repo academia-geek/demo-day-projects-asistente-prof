@@ -87,10 +87,10 @@ const CRUDUniversity = () => {
     <div>
       <div>
         <Link to='/landing'>
-          <Button variant='secondary' className='m-2'>
+          <Button variant='secondary' className='m-2 back-btn'>
             {' '}
-            <span className='bi bi-arrow-left-circle-fill'></span> Volver a
-            pagina principal
+            <span className='bi bi-arrow-left-circle-fill text-light'></span>{' '}
+            Volver a pagina principal
           </Button>
         </Link>
       </div>
@@ -253,7 +253,13 @@ const CRUDUniversity = () => {
         </button>
       </Form>
       <br />
-      <Table className='w-75 mx-auto my-4 ' striped bordered hover size='sm'>
+      <Table
+        className='w-75 mx-auto my-4 shadow-lg '
+        striped
+        bordered
+        hover
+        size='sm'
+      >
         <thead>
           <tr className='text-center'>
             <th>Carrera</th>
@@ -262,8 +268,6 @@ const CRUDUniversity = () => {
             <th>Área</th>
             <th>Ciudad</th>
             <th>Duracion</th>
-            {/* <th>Descripcion</th> */}
-            {/* <th>Img</th> */}
             <th>Actions</th>
           </tr>
         </thead>

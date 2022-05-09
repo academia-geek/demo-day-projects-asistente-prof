@@ -99,14 +99,13 @@ const Register = () => {
                   onChange={handleInputChange}
                 />
               </Form.Group>
-              <Button
-                variant='info'
+              <button
                 type='submit'
-                className='text-center d-flex m-auto'
+                className='text-center d-flex mx-auto btones-btn my-4'
                 style={{ background: '#6ee6e6' }}
               >
                 Registrarse
-              </Button>
+              </button>
             </Form>
           </Col>
         </Row>

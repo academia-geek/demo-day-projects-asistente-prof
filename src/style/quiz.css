@@ -12,5 +12,34 @@
   border: none;
   width: 25%;
   border-radius: 10px;
-  background-color: #6ee6e6;
+  background-color: rgb(111, 231, 231);
+}
+
+.descriptionResult {
+  width: 75%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px auto;
+  height: 400px;
+  background-image: url('https://res.cloudinary.com/djjgtili7/image/upload/v1652130041/WhatsApp_Image_2022-05-07_at_12.39.39_AM-removebg-preview_uiuin6.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.descrip {
+  font-weight: bold;
+  font-size: 60px;
+  color: #fff;
+  text-shadow: 0 0 10px #000;
+}
+
+.descipP {
+  font-weight: bold !important;
+  font-size: 18px !important;
+  background-color: rgb(75, 63, 107, 0.8);
+  padding: 15px;
+  color: #fff;
+  text-shadow: 0 0 2px #000;
 }

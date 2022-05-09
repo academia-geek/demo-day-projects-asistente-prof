@@ -1,65 +1,62 @@
-#c{
-    background-color: #94E7E7;
-    color: black;
+#c {
+  background-color: #94e7e7;
+  color: black;
 }
-#h{
-    background-color: #5D527A;
-    color: white;
+#h {
+  background-color: #5d527a;
+  color: white;
 }
 
-#a{
-    background-color: #FF8080;
-    color: white;
+#a {
+  background-color: #ff8080;
+  color: white;
 }
-#s{
-    background-color: #FF80FF;
-    color: white;
+#s {
+  background-color: #ff80ff;
+  color: white;
 }
-#i{
-    background-color: #FF9A52;
-    color: black;
+#i {
+  background-color: #ff9a52;
+  color: black;
 }
-#d{
-    background-color: #7449E8;
-    color: white;
+#d {
+  background-color: #7449e8;
+  color: white;
 }
-#e{
-    background-color: #80EF9F;
-    color: black;
+#e {
+  background-color: #80ef9f;
+  color: black;
 }
-.cardResultdos{
-    margin-top: 50px;
+.cardResultdos {
+  margin-top: 5px;
 }
-.cardResult{
-    display: flex;
-    flex-direction: column;
-    margin: 50px auto;
+.cardResult {
+  display: flex;
+  flex-direction: column;
+  margin: 50px auto;
 }
 @media (min-width: 900px) {
-    .cardResultdos{
-        margin-top: 80px;
-    }
-    .cardResult{
-        flex-direction: row;
-        margin: 60px 30px;
-    }
-    
+  .cardResultdos {
+    margin-top: 80px;
+  }
+  .cardResult {
+    flex-direction: row;
+    margin: 60px 30px;
+  }
 }
 @media (min-width: 1300px) {
-    .cardResult{
-        flex-direction: row;
-        margin: 70px 30px;
-    }
-    
-    
+  .cardResult {
+    flex-direction: row;
+    margin: 70px 30px;
+  }
 }
 @media (max-width: 900px) {
-    .cardResult{
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important; 
-    }
+  .cardResult {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
   }
-.titleUni{
-    padding-top: 70px;
+}
+.titleUni {
+  padding-top: 70px;
 }
