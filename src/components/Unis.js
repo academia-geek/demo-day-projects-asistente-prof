@@ -20,12 +20,6 @@ export const Unis = () => {
         
         if(dataFavorite === null){
             localStorage.setItem('favorites', JSON.stringify([]))
-            Swal.fire({
-                title: 'Bienvenido',
-                text: 'A continuación van a realizar un test de 98 preguntas donde tienen como resultado sus habilidades y actitudes que ayudaran a encontar la carrera que se adapta a su perfil.',
-                icon: 'exito',
-                confirmButtonText: 'Realizar Test'
-              })
         }else{
 
         }

@@ -20,9 +20,11 @@ export const saveFavorites = (dataNew) => {
         }
     } else {
         Swal.fire({
+            
             icon: 'error',
-            title: 'Oops...',
-            text: 'Ya fue Agregada',
+            title: 'Ya fue Agregada',
+            position: 'top-end',
+            
         })
     }
 }
@@ -38,4 +40,11 @@ export const deleteAllFavorites = (id) => {
     const dataFavorite = JSON.parse(localStorage.getItem('favorites'))
     const dataDelete = dataFavorite.filter((item) => item.idCarrera !== id)
     localStorage.setItem('favorites', JSON.stringify(dataDelete))
+    Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        title: 'Eliminada con Exito',
+        showConfirmButton: false,
+        timer: 1500
+      })
 }

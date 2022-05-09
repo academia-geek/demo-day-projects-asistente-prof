@@ -20,7 +20,7 @@ export const LFooter = () => {
                         </td>
                     </tr>
                     <tr>
-                        <td>Trabajar en Amazon</td>
+                        <td>Trabaja con nosotros</td>
                         <td>Departamento de prensa</td>
                         <td className='d-flex justify-content-between footLogos'>
                             <i className="bi bi-instagram"></i>
