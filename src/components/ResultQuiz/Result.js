@@ -6,6 +6,7 @@ import Swal from 'sweetalert2';
 import { saveFavorites } from '../../helpers/favoriteLocalStorage';
 import { paintCareerAsync } from '../../redux/actions/actionUniversity';
 import { addUserAsync, deleteUserAsync } from '../../redux/actions/actionUsers';
+import TitleResult from '../TitleResult';
 import CardResult from './CardResult';
 
 const Result = ({
@@ -76,6 +77,7 @@ const Result = ({
               className=' d-flex justify-content-between flex-wrap'
               style={{ width: '100%' }}
             >
+              <TitleResult careeries={careeries} />
               {careeries.map((carrera) => (
                 <Container
                   className='d-flex my-3 shadow'
@@ -151,6 +153,11 @@ const Result = ({
           </div>
         ) : (
           <div className='centrar'>
+            <h2 className='mt-5 pt-5 '>
+              {' '}
+              Hola, <span className='fw-bold'>{displayName}</span> estos son tus
+              resultados:
+            </h2>
             {focus.map((item) => (
               <div key={item.id} className='conten '>
                 <p className=''>
@@ -213,14 +220,13 @@ const Result = ({
             Swal.fire({
               title: 'Custom animation with Animate.css',
               showClass: {
-                popup: 'animate__animated animate__fadeInDown'
+                popup: 'animate__animated animate__fadeInDown',
               },
               hideClass: {
-                popup: 'animate__animated animate__fadeOutUp'
-              }
-            })
+                popup: 'animate__animated animate__fadeOutUp',
+              },
+            });
           }}
-          
         >
           Reiniciar Test ({resetarTest})
         </button>

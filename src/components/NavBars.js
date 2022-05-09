@@ -21,7 +21,7 @@ const NavBars = ({ userV, numero }) => {
     <div>
       <Navbar
         fixed='top'
-        style={{ background: '#4B3F6B', paddingBottom: '0px' }}
+        style={{ background: '#4B3F6B', padding: '0px' }}
         expand='lg'
       >
         <Container>
