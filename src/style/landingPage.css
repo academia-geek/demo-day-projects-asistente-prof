@@ -180,7 +180,6 @@
 /* Buttons  */
 
 button {
-  border: 2px solid #2acfcf !important;
   position: relative;
   overflow: hidden;
   background-color: transparent;
@@ -534,4 +533,80 @@ button:hover {
 }
 .back-btn:hover {
   color: gray !important;
+}
+
+.guardar-btn {
+  padding: 0.5rem 1rem;
+  width: 30% !important;
+  border: 2px solid green !important;
+  position: relative !important;
+  overflow: hidden !important;
+  text-align: center !important;
+  text-transform: uppercase;
+  font-size: 12px !important;
+  transition: 0.3s;
+  z-index: 1 !important;
+  font-family: inherit !important;
+  color: green !important;
+  font-weight: bold !important;
+  border-radius: 3px !important;
+}
+
+.guardar-btn::before {
+  content: '';
+  width: 0;
+  height: 1700% !important;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  background: green !important;
+  transition: 0.5s ease;
+  display: block;
+  z-index: -1;
+}
+
+.guardar-btn:hover::before {
+  width: 105% !important;
+}
+.guardar-btn:hover {
+  color: white !important;
+}
+
+.reiniciar-btn {
+  padding: 0.5rem 1rem;
+  width: 30% !important;
+  border: 2px solid red !important;
+  position: relative !important;
+  overflow: hidden !important;
+  text-align: center !important;
+  text-transform: uppercase;
+  font-size: 12px !important;
+  transition: 0.3s;
+  z-index: 1 !important;
+  font-family: inherit !important;
+  color: red !important;
+  font-weight: bold !important;
+  border-radius: 3px !important;
+}
+
+.reiniciar-btn::before {
+  content: '';
+  width: 0;
+  height: 1700% !important;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  background: red !important;
+  transition: 0.5s ease;
+  display: block;
+  z-index: -1;
+}
+
+.reiniciar-btn:hover::before {
+  width: 105% !important;
+}
+.reiniciar-btn:hover {
+  color: white !important;
 }
