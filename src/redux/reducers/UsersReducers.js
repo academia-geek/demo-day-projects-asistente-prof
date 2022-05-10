@@ -22,7 +22,7 @@ export const userReducers = (state = initialState, action) => {
       };
     case typesUsers.deleteUser:
       return {
-        user: state.user.filter((user) => user.id !== action.payload),
+        user: state.user?.filter((user) => user.id !== action.payload),
       };
 
     default:
