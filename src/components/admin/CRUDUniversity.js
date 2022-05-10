@@ -16,7 +16,7 @@ import {
   deleteCareerAsync,
   paintCareerAsync,
 } from '../../redux/actions/actionUniversity';
-import '../../style/unis.css';
+import '../../style/CRUDstyles.css';
 import { Edit } from '../Edit';
 
 const CRUDUniversity = () => {
@@ -237,7 +237,6 @@ const CRUDUniversity = () => {
           type='submit'
           variant='success'
           className='m-4 w-25 d-flex mx-auto border-0 add-btn d-flex justify-content-center'
-          style={{ backgroundColor: 'green' }}
         >
           Agregar
         </button>
@@ -247,7 +246,6 @@ const CRUDUniversity = () => {
           onClick={() => {
             dispatch(paintCareerAsync());
           }}
-          style={{ backgroundColor: 'blue' }}
         >
           ver todas de carreras
         </button>
