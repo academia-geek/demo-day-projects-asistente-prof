@@ -1,113 +1,157 @@
+function generatorPDF() {
+    const doc = new jsPDF();
+    //cuadrado
+    doc.setFillColor(75, 63, 107);
+    doc.rect(0, 0, 210, 40, 'F');
 
-var doc = new jsPDF();
+    //titulo e img
 
-//cuadrado
-doc.setFillColor(75,63,107);
-doc.rect(0, 0, 210,40, 'F'); 
+    doc.setFont('helvetica', 'bold');
+    doc.setFontSize(20);
+    doc.setTextColor(252, 252, 252);
+    doc.text(`Tu Asistente Prof`, 80, 20);
+    doc.addImage(
+      'https://res.cloudinary.com/djjgtili7/image/upload/v1651901836/Tu_Asistente_prof_1_tqqqyk.png',
+      50,
+      0,
+      40,
+      40
+    );
 
-//titulo e img
-doc.setFont('helvetica', 'bold');
-doc.setFontSize(20);
-doc.setTextColor(252, 252, 252);
-doc.text(`Tu Asistente Prof`, 80, 20);
-doc.addImage("https://res.cloudinary.com/djjgtili7/image/upload/v1651901836/Tu_Asistente_prof_1_tqqqyk.png", 50, 0, 40, 40);
-   
-//text hello
-doc.setFontSize(16);
+    //text hello
+    doc.setFontSize(16);
     doc.setTextColor(0, 0, 0);
-doc.text(`Hola Paco estos son los resultados del test`, 20, 60);
+    doc.text(
+      `Hola ${userV.displayName} estos son los resultados del test CHASIDE:`,
+      20,
+      60
+    );
 
-//cuadro uno morado
-doc.setFillColor(163,157,179,);
-doc.rect(20, 80, 170,80, 'F'); 
+    //cuadro uno morado
+    doc.setFillColor(163, 157, 179);
+    doc.rect(20, 80, 170, 100, 'F');
 
-//cuadro tipo de carrera y texto
-doc.setFillColor(148, 231, 231);
-doc.rect(45, 85, 30, 8, 'F'); 
-doc.setFontSize(12);
+    //cuadro tipo de carrera y texto
+    doc.setFillColor(148, 231, 231);
+    doc.rect(30, 85, 60, 8, 'F');
+    doc.setFontSize(12);
     doc.setTextColor(0, 0, 0);
-doc.text(`Ingenieria`, 50, 90);
+    doc.text(`${data[0].title}`, 32, 90);
+    // doc.text(`${data[0].title}`, 35, 90);
+
+    //img cuadro
+    doc.addImage(`${data[0].imagen}`, 30, 105, 60, 60);
+    // doc.addImage(`${data[0].imagen}`, 30, 95, 60, 60);
+
+    //cuadro y text intereses
+    doc.setFontSize(14);
+    doc.setTextColor(252, 252, 252);
+    doc.text(`Intereses`, 130, 93);
+    // doc.line(100, 92, 180, 92);
+
+    doc.setFontSize(12);
+    doc.setFillColor(75, 63, 107);
+    doc.rect(100, 95, 80, 20, 'F');
+
+    doc.setFontSize(10);
+    doc.setTextColor(252, 252, 252);
+    doc.text(`${data[0].intereses}`, 105, 100, {
+      align: 'justify',
+      maxWidth: 70,
+    });
+
+    //cuadro y text aptitudes
+    doc.setFontSize(14);
+    doc.setTextColor(252, 252, 252);
+    doc.text(`Aptitudes`, 130, 123);
+
+    doc.setFillColor(75, 63, 107);
+    doc.rect(100, 125, 80, 20, 'F');
 
 
-//img cuadro
-doc.addImage("https://res.cloudinary.com/edwin3002/image/upload/v1651613762/u/s_indnvz.webp", 30, 95, 60, 60);
+    doc.setFontSize(10);
+    doc.setTextColor(252, 252, 252);
+    doc.text(`${data[0].aptitudes}`, 105, 130, {
+      align: 'justify',
+      maxWidth: 70,
+    });
 
-//cuadro y text intereses
-doc.setFontSize(18);
-doc.setTextColor(252, 252, 252);
-doc.text(`Intereses`, 125, 90);
+    //cuadro y carreras
+    doc.setFontSize(14);
+    doc.setTextColor(252, 252, 252);
+    doc.text(`Carreras`, 130, 153);
 
-doc.setFillColor(75, 63, 107);
-doc.rect(100, 95, 80, 15, 'F');
+    doc.setFillColor(75, 63, 107);
+    doc.rect(100, 155, 80, 20, 'F');
 
-doc.setFontSize(10);
-doc.setTextColor(252, 252, 252);
-doc.text(`Precisión, Verbal, Organización, Relación de Hechos, Lingüística,Orden y justicia`, 105, 100);
+    doc.setFontSize(10);
+    doc.setTextColor(252, 252, 252);
+    doc.text(`${data[0].carrera}`, 105, 160, {
+      align: 'justify',
+      maxWidth: 70,
+    });
 
-//cuadro y text aptitudes
-doc.setFontSize(18);
-doc.setTextColor(252, 252, 252);
-doc.text(`Aptitudes`, 125, 210);
+    //cuadro dos morado 2
+    doc.setFillColor(163, 157, 179);
+    doc.rect(20, 190, 170, 100, 'F');
 
-doc.setFillColor(75, 63, 107);
-doc.rect(100, 125, 80, 15, 'F');
-
-doc.setFontSize(12);
-doc.setTextColor(252, 252, 252);
-doc.text(`Ingenieria Ingenieria Ingenieria Ingenieria Ingenieria Ingenieria Ingenieria Ingenieria`, 105, 130);
-
-
-
-//cuadro dos morado 2
-doc.setFillColor(163,157,179,);
-doc.rect(20, 170, 170,80, 'F'); 
-
-//cuadro tipo de carrera y texto
-doc.setFillColor(148, 231, 231);
-doc.rect(45, 175, 30, 8, 'F'); 
-doc.setFontSize(12);
+    //cuadro tipo de carrera y texto
+    doc.setFillColor(148, 231, 233);
+    doc.rect(30, 195, 60, 8, 'F');
+    doc.setFontSize(12);
     doc.setTextColor(0, 0, 0);
-doc.text(`Ingenieria`, 50, 180);
+    doc.text(`${data[1].title}`, 32, 200, {
+      align: 'justify',
+      maxWidth: 70,
+    });
 
+    //img cuadro 2
+    doc.addImage(`${data[1].imagen}`, 30, 215, 60, 60);
 
-//img cuadro 2
-doc.addImage("https://res.cloudinary.com/edwin3002/image/upload/v1651613762/u/s_indnvz.webp", 30, 185, 60, 60);
+    //cuadro y text intereses 2
+    doc.setFontSize(14);
+    doc.setTextColor(252, 252, 252);
+    doc.text(`Intereses`, 130, 203);
 
-//cuadro y text intereses 2
-doc.setFontSize(18);
-doc.setTextColor(252, 252, 252);
-doc.text(`Intereses`, 125, 180);
+    doc.setFillColor(75, 63, 107);
+    doc.rect(100, 205, 80, 20, 'F');
 
-doc.setFillColor(75, 63, 107);
-doc.rect(100, 185, 80, 15, 'F');
+    doc.setFontSize(10);
+    doc.setTextColor(252, 252, 252);
+    doc.text(`${data[1].intereses}`, 105, 210, {
+      align: 'justify',
+      maxWidth: 70,
+    });
 
-doc.setFontSize(10);
-doc.setTextColor(252, 252, 252);
-doc.text(`Precisión, Verbal, Organización, Relación de Hechos, Lingüística,Orden y justicia`, 105, 190);
+    //cuadro y text aptitudes 2
+    doc.setFontSize(14);
+    doc.setTextColor(252, 252, 252);
+    doc.text(`Aptitudes`, 130, 233);
 
-//cuadro y text aptitudes 2
-doc.setFontSize(18);
-doc.setTextColor(252, 252, 252);
-doc.text(`Aptitudes`, 205, 210);
+    doc.setFillColor(75, 63, 107);
+    doc.rect(100, 235, 80, 20, 'F');
 
-doc.setFillColor(75, 63, 107);
-doc.rect(100, 215, 80, 15, 'F');
+    doc.setFontSize(10);
+    doc.setTextColor(252, 252, 252);
+    doc.text(`${data[1].aptitudes}`, 105, 240, {
+      align: 'justify',
+      maxWidth: 70,
+    });
 
-doc.setFontSize(12);
-doc.setTextColor(252, 252, 252);
-doc.text(`Ingenieria Ingenieria Ingenieria Ingenieria Ingenieria Ingenieria Ingenieria Ingenieria`, 105, 220);
+    //cuadro y carreras 2
+    doc.setFontSize(14);
+    doc.setTextColor(252, 252, 252);
+    doc.text(`Carreras`, 130, 263);
 
+    doc.setFillColor(75, 63, 107);
+    doc.rect(100, 265, 80, 20, 'F');
 
+    doc.setFontSize(10);
+    doc.setTextColor(252, 252, 252);
+    doc.text(`${data[1].carrera}`, 105, 272, {
+      align: 'justify',
+      maxWidth: 70,
+    });
 
-
-/////sirver para el text field en caja
-
-
-textField.Rect = [60, 140, 100, 10];
-textField.multiline = true;
-textField.value =
-  "The quick brown fox ate the lazy mouse The quick brown fox ate the lazy mouse The quick brown fox ate the lazy mouse"; //
-textField.fieldName = "TestTextBox";
-doc.addField(textField);
-
-//http://raw.githack.com/MrRio/jsPDF/master/index.html
+    doc.save(`${displayName}-Resultados-Chaside.pdf`);
+  }
