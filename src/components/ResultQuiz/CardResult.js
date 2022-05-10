@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Button, Card } from 'react-bootstrap';
+import { Card } from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
 import { infoChaside } from '../../data/chaside';
 import {

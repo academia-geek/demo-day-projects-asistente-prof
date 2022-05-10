@@ -6,14 +6,14 @@ import Swal from 'sweetalert2';
 import { useDispatch } from 'react-redux';
 import { deleteUserLogAsync } from '../../redux/actions/actionLogin';
 import { deleteUserAsync } from '../../redux/actions/actionUsers';
-import '../../style/perfil.css'
+import '../../style/perfil.css';
 
 const Perfil = ({ userV }) => {
   const dispatch = useDispatch();
   const { displayName, email, photoURL } = userV;
   const [result, setResult] = useState();
   const [data, setData] = useState([]);
-  console.log(userV.uid);
+  console.log(data);
 
   useEffect(() => {
     if (userV) {
@@ -186,7 +186,7 @@ const Perfil = ({ userV }) => {
   const dataPdf = async () => {
     if (result) {
       const resultPdf = await result?.answers?.filter((item) =>
-        item.ans > 2 ? item.id : null
+        item.ans >= 9 ? item.id : null
       );
 
       const resultSinDuplicate = resultPdf.filter(
@@ -223,9 +223,9 @@ const Perfil = ({ userV }) => {
   };
 
   return (
-    <div style={{ background: '#4B3F6B' }} className='mt-5 Background'>
+    <div style={{ background: '#eee' }} className='mt-5 Background'>
       <Container className='py-5 mt-5 '>
-        <Card className=' ProfileCard mx-auto w-50'>
+        <Card className=' ProfileCard mx-auto'>
           <Card.Img
             className='ProfileCardBackgroundImage w-100'
             alt='Background Image'
@@ -255,7 +255,10 @@ const Perfil = ({ userV }) => {
                   Descargar Resultados
                 </Card.Text>
               </Col>
-              <Col className='cursorp iconHoverX p-2' onClick={() => deleteuser()}>
+              <Col
+                className='cursorp iconHoverX p-2'
+                onClick={() => deleteuser()}
+              >
                 <Card.Text className='TextBold '>
                   <i class='bi bi-x-square-fill '></i>
                 </Card.Text>

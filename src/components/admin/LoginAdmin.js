@@ -114,11 +114,12 @@ const LoginAdmin = ({ setIsAdminLog }) => {
               <button
                 onClick={() => navigate('/landing')}
                 variant='light'
-                className='d-flex m-auto botones'
+                className='d-flex mx-auto px-2   botMore2-btn'
+                style={{ width: '40%' }}
               >
                 {' '}
-                <span className='bi bi-arrow-left-circle-fill'></span> Volver a
-                pagina principal
+                <span className='bi bi-arrow-left-circle-fill mx-2'></span>{' '}
+                Volver a pagina principal
               </button>
             </Col>
           </Row>

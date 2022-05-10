@@ -144,7 +144,7 @@
 .ProfileCardImage {
   width: 96px !important;
   height: 96px !important;
-  margin: 0  auto;
+  margin: 0 auto;
   margin-top: 20px;
   position: relative;
   bottom: 50px;
@@ -404,17 +404,17 @@ button:hover {
   flex-direction: column;
 }
 
-.iconHoverX:hover i{
+.iconHoverX:hover i {
   color: red !important;
 }
-.iconHoverX:hover p{
+.iconHoverX:hover p {
   color: red !important;
   transform: scale(1.5) !important;
 }
-.iconHoverPdf:hover i{
+.iconHoverPdf:hover i {
   color: #2acfcf !important;
 }
-.iconHoverPdf:hover p{
+.iconHoverPdf:hover p {
   color: #2acfcf !important;
   transform: scale(1.5) !important;
 }
@@ -427,82 +427,6 @@ button:hover {
     30px 91px 97px rgba(0, 0, 0, 0.19) !important;
 
   padding-top: 80px auto !important;
-}
-
-.add-btn {
-  padding: 0.5rem 1rem;
-  width: 25% !important;
-  border: 2px solid green !important;
-  position: relative !important;
-  overflow: hidden !important;
-  text-align: center !important;
-  text-transform: uppercase;
-  font-size: 12px !important;
-  transition: 0.3s;
-  z-index: 1 !important;
-  font-family: inherit !important;
-  color: white !important;
-  font-weight: bold !important;
-  border-radius: 3px !important;
-}
-
-.add-btn::before {
-  content: '';
-  width: 0;
-  height: 1700% !important;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) rotate(45deg);
-  background: white !important;
-  transition: 0.5s ease;
-  display: block;
-  z-index: -1;
-}
-
-.add-btn:hover::before {
-  width: 105% !important;
-}
-.add-btn:hover {
-  color: green !important;
-}
-
-.view-btn {
-  padding: 0.5rem 1rem;
-  width: 25% !important;
-  border: 2px solid blue !important;
-  position: relative !important;
-  overflow: hidden !important;
-  text-align: center !important;
-  text-transform: uppercase;
-  font-size: 12px !important;
-  transition: 0.3s;
-  z-index: 1 !important;
-  font-family: inherit !important;
-  color: white !important;
-  font-weight: bold !important;
-  border-radius: 3px !important;
-}
-
-.view-btn::before {
-  content: '';
-  width: 0;
-  height: 1700% !important;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) rotate(45deg);
-  background: white !important;
-  transition: 0.5s ease;
-  display: block;
-  z-index: -1;
-}
-
-.view-btn:hover::before {
-  width: 105% !important;
-}
-.view-btn:hover {
-  color: blue !important;
 }
 
 .back-btn {
@@ -546,18 +470,24 @@ button:hover {
 .guardar-btn {
   padding: 0.5rem 1rem;
   width: 30% !important;
-  border: 2px solid green !important;
+  border: 2px solid #2b9f65 !important;
   position: relative !important;
   overflow: hidden !important;
   text-align: center !important;
   text-transform: uppercase;
-  font-size: 12px !important;
+  font-size: 18px !important;
   transition: 0.3s;
   z-index: 1 !important;
   font-family: inherit !important;
-  color: green !important;
+  color: white !important;
   font-weight: bold !important;
   border-radius: 3px !important;
+  background-color: #2b9f65 !important;
+  box-shadow: 2.9px 8.9px 3.3px rgba(0, 0, 0, 0.059),
+    5.7px 17.4px 8.4px rgba(0, 0, 0, 0.084),
+    8.8px 26.7px 17.2px rgba(0, 0, 0, 0.106),
+    13.7px 41.6px 35.4px rgba(0, 0, 0, 0.131),
+    30px 91px 97px rgba(0, 0, 0, 0.19) !important;
 }
 
 .guardar-btn::before {
@@ -568,7 +498,7 @@ button:hover {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) rotate(45deg);
-  background: green !important;
+  background: whitesmoke !important;
   transition: 0.5s ease;
   display: block;
   z-index: -1;
@@ -578,7 +508,7 @@ button:hover {
   width: 105% !important;
 }
 .guardar-btn:hover {
-  color: white !important;
+  color: #2b9f65 !important;
 }
 
 .reiniciar-btn {
@@ -589,13 +519,19 @@ button:hover {
   overflow: hidden !important;
   text-align: center !important;
   text-transform: uppercase;
-  font-size: 12px !important;
+  font-size: 18px !important;
   transition: 0.3s;
   z-index: 1 !important;
   font-family: inherit !important;
   color: red !important;
   font-weight: bold !important;
   border-radius: 3px !important;
+  background-color: whitesmoke !important;
+  box-shadow: 2.9px 8.9px 3.3px rgba(0, 0, 0, 0.059),
+    5.7px 17.4px 8.4px rgba(0, 0, 0, 0.084),
+    8.8px 26.7px 17.2px rgba(0, 0, 0, 0.106),
+    13.7px 41.6px 35.4px rgba(0, 0, 0, 0.131),
+    30px 91px 97px rgba(0, 0, 0, 0.19) !important;
 }
 
 .reiniciar-btn::before {
@@ -616,6 +552,92 @@ button:hover {
   width: 105% !important;
 }
 .reiniciar-btn:hover {
+  color: white !important;
+}
+.add-btn {
+  padding: 0.5rem 1rem;
+  width: 30% !important;
+  border: 2px solid #2b9f65 !important;
+  position: relative !important;
+  overflow: hidden !important;
+  text-align: center !important;
+  text-transform: uppercase;
+  font-size: 18px !important;
+  transition: 0.3s;
+  z-index: 1 !important;
+  font-family: inherit !important;
+  color: #2b9f65 !important;
+  font-weight: bold !important;
+  border-radius: 3px !important;
+  background-color: whitesmoke !important;
+  box-shadow: 2.9px 8.9px 3.3px rgba(0, 0, 0, 0.059),
+    5.7px 17.4px 8.4px rgba(0, 0, 0, 0.084),
+    8.8px 26.7px 17.2px rgba(0, 0, 0, 0.106),
+    13.7px 41.6px 35.4px rgba(0, 0, 0, 0.131),
+    30px 91px 97px rgba(0, 0, 0, 0.19) !important;
+}
+
+.add-btn::before {
+  content: '';
+  width: 0;
+  height: 1700% !important;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  background: #2b9f65 !important;
+  transition: 0.5s ease;
+  display: block;
+  z-index: -1;
+}
+
+.add-btn:hover::before {
+  width: 105% !important;
+}
+.add-btn:hover {
+  color: white !important;
+}
+.view-btn {
+  padding: 0.5rem 1rem;
+  width: 30% !important;
+  border: 2px solid #2b939f !important;
+  position: relative !important;
+  overflow: hidden !important;
+  text-align: center !important;
+  text-transform: uppercase;
+  font-size: 18px !important;
+  transition: 0.3s;
+  z-index: 1 !important;
+  font-family: inherit !important;
+  color: #2b939f !important;
+  font-weight: bold !important;
+  border-radius: 3px !important;
+  background-color: whitesmoke !important;
+  box-shadow: 2.9px 8.9px 3.3px rgba(0, 0, 0, 0.059),
+    5.7px 17.4px 8.4px rgba(0, 0, 0, 0.084),
+    8.8px 26.7px 17.2px rgba(0, 0, 0, 0.106),
+    13.7px 41.6px 35.4px rgba(0, 0, 0, 0.131),
+    30px 91px 97px rgba(0, 0, 0, 0.19) !important;
+}
+
+.view-btn::before {
+  content: '';
+  width: 0;
+  height: 1700% !important;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  background: #2b939f !important;
+  transition: 0.5s ease;
+  display: block;
+  z-index: -1;
+}
+
+.view-btn:hover::before {
+  width: 105% !important;
+}
+.view-btn:hover {
   color: white !important;
 }
 
@@ -684,6 +706,7 @@ button:hover {
   border: 1px solid #2b939f !important;
   width: 100%;
   margin: 60px auto !important;
+  border-radius: 5px !important;
 }
 
 .watchU-btn::before {
@@ -710,4 +733,175 @@ button:hover {
 
 .fsize7 {
   font-size: 14px !important;
+}
+
+.botMore-btn {
+  padding: 0.5rem 1rem;
+  position: relative;
+  overflow: hidden;
+  background-color: whitesmoke;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 16px !important;
+  transition: 0.3s;
+  z-index: 1;
+  font-family: inherit;
+  color: #2acfcf !important;
+  font-weight: 600 !important;
+  border: 1px solid #2acfcf !important;
+  width: 50%;
+  box-shadow: 2.9px 8.9px 3.3px rgba(0, 0, 0, 0.059),
+    5.7px 17.4px 8.4px rgba(0, 0, 0, 0.084),
+    8.8px 26.7px 17.2px rgba(0, 0, 0, 0.106),
+    13.7px 41.6px 35.4px rgba(0, 0, 0, 0.131),
+    30px 91px 97px rgba(0, 0, 0, 0.19) !important;
+}
+
+.botMore-btn::before {
+  content: '';
+  width: 0;
+  height: 1000%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  background: #2acfcf !important;
+  transition: 0.5s ease;
+  display: block;
+  z-index: -1;
+}
+
+.botMore-btn:hover::before {
+  width: 105%;
+}
+
+.botMore-btn:hover {
+  color: rgb(66, 64, 64) !important;
+}
+
+.botMore2-btn {
+  padding: 0.5rem 1rem;
+  position: relative;
+  overflow: hidden;
+  background-color: whitesmoke;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 10px !important;
+  transition: 0.3s;
+  z-index: 1;
+  font-family: inherit;
+  color: #2acfcf !important;
+  font-weight: 600 !important;
+  border: 1px solid #2acfcf !important;
+  width: 50%;
+}
+
+.botMore2-btn::before {
+  content: '';
+  width: 0;
+  height: 1000%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  background: #2acfcf !important;
+  transition: 0.5s ease;
+  display: block;
+  z-index: -1;
+}
+
+.botMore2-btn:hover::before {
+  width: 105%;
+}
+
+.botMore2-btn:hover {
+  color: rgb(66, 64, 64) !important;
+}
+
+.login-btn {
+  padding: 0.5rem 1rem;
+  position: relative;
+  overflow: hidden;
+  background-color: whitesmoke;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 14px !important;
+  transition: 0.3s;
+  z-index: 1;
+  font-family: inherit;
+  color: #2acfcf !important;
+  font-weight: 600 !important;
+  border: 1px solid #2acfcf !important;
+  width: 100%;
+  box-shadow: 2.9px 8.9px 3.3px rgba(0, 0, 0, 0.059),
+    5.7px 17.4px 8.4px rgba(0, 0, 0, 0.084),
+    8.8px 26.7px 17.2px rgba(0, 0, 0, 0.106),
+    13.7px 41.6px 35.4px rgba(0, 0, 0, 0.131),
+    30px 91px 97px rgba(0, 0, 0, 0.19) !important;
+}
+
+.login-btn::before {
+  content: '';
+  width: 0;
+  height: 1000%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  background: #2acfcf !important;
+  transition: 0.5s ease;
+  display: block;
+  z-index: -1;
+}
+
+.login-btn:hover::before {
+  width: 105%;
+}
+
+.login-btn:hover {
+  color: rgb(66, 64, 64) !important;
+}
+.newUser-btn {
+  padding: 0.5rem 1rem;
+  position: relative;
+  overflow: hidden;
+  background-color: #2acfcf;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 14px !important;
+  transition: 0.3s;
+  z-index: 1;
+  font-family: inherit;
+  color: rgb(66, 64, 64) !important;
+  font-weight: 600 !important;
+  border: 1px solid #2acfcf !important;
+  width: 100%;
+  box-shadow: 2.9px 8.9px 3.3px rgba(0, 0, 0, 0.059),
+    5.7px 17.4px 8.4px rgba(0, 0, 0, 0.084),
+    8.8px 26.7px 17.2px rgba(0, 0, 0, 0.106),
+    13.7px 41.6px 35.4px rgba(0, 0, 0, 0.131),
+    30px 91px 97px rgba(0, 0, 0, 0.19) !important;
+}
+
+.newUser-btn::before {
+  content: '';
+  width: 0;
+  height: 1000%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  background: whitesmoke !important;
+  transition: 0.5s ease;
+  display: block;
+  z-index: -1;
+}
+
+.newUser-btn:hover::before {
+  width: 105%;
+}
+
+.newUser-btn:hover {
+  color: #2acfcf !important;
 }

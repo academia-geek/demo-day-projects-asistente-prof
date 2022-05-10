@@ -31,7 +31,7 @@ export const Login = ({ userV, conterLogin }) => {
   const handleGoogle = () => {
     dispatch(loginGoogle());
     setTimeout(() => {
-      if (conterLogin === 85) {
+      if (conterLogin === 0) {
         console.log('entro');
         Swal.fire({
           title: 'Bienvenido',
@@ -45,7 +45,7 @@ export const Login = ({ userV, conterLogin }) => {
   const handleFacebook = () => {
     dispatch(loginFacebook(conterLogin));
     setTimeout(() => {
-      if (conterLogin === 85) {
+      if (conterLogin === 0) {
         Swal.fire({
           title: 'Bienvenido',
           text: 'A continuación van a realizar un test de 98 preguntas donde tienen como resultado sus habilidades y aptitudes que ayudaran a encontar la carrera que se adapta a su perfil.',

@@ -19,7 +19,7 @@ const Register = () => {
     e.preventDefault();
     dispatch(registerAsync(email, pass1, nombre));
     localStorage.setItem('answers', JSON.stringify([]));
-    localStorage.setItem('conter', JSON.stringify(85));
+    localStorage.setItem('conter', JSON.stringify(0));
     localStorage.setItem('letters', JSON.stringify([0, 0, 0, 0, 0, 0, 0]));
 
     reset();

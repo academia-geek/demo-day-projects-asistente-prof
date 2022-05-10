@@ -25,20 +25,20 @@ export const Unis = () => {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
     return (
-        <div className='' style={{ background: '#4B3F6B', marginTop: '80px' }}>
-            <h2 className='text-center text-light fw-bold titleUni'>
+        <div className='' style={{ background: '#eee', marginTop: '80px' }}>
+            <h2 className='text-center fw-bold titleUni'>
                 Carreras universitarias
             </h2>
             <SearchUnis />
-            <h3 className='text-light w-75 m-auto'>Resultados: {careeries.length}</h3>
+            <h3 className=' w-75 m-auto'>Resultados: {careeries.length}</h3>
 
             <div
-                className='py-5 d-flex justify-content-between flex-wrap'
+                className=' d-flex justify-content-between flex-wrap'
                 style={{ width: '100%' }}
             >
                 {careeries.map((carrera, index) => (
                     <Container
-                        className='d-flex my-3 bg-white rounded'
+                        className='d-flex my-3 bg-white rounded border'
                         style={{ minWidth: '500px', maxWidth: '700px' }}
                         key={carrera.idCarrera}
                     >

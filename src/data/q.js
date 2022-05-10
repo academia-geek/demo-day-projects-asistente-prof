@@ -49,7 +49,9 @@ export const quest = [
     id: 7,
     quest:
       '¿Te interesan más los misterios de la naturaleza que los secretos de la tecnología?',
-    formacion: '7',
+    formacion: 'e',
+    imagen:
+      'https://res.cloudinary.com/edwin3002/image/upload/v1651613848/u/e_fety8d.jpg',
   },
   {
     id: 8,

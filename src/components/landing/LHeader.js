@@ -19,12 +19,15 @@ const LHeader = () => {
           <Navbar.Collapse className='' id='basic-navbar-nav'>
             <Nav className='m-auto w-100 d-flex justify-content-end'>
               <Link to='/login' className='m-2'>
-                <Button variant='outline-info' className='text-light'>
+                <Button
+                  variant='outline-info'
+                  className='text-light login-btn '
+                >
                   Login
                 </Button>
               </Link>
               <Link className='m-2' to='/register'>
-                <Button variant='info' style={{ background: '#6ee6e6' }}>
+                <Button variant='info' className='newUser-btn'>
                   Crear cuenta
                 </Button>
               </Link>
