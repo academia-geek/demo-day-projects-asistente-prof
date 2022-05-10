@@ -22,6 +22,7 @@ const SignupSchema = Yup.object().shape({
     .min(5, 'muy corta')
     .max(10, 'muy larga')
     .required('el password es obligatorio'),
+    
 });
 
 export const Login = ({ userV, conterLogin }) => {
@@ -33,25 +34,25 @@ export const Login = ({ userV, conterLogin }) => {
       if (conterLogin === 85) {
         Swal.fire({
           title: 'Bienvenido',
-          text: 'A continuación van a realizar un test de 98 preguntas donde tienen como resultado sus habilidades y actitudes que ayudaran a encontar la carrera que se adapta a su perfil.',
+          text: 'A continuación van a realizar un test de 98 preguntas donde tienen como resultado sus habilidades y aptitudes que ayudaran a encontar la carrera que se adapta a su perfil.',
           icon: 'exito',
           confirmButtonText: 'Realizar Test',
         });
       }
-    }, 2000);
+    }, 2500);
   };
   const handleFacebook = () => {
     dispatch(loginFacebook(conterLogin));
     setTimeout(() => {
       if (conterLogin === 85) {
-        Swal.fire({
-          title: 'Bienvenido',
-          text: 'A continuación van a realizar un test de 98 preguntas donde tienen como resultado sus habilidades y actitudes que ayudaran a encontar la carrera que se adapta a su perfil.',
-          icon: 'exito',
-          confirmButtonText: 'Realizar Test',
-        });
+            Swal.fire({
+              title: 'Bienvenido',
+              text: 'A continuación van a realizar un test de 98 preguntas donde tienen como resultado sus habilidades y aptitudes que ayudaran a encontar la carrera que se adapta a su perfil.',
+              icon: 'exito',
+              confirmButtonText: 'Realizar Test',
+            });
       }
-    }, 2000);
+    }, 2500);
   };
 
   return (
@@ -91,6 +92,7 @@ export const Login = ({ userV, conterLogin }) => {
             <Container
               className='google-icon-wrapper d-flex   w-75 my-2 px-2  cursorp'
               onClick={handleGoogle}
+              
             >
               <span className='d-flex  gap-5 google-btn iWhite '>
                 <i class='bi bi-google text-danger fs-5 iWhite   '></i>
@@ -121,6 +123,20 @@ export const Login = ({ userV, conterLogin }) => {
                     conterLogin
                   )
                 );
+                if (loginEmailPassAsync === true) {
+                  Swal.fire({
+                    title: 'Bienvenido',
+                    text: 'A continuación van a realizar un test de 98 preguntas donde tienen como resultado sus habilidades y aptitudes que ayudaran a encontar la carrera que se adapta a su perfil.',
+                    icon: 'exito',
+                    confirmButtonText: 'Realizar Test',
+                  });
+                } else {
+                  Swal.fire({
+                    title: 'Contraseña o Usuario equivocado',
+                    icon: 'error',
+                  });
+                  
+                }
               }}
             >
               {({ errors, touched }) => (
@@ -148,13 +164,16 @@ export const Login = ({ userV, conterLogin }) => {
                   {errors.password && touched.password ? (
                     <div>{errors.password}</div>
                   ) : null}
+                  
                   <button
                     className='d-flex mx-auto w-75 text-center continuar-btn'
                     type='submit'
-                    style={{ background: '#6ee6e6' }}
+                    style={{ background: '#6ee6e6' }} 
                   >
                     Continue
                   </button>
+                  
+
                 </Form>
               )}
             </Formik>
