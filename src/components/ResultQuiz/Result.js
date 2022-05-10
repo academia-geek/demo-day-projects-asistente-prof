@@ -153,7 +153,7 @@ const Result = ({
           </div>
         ) : (
           <div className='centrar'>
-            <h2 className='mt-5 pt-5 '>
+            <h2 className='mt-5 pt-5 fs-1'>
               {' '}
               Hola, <span className='fw-bold'>{displayName}</span> estos son tus
               resultados:

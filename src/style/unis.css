@@ -1,31 +1,90 @@
+
+:root{
+  --clippy: polygon(0 0, 90% 0, 100% 100%, 0% 100%);
+}
 #c {
   background-color: #94e7e7;
   color: black;
 }
+
 #h {
+  display: none;
+  position: absolute;
   background-color: #5d527a;
   color: white;
 }
 
 #a {
+  display: none;
+  position: absolute;
   background-color: #ff8080;
   color: white;
 }
 #s {
+  display: none;
+  position: absolute;
   background-color: #ff80ff;
   color: white;
 }
 #i {
+  display: none;
+  position: absolute;
   background-color: #ff9a52;
   color: black;
 }
+
 #d {
+  display: none;
+  position: absolute;
   background-color: #7449e8;
   color: white;
 }
 #e {
+  display: none;
+  position: absolute;
   background-color: #80ef9f;
   color: black;
+}
+.subT p {
+  width: 40%;
+}
+.subT:hover #c{
+  display: block;
+  z-index: 10;
+  transition: display 2s;
+}
+.subT:hover #h{
+  display: block;
+  z-index: 10;
+  transition: display 2s;
+}
+.subT:hover #a{
+  display: block;
+  z-index: 10;
+  transition: display 2s;
+}
+.subT:hover #s{
+  display: block;
+  z-index: 10;
+  transition: display 2s;
+}
+.subT:hover #i{
+  display: block;
+  z-index: 10;
+  transition: display 2s;
+}
+.subT:hover #d{
+  display: block;
+  z-index: 10;
+  transition: display 2s;
+}
+.subT:hover #e{
+  display: block;
+  z-index: 10;
+  transition: display 2s;
+}
+.subT:hover .flecha{
+  color: #94e7e7;
 }
 .cardResultdos {
   margin-top: 5px;
