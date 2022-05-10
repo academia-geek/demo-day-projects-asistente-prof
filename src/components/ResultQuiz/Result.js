@@ -29,7 +29,6 @@ const Result = ({
     letters,
   });
   const [resetarTest, setResetarTest] = useState(2);
-  console.log(resetarTest);
 
   const dispatch = useDispatch();
   const { careeries } = useSelector((store) => store.careeries);
