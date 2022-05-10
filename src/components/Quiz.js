@@ -94,6 +94,25 @@ export const Quiz = ({ userV, setnumero }) => {
   }, [letters]);
 
   useEffect(() => {
+    const numeroMayor = Math.max(...answers.map((item) => item.ans));
+    const arraySinMayor = answers.filter((item) => item.ans !== numeroMayor);
+    const numeroMayor2 = Math.max(...arraySinMayor.map((item) => item.ans));
+
+    const prueba = answers?.find((item) =>
+      item.ans === numeroMayor ? item.id : null
+    );
+
+    const prueba2 = arraySinMayor.find((item) =>
+      item.ans === numeroMayor2 ? item.id : null
+    );
+
+    const datosFinal = [prueba, prueba2];
+
+    setFocus(datosFinal);
+  }, [answers]);
+  console.log(focus);
+
+  useEffect(() => {
     localStorage.setItem('answers', JSON.stringify(answers));
     localStorage.setItem('conter', JSON.stringify(conter));
     localStorage.setItem('letters', JSON.stringify(letters));
