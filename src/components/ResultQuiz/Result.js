@@ -32,7 +32,7 @@ const Result = ({
 
   const dispatch = useDispatch();
   const { careeries } = useSelector((store) => store.careeries);
-  console.log(careeries);
+  // console.log(careeries);
 
   useEffect(() => {
     dispatch(paintCareerAsync());

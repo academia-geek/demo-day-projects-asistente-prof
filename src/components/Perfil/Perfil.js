@@ -14,16 +14,21 @@ const Perfil = ({ userV }) => {
   const [result, setResult] = useState();
   const [data, setData] = useState([]);
   console.log(data);
-
+  console.log(userV);
+  console.log(result);
+  
   useEffect(() => {
     if (userV) {
-      setResult(JSON.parse(localStorage.getItem('user')));
+      const data =  JSON.parse(localStorage.getItem('user'))
+      setResult(data);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
+  
+  let a = 'hola'
   function generatorPDF() {
     const doc = new jsPDF();
+    console.log(a)
     //cuadrado
     doc.setFillColor(75, 63, 107);
     doc.rect(0, 0, 210, 40, 'F');
@@ -60,19 +65,22 @@ const Perfil = ({ userV }) => {
     doc.rect(30, 85, 60, 8, 'F');
     doc.setFontSize(12);
     doc.setTextColor(0, 0, 0);
-    doc.text(`${data[0].title}`, 35, 90);
+    doc.text(`${data[0].title}`, 32, 90);
+    // doc.text(`${data[0].title}`, 35, 90);
 
     //img cuadro
-    doc.addImage(`${data[0].imagen}`, 30, 95, 60, 60);
+    doc.addImage(`${data[0].imagen}`, 30, 105, 60, 60);
+    // doc.addImage(`${data[0].imagen}`, 30, 95, 60, 60);
 
     //cuadro y text intereses
-    doc.setFontSize(18);
+    doc.setFontSize(14);
     doc.setTextColor(252, 252, 252);
-    doc.text(`Intereses`, 125, 90);
-    doc.line(100, 92, 180, 92);
+    doc.text(`Intereses`, 130, 93);
+    // doc.line(100, 92, 180, 92);
 
+    doc.setFontSize(12);
     doc.setFillColor(75, 63, 107);
-    doc.rect(100, 95, 80, 15, 'F');
+    doc.rect(100, 95, 80, 20, 'F');
 
     doc.setFontSize(10);
     doc.setTextColor(252, 252, 252);
@@ -82,14 +90,15 @@ const Perfil = ({ userV }) => {
     });
 
     //cuadro y text aptitudes
-    doc.setFontSize(18);
+    doc.setFontSize(14);
     doc.setTextColor(252, 252, 252);
-    doc.text(`Aptitudes`, 125, 120);
+    doc.text(`Aptitudes`, 130, 123);
 
     doc.setFillColor(75, 63, 107);
-    doc.rect(100, 125, 80, 15, 'F');
+    doc.rect(100, 125, 80, 20, 'F');
 
-    doc.setFontSize(12);
+
+    doc.setFontSize(10);
     doc.setTextColor(252, 252, 252);
     doc.text(`${data[0].aptitudes}`, 105, 130, {
       align: 'justify',
@@ -97,14 +106,14 @@ const Perfil = ({ userV }) => {
     });
 
     //cuadro y carreras
-    doc.setFontSize(18);
+    doc.setFontSize(14);
     doc.setTextColor(252, 252, 252);
-    doc.text(`Carreras`, 125, 150);
+    doc.text(`Carreras`, 130, 153);
 
     doc.setFillColor(75, 63, 107);
     doc.rect(100, 155, 80, 20, 'F');
 
-    doc.setFontSize(12);
+    doc.setFontSize(10);
     doc.setTextColor(252, 252, 252);
     doc.text(`${data[0].carrera}`, 105, 160, {
       align: 'justify',
@@ -116,7 +125,7 @@ const Perfil = ({ userV }) => {
     doc.rect(20, 190, 170, 100, 'F');
 
     //cuadro tipo de carrera y texto
-    doc.setFillColor(148, 231, 231);
+    doc.setFillColor(148, 231, 233);
     doc.rect(30, 195, 60, 8, 'F');
     doc.setFontSize(12);
     doc.setTextColor(0, 0, 0);
@@ -126,15 +135,15 @@ const Perfil = ({ userV }) => {
     });
 
     //img cuadro 2
-    doc.addImage(`${data[1].imagen}`, 30, 205, 60, 60);
+    doc.addImage(`${data[1].imagen}`, 30, 215, 60, 60);
 
     //cuadro y text intereses 2
-    doc.setFontSize(18);
+    doc.setFontSize(14);
     doc.setTextColor(252, 252, 252);
-    doc.text(`Intereses`, 125, 200);
+    doc.text(`Intereses`, 130, 203);
 
     doc.setFillColor(75, 63, 107);
-    doc.rect(100, 205, 80, 15, 'F');
+    doc.rect(100, 205, 80, 20, 'F');
 
     doc.setFontSize(10);
     doc.setTextColor(252, 252, 252);
@@ -144,14 +153,14 @@ const Perfil = ({ userV }) => {
     });
 
     //cuadro y text aptitudes 2
-    doc.setFontSize(18);
+    doc.setFontSize(14);
     doc.setTextColor(252, 252, 252);
-    doc.text(`Aptitudes`, 125, 230);
+    doc.text(`Aptitudes`, 130, 233);
 
     doc.setFillColor(75, 63, 107);
-    doc.rect(100, 235, 80, 15, 'F');
+    doc.rect(100, 235, 80, 20, 'F');
 
-    doc.setFontSize(12);
+    doc.setFontSize(10);
     doc.setTextColor(252, 252, 252);
     doc.text(`${data[1].aptitudes}`, 105, 240, {
       align: 'justify',
@@ -159,14 +168,14 @@ const Perfil = ({ userV }) => {
     });
 
     //cuadro y carreras 2
-    doc.setFontSize(18);
+    doc.setFontSize(14);
     doc.setTextColor(252, 252, 252);
-    doc.text(`Carreras`, 125, 260);
+    doc.text(`Carreras`, 130, 263);
 
     doc.setFillColor(75, 63, 107);
     doc.rect(100, 265, 80, 20, 'F');
 
-    doc.setFontSize(12);
+    doc.setFontSize(10);
     doc.setTextColor(252, 252, 252);
     doc.text(`${data[1].carrera}`, 105, 272, {
       align: 'justify',
