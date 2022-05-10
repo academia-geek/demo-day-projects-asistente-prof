@@ -211,7 +211,7 @@ button:hover::before {
 }
 
 button:hover {
-  color: white !important;
+  color: rgb(66, 64, 64) !important;
 }
 
 .botones {
@@ -609,4 +609,54 @@ button:hover {
 }
 .reiniciar-btn:hover {
   color: white !important;
+}
+
+.logout-btn {
+  position: relative;
+  overflow: hidden;
+  background-color: transparent;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 16px !important;
+  transition: 0.3s;
+  z-index: 1;
+  font-family: inherit;
+  color: white !important;
+  border: 1px solid rgb(250, 79, 79) !important;
+}
+
+.logout-btn::before {
+  content: '';
+  width: 0;
+  height: 500%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  background: rgb(250, 79, 79) !important;
+  transition: 0.5s ease;
+  display: block;
+  z-index: -1;
+}
+
+.logout-btn:hover::before {
+  width: 105%;
+}
+
+.logout-btn:hover {
+  color: white !important;
+}
+
+.iconHover:hover {
+  color: white !important;
+}
+.iconHover:hover i {
+  color: white !important;
+}
+
+.iconHover2:hover {
+  color: black !important;
+}
+.iconHover2:hover span {
+  color: black !important;
 }
