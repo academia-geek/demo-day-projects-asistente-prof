@@ -94,20 +94,6 @@ export const Quiz = ({ userV, setnumero }) => {
   }, [letters]);
 
   useEffect(() => {
-    const numeroMayor = Math.max(...answers.map((item) => item.ans));
-    const EliminarNumeroMayor = answers.filter(
-      (item) => item.ans !== numeroMayor
-    );
-
-    const prueba = answers?.filter((item) =>
-      item.ans >= numeroMayor - 1 ? item.id : null
-    );
-
-    console.log(prueba);
-    setFocus(prueba);
-  }, [answers]);
-
-  useEffect(() => {
     localStorage.setItem('answers', JSON.stringify(answers));
     localStorage.setItem('conter', JSON.stringify(conter));
     localStorage.setItem('letters', JSON.stringify(letters));
