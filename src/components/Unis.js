@@ -30,7 +30,7 @@ export const Unis = () => {
                 Carreras universitarias
             </h2>
             <SearchUnis />
-            <h2 className='text-light w-75 m-auto'>Resultados: {careeries.length}</h2>
+            <h3 className='text-light w-75 m-auto'>Resultados: {careeries.length}</h3>
 
             <div
                 className='py-5 d-flex justify-content-between flex-wrap'
@@ -113,7 +113,7 @@ export const Unis = () => {
                                     target='_blank'
                                     rel='noreferrer'
                                 >
-                                    Ver carrera{' '}
+                                    Más información
                                 </a>
                             </Card.Text>
                         </Card.Body>

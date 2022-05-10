@@ -1,0 +1,16 @@
+.swal2-cancel {
+
+    border: none !important;
+}
+.swal2-cancel::before {
+    background-color: transparent !important;
+}
+.swal2-confirm{
+    background-color: #2b939f !important;
+}
+.swal2-confirm::before {
+    background-color: #247881 !important;
+}
+.ProfileCard{
+    margin-top: 100px;
+}
