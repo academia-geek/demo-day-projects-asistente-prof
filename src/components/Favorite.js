@@ -27,18 +27,18 @@ export const Favorites = () => {
     }
   }, [setdataf]);
   return (
-    <div className=' py-5' style={{ background: '#4B3F6B' }}>
-      <h2 className='text-center text-light fw-bold  titleUni'>
+    <div className=' py-5' style={{ background: '#eee' }}>
+      <h2 className='text-center my-5 fw-bold  titleUni'>
         Tus Carreras Favoritas
       </h2>
 
       <div
-        className='py-2 d-flex justify-content-between flex-wrap'
+        className=' d-flex justify-content-between flex-wrap '
         style={{ width: '100%' }}
       >
         {dataf.length === 0 ? (
-          <div className='w-75 d-flex justify-content-between flex-column align-items-center mx-auto my-5'>
-            <div className='bg-light d-flex flex-column justify-content-center align-items-center rounded-3'>
+          <div className='w-75 d-flex justify-content-between flex-column align-items-center mx-auto'>
+            <div className='bg-light d-flex flex-column justify-content-center align-items-center rounded-3 shadow'>
               <h2
                 className='text-black  mx-auto w-100 text-center  mt-5 px-5 py-3 fw-bold text-light shadow-sm '
                 style={{ background: '#2acfcf' }}

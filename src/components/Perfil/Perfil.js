@@ -223,9 +223,9 @@ const Perfil = ({ userV }) => {
   };
 
   return (
-    <div style={{ background: '#4B3F6B' }} className='mt-5 Background'>
+    <div style={{ background: '#eee' }} className='mt-5 Background'>
       <Container className='py-5 mt-5 '>
-        <Card className=' ProfileCard mx-auto w-50'>
+        <Card className=' ProfileCard mx-auto'>
           <Card.Img
             className='ProfileCardBackgroundImage w-100'
             alt='Background Image'
