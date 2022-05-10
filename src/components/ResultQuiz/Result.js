@@ -69,7 +69,7 @@ const Result = ({
       <Container className='w-100'>
         {resultMatch ? (
           <div>
-            <h1 className='pt-5' onClick={() => setResultMatch(false)}>
+            <h1 className='mt-5 fs-3' style={{position: 'fixed'}}  onClick={() => setResultMatch(false)}>
               <span className='bi bi-arrow-left-circle-fill text-info'></span>{' '}
               Volver
             </h1>

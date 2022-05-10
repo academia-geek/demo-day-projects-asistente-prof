@@ -25,18 +25,21 @@ const SearchUnis = () => {
   };
 
   return (
-    <Form className='w-75 mx-auto my-0' onSubmit={handleSubmit}>
-      <InputGroup className='mb-3 '>
-        <FormControl
-          placeholder='Buscar carrera'
-          name='busqueda'
-          onChange={handleInputChange}
-        />
-        <Button variant='outline-secondary' type='submit'>
-          <i className='bi bi-search'></i>
-        </Button>
-      </InputGroup>
-    </Form>
+    <div>
+
+      <Form className='w-50 mx-auto my-0' onSubmit={handleSubmit}>
+        <InputGroup className='mb-3 '>
+          <FormControl
+            placeholder='Buscar carrera'
+            name='busqueda'
+            onChange={handleInputChange}
+          />
+          <Button variant='outline-secondary' type='submit'>
+            <i className='bi bi-search'></i>
+          </Button>
+        </InputGroup>
+      </Form>
+    </div>
   );
 };
 
