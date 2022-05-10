@@ -16,7 +16,7 @@ import {
   deleteCareerAsync,
   paintCareerAsync,
 } from '../../redux/actions/actionUniversity';
-import '../../style/CRUDstyles.css';
+import '../../style/crud.css';
 import { Edit } from '../Edit';
 
 const CRUDUniversity = () => {
@@ -287,7 +287,7 @@ const CRUDUniversity = () => {
                   {carr.titulo}
                 </div>
               </td>
-              <td className='position-relative' id={carr.area}>
+              <td className='position-relative' id={carr.area + '1'}>
                 <div className='position-absolute top-50 start-50 translate-middle text-light fw-bold text-uppercase'>
                   {carr.area}
                 </div>
