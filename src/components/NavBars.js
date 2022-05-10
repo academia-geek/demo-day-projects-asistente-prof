@@ -36,7 +36,7 @@ const NavBars = ({ userV, numero }) => {
             <Nav className='me-auto' style={{ gap: '10px' }}>
               <Link to='/' className='mx-2'>
                 <Button
-                  className='fs-5'
+                  className='fs-6'
                   style={{
                     background: 'transparent',
                     border: 'none',
@@ -48,7 +48,7 @@ const NavBars = ({ userV, numero }) => {
               </Link>
               <Link to='/unis' className='mx-2'>
                 <Button
-                  className='fs-5'
+                  className='fs-6'
                   style={{
                     background: 'transparent',
                     border: 'none',
@@ -60,7 +60,7 @@ const NavBars = ({ userV, numero }) => {
               </Link>
               <Link to='/favorites' className='mx-2'>
                 <Button
-                  className='fs-5'
+                  className='fs-6'
                   style={{
                     background: 'transparent',
                     border: 'none',
@@ -78,7 +78,7 @@ const NavBars = ({ userV, numero }) => {
               <Link to='/perfil' className='mx-4 '>
                 <Button
                   variant='outline-info'
-                  className='mx-4 fs-6 fw-bold iconHover2 '
+                  className='mx-4  fsize7 fw-bold iconHover2 '
                 >
                   <span className='text-light fw-light'>Hola,</span>{' '}
                   {displayName}
@@ -86,7 +86,7 @@ const NavBars = ({ userV, numero }) => {
               </Link>
 
               <Button
-                className='fw-bold logout-btn iconHover '
+                className='fw-bold logout-btn iconHover fsize7 '
                 style={{ background: 'transparent' }}
                 onClick={() => {
                   handleLogout();

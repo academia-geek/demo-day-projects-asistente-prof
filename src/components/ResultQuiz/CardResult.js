@@ -21,7 +21,7 @@ const CardResult = ({ item, setResultMatch }) => {
   }, []);
 
   return (
-    <div className='w-100 d-flex shadow rounded mx-auto  p-0 cardResultdos'>
+    <div className='w-100 d-flex shadow-lg  rounded mx-auto my-5  p-0 cardResultdos'>
       {infoChaside.map((ite) =>
         ite.id === item ? (
           <div className='w-100 rounded cardResult ' key={ite.id}>
@@ -29,7 +29,7 @@ const CardResult = ({ item, setResultMatch }) => {
               className=' my-auto mx-2 py-2 px-4'
               style={{
                 maxWidth: '400px',
-                border: '5px solid #2ACFCF',
+                border: '5px solid #2b939f',
                 borderRadius: '20px',
               }}
             >
@@ -41,18 +41,18 @@ const CardResult = ({ item, setResultMatch }) => {
                   ite.id === 'c'
                     ? 'https://res.cloudinary.com/edwin3002/image/upload/v1651613763/u/c_rwrkmu.jpg'
                     : ite.id === 'h'
-                      ? 'https://res.cloudinary.com/edwin3002/image/upload/v1651613751/u/h_ce1m2k.jpg'
-                      : ite.id === 'a'
-                        ? 'https://res.cloudinary.com/edwin3002/image/upload/v1651613869/u/a_zb7e01.jpg'
-                        : ite.id === 's'
-                          ? 'https://res.cloudinary.com/edwin3002/image/upload/v1651613762/u/s_indnvz.webp'
-                          : ite.id === 'i'
-                            ? 'https://res.cloudinary.com/edwin3002/image/upload/v1651613827/u/i_lccsi4.jpg'
-                            : ite.id === 'd'
-                              ? 'https://res.cloudinary.com/edwin3002/image/upload/v1651613853/u/d_g4ibn7.jpg'
-                              : ite.id === 'e'
-                                ? 'https://res.cloudinary.com/edwin3002/image/upload/v1651613848/u/e_fety8d.jpg'
-                                : 'https://thumbs.dreamstime.com/b/sin-foto-ni-icono-de-imagen-en-blanco-cargar-im%C3%A1genes-o-falta-marca-no-disponible-pr%C3%B3xima-se%C3%B1al-silueta-naturaleza-simple-marco-215973362.jpg'
+                    ? 'https://res.cloudinary.com/edwin3002/image/upload/v1651613751/u/h_ce1m2k.jpg'
+                    : ite.id === 'a'
+                    ? 'https://res.cloudinary.com/edwin3002/image/upload/v1651613869/u/a_zb7e01.jpg'
+                    : ite.id === 's'
+                    ? 'https://res.cloudinary.com/edwin3002/image/upload/v1651613762/u/s_indnvz.webp'
+                    : ite.id === 'i'
+                    ? 'https://res.cloudinary.com/edwin3002/image/upload/v1651613827/u/i_lccsi4.jpg'
+                    : ite.id === 'd'
+                    ? 'https://res.cloudinary.com/edwin3002/image/upload/v1651613853/u/d_g4ibn7.jpg'
+                    : ite.id === 'e'
+                    ? 'https://res.cloudinary.com/edwin3002/image/upload/v1651613848/u/e_fety8d.jpg'
+                    : 'https://thumbs.dreamstime.com/b/sin-foto-ni-icono-de-imagen-en-blanco-cargar-im%C3%A1genes-o-falta-marca-no-disponible-pr%C3%B3xima-se%C3%B1al-silueta-naturaleza-simple-marco-215973362.jpg'
                 }
               />
             </div>
@@ -65,9 +65,10 @@ const CardResult = ({ item, setResultMatch }) => {
                 <hr />
                 <div className='subT'>
                   <div className='d-flex align-items-center justify-content-between'>
-
-                    <Card.Title className='my-4 text-center fs-3'>Intereses</Card.Title>
-                    <span className="flecha bi bi-caret-down-square"></span>
+                    <Card.Title className='my-4 text-center fs-3'>
+                      Intereses
+                    </Card.Title>
+                    <span className='flecha bi bi-caret-down-square'></span>
                   </div>
                   <p
                     id={ite.id}
@@ -76,10 +77,12 @@ const CardResult = ({ item, setResultMatch }) => {
                     {ite.intereses}
                   </p>
                 </div>
-                <div className='subT' >
+                <div className='subT'>
                   <div className='d-flex align-items-center justify-content-between'>
-                    <Card.Title className='my-4 text-center fs-3'>Aptitudes</Card.Title>
-                    <span className="flecha bi bi-caret-down-square"></span>
+                    <Card.Title className='my-4 text-center fs-3'>
+                      Aptitudes
+                    </Card.Title>
+                    <span className='flecha bi bi-caret-down-square'></span>
                   </div>
                   <p
                     id={ite.id}
@@ -91,25 +94,24 @@ const CardResult = ({ item, setResultMatch }) => {
                 <div className='subT'>
                   <div className='d-flex align-items-center justify-content-between'>
                     <Card.Title className='my-4 fs-3 '>Carreras </Card.Title>
-                    <span className="flecha bi bi-caret-down-square"></span>
+                    <span className='flecha bi bi-caret-down-square'></span>
                   </div>
                   <p
                     id={ite.id}
-                    className='inf fw-bold p-3 text-center border border-dark rounded'
+                    className='inf fw-bold p-3 text-center border border-dark rounded '
                   >
                     {ite.carrera}
                   </p>
                 </div>
-                <Button
-                  variant='info'
-                  className='m-auto d-flex'
+                <button
+                  className='d-flex   watchU-btn fw-bold    '
                   onClick={() => {
                     handleUniversity();
                   }}
-                  style={{ background: '#6ee6e6' }}
+                  style={{ background: '#2b939f' }}
                 >
-                  Ver Universidades
-                </Button>
+                  Ver Carreras
+                </button>
               </div>
             </Card.Body>
           </div>
