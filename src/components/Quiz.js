@@ -9,7 +9,7 @@ import Result from './ResultQuiz/Result';
 export const Quiz = ({ userV, setnumero }) => {
   const dispatch = useDispatch();
   const { user } = useSelector((state) => state.user);
-  const [conter, setconter] = useState(85);
+  const [conter, setconter] = useState(0);
   const [questions, setQuestions] = useState([]);
   const [answers, setAnswers] = useState([]);
   const [letters, setLetters] = useState([0, 0, 0, 0, 0, 0, 0]);
@@ -34,7 +34,7 @@ export const Quiz = ({ userV, setnumero }) => {
       setLetters(user.letters);
     } else {
       setAnswers([]);
-      setconter(85);
+      setconter(0);
       setLetters([0, 0, 0, 0, 0, 0, 0]);
     }
   }, [user]);
@@ -94,7 +94,7 @@ export const Quiz = ({ userV, setnumero }) => {
   }, [letters]);
 
   useEffect(() => {
-    const prueba = answers?.filter((item) => (item.ans > 2 ? item.id : null));
+    const prueba = answers?.filter((item) => (item.ans >= 9 ? item.id : null));
     setFocus(prueba);
   }, [answers]);
 
