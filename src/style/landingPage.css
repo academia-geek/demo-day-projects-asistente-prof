@@ -723,3 +723,135 @@ button:hover {
 .fsize7 {
   font-size: 14px !important;
 }
+
+.botMore-btn {
+  padding: 0.5rem 1rem;
+  position: relative;
+  overflow: hidden;
+  background-color: whitesmoke;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 16px !important;
+  transition: 0.3s;
+  z-index: 1;
+  font-family: inherit;
+  color: #2acfcf !important;
+  font-weight: 600 !important;
+  border: 1px solid #2acfcf !important;
+  width: 50%;
+  box-shadow: 2.9px 8.9px 3.3px rgba(0, 0, 0, 0.059),
+    5.7px 17.4px 8.4px rgba(0, 0, 0, 0.084),
+    8.8px 26.7px 17.2px rgba(0, 0, 0, 0.106),
+    13.7px 41.6px 35.4px rgba(0, 0, 0, 0.131),
+    30px 91px 97px rgba(0, 0, 0, 0.19) !important;
+}
+
+.botMore-btn::before {
+  content: '';
+  width: 0;
+  height: 1000%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  background: #2acfcf !important;
+  transition: 0.5s ease;
+  display: block;
+  z-index: -1;
+}
+
+.botMore-btn:hover::before {
+  width: 105%;
+}
+
+.botMore-btn:hover {
+  color: rgb(66, 64, 64) !important;
+}
+
+.login-btn {
+  padding: 0.5rem 1rem;
+  position: relative;
+  overflow: hidden;
+  background-color: whitesmoke;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 14px !important;
+  transition: 0.3s;
+  z-index: 1;
+  font-family: inherit;
+  color: #2acfcf !important;
+  font-weight: 600 !important;
+  border: 1px solid #2acfcf !important;
+  width: 100%;
+  box-shadow: 2.9px 8.9px 3.3px rgba(0, 0, 0, 0.059),
+    5.7px 17.4px 8.4px rgba(0, 0, 0, 0.084),
+    8.8px 26.7px 17.2px rgba(0, 0, 0, 0.106),
+    13.7px 41.6px 35.4px rgba(0, 0, 0, 0.131),
+    30px 91px 97px rgba(0, 0, 0, 0.19) !important;
+}
+
+.login-btn::before {
+  content: '';
+  width: 0;
+  height: 1000%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  background: #2acfcf !important;
+  transition: 0.5s ease;
+  display: block;
+  z-index: -1;
+}
+
+.login-btn:hover::before {
+  width: 105%;
+}
+
+.login-btn:hover {
+  color: rgb(66, 64, 64) !important;
+}
+.newUser-btn {
+  padding: 0.5rem 1rem;
+  position: relative;
+  overflow: hidden;
+  background-color: #2acfcf;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 14px !important;
+  transition: 0.3s;
+  z-index: 1;
+  font-family: inherit;
+  color: rgb(66, 64, 64) !important;
+  font-weight: 600 !important;
+  border: 1px solid #2acfcf !important;
+  width: 100%;
+  box-shadow: 2.9px 8.9px 3.3px rgba(0, 0, 0, 0.059),
+    5.7px 17.4px 8.4px rgba(0, 0, 0, 0.084),
+    8.8px 26.7px 17.2px rgba(0, 0, 0, 0.106),
+    13.7px 41.6px 35.4px rgba(0, 0, 0, 0.131),
+    30px 91px 97px rgba(0, 0, 0, 0.19) !important;
+}
+
+.newUser-btn::before {
+  content: '';
+  width: 0;
+  height: 1000%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  background: whitesmoke !important;
+  transition: 0.5s ease;
+  display: block;
+  z-index: -1;
+}
+
+.newUser-btn:hover::before {
+  width: 105%;
+}
+
+.newUser-btn:hover {
+  color: #2acfcf !important;
+}
