@@ -29,10 +29,10 @@ const Result = ({
     letters,
   });
   const [resetarTest, setResetarTest] = useState(2);
+  const [f, setf] = useState(focus)
 
   const dispatch = useDispatch();
   const { careeries } = useSelector((store) => store.careeries);
-  console.log(careeries);
 
   useEffect(() => {
     dispatch(paintCareerAsync());
@@ -58,6 +58,7 @@ const Result = ({
   const agregarBDUSer = () => {
     dispatch(addUserAsync(newUser));
     navigate('/perfil');
+    localStorage.setItem('f', JSON.stringify(focus))
   };
   const favoriteStar = (car) => {
     saveFavorites(car);
@@ -157,52 +158,13 @@ const Result = ({
         ) : (
           <div className='centrar'>
             <h2 className='mt-5 pt-5 fs-1'>
-              {' '}
               Hola, <span className='fw-bold'>{displayName}</span> estos son tus
               resultados:
             </h2>
-            {focus.map((item) => (
-              <div key={item.id} className='conten '>
-                <p className=''>
-                  {item.id === 'c' ? (
-                    <CardResult
-                      item={item.id}
-                      setResultMatch={setResultMatch}
-                    />
-                  ) : item.id === 'h' ? (
-                    <CardResult
-                      item={item.id}
-                      setResultMatch={setResultMatch}
-                    />
-                  ) : item.id === 'a' ? (
-                    <CardResult
-                      item={item.id}
-                      setResultMatch={setResultMatch}
-                    />
-                  ) : item.id === 's' ? (
-                    <CardResult
-                      item={item.id}
-                      setResultMatch={setResultMatch}
-                    />
-                  ) : item.id === 'i' ? (
-                    <CardResult
-                      item={item.id}
-                      setResultMatch={setResultMatch}
-                    />
-                  ) : item.id === 'd' ? (
-                    <CardResult
-                      item={item.id}
-                      setResultMatch={setResultMatch}
-                    />
-                  ) : item.id === 'e' ? (
-                    <CardResult
-                      item={item.id}
-                      setResultMatch={setResultMatch}
-                    />
-                  ) : null}
-                </p>
+            <div className='conten '>
+              <CardResult  item={focus[0]?focus[0].id: null} setResultMatch={setResultMatch}/>
+              <CardResult  item={focus[1]?focus[1].id: null} setResultMatch={setResultMatch}/>
               </div>
-            ))}
             <br />
           </div>
         )}
