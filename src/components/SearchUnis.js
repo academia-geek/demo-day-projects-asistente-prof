@@ -27,7 +27,7 @@ const SearchUnis = () => {
   return (
     <div>
 
-      <Form className='w-75 mx-auto my-0' onSubmit={handleSubmit}>
+      <Form className='w-50 mx-auto my-0' onSubmit={handleSubmit}>
         <InputGroup className='mb-3 '>
           <FormControl
             placeholder='Buscar carrera'
