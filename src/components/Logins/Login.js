@@ -35,12 +35,12 @@ export const Login = ({ userV, conterLogin }) => {
         console.log('entro');
         Swal.fire({
           title: 'Bienvenido',
-          text: 'A continuación van a realizar un test de 98 preguntas donde tienen como resultado sus habilidades y actitudes que ayudaran a encontar la carrera que se adapta a su perfil.',
+          text: 'A continuación van a realizar un test de 98 preguntas donde tienen como resultado sus habilidades y aptitudes que ayudaran a encontar la carrera que se adapta a su perfil.',
           icon: 'exito',
           confirmButtonText: 'Realizar Test',
         });
       }
-    }, 5000);
+    }, 2500);
   };
   const handleFacebook = () => {
     dispatch(loginFacebook(conterLogin));
@@ -48,12 +48,12 @@ export const Login = ({ userV, conterLogin }) => {
       if (conterLogin === 85) {
         Swal.fire({
           title: 'Bienvenido',
-          text: 'A continuación van a realizar un test de 98 preguntas donde tienen como resultado sus habilidades y actitudes que ayudaran a encontar la carrera que se adapta a su perfil.',
+          text: 'A continuación van a realizar un test de 98 preguntas donde tienen como resultado sus habilidades y aptitudes que ayudaran a encontar la carrera que se adapta a su perfil.',
           icon: 'exito',
           confirmButtonText: 'Realizar Test',
         });
       }
-    }, 2000);
+    }, 2500);
   };
 
   return (
@@ -123,6 +123,19 @@ export const Login = ({ userV, conterLogin }) => {
                     conterLogin
                   )
                 );
+                if (loginEmailPassAsync === true) {
+                  Swal.fire({
+                    title: 'Bienvenido',
+                    text: 'A continuación van a realizar un test de 98 preguntas donde tienen como resultado sus habilidades y aptitudes que ayudaran a encontar la carrera que se adapta a su perfil.',
+                    icon: 'exito',
+                    confirmButtonText: 'Realizar Test',
+                  });
+                } else {
+                  Swal.fire({
+                    title: 'Contraseña o Usuario equivocado',
+                    icon: 'error',
+                  });
+                }
               }}
             >
               {({ errors, touched }) => (
@@ -150,6 +163,7 @@ export const Login = ({ userV, conterLogin }) => {
                   {errors.password && touched.password ? (
                     <div>{errors.password}</div>
                   ) : null}
+
                   <button
                     className='d-flex mx-auto w-75 text-center continuar-btn'
                     type='submit'

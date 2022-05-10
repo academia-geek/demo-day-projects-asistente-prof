@@ -34,34 +34,68 @@ const NavBars = ({ userV, numero }) => {
           <Navbar.Toggle aria-controls='basic-navbar-nav' />
           <Navbar.Collapse id='basic-navbar-nav'>
             <Nav className='me-auto' style={{ gap: '10px' }}>
-              <Link to='/perfil' className='mx-4'>
-                <Button variant='outline-info'>Perfil</Button>
-              </Link>
-              <Link to='/' className='mx-4'>
-                <Button variant='outline-info'>
+              <Link to='/' className='mx-2'>
+                <Button
+                  className='fs-5'
+                  style={{
+                    background: 'transparent',
+                    border: 'none',
+                    fontWeight: 'bold',
+                  }}
+                >
                   {numero === 98 ? 'Resultados' : 'Test'}
                 </Button>
               </Link>
-              <Link to='/unis' className='mx-4'>
-                <Button variant='outline-info'>Universidades</Button>
+              <Link to='/unis' className='mx-2'>
+                <Button
+                  className='fs-5'
+                  style={{
+                    background: 'transparent',
+                    border: 'none',
+                    fontWeight: 'bold',
+                  }}
+                >
+                  Universidades
+                </Button>
               </Link>
-              <Link to='/favorites' className='mx-4'>
-                <Button variant='outline-info'>Favoritos</Button>
+              <Link to='/favorites' className='mx-2'>
+                <Button
+                  className='fs-5'
+                  style={{
+                    background: 'transparent',
+                    border: 'none',
+                    fontWeight: 'bold',
+                  }}
+                >
+                  Favoritos
+                </Button>
               </Link>
             </Nav>
             <Nav
               className='mx-auto my-2 w-100 d-flex justify-content-end '
               style={{ gap: '10px' }}
             >
-              <Button variant='outline-info' className='mx-4 text-light'>
-                Hola,
-                <span className=' fw-bold text-light'> {displayName}</span>
-              </Button>
-              <Link to='/register' className='mx-4' onClick={handleLogout}>
-                <Button variant='info' style={{ background: '#6ee6e6' }}>
-                  <i className='bi bi-box-arrow-left'></i> Cerrar sesion{' '}
+              <Link to='/perfil' className='mx-4 '>
+                <Button
+                  variant='outline-info'
+                  className='mx-4 fs-6 fw-bold iconHover2 '
+                >
+                  <span className='text-light fw-light'>Hola,</span>{' '}
+                  {displayName}
                 </Button>
               </Link>
+
+              <Button
+                className='fw-bold logout-btn iconHover '
+                style={{ background: 'transparent' }}
+                onClick={() => {
+                  handleLogout();
+                  navigate('/landing');
+                }}
+              >
+                <i className='bi bi-box-arrow-left fs-6 px-2 text-danger  '></i>{' '}
+                Cerrar sesion{' '}
+              </Button>
             </Nav>
           </Navbar.Collapse>
         </Container>
