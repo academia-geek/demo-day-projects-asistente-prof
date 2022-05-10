@@ -206,7 +206,7 @@ const Result = ({
       </Container>
       <div className='botones'>
         <button
-          className='btones-btn'
+          className='guardar-btn '
           onClick={() => {
             agregarBDUSer();
           }}
@@ -214,11 +214,13 @@ const Result = ({
           Guardar Test
         </button>
         <button
-          className={resetarTest <= 0 ? 'visually-hidden' : 'btones-btn'}
+          className={resetarTest <= 0 ? 'visually-hidden' : 'reiniciar-btn'}
           onClick={() => {
             handleReset();
             Swal.fire({
-              title: `Acabas de reiniciar tu test, te queda ${resetarTest-1} opción de reinicio`,
+              title: `Acabas de reiniciar tu test, te queda ${
+                resetarTest - 1
+              } opción de reinicio`,
               showClass: {
                 popup: 'animate__animated animate__fadeInDown',
               },

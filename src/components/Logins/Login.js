@@ -26,11 +26,13 @@ const SignupSchema = Yup.object().shape({
 
 export const Login = ({ userV, conterLogin }) => {
   const dispatch = useDispatch();
+  console.log(conterLogin);
 
   const handleGoogle = () => {
     dispatch(loginGoogle());
     setTimeout(() => {
       if (conterLogin === 85) {
+        console.log('entro');
         Swal.fire({
           title: 'Bienvenido',
           text: 'A continuación van a realizar un test de 98 preguntas donde tienen como resultado sus habilidades y actitudes que ayudaran a encontar la carrera que se adapta a su perfil.',
@@ -38,7 +40,7 @@ export const Login = ({ userV, conterLogin }) => {
           confirmButtonText: 'Realizar Test',
         });
       }
-    }, 2000);
+    }, 5000);
   };
   const handleFacebook = () => {
     dispatch(loginFacebook(conterLogin));
