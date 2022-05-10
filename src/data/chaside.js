@@ -27,7 +27,7 @@ export const infoChaside = [
     id: 'a',
     title: 'Artísticas ',
     intereses: 'Estético, Armónico, Manual, Visual, Auditivo',
-    aptiudes:
+    aptitudes:
       'Sensible, Imaginativo, Creativo, Detallista, Innovador ,Intuitivo',
     imagen:
       'https://res.cloudinary.com/edwin3002/image/upload/v1651613869/u/a_zb7e01.jpg',
