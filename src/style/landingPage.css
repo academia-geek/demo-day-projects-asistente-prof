@@ -144,10 +144,10 @@
 .ProfileCardImage {
   width: 96px !important;
   height: 96px !important;
-  margin: auto;
-  position: absolute;
-  top: 84px;
-  left: 127px;
+  margin: 0  auto;
+  margin-top: 20px;
+  position: relative;
+  bottom: 50px;
   border: 5px white solid;
   border-radius: 48px !important;
 }
@@ -404,11 +404,19 @@ button:hover {
   flex-direction: column;
 }
 
-.iconHoverX :hover {
+.iconHoverX:hover i{
   color: red !important;
 }
-.iconHoverPdf :hover {
+.iconHoverX:hover p{
+  color: red !important;
+  transform: scale(1.5) !important;
+}
+.iconHoverPdf:hover i{
   color: #2acfcf !important;
+}
+.iconHoverPdf:hover p{
+  color: #2acfcf !important;
+  transform: scale(1.5) !important;
 }
 
 .sombraSha {
