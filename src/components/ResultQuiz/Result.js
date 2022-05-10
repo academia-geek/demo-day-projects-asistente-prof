@@ -69,8 +69,12 @@ const Result = ({
       <Container className='w-100'>
         {resultMatch ? (
           <div>
-            <h1 className='mt-5 fs-3' style={{position: 'fixed'}}  onClick={() => setResultMatch(false)}>
-              <span className='bi bi-arrow-left-circle-fill text-info'></span>{' '}
+            <h1
+              className='mt-5 fs-3 cursorp'
+              style={{ position: 'fixed' }}
+              onClick={() => setResultMatch(false)}
+            >
+              <span className='bi bi-arrow-left-circle-fill text-info cursorp'></span>{' '}
               Volver
             </h1>
             <div

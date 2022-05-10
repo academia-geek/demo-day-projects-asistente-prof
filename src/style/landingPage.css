@@ -696,6 +696,7 @@ button:hover {
   border: 1px solid #2b939f !important;
   width: 100%;
   margin: 60px auto !important;
+  border-radius: 5px !important;
 }
 
 .watchU-btn::before {
