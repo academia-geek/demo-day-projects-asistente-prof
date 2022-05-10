@@ -6,6 +6,7 @@ import Swal from 'sweetalert2';
 import { useDispatch } from 'react-redux';
 import { deleteUserLogAsync } from '../../redux/actions/actionLogin';
 import { deleteUserAsync } from '../../redux/actions/actionUsers';
+import '../../style/perfil.css'
 
 const Perfil = ({ userV }) => {
   const dispatch = useDispatch();
@@ -204,7 +205,7 @@ const Perfil = ({ userV }) => {
 
   const deleteuser = () => {
     Swal.fire({
-      title: '¿Estas Seguro?',
+      title: '¿Estas Seguro de eliminar tu cuenta?',
       text: 'Tu información se eliminara permanentemente!',
       icon: 'warning',
       showCancelButton: true,
@@ -223,16 +224,16 @@ const Perfil = ({ userV }) => {
 
   return (
     <div style={{ background: '#4B3F6B' }} className='mt-5 Background'>
-      <Container className='py-5'>
-        <Card className=' ProfileCard mx-auto'>
+      <Container className='py-5 mt-5 '>
+        <Card className=' ProfileCard mx-auto w-50'>
           <Card.Img
-            className='ProfileCardBackgroundImage '
+            className='ProfileCardBackgroundImage w-100'
             alt='Background Image'
             variant='top'
             src='https://res.cloudinary.com/djjgtili7/image/upload/v1651781957/bg-pattern-card_v7d4jo.svg'
           />
           <Card.Img
-            className='ProfileCardImage '
+            className='ProfileCardImage w-100 d-flex m-auto'
             alt='User Image'
             src={
               photoURL
@@ -241,27 +242,24 @@ const Perfil = ({ userV }) => {
             }
           />
           <Card.Body className='text-center ProfileCardBody '>
-            <Card.Text className='TextBold mb-0'>{displayName}</Card.Text>
-            <Card.Text className='TextMuted'>{email}</Card.Text>
+            <Card.Text className='TextBold mb-0 fs-2'>{displayName}</Card.Text>
+            <Card.Text className='TextMuted fs-4'>{email}</Card.Text>
           </Card.Body>
           <Card.Footer className='CardFooter'>
             <Row xs='2' className='text-center mb-1'>
-              <Col className='cursorp ' onClick={generatorPDF}>
-                <Card.Text className='TextBold iconHoverPdf'>
-                  <i className='bi bi-file-earmark-arrow-down-fill '></i>
+              <Col className='cursorp iconHoverPdf p-2' onClick={generatorPDF}>
+                <Card.Text className='TextBold '>
+                  <i className='bi bi-file-earmark-arrow-down-fill'></i>
                 </Card.Text>
-                <Card.Text className='TextMuted iconHoverPdf'>
+                <Card.Text className='TextMuted fs-6'>
                   Descargar Resultados
                 </Card.Text>
               </Col>
-              <Col className='cursorp' onClick={() => deleteuser()}>
-                <Card.Text className='TextBold iconHoverX'>
+              <Col className='cursorp iconHoverX p-2' onClick={() => deleteuser()}>
+                <Card.Text className='TextBold '>
                   <i class='bi bi-x-square-fill '></i>
                 </Card.Text>
-                <Card.Text
-                  className='TextMuted iconHoverX'
-                  onClick={() => deleteuser()}
-                >
+                <Card.Text className='TextMuted fs-6'>
                   Eliminar Cuenta
                 </Card.Text>
               </Col>

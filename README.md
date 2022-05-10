@@ -39,4 +39,4 @@
  
 ## Tools 🎨 
  ![Figma](https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white)
- ![Firebase]()
+![Firebase](https://th.bing.com/th/id/OIP.VnP8WNkRxAIYvhjiF9sOPQAAAA?pid=ImgDet&rs=1)

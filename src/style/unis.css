@@ -1,7 +1,4 @@
 
-:root{
-  --clippy: polygon(0 0, 90% 0, 100% 100%, 0% 100%);
-}
 #c {
   background-color: #94e7e7;
   color: black;
@@ -47,6 +44,18 @@
 }
 .subT p {
   width: 40%;
+}
+@media (min-width: 900px) {
+  .subT p {
+    width: 25%;
+    background-color: red;
+  }
+}
+@media (min-width: 1000px) {
+  .subT p {
+    width: 30%;
+    background-color: red;
+  }
 }
 .subT:hover #c{
   display: block;
