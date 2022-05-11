@@ -26,6 +26,7 @@ const AppRouters = () => {
     photoURL: '',
     uid: '',
   });
+  console.log(conterLogin);
 
   useEffect(() => {
     const auth = getAuth();

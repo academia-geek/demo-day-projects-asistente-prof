@@ -10,7 +10,6 @@ const NavBars = ({ userV, numero, btnPerfil }) => {
 
   const handleLogout = () => {
     dispatch(logoutAsync());
-    navigate('/login');
     localStorage.removeItem('answers');
     localStorage.removeItem('letters');
     localStorage.removeItem('conter');

@@ -40,7 +40,7 @@ export const Login = ({ userV, conterLogin }) => {
           confirmButtonText: 'Realizar Test',
         });
       }
-    }, 2500);
+    }, 5000);
   };
   const handleFacebook = () => {
     dispatch(loginFacebook(conterLogin));
@@ -53,7 +53,7 @@ export const Login = ({ userV, conterLogin }) => {
           confirmButtonText: 'Realizar Test',
         });
       }
-    }, 2500);
+    }, 5000);
   };
 
   return (
@@ -123,7 +123,7 @@ export const Login = ({ userV, conterLogin }) => {
                     conterLogin
                   )
                 );
-                if (loginEmailPassAsync === true) {
+                if (conterLogin === 0) {
                   Swal.fire({
                     title: 'Bienvenido',
                     text: 'A continuación van a realizar un test de 98 preguntas donde tienen como resultado sus habilidades y aptitudes que ayudaran a encontar la carrera que se adapta a su perfil.',
