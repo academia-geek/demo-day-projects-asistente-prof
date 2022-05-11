@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import { logoutAsync } from '../redux/actions/actionLogin';
 
-const NavBars = ({ userV, numero }) => {
+const NavBars = ({ userV, numero, btnPerfil }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { displayName } = userV;
@@ -76,7 +76,7 @@ const NavBars = ({ userV, numero }) => {
               className='mx-auto my-2 w-100 d-flex justify-content-end '
               style={{ gap: '10px' }}
             >
-              <Link to={numero === 98 ? '/perfil' : '/'} className='mx-4 '>
+              <Link to={btnPerfil ? '/perfil' : '/'} className='mx-4 '>
                 <Button
                   variant='outline-info'
                   className='mx-4  fsize7 fw-bold iconHover2 '

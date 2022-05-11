@@ -9,6 +9,7 @@ import { Unis } from '../components/Unis';
 
 const DashboardRoute = ({ userV, setconterLogin }) => {
   const [numero, setnumero] = useState(0);
+  const [btnPerfil, setBtnPerfil] = useState(false);
   useEffect(() => {
     setconterLogin(numero);
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -16,11 +17,17 @@ const DashboardRoute = ({ userV, setconterLogin }) => {
 
   return (
     <>
-      <NavBars userV={userV} numero={numero} />
+      <NavBars userV={userV} numero={numero} btnPerfil={btnPerfil} />
       <Routes>
         <Route
           path='/'
-          element={<Home userV={userV} setnumero={setnumero} />}
+          element={
+            <Home
+              userV={userV}
+              setnumero={setnumero}
+              setBtnPerfil={setBtnPerfil}
+            />
+          }
         />
         <Route path='/unis' element={<Unis />} />
         <Route path='/perfil' element={<Perfil userV={userV} />} />

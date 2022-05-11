@@ -7,7 +7,6 @@ import { saveFavorites } from '../../helpers/favoriteLocalStorage';
 import { resetLS } from '../../helpers/resetLS';
 import { paintCareerAsync } from '../../redux/actions/actionUniversity';
 import { addUserAsync, deleteUserAsync } from '../../redux/actions/actionUsers';
-import Home from '../Home';
 import TitleResult from '../TitleResult';
 import CardResult from './CardResult';
 
@@ -20,6 +19,7 @@ const Result = ({
   letters,
   uid,
   displayName,
+  setBtnPerfil,
 }) => {
   const navigate = useNavigate();
   const [resultMatch, setResultMatch] = useState(false);
@@ -56,6 +56,7 @@ const Result = ({
   const agregarBDUSer = () => {
     dispatch(addUserAsync(newUser));
     navigate('/perfil');
+    setBtnPerfil(true);
     localStorage.setItem('f', JSON.stringify(focus));
   };
   const favoriteStar = (car) => {
