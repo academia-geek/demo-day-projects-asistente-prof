@@ -157,28 +157,31 @@ export const Quiz = ({ userV, setnumero, setBtnPerfil }) => {
           setBtnPerfil={setBtnPerfil}
         />
       ) : (
-        <Container className=' d-flex m-auto marginQuiz shadow my-5'>
+        <Container className=' d-flex mx-auto marginQuiz shadow '>
           <div className='questionsQuiz my-5 text-center text-light d-flex align-content-between flex-wrap'>
             <h2 className='fw-bold m-3 preguntas'>
               {questions[conter]?.quest}
             </h2>
-            <ul className='w-100'>
-              <li
-                className='btnSioNo'
-                onClick={() => {
-                  addData(questions[conter]?.formacion);
-                }}
-              >
-                Si
-              </li>
-              <li className='btnSioNo' onClick={sumar}>
-                No
-              </li>
-
-              <p>
-                {conter + 1} / {questions.length}
-              </p>
-            </ul>
+            <div className='w-100 d-flex align-content-between flex-wrap'>
+              <ul className='w-100 m-0 '>
+                <li
+                  className='btnSioNo'
+                  onClick={() => {
+                    addData(questions[conter]?.formacion);
+                  }}
+                >
+                  Si
+                </li>
+                <li className='btnSioNo' onClick={sumar}>
+                  No
+                </li>
+              </ul>
+              <ul className='d-flex m-auto'>
+                <p >
+                  {conter + 1} / {questions.length}
+                </p>
+              </ul>
+            </div>
           </div>
           <div className='d-flex align-items-center imgQuiz'>
             <img

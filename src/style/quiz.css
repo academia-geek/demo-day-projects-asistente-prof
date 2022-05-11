@@ -22,7 +22,7 @@
   align-items: center;
   margin: 5px auto;
   height: 400px;
-  background-image: url('https://res.cloudinary.com/djjgtili7/image/upload/v1652130041/WhatsApp_Image_2022-05-07_at_12.39.39_AM-removebg-preview_uiuin6.png');
+  background-image: url("https://res.cloudinary.com/djjgtili7/image/upload/v1652130041/WhatsApp_Image_2022-05-07_at_12.39.39_AM-removebg-preview_uiuin6.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -49,4 +49,12 @@
     0px 6px 25.1px rgba(0, 0, 0, 0.097), 0px 8.7px 40.3px rgba(0, 0, 0, 0.12),
     0px 11.5px 60px rgba(0, 0, 0, 0.143), 0px 15.3px 91.5px rgba(0, 0, 0, 0.173),
     0px 25px 164px rgba(0, 0, 0, 0.24) !important;
+}
+.marginQuiz {
+  margin-top: 100px;
+}
+@media (max-width: 800px) {
+  .marginQuiz {
+    margin-top: 30px;
+  }
 }

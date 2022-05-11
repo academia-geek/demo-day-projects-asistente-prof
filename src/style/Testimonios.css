@@ -40,6 +40,9 @@ margin-top: 100px;
 .textB button{
   color: black !important;
 }
+.textB button::before{
+  background-color: transparent !important;
+}
 @media (max-width: 1200px) {
   .imgCut {
     border-radius: 20px 20px 0 20px;
