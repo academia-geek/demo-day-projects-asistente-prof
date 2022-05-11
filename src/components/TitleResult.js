@@ -97,7 +97,7 @@ const TitleResult = ({ careeries }) => {
           </p>
         </div>
       ) : null}
-      <hr />
+      <hr />    
     </div>
   );
 };

@@ -8,6 +8,7 @@ import { paintCareerAsync } from '../../redux/actions/actionUniversity';
 import { addUserAsync, deleteUserAsync } from '../../redux/actions/actionUsers';
 import TitleResult from '../TitleResult';
 import CardResult from './CardResult';
+import { Testimonios } from '../Testimonios';
 
 const Result = ({
   focus,
@@ -29,7 +30,6 @@ const Result = ({
     letters,
   });
   const [resetarTest, setResetarTest] = useState(2);
-  const [f, setf] = useState(focus)
 
   const dispatch = useDispatch();
   const { careeries } = useSelector((store) => store.careeries);
@@ -74,9 +74,10 @@ const Result = ({
               style={{ position: 'fixed' }}
               onClick={() => setResultMatch(false)}
             >
-              <span className='bi bi-arrow-left-circle-fill text-info cursorp'></span>{' '}
+              <span className='mt- bi bi-arrow-left-circle-fill text-info cursorp'></span>{' '}
               Volver
             </h1>
+            <Testimonios careeries={careeries[0].area}/>
             <div
               className=' d-flex justify-content-between flex-wrap'
               style={{ width: '100%' }}
@@ -115,16 +116,16 @@ const Result = ({
                       {carrera.area === 'c'
                         ? 'Administrativas y Contables'
                         : carrera.area === 'h'
-                        ? ' Humanísticas y Sociales '
-                        : carrera.area === 'a'
-                        ? ' Artísticas'
-                        : carrera.area === 's'
-                        ? 'Medicina y Cs. de la Salud '
-                        : carrera.area === 'i'
-                        ? 'Ingeniería y Computación'
-                        : carrera.area === 'd'
-                        ? 'Defensa y Seguridad'
-                        : 'Ciencias Exactas y Agrarias'}
+                          ? ' Humanísticas y Sociales '
+                          : carrera.area === 'a'
+                            ? ' Artísticas'
+                            : carrera.area === 's'
+                              ? 'Medicina y Cs. de la Salud '
+                              : carrera.area === 'i'
+                                ? 'Ingeniería y Computación'
+                                : carrera.area === 'd'
+                                  ? 'Defensa y Seguridad'
+                                  : 'Ciencias Exactas y Agrarias'}
                     </button>
                     <Card.Text>
                       <p>
@@ -162,9 +163,9 @@ const Result = ({
               resultados:
             </h2>
             <div className='conten '>
-              <CardResult  item={focus[0]?focus[0].id: null} setResultMatch={setResultMatch}/>
-              <CardResult  item={focus[1]?focus[1].id: null} setResultMatch={setResultMatch}/>
-              </div>
+              <CardResult item={focus[0] ? focus[0].id : null} setResultMatch={setResultMatch} />
+              <CardResult item={focus[1] ? focus[1].id : null} setResultMatch={setResultMatch} />
+            </div>
             <br />
           </div>
         )}
@@ -183,9 +184,8 @@ const Result = ({
           onClick={() => {
             handleReset();
             Swal.fire({
-              title: `Acabas de reiniciar tu test, te queda ${
-                resetarTest - 1
-              } opción de reinicio`,
+              title: `Acabas de reiniciar tu test, te queda ${resetarTest - 1
+                } opción de reinicio`,
               showClass: {
                 popup: 'animate__animated animate__fadeInDown',
               },
@@ -198,7 +198,10 @@ const Result = ({
           Reiniciar Test ({resetarTest})
         </button>
       </div>
-    </div>
+
+
+    </div >
+
   );
 };
 
