@@ -106,7 +106,11 @@ const AppRouters = () => {
           path='/*'
           element={
             <PrivateRoters isAut={isLoggedIn}>
-              <DashboardRoute userV={userV} setconterLogin={setconterLogin} />
+              <DashboardRoute
+                userV={userV}
+                setconterLogin={setconterLogin}
+                conterLogin={conterLogin}
+              />
             </PrivateRoters>
           }
         />

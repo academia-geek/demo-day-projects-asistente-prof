@@ -1,4 +1,10 @@
 # Tu Asistente Prof 💻
+<img width="952" alt="image" src="https://user-images.githubusercontent.com/90290626/167674895-088b4ecf-faf8-4a58-b7db-cb4274328a68.png">
+
+## Despliegue
+- https://demo-day-projects-asistente-prof.vercel.app/
+
+
 ## Descripcion 📚
  Es un aplicativo que ayuda a que los Estudiantes puedan realizar un test para saber sobre su orientación vocacional y así poder dar opciones de Carreras técnicas, tecnológicas y profesionales .  
 ## Instalacion 💡 
@@ -40,3 +46,21 @@
 ## Tools 🎨 
  ![Figma](https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white)
 ![Firebase](https://th.bing.com/th/id/OIP.VnP8WNkRxAIYvhjiF9sOPQAAAA?pid=ImgDet&rs=1)
+
+
+## Screenshots
+
+### Login
+
+<img width="961" alt="image" src="https://user-images.githubusercontent.com/90290626/167675959-d8944904-c35f-45e9-8934-31bf100a57f2.png">
+
+## WakaTime
+- Laura Bermudez
+[![wakatime](https://wakatime.com/badge/user/1518fba1-7823-424b-96e7-60047d9d66b0/project/49b594d1-cd59-4107-95b8-1fdbf8eb2d5b.svg)](https://wakatime.com/badge/user/1518fba1-7823-424b-96e7-60047d9d66b0/project/49b594d1-cd59-4107-95b8-1fdbf8eb2d5b)
+- Edwin Vargas
+- David Puerto
+[![wakatime](https://wakatime.com/badge/user/54d759a2-12d9-48b4-9e4e-88518abe7706/project/1f280c1f-07ba-43eb-8982-f5fdb7f29cf5.svg)](https://wakatime.com/badge/user/54d759a2-12d9-48b4-9e4e-88518abe7706/project/1f280c1f-07ba-43eb-8982-f5fdb7f29cf5)
+
+
+
+

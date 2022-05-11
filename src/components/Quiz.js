@@ -6,7 +6,7 @@ import { paintUserAsync } from '../redux/actions/actionUsers';
 import '../style/quiz.css';
 import Result from './ResultQuiz/Result';
 
-export const Quiz = ({ userV, setnumero }) => {
+export const Quiz = ({ userV, setnumero, setBtnPerfil }) => {
   const dispatch = useDispatch();
   const { user } = useSelector((state) => state.user);
   const [conter, setconter] = useState(0);
@@ -155,6 +155,7 @@ export const Quiz = ({ userV, setnumero }) => {
           letters={letters}
           uid={uid}
           displayName={displayName}
+          setBtnPerfil={setBtnPerfil}
         />
       ) : (
         <Container className=' d-flex m-auto marginQuiz shadow my-5'>

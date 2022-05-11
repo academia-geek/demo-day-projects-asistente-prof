@@ -34,14 +34,15 @@ export const addUserAsync = (user) => {
       addDoc(collection(getMyData, 'users'), user)
         .then((resp) => {
           dispatch(addUserSync(user));
-          if(resp){Swal.fire({
-            position: 'top-end',
-            icon: 'success',
-            title: 'Guardada con Exito',
-            showConfirmButton: false,
-            timer: 1500
-          })}
-          
+          if (resp) {
+            Swal.fire({
+              position: 'top-end',
+              icon: 'success',
+              title: 'Guardada con Exito',
+              showConfirmButton: false,
+              timer: 1500,
+            });
+          }
         })
         .catch((error) => {
           console.warn(error);
@@ -110,6 +111,7 @@ export const deleteUserSync = (user) => {
   };
 };
 export const deleteUserAsync = (uid) => {
+  console.log(uid);
   return async (dispatch) => {
     const collectionTraer = collection(getMyData, 'users');
     const q = query(collectionTraer, where('id', '==', uid));
