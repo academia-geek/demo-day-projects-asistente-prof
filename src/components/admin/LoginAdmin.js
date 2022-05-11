@@ -1,7 +1,7 @@
 import { Field, Form, Formik } from 'formik';
 import React from 'react';
 import { Button, Col, Container, Nav, Row } from 'react-bootstrap';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import * as Yup from 'yup';
 
 const SignupSchema = Yup.object().shape({

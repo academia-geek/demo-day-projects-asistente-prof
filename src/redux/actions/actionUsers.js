@@ -21,7 +21,6 @@ export const addUserSync = (user) => {
 };
 
 export const addUserAsync = (user) => {
-  console.log(user);
   return async (dispatch) => {
     const collectionTraer = await getDocs(collection(getMyData, 'users'));
     const userlist = collectionTraer.docs.map((doc) => {
@@ -111,7 +110,6 @@ export const deleteUserSync = (user) => {
   };
 };
 export const deleteUserAsync = (uid) => {
-  console.log(uid);
   return async (dispatch) => {
     const collectionTraer = collection(getMyData, 'users');
     const q = query(collectionTraer, where('id', '==', uid));

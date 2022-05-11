@@ -6,12 +6,8 @@ import '../style/Testimonios.css'
 export const Testimonios = ({ careeries }) => {
     const [testi, setTesti] = useState([])
 
-    console.log(testi)
-    console.log(careeries)
-    // console.log(testi)
     useEffect(() => {
         const info = infoChaside?.find(i => i.id === careeries)
-        console.log(info)
         setTesti(info)
 
         // eslint-disable-next-line react-hooks/exhaustive-deps

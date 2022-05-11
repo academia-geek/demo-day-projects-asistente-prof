@@ -70,11 +70,11 @@ const Result = ({
         {resultMatch ? (
           <div>
             <h1
-              className='mt-5 fs-3 cursorp'
+              className=' fs-3 cursorp'
               style={{ position: 'fixed' }}
               onClick={() => setResultMatch(false)}
             >
-              <span className='mt- bi bi-arrow-left-circle-fill text-info cursorp'></span>{' '}
+              <span className=' bi bi-arrow-left-circle-fill text-info cursorp'></span>{' '}
               Volver
             </h1>
             <Testimonios careeries={careeries[0].area}/>
@@ -176,9 +176,7 @@ const Result = ({
                 onClick={() => {
                   handleReset();
                   Swal.fire({
-                    title: `Acabas de reiniciar tu test, te queda ${
-                      resetarTest - 1
-                    } opción de reinicio`,
+                    title: `Acabas de reiniciar tu test, ya no te quedan opciónes de reiniciarlo`,
                     showClass: {
                       popup: 'animate__animated animate__fadeInDown',
                     },

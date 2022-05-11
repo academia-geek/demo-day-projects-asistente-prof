@@ -2,10 +2,9 @@ import React, { useState } from 'react';
 
 const TitleResult = ({ careeries }) => {
   const [carreras] = useState(careeries[0].area);
-  console.log(carreras);
 
   return (
-    <div className='descriptionResult' style={{ marginTop: '100px' }}>
+    <div className='descriptionResult' style={{ marginTop: '30px' }}>
       {carreras === 'c' ? (
         <div className='d-flex flex-column justify-content-center mx-auto text-center '>
           <h2 className='descrip'>Administrativas y Contables</h2>
