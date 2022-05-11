@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Col, Container, Form, Nav, Row } from 'react-bootstrap';
+import { Col, Container, Form, Nav, Row } from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
 import { useForm } from '../Hooks/useForm';
 import { registerAsync } from '../redux/actions/actionRegister';
@@ -27,27 +27,17 @@ const Register = () => {
 
   return (
     <div>
-      <Nav
-        className='d-flex justify-content-between'
-        style={{
-          background: '#4B3F6B',
-          fontWeight: 'bold',
-          backgroundImage: "url('https://i.ibb.co/CngVcj8/descarga-2.png')",
-        }}
-        as='ul'
-      >
-        <Nav.Item as='li'>
-          <Nav.Link href='/landing' style={{ color: 'white' }}>
-            Volver
-          </Nav.Link>
-        </Nav.Item>
-      </Nav>
-      <h1 className='text-center mx-4 my-5' style={{ fontSize: '60px' }}>
-        {' '}
-        Registrarse
-      </h1>
-
-      <Container>
+      <Container className='shadow p-5 rounded mx-auto my-5'>
+        <Nav className='d-flex justify-content-between'>
+          <Nav.Item as='li'>
+            <Nav.Link href='/landing' className=' text-dark fs-5'>
+            <span className='text-dark bi bi-arrow-left-circle-fill'></span> Atras
+            </Nav.Link>
+          </Nav.Item>
+        </Nav>
+        <h1 className='text-center mx-4' style={{ fontSize: '60px' }}>
+          Registrarse
+        </h1>
         <Row>
           <Col>
             <Form.Label>Nombre (obligatorio)</Form.Label>

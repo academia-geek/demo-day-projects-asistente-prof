@@ -162,11 +162,7 @@
   font-weight: 700;
 }
 
-.CardFooter {
-  background-color: white !important;
-  border-bottom-left-radius: 15px !important;
-  border-bottom-right-radius: 15px !important;
-}
+
 
 .FooterP {
   margin-bottom: 0;
@@ -906,5 +902,3 @@ button:hover {
   color: #2acfcf !important;
 }
 
-.desahabilitado {
-}

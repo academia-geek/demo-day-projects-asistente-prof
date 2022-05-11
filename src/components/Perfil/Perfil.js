@@ -233,28 +233,33 @@ const Perfil = ({ userV }) => {
     <div style={{ background: '#eee' }} className='mt-5 Background'>
       <Container className='py-5 mt-5 '>
         <Card className=' ProfileCard mx-auto'>
-          <Card.Img
-            className='ProfileCardBackgroundImage w-100'
-            alt='Background Image'
-            variant='top'
-            src='https://res.cloudinary.com/djjgtili7/image/upload/v1651781957/bg-pattern-card_v7d4jo.svg'
-          />
-          <Card.Img
-            className='ProfileCardImage w-100 d-flex m-auto'
-            alt='User Image'
-            src={
-              photoURL
-                ? photoURL
-                : 'https://res.cloudinary.com/djjgtili7/image/upload/v1650336872/ArtistApp/ICONO-PERFIL_gh23iu.png'
-            }
-          />
+          <div>
+            <Card.Img
+              className='ProfileCardBackgroundImage w-100'
+              alt='Background Image'
+              variant='top'
+              src='https://res.cloudinary.com/djjgtili7/image/upload/v1651781957/bg-pattern-card_v7d4jo.svg'
+            />
+            <Card.Img
+              className='ProfileCardImage w-100 d-flex m-auto'
+              alt='User Image'
+              src={
+                photoURL
+                  ? photoURL
+                  : 'https://res.cloudinary.com/djjgtili7/image/upload/v1650336872/ArtistApp/ICONO-PERFIL_gh23iu.png'
+              }
+            />
+            <Card.Text className='TextBold btnDelete ' onClick={() => deleteuser()}>
+                  <i className='bi bi-x-square-fill '></i>
+                </Card.Text>
+          </div>
           <Card.Body className='text-center ProfileCardBody '>
             <Card.Text className='TextBold mb-0 fs-2'>{displayName}</Card.Text>
             <Card.Text className='TextMuted fs-4'>{email}</Card.Text>
           </Card.Body>
           <Card.Footer className='CardFooter'>
-            <Row xs='2' className='text-center mb-1'>
-              <Col className='cursorp iconHoverPdf p-2' onClick={generatorPDF}>
+            <Row xs='2' className='text-center mb-1 '>
+              <Col className='cursorp iconHoverPdf p-2 m-auto' onClick={generatorPDF}>
                 <Card.Text className='TextBold '>
                   <i className='bi bi-file-earmark-arrow-down-fill'></i>
                 </Card.Text>
@@ -262,21 +267,11 @@ const Perfil = ({ userV }) => {
                   Descargar Resultados
                 </Card.Text>
               </Col>
-              <Col
-                className='cursorp iconHoverX p-2'
-                onClick={() => deleteuser()}
-              >
-                <Card.Text className='TextBold '>
-                  <i className='bi bi-x-square-fill '></i>
-                </Card.Text>
-                <Card.Text className='TextMuted fs-6'>
-                  Eliminar Cuenta
-                </Card.Text>
-              </Col>
             </Row>
           </Card.Footer>
         </Card>
       </Container>
+
     </div>
   );
 };

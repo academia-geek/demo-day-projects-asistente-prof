@@ -6,7 +6,7 @@ import {
 } from '../../redux/actions/actionLogin';
 import { Formik, Field, Form } from 'formik';
 import { Col, Container, Nav, Row } from 'react-bootstrap';
-
+import { Link } from "react-router-dom";
 import * as Yup from 'yup';
 import '../../style/style.css';
 import Swal from 'sweetalert2';
@@ -56,26 +56,15 @@ export const Login = ({ userV, conterLogin }) => {
 
   return (
     <div className='login '>
-      <Nav
-        className='d-flex justify-content-between'
-        style={{
-          background: '#4B3F6B',
-          fontWeight: 'bold',
-          backgroundImage: "url('https://i.ibb.co/CngVcj8/descarga-2.png')",
-        }}
-      >
-        <Nav.Item as='li'>
-          <Nav.Link href='/landing' className='text-light tagsSimple'>
-            Atras
-          </Nav.Link>
-        </Nav.Item>
-        <Nav.Item as='li'>
-          <Nav.Link href='/register' className='text-light tagsSimple'>
-            Crear Cuenta
-          </Nav.Link>
-        </Nav.Item>
-      </Nav>
+
       <Container className='shadow p-5 rounded mx-auto my-5 '>
+        <Nav className='d-flex justify-content-between'>
+          <Nav.Item as='li'>
+            <Nav.Link href='/landing' className=' text-dark  fs-5'>
+              <span className='text-dark bi bi-arrow-left-circle-fill'></span>  Atras
+            </Nav.Link>
+          </Nav.Item>
+        </Nav>
         <h1 className='text-center'>Iniciar sesión</h1>
         <Row className='contLogin'>
           <Col>
@@ -172,6 +161,9 @@ export const Login = ({ userV, conterLogin }) => {
                 </Form>
               )}
             </Formik>
+            <Link to='/register' className='text-info text-center  d-flex w-75 m-auto ' style={{ textDecoration: 'none' }}>
+              Crear Cuenta
+            </Link>
           </Col>
         </Row>
       </Container>

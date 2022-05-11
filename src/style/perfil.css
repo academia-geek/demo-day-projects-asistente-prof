@@ -14,3 +14,12 @@
 .ProfileCard{
     margin-top: 100px;
 }
+.btnDelete{
+    left: 90%;
+    bottom: 90%;
+    position: absolute;
+}
+.btnDelete:hover i{
+    color: red;
+    transform: scale(1.5);
+}
