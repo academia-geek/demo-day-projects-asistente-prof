@@ -58,6 +58,7 @@
 - Laura Bermudez
 [![wakatime](https://wakatime.com/badge/user/1518fba1-7823-424b-96e7-60047d9d66b0/project/49b594d1-cd59-4107-95b8-1fdbf8eb2d5b.svg)](https://wakatime.com/badge/user/1518fba1-7823-424b-96e7-60047d9d66b0/project/49b594d1-cd59-4107-95b8-1fdbf8eb2d5b)
 - Edwin Vargas
+-[![wakatime](https://wakatime.com/badge/user/7e7305fe-4605-403b-b2b2-f0610ed95917/project/fef72d04-e775-43e7-9ef5-def9e9d6135e.svg)](https://wakatime.com/badge/user/7e7305fe-4605-403b-b2b2-f0610ed95917/project/fef72d04-e775-43e7-9ef5-def9e9d6135e)
 - David Puerto
 [![wakatime](https://wakatime.com/badge/user/54d759a2-12d9-48b4-9e4e-88518abe7706/project/1f280c1f-07ba-43eb-8982-f5fdb7f29cf5.svg)](https://wakatime.com/badge/user/54d759a2-12d9-48b4-9e4e-88518abe7706/project/1f280c1f-07ba-43eb-8982-f5fdb7f29cf5)
 
