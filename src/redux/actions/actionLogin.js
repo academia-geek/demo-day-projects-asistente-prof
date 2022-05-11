@@ -37,7 +37,6 @@ export const loginGoogle = () => {
       .then(({ user }) => {
         dispatch(loginSincronico(user.email, user.password));
 
-        console.log(user, 'Usuario autorizado');
       })
       .catch((error) => {
         console.warn(error, 'No autorizado');
@@ -52,7 +51,6 @@ export const loginFacebook = () => {
       .then(({ user }) => {
         dispatch(loginSincronico(user.email, user.password));
 
-        console.log(user, 'Usuario autorizado');
       })
       .catch((error) => {
         console.warn(error, 'No autorizado');
@@ -68,7 +66,6 @@ export const loginEmailPassAsync = (email, password) => {
       .then(({ user }) => {
         dispatch(loginSincronico(user.email, user.password));
 
-        console.log('Usuario autorizado');
       })
 
       .catch((error) => {

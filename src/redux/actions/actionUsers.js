@@ -21,7 +21,6 @@ export const addUserSync = (user) => {
 };
 
 export const addUserAsync = (user) => {
-  console.log(user);
   return async (dispatch) => {
     const collectionTraer = await getDocs(collection(getMyData, 'users'));
     const userlist = collectionTraer.docs.map((doc) => {
@@ -34,14 +33,15 @@ export const addUserAsync = (user) => {
       addDoc(collection(getMyData, 'users'), user)
         .then((resp) => {
           dispatch(addUserSync(user));
-          if(resp){Swal.fire({
-            position: 'top-end',
-            icon: 'success',
-            title: 'Guardada con Exito',
-            showConfirmButton: false,
-            timer: 1500
-          })}
-          
+          if (resp) {
+            Swal.fire({
+              position: 'top-end',
+              icon: 'success',
+              title: 'Guardada con Exito',
+              showConfirmButton: false,
+              timer: 1500,
+            });
+          }
         })
         .catch((error) => {
           console.warn(error);

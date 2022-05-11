@@ -4,10 +4,12 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import { saveFavorites } from '../../helpers/favoriteLocalStorage';
+import { resetLS } from '../../helpers/resetLS';
 import { paintCareerAsync } from '../../redux/actions/actionUniversity';
 import { addUserAsync, deleteUserAsync } from '../../redux/actions/actionUsers';
 import TitleResult from '../TitleResult';
 import CardResult from './CardResult';
+import { Testimonios } from '../Testimonios';
 
 const Result = ({
   focus,
@@ -18,6 +20,7 @@ const Result = ({
   letters,
   uid,
   displayName,
+  setBtnPerfil,
 }) => {
   const navigate = useNavigate();
   const [resultMatch, setResultMatch] = useState(false);
@@ -28,37 +31,34 @@ const Result = ({
     conter,
     letters,
   });
-  const [resetarTest, setResetarTest] = useState(2);
-  const [f, setf] = useState(focus)
+  const [resetarTest, setResetarTest] = useState(false);
 
   const dispatch = useDispatch();
   const { careeries } = useSelector((store) => store.careeries);
 
   useEffect(() => {
     dispatch(paintCareerAsync());
-    if (localStorage.getItem(`resetarTest`)) {
-      const reset = JSON.parse(localStorage.getItem('resetarTest'));
-      setResetarTest(reset);
-    }
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
-    localStorage.setItem(`resetarTest`, JSON.stringify(resetarTest));
+    resetLS(resetarTest, setResetarTest);
   }, [resetarTest]);
 
   const handleReset = () => {
     dispatch(deleteUserAsync(uid));
+    setResetarTest(true);
     setTimeout(() => {
-      navigate('/home');
-    }, 1000);
-    setResetarTest(resetarTest - 1);
+      setconter(0);
+    }, 2000);
   };
 
   const agregarBDUSer = () => {
     dispatch(addUserAsync(newUser));
     navigate('/perfil');
-    localStorage.setItem('f', JSON.stringify(focus))
+    setBtnPerfil(true);
+    localStorage.setItem('f', JSON.stringify(focus));
   };
   const favoriteStar = (car) => {
     saveFavorites(car);
@@ -70,13 +70,14 @@ const Result = ({
         {resultMatch ? (
           <div>
             <h1
-              className='mt-5 fs-3 cursorp'
+              className=' fs-3 cursorp'
               style={{ position: 'fixed' }}
               onClick={() => setResultMatch(false)}
             >
-              <span className='bi bi-arrow-left-circle-fill text-info cursorp'></span>{' '}
+              <span className=' bi bi-arrow-left-circle-fill text-info cursorp'></span>{' '}
               Volver
             </h1>
+            <Testimonios careeries={careeries[0].area}/>
             <div
               className=' d-flex justify-content-between flex-wrap'
               style={{ width: '100%' }}
@@ -115,16 +116,16 @@ const Result = ({
                       {carrera.area === 'c'
                         ? 'Administrativas y Contables'
                         : carrera.area === 'h'
-                        ? ' Humanísticas y Sociales '
-                        : carrera.area === 'a'
-                        ? ' Artísticas'
-                        : carrera.area === 's'
-                        ? 'Medicina y Cs. de la Salud '
-                        : carrera.area === 'i'
-                        ? 'Ingeniería y Computación'
-                        : carrera.area === 'd'
-                        ? 'Defensa y Seguridad'
-                        : 'Ciencias Exactas y Agrarias'}
+                          ? ' Humanísticas y Sociales '
+                          : carrera.area === 'a'
+                            ? ' Artísticas'
+                            : carrera.area === 's'
+                              ? 'Medicina y Cs. de la Salud '
+                              : carrera.area === 'i'
+                                ? 'Ingeniería y Computación'
+                                : carrera.area === 'd'
+                                  ? 'Defensa y Seguridad'
+                                  : 'Ciencias Exactas y Agrarias'}
                     </button>
                     <Card.Text>
                       <p>
@@ -161,43 +162,41 @@ const Result = ({
               Hola, <span className='fw-bold'>{displayName}</span> estos son tus
               resultados:
             </h2>
+            <div className='botones mt-5'>
+              <button
+                className='guardar-btn '
+                onClick={() => {
+                  agregarBDUSer();
+                }}
+              >
+                Guardar Test
+              </button>
+              <button
+                className={resetarTest ? 'visually-hidden' : 'reiniciar-btn '}
+                onClick={() => {
+                  handleReset();
+                  Swal.fire({
+                    title: `Acabas de reiniciar tu test, ya no te quedan opciónes de reiniciarlo`,
+                    showClass: {
+                      popup: 'animate__animated animate__fadeInDown',
+                    },
+                    hideClass: {
+                      popup: 'animate__animated animate__fadeOutUp',
+                    },
+                  });
+                }}
+              >
+                Reiniciar Test
+              </button>
+            </div>
             <div className='conten '>
-              <CardResult  item={focus[0]?focus[0].id: null} setResultMatch={setResultMatch}/>
-              <CardResult  item={focus[1]?focus[1].id: null} setResultMatch={setResultMatch}/>
-              </div>
+              <CardResult item={focus[0] ? focus[0].id : null} setResultMatch={setResultMatch} />
+              <CardResult item={focus[1] ? focus[1].id : null} setResultMatch={setResultMatch} />
+            </div>
             <br />
           </div>
         )}
       </Container>
-      <div className='botones'>
-        <button
-          className='guardar-btn '
-          onClick={() => {
-            agregarBDUSer();
-          }}
-        >
-          Guardar Test
-        </button>
-        <button
-          className={resetarTest <= 0 ? 'visually-hidden' : 'reiniciar-btn'}
-          onClick={() => {
-            handleReset();
-            Swal.fire({
-              title: `Acabas de reiniciar tu test, te queda ${
-                resetarTest - 1
-              } opción de reinicio`,
-              showClass: {
-                popup: 'animate__animated animate__fadeInDown',
-              },
-              hideClass: {
-                popup: 'animate__animated animate__fadeOutUp',
-              },
-            });
-          }}
-        >
-          Reiniciar Test ({resetarTest})
-        </button>
-      </div>
     </div>
   );
 };

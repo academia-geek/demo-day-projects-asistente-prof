@@ -15,15 +15,13 @@ const Perfil = ({ userV }) => {
   const [data, setData] = useState([]);
   const [c1, setC1] = useState();
   const [c2, setC2] = useState();
-  console.log(c1)
-  console.log(c2)
   useEffect(() => {
     if (userV) {
-      const dt = JSON.parse(localStorage.getItem('user'))
+      const dt = JSON.parse(localStorage.getItem('user'));
       setResult(dt);
-      const dataUser = JSON.parse(localStorage.getItem('f'))
-      setC1 (infoChaside.filter(i => i.id === dataUser[0].id))
-      setC2 (infoChaside.filter(i => i.id === dataUser[1].id))
+      const dataUser = JSON.parse(localStorage.getItem('f'));
+      setC1(infoChaside.filter((i) => i.id === dataUser[0].id));
+      setC2(infoChaside.filter((i) => i.id === dataUser[1].id));
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -97,7 +95,6 @@ const Perfil = ({ userV }) => {
 
     doc.setFillColor(75, 63, 107);
     doc.rect(100, 125, 80, 20, 'F');
-
 
     doc.setFontSize(10);
     doc.setTextColor(252, 252, 252);
