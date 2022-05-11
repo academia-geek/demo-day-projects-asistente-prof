@@ -26,16 +26,14 @@ const SignupSchema = Yup.object().shape({
 
 export const Login = ({ userV, conterLogin }) => {
   const dispatch = useDispatch();
-  console.log(conterLogin);
 
   const handleGoogle = () => {
     dispatch(loginGoogle());
     setTimeout(() => {
       if (conterLogin === 0) {
-        console.log('entro');
         Swal.fire({
           title: 'Bienvenido',
-          text: 'A continuación van a realizar un test de 98 preguntas donde tienen como resultado sus habilidades y aptitudes que ayudaran a encontar la carrera que se adapta a su perfil.',
+          text: 'A continuación van a realizar un test de 98 preguntas donde tienen como resultado sus habilidades y aptitudes que ayudaran a encontar la carrera que se adapta a su perfil. " SOLO PODRAS REALIZAR EL TEST 2 VECES "',
           icon: 'exito',
           confirmButtonText: 'Realizar Test',
         });
@@ -48,7 +46,7 @@ export const Login = ({ userV, conterLogin }) => {
       if (conterLogin === 0) {
         Swal.fire({
           title: 'Bienvenido',
-          text: 'A continuación van a realizar un test de 98 preguntas donde tienen como resultado sus habilidades y aptitudes que ayudaran a encontar la carrera que se adapta a su perfil.',
+          text: 'A continuación van a realizar un test de 98 preguntas donde tienen como resultado sus habilidades y aptitudes que ayudaran a encontar la carrera que se adapta a su perfil. " SOLO PODRAS REALIZAR EL TEST 2 VECES "',
           icon: 'exito',
           confirmButtonText: 'Realizar Test',
         });
@@ -95,7 +93,7 @@ export const Login = ({ userV, conterLogin }) => {
               onClick={handleGoogle}
             >
               <span className='d-flex  gap-5 google-btn iWhite '>
-                <i class='bi bi-google text-danger fs-5 iWhite   '></i>
+                <i className='bi bi-google text-danger fs-5 iWhite   '></i>
                 Continuar con Google
               </span>
             </Container>
@@ -104,7 +102,7 @@ export const Login = ({ userV, conterLogin }) => {
               onClick={handleFacebook}
             >
               <span className='d-flex  gap-5  google-btn iWhite'>
-                <i class='bi bi-facebook text-info fs-5'></i>
+                <i className='bi bi-facebook text-info fs-5'></i>
                 Continuar con Facebook
               </span>
             </Container>
@@ -126,7 +124,7 @@ export const Login = ({ userV, conterLogin }) => {
                 if (conterLogin === 0) {
                   Swal.fire({
                     title: 'Bienvenido',
-                    text: 'A continuación van a realizar un test de 98 preguntas donde tienen como resultado sus habilidades y aptitudes que ayudaran a encontar la carrera que se adapta a su perfil.',
+                    text: 'A continuación van a realizar un test de 98 preguntas donde tienen como resultado sus habilidades y aptitudes que ayudaran a encontar la carrera que se adapta a su perfil. " SOLO PODRAS REALIZAR EL TEST 2 VECES "',
                     icon: 'exito',
                     confirmButtonText: 'Realizar Test',
                   });

@@ -15,8 +15,6 @@ const Perfil = ({ userV }) => {
   const [data, setData] = useState([]);
   const [c1, setC1] = useState();
   const [c2, setC2] = useState();
-  console.log(c1);
-  console.log(c2);
   useEffect(() => {
     if (userV) {
       const dt = JSON.parse(localStorage.getItem('user'));

@@ -1,0 +1,56 @@
+.acor{
+margin-top: 100px;
+}
+.contentTestimonios {
+  display: flex;
+  margin: 20px auto;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background-color: #eee;
+  box-shadow: 10px 20px 20px gray;
+  border-radius: 20px;
+  width: 80%;
+}
+.contentImgCut {
+  width: 50%;
+  display: flex;
+  max-width: 1000px;
+  min-width: 100px;
+  position: relative;
+}
+.imgCut {
+  width: 100%;
+  border-radius: 20px 0 0 20px;
+  object-fit: cover;
+  clip-path: polygon(0 0, 100% 0%, 75% 100%, 0% 100%);
+}
+.contentInfo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  margin: 20px auto;
+  width: 45%;
+}
+.imgSobre {
+  position: absolute;
+  top: 75%;
+  left: 80%;
+  width: 100px;
+}
+.textB button{
+  color: black !important;
+}
+@media (max-width: 1200px) {
+  .imgCut {
+    border-radius: 20px 20px 0 20px;
+  }
+  .contentImgCut {
+    width: 100%;
+  }
+  .contentInfo {
+    width: 95%;
+  }
+  .imgSobre {
+    left: 78%;
+  }
+}

@@ -60,7 +60,7 @@ export const Favorites = () => {
           </div>
         ) : (
           <>
-            <h2 className='text-light w-75 m-auto'>
+            <h2 className='w-75 m-auto'>
               Favoritos: {dataf.length}
             </h2>
             {dataf?.map((carrera) => (
@@ -144,7 +144,7 @@ export const Favorites = () => {
                       target='_blank'
                       rel='noreferrer'
                     >
-                      Ver carrera{' '}
+                      Más información
                     </a>
                   </Card.Text>
                 </Card.Body>

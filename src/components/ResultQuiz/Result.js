@@ -9,6 +9,7 @@ import { paintCareerAsync } from '../../redux/actions/actionUniversity';
 import { addUserAsync, deleteUserAsync } from '../../redux/actions/actionUsers';
 import TitleResult from '../TitleResult';
 import CardResult from './CardResult';
+import { Testimonios } from '../Testimonios';
 
 const Result = ({
   focus,
@@ -69,13 +70,14 @@ const Result = ({
         {resultMatch ? (
           <div>
             <h1
-              className='mt-5 fs-3 cursorp'
+              className=' fs-3 cursorp'
               style={{ position: 'fixed' }}
               onClick={() => setResultMatch(false)}
             >
-              <span className='bi bi-arrow-left-circle-fill text-info cursorp'></span>{' '}
+              <span className=' bi bi-arrow-left-circle-fill text-info cursorp'></span>{' '}
               Volver
             </h1>
+            <Testimonios careeries={careeries[0].area}/>
             <div
               className=' d-flex justify-content-between flex-wrap'
               style={{ width: '100%' }}
@@ -114,16 +116,16 @@ const Result = ({
                       {carrera.area === 'c'
                         ? 'Administrativas y Contables'
                         : carrera.area === 'h'
-                        ? ' Humanísticas y Sociales '
-                        : carrera.area === 'a'
-                        ? ' Artísticas'
-                        : carrera.area === 's'
-                        ? 'Medicina y Cs. de la Salud '
-                        : carrera.area === 'i'
-                        ? 'Ingeniería y Computación'
-                        : carrera.area === 'd'
-                        ? 'Defensa y Seguridad'
-                        : 'Ciencias Exactas y Agrarias'}
+                          ? ' Humanísticas y Sociales '
+                          : carrera.area === 'a'
+                            ? ' Artísticas'
+                            : carrera.area === 's'
+                              ? 'Medicina y Cs. de la Salud '
+                              : carrera.area === 'i'
+                                ? 'Ingeniería y Computación'
+                                : carrera.area === 'd'
+                                  ? 'Defensa y Seguridad'
+                                  : 'Ciencias Exactas y Agrarias'}
                     </button>
                     <Card.Text>
                       <p>
@@ -174,9 +176,7 @@ const Result = ({
                 onClick={() => {
                   handleReset();
                   Swal.fire({
-                    title: `Acabas de reiniciar tu test, te queda ${
-                      resetarTest - 1
-                    } opción de reinicio`,
+                    title: `Acabas de reiniciar tu test, ya no te quedan opciónes de reiniciarlo`,
                     showClass: {
                       popup: 'animate__animated animate__fadeInDown',
                     },
@@ -190,14 +190,8 @@ const Result = ({
               </button>
             </div>
             <div className='conten '>
-              <CardResult
-                item={focus[0] ? focus[0].id : null}
-                setResultMatch={setResultMatch}
-              />
-              <CardResult
-                item={focus[1] ? focus[1].id : null}
-                setResultMatch={setResultMatch}
-              />
+              <CardResult item={focus[0] ? focus[0].id : null} setResultMatch={setResultMatch} />
+              <CardResult item={focus[1] ? focus[1].id : null} setResultMatch={setResultMatch} />
             </div>
             <br />
           </div>

@@ -110,7 +110,6 @@ export const Quiz = ({ userV, setnumero, setBtnPerfil }) => {
 
     setFocus(datosFinal);
   }, [answers]);
-  console.log(focus);
 
   useEffect(() => {
     localStorage.setItem('answers', JSON.stringify(answers));
