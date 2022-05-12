@@ -109,10 +109,12 @@ const CRUDUniversity = () => {
           value={universidad}
           className='w-75 mx-auto mb-3 text-secondary'
         >
-          <option>Selecciona universidad</option>
+          <option>Selecciona Universidad</option>
           <option>Universidad Nacional de Colombia</option>
           <option>Pontificia Universidad Javeriana</option>
           <option>Universidad Icesi</option>
+          <option>Corporación Universitaria UNITEC</option>
+          <option>Politecnico Gran Colombiano</option>
         </Form.Select>
         <Form.Label htmlFor='car' className='w-75 d-flex mx-auto fw-bold'>
           Sigla de universidad

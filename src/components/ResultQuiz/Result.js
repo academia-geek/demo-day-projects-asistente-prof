@@ -93,16 +93,14 @@ const Result = ({
                       style={{ width: '100%' }}
                       variant='top'
                       src={
-                        carrera.sigla === 'unal'
-                            ? 'https://res.cloudinary.com/edwin3002/image/upload/v1651556835/u/unal_txtgip.png'
-                            : carrera.sigla === 'ecci'
-                                ? 'https://res.cloudinary.com/edwin3002/image/upload/v1651556836/u/ecci_vsmyre.png'
-                                : carrera.sigla === 'utap'
-                                    ? 'https://res.cloudinary.com/edwin3002/image/upload/v1651556836/u/utap_tonkbm.png'
-                                    : carrera.sigla === 'puj'
-                                        ? 'https://res.cloudinary.com/edwin3002/image/upload/v1651556839/u/puj_wggjl8.png'
-                                        : 'https://thumbs.dreamstime.com/b/sin-foto-ni-icono-de-imagen-en-blanco-cargar-im%C3%A1genes-o-falta-marca-no-disponible-pr%C3%B3xima-se%C3%B1al-silueta-naturaleza-simple-marco-215973362.jpg'
-                    }
+                        carrera.sigla === 'unal' ? 'https://res.cloudinary.com/edwin3002/image/upload/v1651556835/u/unal_txtgip.png' :
+                          carrera.sigla === 'ecci' ? 'https://res.cloudinary.com/edwin3002/image/upload/v1651556836/u/ecci_vsmyre.png' :
+                            carrera.sigla === 'utap' ? 'https://res.cloudinary.com/edwin3002/image/upload/v1651556836/u/utap_tonkbm.png' :
+                              carrera.sigla === 'puj' ? 'https://res.cloudinary.com/edwin3002/image/upload/v1651556839/u/puj_wggjl8.png' :
+                                carrera.sigla === 'unitec' ? 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Logo_Unitec.png/640px-Logo_Unitec.png' :
+                                  carrera.sigla === 'poli' ? 'https://politecnicointernacional.edu.co/landings/wp-content/uploads/2019/05/fav-icon.png' :
+                                    'https://thumbs.dreamstime.com/b/sin-foto-ni-icono-de-imagen-en-blanco-cargar-im%C3%A1genes-o-falta-marca-no-disponible-pr%C3%B3xima-se%C3%B1al-silueta-naturaleza-simple-marco-215973362.jpg'
+                      }
                     />
                   </div>
                   <Card.Body>
