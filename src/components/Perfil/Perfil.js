@@ -246,7 +246,7 @@ const Perfil = ({ userV }) => {
               src={
                 photoURL
                   ? photoURL
-                  : 'https://res.cloudinary.com/djjgtili7/image/upload/v1650336872/ArtistApp/ICONO-PERFIL_gh23iu.png'
+                  : 'https://res.cloudinary.com/djjgtili7/image/upload/v1652248983/female-student-with-books-paperworks_rwepgz.jpg'
               }
             />
             <Card.Text className='TextBold btnDelete ' onClick={() => deleteuser()}>

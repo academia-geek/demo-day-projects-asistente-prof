@@ -84,7 +84,7 @@ const CRUDUniversity = () => {
   }, []);
 
   return (
-    <div>
+    <div >
       <div>
         <Link to='/landing'>
           <Button variant='secondary' className='m-2 back-btn'>
@@ -98,6 +98,7 @@ const CRUDUniversity = () => {
       <Form
         onSubmit={handleSubmit}
         className='w-75 mx-auto my-5 py-5 sombraSha'
+        
       >
         <Form.Label className='w-75 d-flex mx-auto fw-bold '>
           Universidad
