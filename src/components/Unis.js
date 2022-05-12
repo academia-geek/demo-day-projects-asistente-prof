@@ -38,7 +38,7 @@ export const Unis = () => {
             >
                 {careeries.map((carrera, index) => (
                     <Container
-                        className='d-flex my-3 bg-white rounded border'
+                        className='d-flex my-3 bg-white rounded shadow border'
                         style={{ minWidth: '500px', maxWidth: '700px' }}
                         key={carrera.idCarrera}
                     >

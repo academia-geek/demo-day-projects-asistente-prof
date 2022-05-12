@@ -8,7 +8,7 @@ const TitleResult = ({ careeries }) => {
       {carreras === 'c' ? (
         <div className='d-flex flex-column justify-content-center mx-auto text-center '>
           <h2 className='descrip'>Administrativas y Contables</h2>
-          <p className=''>
+          <p className='descipP'>
             La ciencia y la técnica cuyo propósito es proporcionar información
             para la toma de decisiones económicas se llama contabilidad. Los
             contadores se encargan de las cuentas contables de las empresas,

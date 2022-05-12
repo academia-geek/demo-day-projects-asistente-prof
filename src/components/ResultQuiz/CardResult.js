@@ -7,6 +7,7 @@ import {
   paintCareerAsync,
 } from '../../redux/actions/actionUniversity';
 import '../../style/unis.css';
+import { Testimonios } from '../Testimonios';
 
 const CardResult = ({ item, setResultMatch }) => {
   const dispatch = useDispatch();
@@ -24,11 +25,12 @@ const CardResult = ({ item, setResultMatch }) => {
     <div className='w-100 d-flex shadow-lg  rounded mx-auto my-5  p-0 cardResultdos'>
       {infoChaside.map((ite) =>
         ite.id === item ? (
-          <div className='w-100 rounded cardResult ' key={ite.id}>
+          <div className='w-100 bg-light rounded'>
+          <div className='w-100  cardResult' key={ite.id}>
             <div
-              className=' my-auto mx-2 py-2 px-4'
+              className=' my-4 mx-4 py-2 px-4'
               style={{
-                maxWidth: '400px',
+                maxWidth: '600px',
                 border: '5px solid #2b939f',
                 borderRadius: '20px',
               }}
@@ -56,9 +58,9 @@ const CardResult = ({ item, setResultMatch }) => {
                 }
               />
             </div>
-
-            <Card.Body className='w-50 d-flex  mx-2 p-0'>
-              <div className=' m-auto'>
+                
+            <Card.Body className=' d-flex mx-2 my-4 p-0 cardImg' >
+              <div className=' m-auto w-75'>
                 <Card.Title className='fs-2 fw-bold text-center'>
                   {ite.title}
                 </Card.Title>
@@ -113,7 +115,11 @@ const CardResult = ({ item, setResultMatch }) => {
                   Ver Carreras
                 </button>
               </div>
+              
             </Card.Body>
+
+          </div>
+          <Testimonios  careeries={ite.id}/>
           </div>
         ) : null
       )}

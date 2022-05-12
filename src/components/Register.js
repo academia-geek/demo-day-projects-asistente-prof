@@ -26,8 +26,8 @@ const Register = () => {
   };
 
   return (
-    <div>
-      <Container className='shadow p-5 rounded mx-auto my-5'>
+    <div style={{ background: '#eee', height: '220vh', paddingTop: '30px'}}>
+      <Container className='shadow p-5 bg-light rounded mx-auto my-5'>
         <Nav className='d-flex justify-content-between'>
           <Nav.Item as='li'>
             <Nav.Link href='/landing' className=' text-dark fs-5'>
