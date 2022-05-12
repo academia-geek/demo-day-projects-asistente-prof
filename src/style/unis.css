@@ -105,24 +105,29 @@
 .cardResult {
   display: flex;
   flex-direction: column;
-  margin: 50px auto;
+  margin: 10px auto;
+}
+.cardImg{
+  width: 50%;
 }
 @media (min-width: 900px) {
+
   .cardResultdos {
     margin-top: 80px;
   }
   .cardResult {
     flex-direction: row;
-    margin: 60px 30px;
   }
 }
 @media (min-width: 1300px) {
   .cardResult {
     flex-direction: row;
-    margin: 70px 30px;
   }
 }
 @media (max-width: 900px) {
+  .cardImg{
+    width: 100%;
+  }
   .cardResult {
     display: flex !important;
     align-items: center !important;
@@ -132,3 +137,7 @@
 .titleUni {
   padding-top: 70px;
 }
+/* .cardImg{
+  width: 50%;
+  background-color: orange;
+} */

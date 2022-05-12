@@ -1,5 +1,5 @@
 .acor{
-margin-top: 100px;
+  margin-bottom: 30px;
 }
 .contentTestimonios {
   display: flex;
@@ -39,6 +39,7 @@ margin-top: 100px;
 }
 .textB button{
   color: black !important;
+  font-weight: bold;
 }
 .textB button::before{
   background-color: transparent !important;

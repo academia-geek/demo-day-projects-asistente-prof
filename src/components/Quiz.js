@@ -143,7 +143,7 @@ export const Quiz = ({ userV, setnumero, setBtnPerfil }) => {
   };
 
   return (
-    <div className='py-5 my-3 contPadre'>
+    <div className='py-5 my-3 contPadre' style={{ background: '#eee'}}>
       {conter === questions.length ? (
         <Result
           focus={focus}
@@ -157,7 +157,7 @@ export const Quiz = ({ userV, setnumero, setBtnPerfil }) => {
           setBtnPerfil={setBtnPerfil}
         />
       ) : (
-        <Container className=' d-flex mx-auto marginQuiz shadow '>
+        <Container className=' d-flex bg-light mx-auto marginQuiz shadow '>
           <div className='questionsQuiz my-5 text-center text-light d-flex align-content-between flex-wrap'>
             <h2 className='fw-bold m-3 preguntas'>
               {questions[conter]?.quest}

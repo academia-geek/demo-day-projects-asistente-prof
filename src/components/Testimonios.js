@@ -12,7 +12,7 @@ export const Testimonios = ({ careeries }) => {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
     return (
-        <Accordion className='w-75 mx-auto acor' defaultActiveKey="0">
+        <Accordion className='w-75 mx-auto acor' >
             <Accordion.Item eventKey="0">
                 <Accordion.Header className='textB'>Testimonio 1</Accordion.Header>
                 <Accordion.Body>

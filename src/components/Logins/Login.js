@@ -55,9 +55,9 @@ export const Login = ({ userV, conterLogin }) => {
   };
 
   return (
-    <div className='login '>
+    <div className='login ' style={{ background: '#eee', height: '120vh', paddingTop: '50px'}}>
 
-      <Container className='shadow p-5 rounded mx-auto my-5 '>
+      <Container className='shadow bg-light p-5 rounded mx-auto '>
         <Nav className='d-flex justify-content-between'>
           <Nav.Item as='li'>
             <Nav.Link href='/landing' className=' text-dark  fs-5'>
