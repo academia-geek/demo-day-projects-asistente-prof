@@ -9,7 +9,6 @@ export const Testimonios = ({ careeries }) => {
     useEffect(() => {
         const info = infoChaside?.find(i => i.id === careeries)
         setTesti(info)
-
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
     return (
@@ -22,7 +21,6 @@ export const Testimonios = ({ careeries }) => {
                             <Card.Img className='imgCut' src={testi.img1} alt=' girl' />
                             <Card.ImgOverlay className='imgSobre'>
                                 <Card.Img className='w-100' src='https://i.ibb.co/MNLw3ZB/Tu-Asistente-prof-1-tqqqyk.png' alt='logo' />
-
                             </Card.ImgOverlay>
                         </div>
                         <div className='contentInfo'>
