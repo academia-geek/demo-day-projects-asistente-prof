@@ -230,7 +230,7 @@ const Perfil = ({ userV }) => {
   };
 
   return (
-    <div style={{ background: '#eee' }} className='mt-5 Background'>
+    <div style={{ background: '#eee', height: '100vh' }} className='mt-5 Background'>
       <Container className='py-5 mt-5 '>
         <Card className=' ProfileCard mx-auto'>
           <div>
@@ -246,7 +246,7 @@ const Perfil = ({ userV }) => {
               src={
                 photoURL
                   ? photoURL
-                  : 'https://res.cloudinary.com/djjgtili7/image/upload/v1650336872/ArtistApp/ICONO-PERFIL_gh23iu.png'
+                  : 'https://res.cloudinary.com/djjgtili7/image/upload/v1652248983/female-student-with-books-paperworks_rwepgz.jpg'
               }
             />
             <Card.Text className='TextBold btnDelete ' onClick={() => deleteuser()}>
