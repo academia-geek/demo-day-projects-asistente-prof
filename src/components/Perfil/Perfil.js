@@ -230,7 +230,7 @@ const Perfil = ({ userV }) => {
   };
 
   return (
-    <div style={{ background: '#eee' }} className='mt-5 Background'>
+    <div style={{ background: '#eee', height: '100vh' }} className='mt-5 Background'>
       <Container className='py-5 mt-5 '>
         <Card className=' ProfileCard mx-auto'>
           <div>

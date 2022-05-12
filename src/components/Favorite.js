@@ -27,7 +27,7 @@ export const Favorites = () => {
     }
   }, [setdataf]);
   return (
-    <div className=' py-5' style={{ background: '#eee', height: '100vh' }}>
+    <div className=' py-5' style={{ background: '#eee', height: '130vh' }}>
       <h2 className='text-center my-5 fw-bold  titleUni'>
         Tus Carreras Favoritas
       </h2>
